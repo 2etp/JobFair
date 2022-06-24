@@ -5,6 +5,7 @@
 			<img src="image/logo.png">
 		</article>
 		<nav class="header-navigation">
+			<div>|</div>
 			<a href="javascript:void(0)">소개</a>
 			<div>|</div>
 			<a href="javascript:void(0)">채용관</a>
@@ -12,6 +13,7 @@
 			<a href="javascript:void(0)">회원가입</a>
 			<div>|</div>
 			<a href="javascript:void(0)">로그인</a>
+			<div>|</div>
 		</nav>
 	</section>
 </header>

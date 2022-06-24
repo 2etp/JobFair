@@ -95,5 +95,4 @@ replay_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java
 main/webapp/META-INF/
-
-main/java/jobFairMgr/DBConMgr.java
+main/java/jobFairMgr/DBConnectionMgr.java

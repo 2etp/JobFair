@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+body {
+	display : flex;
+	flex-direction : column;
+	justify-content : space-between;
+	height : 100vh;
+	margin : 0;
+}
+
+header {
+	flex-basis : 15%;
+	display : flex;
+	justify-content : center;
+}
+
+header section{
+	flex-basis : 40%;
+}
+
+main {
+	flex-basis : 70%;
+
+}
+
+footer{
+	flex-basis : 15%;
+	display : flex;
+	justify-content : center;
+}
+
+footer section{
+	flex-basis : 40%;
+}
+
+
+.header-img img{
+	width : 40%;
+}
+
+.header-navigation {
+	display : flex;
+	justify-content : space-between;
+}
+
+.header-navigation a{
+	padding : 0 7.53%;
+	font-size : 25px;
+	color : black;
+	border-right : 1px solid black;
+	text-decoration : none;
+}
+
+.header-navigation a:first-child{
+	border-left : 1px solid black;
+}

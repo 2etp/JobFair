@@ -24,7 +24,8 @@ header section{
 
 main {
 	flex-basis : 70%;
-
+	display : flex;
+	justify-content : center;
 }
 
 footer{

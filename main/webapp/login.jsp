@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>2021 부산 장애인 온라인 채용 박람회 | 로그인</title>
+<title>2022 부산 장애인 온라인 채용 박람회 | 로그인</title>
 </head>
 <body>
 	

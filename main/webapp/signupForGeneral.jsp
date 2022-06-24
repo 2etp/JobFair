@@ -18,11 +18,14 @@
 			<label>기업명</label>
 			<input type="text" name="companyName">
 			
-			<label>이름</label>
+			<label>대표자 이름</label>
 			<input type="text" name="name">
 			
 			<label>기업주소</label>
 			<input type="text" name="address">
+			
+			<label>홈페이지</label>
+			<input type="text" name="homepage">
 			
 			<label>연락처</label>
 			<input type="tel" name="mobile">

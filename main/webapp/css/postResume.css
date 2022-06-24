@@ -6,12 +6,12 @@ table, tr, td {
 	border-collapse: collapse;
 }
 
-.saveResume {
+.sideBar {
 	position:fixed;
 	right: 10%;
 	top: 40%;
 }
 
-.saveResume a {
+.sideBar a {
 	display: flex;
 }

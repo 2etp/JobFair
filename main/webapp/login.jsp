@@ -14,7 +14,9 @@
 <main>
 	<seciton>
 		<form name="logFrm" method="post" action="loginProc.jsp">
+			<label>아이디</label>
 			<input type="text" name="id	">	
+			<label>비밀번호</label>
 			<input type="password" name="pw">
 			<a href="javascript:loginCheck();" role="button">로그인</a>
 		</form>

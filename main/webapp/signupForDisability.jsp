@@ -17,22 +17,21 @@
 			<label>성명</label>
 			<input type="text" name="name">
 			<label>주민등록번호</label>
-			<input type="number" name="prefixNum">
+			<input type="number" name="prefixNum"> -
 			<input type="number" name="suffixNum">
 			
+			<label>거주지역</label>
 			<select>
 				<option value="">
 				<option value="">
 				<option value="">
 				<option value="">
 			</select>
-			
-			<label>거주지역</label>
-			<input type="text" name="address">
 			
 			<label>연락처</label>
 			<input type="tel" name="mobile">
 			
+			<label>장애유형</label>
 			<select>
 				<option value="">
 				<option value="">
@@ -41,6 +40,7 @@
 				<option value="">
 			</select>
 			
+			<label>장애등급</label>
 			<select>
 				<option value="">
 				<option value="">

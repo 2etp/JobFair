@@ -14,9 +14,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>2022 부산 장애인 온라인 채용 박람회 | 이력서 등록(일반인용)</title>
+<title>2022 부산 장애인 온라인 채용 박람회 | 이력서 등록</title>
 <link rel="stylesheet" href="./css/common.css">
-<link rel="stylesheet" href="./css/writeResume.css?after">
+<link rel="stylesheet" href="./css/postResume.css?after">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 
 <main>
 	<seciton>
-		<form name="resumeFrm" method="post" action="writeResumeProc.jsp">
+		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
 			<table>
 				<tr>
 					<td>성명</td>
@@ -34,7 +34,7 @@
 				</tr>
 				
 				<tr>
-					<td>연락처	</td>
+					<td>연락처</td>
 					<td><%=mobile%></td>
 					<td colspan="2">생년월일</td>
 					<td colspan="2"><%=birthDay%></td>
@@ -87,8 +87,6 @@
 				
 				<tr>
 					<td><input type="text" name="major">학과</td>
-				
-
 				</tr>
 				
 				<tr>

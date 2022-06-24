@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+main section{
+	flex-basis: 40%;
+}
+
+main section article img{
+	width : 100%;
+	
+}
+
+.article-leftarrow {
+	display : flex;
+	flex-direction : column;
+	align-items: end;
+	
+}
+.article-leftarrow a{
+	width : 10%;
+}

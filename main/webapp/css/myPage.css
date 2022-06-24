@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+main {
+	align-items : center;
+}
+
+.section-aside{
+	position : fixed;
+	right : 10%;
+	top : 50%;	
+}
+
+.section-aside aside{
+	display : flex;
+	flex-direction : column;
+}
+
+.section-table {
+	flex-basis : 40%;
+}
+
+.section-table table{
+	text-align : left;
+}
+
+.section-table tr:nth-child(1) th{
+	letter-spacing : 64px;
+}

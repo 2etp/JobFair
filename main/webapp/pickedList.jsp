@@ -20,12 +20,15 @@
 		<div class="jobOpening">
 			<img src="./image/mjt.png">
 			<div class="content">
-				<p>(주)엠제이티</p>
+				<a href="#" role="button"><b>(주식회사)엠제이티</b></a>
 				<p>근무지역</p>
 				<p>사상구</p>
 				<p>직무</p>
 				<p>CNC, MCT, 가공후처리(버핑)</p>
 			</div>
+			
+			<a href="#" role="button">접수마감</a>
+			<p>~ 7/26</p>
 		</div>
 		
 		<aside class="sideBar">

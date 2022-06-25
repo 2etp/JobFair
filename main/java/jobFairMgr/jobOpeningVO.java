@@ -3,7 +3,7 @@ package jobFairMgr;
 // 채용공고 VO
 public class jobOpeningVO {
 	private int employNum;			// 채용공고 고유번호
-	private String comNum;			// 기업 고유번호 -> 나중에 외래키로 쓰여질 예정
+	private int comNum;			// 기업 고유번호 -> 나중에 외래키로 쓰여질 예정
 	private String title;			// 채용공고 이름
 	private String position;		// 모집 직종
 	private int people;				// 모집 인원
@@ -23,6 +23,7 @@ public class jobOpeningVO {
 	private String facilities;		// 편의시설
 	private String welfare;			// 복리후생
 	private String preferred;		// 우대사항
+	private String openingDate;		// 채용공고 기간
 	
 	
 
@@ -32,10 +33,10 @@ public class jobOpeningVO {
 	public void setEmployNum(int employNum) {
 		this.employNum = employNum;
 	}
-	public String getComNum() {
+	public int getComNum() {
 		return comNum;
 	}
-	public void setComNum(String comNum) {
+	public void setComNum(int comNum) {
 		this.comNum = comNum;
 	}
 	public String getTitle() {
@@ -151,5 +152,11 @@ public class jobOpeningVO {
 	}
 	public void setPreferred(String preferred) {
 		this.preferred = preferred;
+	}
+	public String getOpeningDate() {
+		return openingDate;
+	}
+	public void setOpeningDate(String openingDate) {
+		this.openingDate = openingDate;
 	}
 }

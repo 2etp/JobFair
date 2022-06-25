@@ -80,6 +80,9 @@
 			<a href="javascript:" role="button">검색</a>
 		</form>
 	</section>
+	
+	<!-- 채용공고 리스트 -->
+	
 </main>
 
 <jsp:include page="footer.jsp"/>

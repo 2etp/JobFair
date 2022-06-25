@@ -52,4 +52,38 @@ public class generalDAO {
 		
 		return flag;
 	}
+	
+	
+	// 채용공고 등록
+	
+	
+	
+	// 등록된 채용공고 출력
+	public List<jobOpeningVO> getOpeningList() {
+		List<jobOpeningVO> list = new ArrayList<jobOpeningVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select * from jobopening";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				jobOpeningVO vo = new jobOpeningVO();
+				vo.setEmployNum(rs.getInt("employNum"));
+				vo.setComNum(rs.getInt("comNum"));
+				vo.setTitle(rs.getString("title"));
+				vo.setPosition(rs.getString("position"));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+		
+		return list;
+	}
 }

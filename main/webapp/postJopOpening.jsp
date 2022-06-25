@@ -13,6 +13,7 @@
 
 <main>
 	<section>
+		<p>기업정보</p>
 		<form name="jobFrm" method="post" action="postJobOpeningProc.jsp">
 			<table>
 				<tr>
@@ -43,13 +44,13 @@
 					<td><input type="text" name="size"></td>
 				</tr>
 			</table>
-			
+			<p>채용정보</p>
 			<table>
 				<tr>
 					<td>모집직종</td>
-					<td><input type="text" name="categoryOfOccupation"></td>
+					<td><input type="text" name="position"></td>
 					<td>모집인원</td>
-					<td><input type="text" name="numberOfPeople"></td>
+					<td><input type="number" name="people"></td>
 				</tr>
 				
 				<tr>
@@ -68,7 +69,7 @@
 				
 				<tr>
 					<td>고용형태</td>
-					<td><input type="text" name="employmenType"></td>
+					<td><input type="text" name="employType"></td>
 					<td>근무형태</td>
 					<td><input type="text" name="workType"></td>
 				</tr>
@@ -88,6 +89,7 @@
 				</tr>
 			</table>
 			
+			<p>우대사항 및 복리후생</p>
 			<table>
 				<tr>
 					<td>전공</td>

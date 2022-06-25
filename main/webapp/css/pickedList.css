@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.jobOpening {
+	display: flex;
+	position: relative;
+	top: 10%;
+	
+}
+
+.content {
+	display: block;
+	position: relative;
+	left: 10%;
+}
+
+.sideBar {
+	position:fixed;
+	right: 10%;
+	top: 40%;
+	border: 1px solid black;
+	padding: 5% 3% 5% 3%;
+}
+
+.sideBar a {
+	display: flex;
+	text-decoration: none;
+	color: black;
+	padding: 5% 0 5% 0;
+	font-size: 25px;
+}

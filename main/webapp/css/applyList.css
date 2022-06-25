@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.title {
+	position: absolute;
+	left: 30%;	
+}
+
+.applyList {
+	display: flex;
+	position: absolute;
+	top: 25%;
+	left: 30%;
+	
+}
+
+.content {
+	display: block;
+	position: relative;
+	left: 10%;
+}
+
+.content a {
+	text-decoration: none;
+	color: black;
+	display: flex;
+	margin: 15px 0 0 0;
+	font-size: 25px;
+}
+
+.content a:hover {
+	text-decoration: underline;
+}
+
+.progress {
+	position: relative;
+	left: 20%;
+}
+
+.buttons {
+	position: relative;
+	left: 30%;
+}
+
+.buttons a {
+	display: flex;
+	text-decoration: none;
+	color: black;
+	margin: 20px 0 0 0;
+}

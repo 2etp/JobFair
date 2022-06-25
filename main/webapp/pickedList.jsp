@@ -14,6 +14,8 @@
 <jsp:include page="header.jsp"/>
 
 <main>
+
+	<h2 class="title">관심기업</h2>
 	<section>
 		<div class="jobOpening">
 			<img src="./image/mjt.png">

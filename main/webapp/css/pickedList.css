@@ -1,10 +1,15 @@
 @charset "UTF-8";
 
+.title {
+	position: absolute;
+	left: 30%;	
+}
+
 .jobOpening {
 	display: flex;
-	position: relative;
-	top: 10%;
-	
+	position: absolute;
+	top: 30%;
+	left: 30%;
 }
 
 .content {

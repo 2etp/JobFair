@@ -27,26 +27,26 @@
 		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
 			<table>
 				<tr>
-					<td>성명</td>
+					<th>성명</th>
 					<td><%=name%></td>
-					<td colspan="2">성별</td>
+					<th colspan="2">성별</th>
 					<td colspan="2"><%=sex%></td>
 				</tr>
 				
 				<tr>
-					<td>연락처</td>
+					<th>연락처</th>
 					<td><%=mobile%></td>
-					<td colspan="2">생년월일</td>
+					<th colspan="2">생년월일</th>
 					<td colspan="2"><%=birthDay%></td>
 				</tr>
 				
 				<tr>
-					<td>주소</td>
+					<th>주소</th>
 					<td colspan="3"><%=address%></td>
 				</tr>
 				
 				<tr>
-					<td>병역</td>
+					<th>병역</th>
 					<td colspan="5">
 						<label><input type="checkbox" name="finished" value="finished">필</label>
 						<label><input type="checkbox" name="yet" value="yet">미필</label>
@@ -56,9 +56,9 @@
 				</tr>
 				
 				<tr>
-					<td>장애유형</td>
+					<th>장애유형</th>
 					<td><%=typeOfDisability%></td>
-					<td>보장구 유/무</td>
+					<th>보장구 유/무</th>
 					<td colspan="3">
 						<label><input type="checkbox" name="existence" value="existence">유</label>
 						<label><input type="checkbox" name="nonexistence" value="nonexistence">무</label>
@@ -66,16 +66,16 @@
 				</tr>
 				
 				<tr>
-					<td>장애등급</td>
+					<th>장애등급</th>
 					<td><%=gradeOfDisability%></td>
-					<td>보장구 종류</td>
+					<th>보장구 종류</th>
 					<td colspan="3">
 						<input type="text" name="assistiveDevice">
 					</td>
 				</tr>
 				
 				<tr>
-					<td rowspan="2">최종학력</td>
+					<th rowspan="2">최종학력</th>
 					<td><input type="text" name="schoolName">학교</td>
 					<td rowspan="2" colspan="4">
 						<label><input type="checkbox" name="attending" value="attending">재학</label>
@@ -90,7 +90,7 @@
 				</tr>
 				
 				<tr>
-					<td rowspan="5">경력 및 교육사항</td>
+					<th rowspan="5">경력 및 교육사항</th>
 				</tr>
 				
 				<tr>
@@ -122,7 +122,7 @@
 				</tr>
 				
 				<tr>
-					<td rowspan="5">자격면허</td>
+					<th rowspan="5">자격면허</th>
 				</tr>
 				
 				<tr>

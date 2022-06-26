@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="dao" class="jobFairMgr.generalDAO" />
+<%@ page import = "java.util.*" %>
+<%@ page import = "jobFairMgr.OpeningListVO" %>
+
+
+<%
+	List<OpeningListVO> list = dao.getOpeningList();
+%>
     
 <!DOCTYPE html>
 <html>
@@ -12,7 +20,7 @@
 
 <jsp:include page="header.jsp"/>
 
-<main>
+<main style="display: block; margin:auto">
 	<section>
 		<form name="searchFrm" method="post" action="recruitmentProc.jsp">
 			<input type="text" name="companyName" placeholder="기업명을 입력하세요">
@@ -80,9 +88,23 @@
 			<a href="javascript:" role="button">검색</a>
 		</form>
 	</section>
-	
 	<!-- 채용공고 리스트 -->
-	
+	<div>
+		<%for(int i = 0; i < list.size(); i++) { 
+		OpeningListVO vo = list.get(i);%>
+		<div style="height:150px; margin-top: 30px; padding-bottom:10px; border-bottom: 1px solid gray;"><!-- 로고 이미지 -->
+			<div style="float: left; margin-right: 40px;">
+				<img alt="로고 이미지" src="./image/<%=vo.getLogoName()%>" width="200px" height="150px"><br>
+			</div>
+			<div style="float: left; height:150px;"> <!-- 채용글 -->
+				<p><%=vo.getComName() %></p>
+				<p>근무지역 : <%=vo.getWorkArea() %></p>
+				<p>직무 : <%=vo.getTask() %></p>
+				<p>지원기간 : <%=vo.getOpeningDate() %></p>
+			</div>
+		<% }%>
+		</div>
+	</div>
 </main>
 
 <jsp:include page="footer.jsp"/>

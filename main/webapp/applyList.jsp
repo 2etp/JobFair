@@ -31,13 +31,19 @@
 					<p>서류합격</p>
 				</div>
 				
+				<img src="./image/resume.png" alt="이력서 이미지">
 				<div class="buttons">
 					<a href="javascript:" role="button">지원한 이력서</a>
 					<a href="javascript:" role="button">지원취소</a>
 				</div>
-				
 			</div>
-
+			
+		<aside class="sideBar">
+			<a href="javascript:" role="button">내 정보 관리</a>
+			<a href="javascript:" role="button">이력서 관리</a>
+			<a href="javascript:" role="button">관심기업 관리</a>
+			<a href="javascript:" role="button">기업지원 현황</a>
+		</aside>
 	</section>
 </main>
 

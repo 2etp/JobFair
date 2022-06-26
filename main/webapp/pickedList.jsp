@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>2022 부산 장애인 온라인 채용 박람회 | 관심기업 관리</title>
 <link rel="stylesheet" href="./css/common.css">
-<link rel="stylesheet" href="./css/pickedList.css?after">
+<link rel="stylesheet" href="./css/pickedList.css">
 </head>
 <body>
 
@@ -16,6 +16,7 @@
 <main>
 
 	<h2 class="title">관심기업</h2>
+	
 	<section>
 		<div class="jobOpening">
 			<img src="./image/mjt.png">
@@ -27,8 +28,10 @@
 				<p>CNC, MCT, 가공후처리(버핑)</p>
 			</div>
 			
-			<a href="#" role="button">접수마감</a>
-			<p>~ 7/26</p>
+			<div class="deadline">
+				<p>접수마감</p>
+				<p>~ 7/26</p>
+			</div>
 		</div>
 		
 		<aside class="sideBar">
@@ -39,7 +42,6 @@
 		</aside>
 	</section>
 </main>
-
 
 <jsp:include page="footer.jsp"/>
 

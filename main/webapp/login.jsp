@@ -16,6 +16,14 @@
 	<section>
 		<form name="logFrm" method="post" action="loginProc.jsp">
 			<div class="div-form">
+				<ul>
+					<li>
+						<a href="javascript:void(0)" >개인 회원</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" >기업 회원</a>
+					</li>
+				</ul>
 				<div class=div-name>
 					<label>이름</label>
 					<input type="text" name="name" placeholder="이름을 입력해주세요">	

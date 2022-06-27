@@ -15,7 +15,7 @@ form[name='logFrm']{
     flex-direction: column;
     
     border: 1px solid black;
-    border-radius: 10%;
+    border-radius: 50px;
  
 }
 
@@ -36,6 +36,31 @@ form[name='logFrm'] input{
     
 .div-form{
 	width : 100%;
+}
+
+.div-form ul{
+	list-style-type: none;
+	display : flex;
+	justify-content: center;
+	height : 30%;
+	margin : 0;
+	padding : 0;
+}
+
+.div-form ul li{
+	width : 100%;
+	height : 100%;
+	border : 1px solid black;
+}
+
+.div-form ul li a{
+	text-decoration: none;
+	color : black;
+	width : 100%;
+	height : 69%;
+	padding-top : 9%;
+	display : inline-block;
+	
 }
 
 .div-name{

@@ -12,7 +12,7 @@
 <jsp:include page="commonJSP/header.jsp"/>
 
 <main>
-	<seciton>
+	<section>
 		<form name="logFrm" method="post" action="loginProc.jsp">
 			<label>아이디</label>
 			<input type="text" name="id	">	
@@ -20,7 +20,7 @@
 			<input type="password" name="pw">
 			<a href="javascript:loginCheck();" role="button">로그인</a>
 		</form>
-	</seciton>
+	</section>
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>

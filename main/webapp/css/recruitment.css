@@ -27,6 +27,7 @@ form[name='searchFrm'] div{
 }
 
 .div-boardpaging{
+	text-align : center;
 	margin-top : 20px;
 	height : 30px;
 }

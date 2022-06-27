@@ -4,6 +4,7 @@ body {
 	display : flex;
 	flex-direction : column;
 	justify-content : space-between;
+	width : 1920px;
 	height : 100vh;
 	margin : 0;
 }

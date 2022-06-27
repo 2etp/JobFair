@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <header>
 	<section>
-		<article class="header-img">
+		<div class="header-img">
 			<img src="image/logo.png">
-		</article>
+		</div>
 		<nav class="header-navigation">
 			<div>|</div>
 			<a href="javascript:void(0)">소개</a>

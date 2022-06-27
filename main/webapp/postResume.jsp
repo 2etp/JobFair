@@ -168,6 +168,7 @@
 		<aside class="sideBar">
 			<fieldset>
 				<legend>사이드 메뉴</legend>
+					<a href="javascript:" role="button">다운로드</a>
 					<a href="javascript:" role="button">미리보기</a>
 					<a href="javascript:" role="button">이력서 저장</a>
 			</fieldset>

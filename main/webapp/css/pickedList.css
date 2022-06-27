@@ -1,15 +1,15 @@
 @charset "UTF-8";
-
+/* 
 main section{
 	flex-basis: 40%;
 }
-
+*/
 .title {
 	left: 30%;	
 }
 
 .jobOpening {
-	display: flex;
+	/* display: flex; */
 	top: 25%;
 	left: 30%;
 }
@@ -22,7 +22,7 @@ main section{
 .content a {
 	text-decoration: none;
 	color: black;
-	display: flex;
+	/* display: flex; */
 	
 	font-size: 25px;
 }

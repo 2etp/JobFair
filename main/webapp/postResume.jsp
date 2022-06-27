@@ -23,31 +23,33 @@
 <jsp:include page="header.jsp"/>
 
 <main>
-	<seciton>
+	<section style="margin-top: 10px;">
+		
 		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
-			<table>
-				<tr>
+			<table class="table1">
+				<caption>입사지원서</caption>
+				<tr class="tr1">
 					<th>성명</th>
 					<td><%=name%></td>
-					<th colspan="2">성별</th>
-					<td colspan="2"><%=sex%></td>
+					<th>성별</th>
+					<td><%=sex%></td>
 				</tr>
 				
-				<tr>
+				<tr class="tr2">
 					<th>연락처</th>
 					<td><%=mobile%></td>
-					<th colspan="2">생년월일</th>
-					<td colspan="2"><%=birthDay%></td>
+					<th>생년월일</th>
+					<td><%=birthDay%></td>
 				</tr>
 				
-				<tr>
+				<tr class="tr3">
 					<th>주소</th>
 					<td colspan="3"><%=address%></td>
 				</tr>
 				
-				<tr>
+				<tr class="tr4">
 					<th>병역</th>
-					<td colspan="5">
+					<td colspan="3">
 						<label><input type="radio" name="militaryService" value="finished">필</label>
 						<label><input type="radio" name="militaryService" value="yet">미필</label>
 						<label><input type="radio" name="militaryService" value="exemption">미필</label>
@@ -55,29 +57,29 @@
 					</td>
 				</tr>
 				
-				<tr>
+				<tr class="tr5">
 					<th>장애유형</th>
 					<td><%=typeOfDisability%></td>
 					<th>보장구 유/무</th>
-					<td colspan="3">
+					<td>
 						<label><input type="radio" name="assistive" value="existence">유</label>
 						<label><input type="radio" name="assistive" value="nonexistence">무</label>
 					</td>
 				</tr>
 				
-				<tr>
+				<tr class="tr6">
 					<th>장애등급</th>
 					<td><%=gradeOfDisability%></td>
 					<th>보장구 종류</th>
-					<td colspan="3">
+					<td>
 						<input type="text" name="assistiveDevice">
 					</td>
 				</tr>
 				
-				<tr>
+				<tr class="tr7">
 					<th rowspan="2">최종학력</th>
 					<td><input type="text" name="schoolName">학교</td>
-					<td rowspan="2" colspan="4">
+					<td rowspan="2" colspan="2">
 						<label><input type="radio" name="education" value="attending">재학</label>
 						<label><input type="radio" name="education" value="takingOff">휴학</label>
 						<label><input type="radio" name="education" value="graduate">졸업</label>
@@ -85,84 +87,95 @@
 					</td>
 				</tr>
 				
-				<tr>
+				<tr class="tr8">
 					<td><input type="text" name="major">학과</td>
 				</tr>
 				
-				<tr>
+			</table>
+				
+			<table class="table2">
+				<tr class="tr9">
 					<th rowspan="5">경력 및 교육사항</th>
 				</tr>
 				
-				<tr>
-					<td>사업체명 및 교육기관</td>
-					<td>기간</td>
-					<td>담당업무 및 교육내용</td>
-					<td colspan="2">비고</td>
+				<tr class="tr10">
+					<th>사업체명 및 교육기관</th>
+					<th>기간</td>
+					<th>담당업무 및 교육내용</th>
+					<th colspan="2">비고</th>
 				</tr>
 				
-				<tr>
+				<tr class="tr11">
 					<td><input type="text" name="institutionName1"></td>
 					<td><input type="text" name="period1"></td>
 					<td><input type="text" name="content1"></td>
 					<td colspan="2"><input type="text" name="note1"></td>
 				</tr>
 							
-				<tr>
+				<tr class="tr12">
 					<td><input type="text" name="institutionName2"></td>
 					<td><input type="text" name="period2"></td>
 					<td><input type="text" name="content2"></td>
 					<td colspan="2"><input type="text" name="note2"></td>
 				</tr>
 				
-				<tr>
+				<tr class="tr13">
 					<td><input type="text" name="institutionName3"></td>
 					<td><input type="text" name="period3"></td>
 					<td><input type="text" name="content3"></td>
 					<td colspan="2"><input type="text" name="note3"></td>
 				</tr>
+			</table>
 				
-				<tr>
+			<table class="table3">
+				<tr class="tr14">
 					<th rowspan="5">자격면허</th>
 				</tr>
 				
-				<tr>
-					<td>자격종목</td>
-					<td>급수</td>
-					<td>등록번호</td>
-					<td>발행처</td>
-					<td>발급일자</td>
+				<tr class="tr15">
+					<th>자격종목</th>
+					<th>급수</th>
+					<th>등록번호</th>
+					<th>발행처</th>
+					<th>발급일자</th>
 				</tr>
 				
-				<tr>
+				<tr class="tr16">
 					<td><input type="text" name="certificate1"></td>
 					<td><input type="text" name="certificateNum1"></td>
+					<td><input type="text" name="registration1"></td>
 					<td><input type="text" name="issuer1"></td>
 					<td><input type="text" name="issueDate1"></td>
 				</tr>
 				
-				<tr>
+				<tr class="tr17">
 					<td><input type="text" name="certificate2"></td>
 					<td><input type="text" name="certificateNum2"></td>
+					<td><input type="text" name="registration2"></td>
 					<td><input type="text" name="issuer2"></td>
 					<td><input type="text" name="issueDate2"></td>
 				</tr>
 				
-				<tr>
+				<tr class="tr18">
 					<td><input type="text" name="certificate3"></td>
 					<td><input type="text" name="certificateNum3"></td>					
+					<td><input type="text" name="registration3"></td>
 					<td><input type="text" name="issuer3"></td>
 					<td><input type="text" name="issueDate3"></td>
 				</tr>
 			</table>
 			
 		<aside class="sideBar">
-			<a href="javascript:" role="button">미리보기</a>
-			<a href="javascript:" role="button">이력서 저장</a>
+			<fieldset>
+				<legend>사이드 메뉴</legend>
+					<a href="javascript:" role="button">미리보기</a>
+					<a href="javascript:" role="button">이력서 저장</a>
+			</fieldset>
 		</aside>
 			
 		</form>
 			
-	</seciton>
+	</section>
 </main>
 
 <jsp:include page="footer.jsp"/>

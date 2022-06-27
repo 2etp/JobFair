@@ -96,12 +96,6 @@ main section{
 	color: #666;
 }
 
-.sideBar p {
-	font-size: 25px;
-	margin: 0 0 0 30px;
-	top: 30%;
-}
-
 .sideBar a:nth-of-type(1) {
 	padding-left: 45px;
 }

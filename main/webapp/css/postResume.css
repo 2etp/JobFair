@@ -1,9 +1,19 @@
 @charset "UTF-8";
 
-table, tr, td {
+table, tr, th, td {
 	border: 1px solid black;
 	text-align: center;
 	border-collapse: collapse;
+}
+
+table {
+	width: 900px;
+	margin-top: -1px;
+	height: 350px;
+}
+
+.table2, .table3 {
+	height: 170px;
 }
 
 .sideBar {
@@ -17,8 +27,8 @@ table, tr, td {
 	display: flex;
 	text-decoration: none;
 	color: black;
-	padding: 20px 40px 20px 40px;
-	font-size: 25px;
+	padding: 15px 35px 15px 35px;
+	font-size: 20px;
 	border: 3px solid #dfdfdf;
 	margin: 5% 0 5% 0;
 	background-color: white;
@@ -31,4 +41,78 @@ table, tr, td {
 
 .sideBar a:hover {
 	text-decoration: underline;
+}
+
+.sideBar fieldset {
+	border: 3px solid #686868;
+	padding: 10px 20px 10px 20px;
+}
+
+.sideBar legend {
+	margin-left: 20px;
+	font-size: 30px;
+	color: #666;
+}
+
+table .tr1 th:nth-last-of-type(2n+1) {
+	width: 200px;
+}
+
+table .tr1 td:nth-last-of-type(1) {
+	width: 250px;
+}
+
+table .tr1 td:nth-last-of-type(2) {
+	width: 250px;
+}
+
+table .tr6 input {
+	width: 170px;
+}
+
+table .tr14 th {
+	width: 150px;
+}
+
+table .tr15 th {
+	width: 150px;
+}
+
+table .tr16 input, .tr17 input, .tr18 input {
+	width: 130px;
+}
+
+table .tr10 th {
+	height: 70px;
+}
+
+table .tr15 th {
+	height: 70px;
+}
+
+table .tr11 td, .tr12 td, .tr13 td {
+	height: 40px;
+}
+
+table .tr16 td, .tr17 td, .tr18 td {
+	height: 40px;
+}
+
+table .tr11 input, .tr12 input, .tr13 input {
+	margin: 0px;
+	height: 30px;
+	border: none;
+	
+}
+
+table .tr16 input, .tr17 input, .tr18 input {
+	margin: 0px;
+	height: 30px;
+	border: none;
+}
+
+table caption {
+	font-size: 30px;
+	margin-bottom: 10px;
+	margin-top: 50px;
 }

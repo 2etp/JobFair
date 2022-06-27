@@ -5,16 +5,13 @@
 <head>
 <meta charset="utf-8">
 <title>2022 부산 장애인 온라인 채용 박람회 | 홈</title>
-<link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <header>
-	<section>
-		<div class="header-img">
-			<img src="images/head_00.png" alt="2021 부산 장애인 온라인 채용 박람회">
-		</div>
-	</section>
+	<div class="logo">
+		<img src="images/head_00.png" alt="2021 부산 장애인 온라인 채용 박람회">
+	</div>
 </header>
 <main>
 	<div class="main-img">
@@ -34,6 +31,5 @@
 		</section>
 	</nav>
 </main>
-<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

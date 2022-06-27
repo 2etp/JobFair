@@ -5,8 +5,15 @@ main section{
 }
 	
 form[name='searchFrm'] input, form[name='searchFrm'] select{
-	height : 5%;
+	height : 35px;
 }
+
+form[name='searchFrm'] div{
+	width : 762px;
+	margin-top : 30px;
+	text-align : right;
+}
+
 
 #submit-button{
 	border : 1px solid black;
@@ -14,5 +21,18 @@ form[name='searchFrm'] input, form[name='searchFrm'] select{
 	color : white;
 	background: linear-gradient(to right, blue, skyblue);
 	text-decoration : none;
-	padding : 1% 5% 1% 5%;
+	padding : 10px 30px 10px 30px;
+}
+
+.div-boardpaging{
+	margin-top : 20px;
+	height : 30px;
+}
+
+.div-boardpaging a{
+	padding : 5px 10px 5px 10px;
+	text-decoration : none;
+	color : white;
+	
+	background-color : skyblue;
 }

@@ -116,7 +116,7 @@
 			<% }%>
 		</div>
 		<!-- 게시글 페이징 -->
-		<div>
+		<div class="div-boardpaging">
 		 	<%
 	    		if(cnt != 0) {
 	    			// 전체 페이지 수 계산

@@ -54,7 +54,7 @@ public class generalDAO {
 	}
 	
 	// 채용공고 리스트(로고, 기업명, 근무지역, 직무, 지원기간)
-	public List<OpeningListVO> getOpeningList() {
+	public List<OpeningListVO> getOpeningList(int startRow, int pageSize) {
 		List<OpeningListVO> list = new ArrayList<OpeningListVO>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -62,8 +62,10 @@ public class generalDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.openingDate, j.workArea, j.task from generals As g join jobopening as j on g.comNum = j.comNum";
+			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.openingDate, j.workArea, j.task from generals As g join jobopening as j on g.comNum = j.comNum order by employNum desc limit ?, ?";
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startRow - 1);
+			pstmt.setInt(2, pageSize);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				OpeningListVO vo = new OpeningListVO();
@@ -85,6 +87,28 @@ public class generalDAO {
 		return list;
 	}
 	
+	// 채용공고에 등록된 글이 총 몇개인지 반환
+	public int getOpeningCount() {
+		int cnt = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.openingDate, j.workArea, j.task from generals As g join jobopening as j on g.comNum = j.comNum order by employNum desc";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				cnt++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return cnt;
+	}
 	
 	
 	

@@ -83,7 +83,7 @@ public class generalDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			pool.freeConnection(con, pstmt);
+			pool.freeConnection(con, pstmt, rs);
 		}
 		return list;
 	}
@@ -155,7 +155,7 @@ public class generalDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			pool.freeConnection(con, pstmt);
+			pool.freeConnection(con, pstmt, rs);
 		}
 		return vo;
 	}

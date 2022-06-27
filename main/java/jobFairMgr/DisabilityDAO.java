@@ -34,7 +34,7 @@ public class DisabilityDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.openingDate, j.workArea, j.task  from generals As g  join jobopening as j on g.comNum = j.comNum join intercom as i on i.employNum = j.employNum where i.userNum = ? order by employNum desc limit ?, ?;";
+			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.openingDate, j.workArea, j.task  from generals As g  join jobopening as j on g.comNum = j.comNum join intercom as i on i.employNum = j.employNum where i.userNum = ? order by employNum desc limit ?, ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, userNum);
 			pstmt.setInt(2, startRow - 1);
@@ -55,13 +55,13 @@ public class DisabilityDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			pool.freeConnection(con, pstmt);
+			pool.freeConnection(con, pstmt, rs);
 		}
 		return list;
 	}
 	
 	
-	// 채용공고에 등록된 글이 총 몇개인지 반환
+	// 관심공고에 등록된 글이 총 몇개인지 반환
 	public int getPickedCount(int userNum) {
 		int cnt = 0;
 		Connection con = null;
@@ -70,7 +70,7 @@ public class DisabilityDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.openingDate, j.workArea, j.task  from generals As g  join jobopening as j on g.comNum = j.comNum join intercom as i on i.employNum = j.employNum where i.userNum = ? order by employNum desc";
+			sql = "select g.logoName from generals As g  join jobopening as j on g.comNum = j.comNum join intercom as i on i.employNum = j.employNum where i.userNum = ? order by employNum desc";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, userNum);
 			rs = pstmt.executeQuery();
@@ -84,4 +84,65 @@ public class DisabilityDAO {
 		}
 		return cnt;
 	}
+	
+	// 지원한 기업 리스트 출력
+	public List<ApplyListVO> getApplyList(int userNum, int startRow, int pageSize) {
+		List<ApplyListVO> list = new ArrayList<ApplyListVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.task, j.openingDate, a.progress, r.resumeNum from generals As g join jobopening As j on g.comNum = j.comNum join applycom As a on a.employNum = j.employNum join resume As r on r.resumeSeq = a.resumeNum where a.userNum = ? order by employNum desc limit ?, ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, userNum);
+			pstmt.setInt(2, startRow - 1);
+			pstmt.setInt(3, pageSize);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ApplyListVO vo = new ApplyListVO();
+				vo.setLogoName(rs.getString("logoName"));
+				vo.setLogoSize(rs.getInt("logoSize"));
+				vo.setComNum(rs.getInt("comNum"));
+				vo.setComName(rs.getString("comName"));
+				vo.setEmployNum(rs.getInt("employNum"));
+				vo.setTask(rs.getString("task"));
+				vo.setOpeningDate(rs.getString("openingDate"));
+				vo.setProgress(rs.getString("progress"));
+				vo.setResumeNum(rs.getInt("resumeNum"));
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return list;
+	}
+	
+	// 지원한 채용공고가 총 몇개인지
+	public int getApplyCount(int userNum) {
+		int cnt = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select g.logoName from generals As g join jobopening As j on g.comNum = j.comNum join applycom As a on a.employNum = j.employNum join resume As r on r.resumeSeq = a.resumeNum where a.userNum = ? order by employNum desc";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, userNum);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				cnt++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return cnt;
+	}
+	
 }

@@ -13,7 +13,7 @@
 <jsp:include page="commonJSP/header.jsp"/>
 
 <main>
-	<seciton>
+	<section>
 		<form name="signupFrm" method="post" action="signupProc.jsp?type=General">
 			<label>기업명</label>
 			<input type="text" name="companyName">
@@ -50,7 +50,7 @@
 			<a href="javascript:signupCheck();" role="button">회원가입</a>
 			
 		</form>
-	</seciton>
+	</section>
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>

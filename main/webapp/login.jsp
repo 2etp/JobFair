@@ -12,15 +12,15 @@
 <jsp:include page="commonJSP/header.jsp"/>
 
 <main>
-	<seciton>
+	<section>
 		<form name="logFrm" method="post" action="loginProc.jsp">
-			<label>아이디</label>
-			<input type="text" name="id	">	
-			<label>비밀번호</label>
-			<input type="password" name="pw">
+			<label>이름</label>
+			<input type="text" name="name">	
+			<label>휴대폰번호</label>
+			<input type="tel" name="mobile">
 			<a href="javascript:loginCheck();" role="button">로그인</a>
 		</form>
-	</seciton>
+	</section>
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>

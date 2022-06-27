@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<jsp:include page="header.jsp"/>
+<jsp:include page="commonJSP/header.jsp"/>
 
 <main>
 	<seciton>
@@ -165,7 +165,7 @@
 	</seciton>
 </main>
 
-<jsp:include page="footer.jsp"/>
+<jsp:include page="commonJSP/footer.jsp"/>
 
 </body>
 </html>

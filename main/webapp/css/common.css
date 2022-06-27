@@ -4,7 +4,6 @@ body {
 	display : flex;
 	flex-direction : column;
 	justify-content : space-between;
-	width : 1920px;
 	height : 100vh;
 	margin : 0;
 }
@@ -37,11 +36,15 @@ footer{
 
 footer section{
 	flex-basis : 40%;
+	
 }
 
+footer section article{
+	width : 500px;
+}
 
 .header-img img{
-	width : 40%;
+	width : 300px;
 }
 
 .header-navigation {
@@ -51,7 +54,7 @@ footer section{
 }
 
 .header-navigation a{
-	width : 100%;
+	width : 100px;
 	font-size : 25px;
 	color : black;
 	text-decoration : none;

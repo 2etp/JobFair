@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-table, tr, th, td {
+table, tr, td {
 	border: 1px solid black;
 	text-align: center;
 	border-collapse: collapse;
@@ -36,7 +36,11 @@ table {
 }
 
 .sideBar a:nth-of-type(1) {
-	padding-left: 55px;
+	padding-left: 50px;
+}
+
+.sideBar a:nth-of-type(2) {
+	padding-left: 50px;
 }
 
 .sideBar a:hover {
@@ -49,26 +53,70 @@ table {
 }
 
 .sideBar legend {
-	margin-left: 20px;
+	margin-left: 10px;
 	font-size: 30px;
 	color: #666;
 }
 
-table .tr1 th:nth-last-of-type(2n+1) {
+table th {
+	color: white;
+	background-color: #2A2E70;
+}
+
+table .tr1 th:nth-of-type(1) {
 	width: 200px;
 }
 
-table .tr1 td:nth-last-of-type(1) {
+table .tr1 th:nth-of-type(2) {
+	width: 200px;
+}
+
+table .tr2 th:nth-of-type(1) {
+	width: 200px;
+}
+
+table .tr2 th:nth-of-type(2) {
+	width: 200px;
+}
+
+table .tr1 td:nth-of-type(1) {
 	width: 250px;
 }
 
-table .tr1 td:nth-last-of-type(2) {
+table .tr1 td:nth-of-type(2) {
 	width: 250px;
+}
+
+table .tr6 th {
+	height: 40px;
+}
+
+table .tr7 td, .tr8 td {
+	height: 40px;
 }
 
 table .tr6 input {
-	width: 170px;
+	width: 180px;
+	margin: 0px;
+	height: 30px;
+	border: none;
 }
+
+/* table .tr7 label {
+	margin-left: 10px;
+} */
+
+table .tr7 input:nth-of-type(1), .tr8 input {
+	margin-right: 10px;
+	height: 30px;
+	border: none;
+}
+
+table .tr7 input[type=radio], .tr7 label {
+	height: 10px;
+	
+}
+
 
 table .tr14 th {
 	width: 150px;

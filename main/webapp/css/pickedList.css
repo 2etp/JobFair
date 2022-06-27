@@ -1,13 +1,15 @@
 @charset "UTF-8";
 
+main section{
+	flex-basis: 40%;
+}
+
 .title {
-	position: absolute;
 	left: 30%;	
 }
 
 .jobOpening {
 	display: flex;
-	position: absolute;
 	top: 25%;
 	left: 30%;
 }
@@ -86,20 +88,26 @@
 	display: flex;
 	text-decoration: none;
 	color: black;
-	padding: 20px 40px 20px 40px;
-	font-size: 25px;
+	padding: 15px 35px 15px 35px;
+	font-size: 20px;
 	border: 3px solid #dfdfdf;
 	margin: 5% 0 5% 0;
 	background-color: white;
 	color: #666;
 }
 
+.sideBar p {
+	font-size: 25px;
+	margin: 0 0 0 30px;
+	top: 30%;
+}
+
 .sideBar a:nth-of-type(1) {
-	padding-left: 48px;
+	padding-left: 45px;
 }
 
 .sideBar a:nth-of-type(2) {
-	padding-left: 52px;
+	padding-left: 48px;
 }
 
 .sideBar a:nth-of-type(3) {
@@ -111,3 +119,14 @@
 	text-decoration: underline;
 }
 
+.sideBar fieldset {
+	border: 3px solid #686868;
+	padding: 10px 20px 10px 20px;
+	
+}
+
+.sideBar legend {
+	margin-left: 20px;
+	font-size: 30px;
+	color: #666;
+}

@@ -48,10 +48,10 @@
 				<tr>
 					<th>병역</th>
 					<td colspan="5">
-						<label><input type="checkbox" name="finished" value="finished">필</label>
-						<label><input type="checkbox" name="yet" value="yet">미필</label>
-						<label><input type="checkbox" name="exemption" value="exemption">미필</label>
-						<label><input type="checkbox" name="none" value="none">해당사항 없음</label>
+						<label><input type="radio" name="militaryService" value="finished">필</label>
+						<label><input type="radio" name="militaryService" value="yet">미필</label>
+						<label><input type="radio" name="militaryService" value="exemption">미필</label>
+						<label><input type="radio" name="militaryService" value="none">해당사항 없음</label>
 					</td>
 				</tr>
 				
@@ -60,8 +60,8 @@
 					<td><%=typeOfDisability%></td>
 					<th>보장구 유/무</th>
 					<td colspan="3">
-						<label><input type="checkbox" name="existence" value="existence">유</label>
-						<label><input type="checkbox" name="nonexistence" value="nonexistence">무</label>
+						<label><input type="radio" name="assistive" value="existence">유</label>
+						<label><input type="radio" name="assistive" value="nonexistence">무</label>
 					</td>
 				</tr>
 				
@@ -78,10 +78,10 @@
 					<th rowspan="2">최종학력</th>
 					<td><input type="text" name="schoolName">학교</td>
 					<td rowspan="2" colspan="4">
-						<label><input type="checkbox" name="attending" value="attending">재학</label>
-						<label><input type="checkbox" name="takingOff" value="takingOff">휴학</label>
-						<label><input type="checkbox" name="graduate" value="graduate">졸업</label>
-						<label><input type="checkbox" name="dropOut" value="dropOut">중퇴</label>
+						<label><input type="radio" name="education" value="attending">재학</label>
+						<label><input type="radio" name="education" value="takingOff">휴학</label>
+						<label><input type="radio" name="education" value="graduate">졸업</label>
+						<label><input type="radio" name="education" value="dropOut">중퇴</label>
 					</td>
 				</tr>
 				
@@ -155,7 +155,7 @@
 				</tr>
 			</table>
 			
-		<aside class="saveResume">
+		<aside class="sideBar">
 			<a href="javascript:" role="button">미리보기</a>
 			<a href="javascript:" role="button">이력서 저장</a>
 		</aside>

@@ -91,18 +91,18 @@
 	<!-- 채용공고 리스트 -->
 	<div>
 		<%for(int i = 0; i < list.size(); i++) { 
-		OpeningListVO vo = list.get(i);%>
-		<div style="height:150px; margin-top: 20px; padding-bottom:20px; border-bottom: 1px solid gray;"><!-- 로고 이미지 -->
-			<div style="float: left; margin-right: 40px;">
-				<img alt="로고 이미지" src="./image/<%=vo.getLogoName()%>" width="200px" height="150px"><br>
+			OpeningListVO vo = list.get(i);%>
+			<div style="height:150px; margin-top: 20px; padding-bottom:20px; border-bottom: 1px solid gray;"><!-- 로고 이미지 -->
+				<div style="float: left; margin-right: 40px;">
+					<img alt="로고 이미지" src="./image/<%=vo.getLogoName()%>" width="200px" height="150px"><br>
+				</div>
+				<div style="float: left; height:150px;"> <!-- 채용글 -->
+					<p><%=vo.getComName() %></p>
+					<p>근무지역 : <%=vo.getWorkArea() %></p>
+					<p>직무 : <%=vo.getTask() %></p>
+					<p>지원기간 : <%=vo.getOpeningDate() %></p>
+				</div>
 			</div>
-			<div style="float: left; height:150px;"> <!-- 채용글 -->
-				<p><%=vo.getComName() %></p>
-				<p>근무지역 : <%=vo.getWorkArea() %></p>
-				<p>직무 : <%=vo.getTask() %></p>
-				<p>지원기간 : <%=vo.getOpeningDate() %></p>
-			</div>
-		</div>
 		<% }%>
 	</div>
 </main>

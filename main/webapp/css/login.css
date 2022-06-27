@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+main section {
+	display : flex;
+	flex-direction : column;
+	justify-content : center;
+}
+
+form[name='logFrm']{
+    width : 460px;
+    flex-basis : 85%;
+    text-align : center;
+    display : flex;
+    justify-content : center;
+    flex-direction: column;
+    
+    border: 1px solid black;
+    border-radius: 10%;
+ 
+}
+
+
+
+form[name='logFrm'] label{
+	width: 30%;
+    display: inline-block;
+    font-weight : bold;
+}
+
+
+form[name='logFrm'] input{
+	width : 50%;
+	height: 30px;
+    display: inline-block;
+}
+    
+.div-form{
+	width : 100%;
+}
+
+.div-name{
+	margin-bottom : 20px;
+}
+
+.div-phone{
+	margin-bottom : 20px;
+}
+
+.div-submit{
+	margin-top : 50px;
+	text-align : center;
+}
+
+#loginButton{
+	text-decoration: none;
+    color: white;
+    background: blue;
+    border-radius: 10%;
+    padding: 20px;
+    
+}

@@ -17,6 +17,9 @@
 <title>2022 부산 장애인 온라인 채용 박람회 | 이력서 등록</title>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/postResume.css?after">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script lang="javascript" src="./js/xlsx.full.min.js"></script>
 </head>
 <body>
 
@@ -26,7 +29,7 @@
 	<section style="margin-top: 10px;">
 		
 		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
-			<table class="table1">
+			<table class="table1" id="table">
 				<caption>입사지원서</caption>
 				<tr class="tr1">
 					<th>성명</th>
@@ -52,7 +55,7 @@
 					<td colspan="3">
 						<label><input type="radio" name="militaryService" value="finished">필</label>
 						<label><input type="radio" name="militaryService" value="yet">미필</label>
-						<label><input type="radio" name="militaryService" value="exemption">미필</label>
+						<label><input type="radio" name="militaryService" value="exemption">면제</label>
 						<label><input type="radio" name="militaryService" value="none">해당사항 없음</label>
 					</td>
 				</tr>
@@ -93,7 +96,7 @@
 				
 			</table>
 				
-			<table class="table2">
+			<table class="table2" id="mytable2">
 				<tr class="tr9">
 					<th rowspan="5">경력 및 교육사항</th>
 				</tr>
@@ -127,7 +130,7 @@
 				</tr>
 			</table>
 				
-			<table class="table3">
+			<table class="table3" id="mytable3">
 				<tr class="tr14">
 					<th rowspan="5">자격면허</th>
 				</tr>
@@ -168,7 +171,7 @@
 		<aside class="sideBar">
 			<fieldset>
 				<legend>사이드 메뉴</legend>
-					<a href="javascript:" role="button">다운로드</a>
+					<a href="#" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">다운로드</a>
 					<a href="javascript:" role="button">미리보기</a>
 					<a href="javascript:" role="button">이력서 저장</a>
 			</fieldset>
@@ -180,6 +183,53 @@
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>
+
+	
+	<script>
+		function fnExcelReport(id1,id2,id3, title) {
+			var tab_text = '<html xmlns:x="urn:schemas-microsoft-com:office:excel">';
+			tab_text = tab_text + '<head><meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';
+			tab_text = tab_text + '<xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>';
+			tab_text = tab_text + '<x:Name>Test Sheet</x:Name>';
+			tab_text = tab_text + '<x:WorksheetOptions><x:Panes></x:Panes></x:WorksheetOptions></x:ExcelWorksheet>';
+			tab_text = tab_text + '</x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body>';
+			tab_text = tab_text + "<table border='1px'>";
+			var exportTable1 = $('#' + id1).clone();
+			var exportTable2 = $('#' + id2).clone();
+			var exportTable3 = $('#' + id3).clone();
+			exportTable1.find('input').each(function (index, elem) { $(elem).remove(); });
+			tab_text = tab_text + exportTable1.html();
+			exportTable2.find('input').each(function (index, elem) { $(elem).remove(); });
+			tab_text = tab_text + exportTable2.html();
+			exportTable3.find('input').each(function (index, elem) { $(elem).remove(); });
+			tab_text = tab_text + exportTable3.html();
+			tab_text = tab_text + '</table></body></html>';
+			var data_type = 'data:application/vnd.ms-excel';
+			var ua = window.navigator.userAgent;
+			var msie = ua.indexOf("MSIE "); 
+			var fileName = title + '.xlsx';
+			//Explorer 환경에서 다운로드    
+			if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+				if (window.navigator.msSaveBlob) {
+					var blob = new Blob([tab_text], {
+						type: "application/csv;charset=utf-8;"
+					});
+						navigator.msSaveBlob(blob, fileName);
+					}    
+			} else {
+				var blob2 = new Blob([tab_text], {
+					type: "application/csv;charset=utf-8;"
+					});
+				var filename = fileName;
+				var elem = window.document.createElement('a');
+				elem.href = window.URL.createObjectURL(blob2);
+				elem.download = filename;
+				document.body.appendChild(elem);
+				elem.click();
+				document.body.removeChild(elem);
+			}
+		}
+	</script>
 
 </body>
 </html>

@@ -10,7 +10,7 @@
 	
 </head>
 <body>
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="commonJSP/header.jsp"></jsp:include>
 	<main>
 		<section>
 			<jsp:include page="aside.jsp"></jsp:include>
@@ -44,6 +44,6 @@
 			</table>
 		</section>
 	</main>
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="commonJSP/footer.jsp"></jsp:include>
 </body>
 </html>

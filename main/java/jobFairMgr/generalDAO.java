@@ -29,7 +29,8 @@ public class generalDAO {
 			e.printStackTrace();
 		}
 	}
-	
+	 
+
 	// 기업측 회원가입
 	public boolean insertGeneral(generalVO vo) {
 		boolean flag = false;

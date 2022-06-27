@@ -6,6 +6,7 @@
 <meta charset="utf-8">
 <title>2022 부산 장애인 온라인 채용 박람회 | 홈</title>
 <link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 <header>
@@ -15,7 +16,7 @@
 </header>
 <main>
 	<div class="main-img">
-		<img src="images/main.png">
+		<img src="image/main.png">
 	</div>
 	<nav>
 		<section class="sign">
@@ -31,5 +32,6 @@
 		</section>
 	</nav>
 </main>
+<jsp:include page="commonJSP/footer.jsp"/>
 </body>
 </html>

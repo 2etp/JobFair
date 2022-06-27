@@ -4,25 +4,20 @@ main {
 	align-items : center;
 }
 
-.section-aside{
-	position : fixed;
-	right : 10%;
-	top : 50%;	
-}
-
-.section-aside aside{
-	display : flex;
-	flex-direction : column;
-}
-
 .section-table {
 	flex-basis : 40%;
+	border : 1px solid black;
+	border-radius : 10%;
+	
 }
 
 .section-table table{
 	text-align : left;
+	height : 50vh;
+	margin-left : 35%;
 }
 
-.section-table tr:nth-child(1) th{
-	letter-spacing : 64px;
+.section-table table th{
+	margin-right : 35%;
+	width: 50%;
 }

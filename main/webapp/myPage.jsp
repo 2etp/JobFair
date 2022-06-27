@@ -6,18 +6,14 @@
 	<title>Insert title here</title>
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/myPage.css">
+	<link rel="stylesheet" href="css/aside.css">
 	
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<main>
-		<section class="section-aside">
-			<aside>
-				<a href="javascript:void(0)">내 정보 관리</a>
-				<a href="javascript:void(0)">입사지원서 관리</a>
-				<a href="javascript:void(0)">관심기업 관리</a>
-				<a href="javascript:void(0)">기업지원 현황</a>
-			</aside>
+		<section>
+			<jsp:include page="aside.jsp"></jsp:include>
 		</section>
 		<section class="section-table">
 			<table>

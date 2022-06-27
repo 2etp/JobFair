@@ -1,0 +1,94 @@
+@charset "utf-8";
+@font-face{
+	src:url("../fonts/BinggraeⅡ.ttf");
+	font-family:Binggrae;
+}
+body{
+	margin:auto;
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	height:65%
+}
+main{
+	margin:auto;
+	width:1310px;
+}
+header{
+	margin:20px auto;
+	width:1310px;
+}
+.logo{
+	background:rgba(255,255,255,0.6);
+	padding:10px;
+	width:fit-content;
+	border-radius:5px;
+}
+.main-img img{
+	width:700px;
+}
+.main-img{
+	float:left;
+	width:fit-content;
+	height:342.34px;
+	border-radius:5px;
+	overflow:hidden;
+}
+nav{
+	float:left;
+	width:600px;
+	text-align:center;
+}
+nav section{
+	margin:20px 0;
+}
+nav section a{
+	font-family:Binggrae;
+	text-decoration:none;
+	color:white;
+	display:inline-block;
+	width:240px;
+	text-align:center;
+	font-weight:bold;
+	font-size:22px;
+	text-shadow:0 0 20px #000;
+	padding-top:12px;
+	padding-bottom:12px;
+	border:1px solid #666;
+	border-radius:5px;
+}
+nav section a:last-child{
+	margin-left:10px;
+}
+nav section:nth-child(2) a{
+	width:500px;
+	margin:0;
+}
+nav .nav-main a{
+	height:114px;
+	width:226px;
+	padding:12px 0 0 12px;
+	text-align:left;
+	font-size:35px;
+	text-shadow:0 0 20px #000;
+	color:#fff;
+}
+#signUp{
+	background-color:#71D0BD;
+}
+#signIn{
+	background-color:#54BDB6;
+}
+#howTo{
+	background-color:#004C6A;
+}
+#introFair{
+	background-image:url("../images/sm_01.png");
+	background-position:700px;
+}
+#employee{
+	background-image:url("../images/sm_02.png");
+	background-position:300px;
+}

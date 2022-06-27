@@ -1,6 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
+<%@ page import = "java.util.*" %>
+<%@ page import = "jobFairMgr.OpeningListVO" %>
+
+<%
+	request.setCharacterEncoding("UTF-8");
+//	int userNum = (int)session.getAttribute("lgnUserNum");
+	int userNum = 1;
+	
+	
+	//페이징 넘버 작업
+
+	// 한 페이지에 보여줄 게시글 개수
+	int pageSize = 10;
+	// 현재 페이지
+	String pageNum = request.getParameter("pageNum");
+	// pageNum이 null이라는 뜻은 처음 이 사이트에 들어왔다는 뜻이며, 그러한 경우 1번 페이지를 보여준다.
+	if(pageNum == null) {
+		pageNum = "1";
+	}
+	
+	// 첫번째 글이 전체 게시글중 몇번째인지 계산
+	int currentPage = Integer.parseInt(pageNum);
+	int startRow = (currentPage - 1) * pageSize + 1;
+	
+	List<OpeningListVO> list = dao.getPickedList(userNum, startRow, pageSize);
+	int cnt = dao.getPickedCount(userNum);
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,27 +41,34 @@
 
 <jsp:include page="commonJSP/header.jsp"/>
 
-<main>
+<main style="display: block; margin: auto;">
 
 	
 	
-	<section>
+	<section style="width: 800px;">
 	<h2 class="title">관심기업</h2>
 	<hr>
 		<div class="jobOpening">
-			<img src="./image/mjt.png">
-			<div class="content">
-				<a href="#" role="button"><b>(주식회사)엠제이티</b></a>
-				<p>근무지역</p>
-				<p>사상구</p>
-				<p>직무</p>
-				<p>CNC, MCT, 가공후처리(버핑)</p>
+			<%for(int i = 0; i < list.size(); i++) { 
+				OpeningListVO vo = list.get(i);%>
+			<div style="clear:left;">
+				<div style="float: left;">
+					<img src="./image/<%=vo.getLogoName()%>" width=225px; height=165px;>
+				</div>
+				<div class="content" style="float: left;">
+					<a href="#" role="button"><b><%=vo.getComName()%></b></a>
+					<p>근무지역</p>
+					<p><%=vo.getWorkArea() %></p>
+					<p>직무</p>
+					<p><%=vo.getTask() %></p>
+				</div>
+				
+				<div class="deadline">
+					<p>접수마감</p>
+					<p><%=vo.getOpeningDate().substring(10) %></p>
+				</div>
 			</div>
-			
-			<div class="deadline">
-				<p>접수마감</p>
-				<p>~ 7/26</p>
-			</div>
+			<%}%>
 		</div>
 		
 		

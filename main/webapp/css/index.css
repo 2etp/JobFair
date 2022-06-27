@@ -16,16 +16,6 @@ main{
 	margin:auto;
 	width:1310px;
 }
-header{
-	margin:20px auto;
-	width:1310px;
-}
-.logo{
-	background:rgba(255,255,255,0.6);
-	padding:10px;
-	width:fit-content;
-	border-radius:5px;
-}
 .main-img img{
 	width:700px;
 }
@@ -91,4 +81,7 @@ nav .nav-main a{
 #employee{
 	background-image:url("../images/sm_02.png");
 	background-position:300px;
+}
+footer{
+	clear:left;
 }

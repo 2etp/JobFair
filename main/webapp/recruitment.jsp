@@ -31,24 +31,23 @@
 <meta charset="UTF-8">
 <title>2022 부산 장애인 온라인 채용 박람회 | 채용관</title>
 <link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/recruitment.css">
 </head>
 <body>
 
 <jsp:include page="header.jsp"/>
 
-<main style="display: block; margin:auto">
+<main>
 	<section>
 		<form name="searchFrm" method="post" action="recruitmentProc.jsp">
-			<input type="text" name="companyName" placeholder="기업명을 입력하세요">
-			<a href="javascript:" role="button">검색</a>
+			<div>
+				<input type="text" name="companyName" placeholder="기업명을 입력하세요">
+				<a id="submit-button" href="javascript:" role="button">검색</a>
+			</div>
+			<div>
 			
-			<select name="firstSection">
-				<option value="businessClass" selected>기업체구분</option>
-				<option value="general">일반기업</option>
-				<option value="disabledStandard">장애인표준사업장</option>
-				<option value="rehabilitationFacility">장애인직업재활시설</option>
-				<option value="socialEnterprise">사회적경제기업</option>
-			</select>
+			</div>
+			
 			
 			<select name="secondSection">
 				<option value="categoryOfOccupation" selected>직종</option>
@@ -101,61 +100,61 @@
 				<option value="vehicle">차량소지자</option>	
 			</select>
 			
-			<a href="javascript:" role="button">검색</a>
+			<a id="submit-button" href="javascript:" role="button">검색</a>
 		</form>
+		<!-- 채용공고 리스트 -->
+		<div>
+			<%for(int i = 0; i < list.size(); i++) { 
+				OpeningListVO vo = list.get(i);%>
+				<div style="height:150px; margin-top: 20px; padding-bottom:20px; border-bottom: 1px solid gray;"><!-- 로고 이미지 -->
+					<div style="float: left; margin-right: 40px;">
+						<img alt="로고 이미지" src="./image/<%=vo.getLogoName()%>" width="200px" height="150px"><br>
+					</div>
+					<div style="float: left; height:150px;"> <!-- 채용글 -->
+						<p><%=vo.getComName() %></p>
+						<p>근무지역 : <%=vo.getWorkArea() %></p>
+						<p>직무 : <%=vo.getTask() %></p>
+						<p>지원기간 : <%=vo.getOpeningDate() %></p>
+					</div>
+				</div>
+			<% }%>
+		</div>
+		<!-- 게시글 페이징 -->
+		<div>
+		 	<%
+	    		if(cnt != 0) {
+	    			// 전체 페이지 수 계산
+	    			int pageCnt = cnt / pageSize + (cnt%pageSize == 0 ? 0 : 1);
+	    			// 한 페이지에 보여줄 페이지 번호 개수
+	    			int pageBlock = 10;
+	    			// 시작하는 페이지 번호  ex) 1, 11, 21...
+	    			int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
+	    			// 끝나는 페이지 번호
+	    			int endPage = startPage + pageBlock-1;
+	    			
+	    			if(endPage > pageCnt) {
+	    				endPage = pageCnt;
+	    			}
+	    			
+	    			// 10페이지 이전으로 가는 버튼
+	    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
+		    		if(startPage > pageBlock) { %>
+		    			<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
+		    		<%}
+	    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
+	    			for(int i = startPage; i <= endPage; i++) { %>
+	    				<a href="recruitment.jsp?pageNum=<%=i%>"><%=i %></a>
+	    			<%}
+	    			
+	    			// 10페이지 건너뛰는 버튼
+	    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
+	    			if(endPage < pageCnt) { %>
+	    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
+	    			<%}
+	    		}
+			%>
+		 </div>
 	</section>
-	<!-- 채용공고 리스트 -->
-	<div>
-		<%for(int i = 0; i < list.size(); i++) { 
-			OpeningListVO vo = list.get(i);%>
-			<div style="height:150px; margin-top: 20px; padding-bottom:20px; border-bottom: 1px solid gray;"><!-- 로고 이미지 -->
-				<div style="float: left; margin-right: 40px;">
-					<img alt="로고 이미지" src="./image/<%=vo.getLogoName()%>" width="200px" height="150px"><br>
-				</div>
-				<div style="float: left; height:150px;"> <!-- 채용글 -->
-					<p><%=vo.getComName() %></p>
-					<p>근무지역 : <%=vo.getWorkArea() %></p>
-					<p>직무 : <%=vo.getTask() %></p>
-					<p>지원기간 : <%=vo.getOpeningDate() %></p>
-				</div>
-			</div>
-		<% }%>
-	</div>
-	 <!-- 게시글 페이징 -->
-	 <div>
-	 	<%
-    		if(cnt != 0) {
-    			// 전체 페이지 수 계산
-    			int pageCnt = cnt / pageSize + (cnt%pageSize == 0 ? 0 : 1);
-    			// 한 페이지에 보여줄 페이지 번호 개수
-    			int pageBlock = 10;
-    			// 시작하는 페이지 번호  ex) 1, 11, 21...
-    			int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
-    			// 끝나는 페이지 번호
-    			int endPage = startPage + pageBlock-1;
-    			
-    			if(endPage > pageCnt) {
-    				endPage = pageCnt;
-    			}
-    			
-    			// 10페이지 이전으로 가는 버튼
-    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
-	    		if(startPage > pageBlock) { %>
-	    			<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
-	    		<%}
-    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
-    			for(int i = startPage; i <= endPage; i++) { %>
-    				<a href="recruitment.jsp?pageNum=<%=i%>"><%=i %></a>
-    			<%}
-    			
-    			// 10페이지 건너뛰는 버튼
-    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
-    			if(endPage < pageCnt) { %>
-    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
-    			<%}
-    		}
-		%>
-	 </div>
 </main>
 
 <jsp:include page="footer.jsp"/>

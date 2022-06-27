@@ -48,15 +48,15 @@
 				<div>
 					<select name="secondSection">
 						<option value="categoryOfOccupation" selected>직종</option>
-						<option value="general">제조업</option>
-						<option value="disabledStandard">서비스</option>
-						<option value="rehabilitationFacility">전문, 과학서비스업</option>
-						<option value="socialEnterprise">도소매업</option>
-						<option value="socialEnterprise">보건업</option>
-						<option value="socialEnterprise">숙박업</option>
-						<option value="socialEnterprise">사회복지, 노인의료복지</option>
-						<option value="socialEnterprise">교욱 서비스업</option>
-						<option value="socialEnterprise">숙박 및 음식점업</option>
+						<option value="manufacturing">제조업</option>
+						<option value="service">서비스</option>
+						<option value="science">전문, 과학서비스업</option>
+						<option value="wholesaleRetail">도소매업</option>
+						<option value="health">보건업</option>
+						<option value="lodging">숙박업</option>
+						<option value="socialWelfare">사회복지, 노인의료복지</option>
+						<option value="education">교욱 서비스업</option>
+						<option value="catering">외식업</option>
 					</select>
 					<select name="thirdSection">
 						<option value="workArea" selected>근무지역</option>

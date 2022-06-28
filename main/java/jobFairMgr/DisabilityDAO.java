@@ -25,6 +25,48 @@ public class DisabilityDAO {
 		}
 	}
 	
+	// 로그인
+	// 이름과 휴대폰번호를 입력받음
+	public int login(String name, String phoneNum) {
+		Connection con = null;				
+		PreparedStatement pstmt = null;		
+		String sql = null;
+		ResultSet rs = null;
+		
+		// 1 : 아이디가 존재하지 않음
+		// 2 : 비밀번호가 일치하지 않음
+		// 3 : 로그인 성공
+		int flag = 0;
+		try {
+			con = pool.getConnection();
+			// 입력받은 이름이 데이터베이스에 존재하는지 확인
+			sql = "select name, phoneNum from users where name = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			rs = pstmt.executeQuery();
+			// id가 없으니 1을 반환
+			if(!rs.next()) {
+				flag = 1;
+				return flag;
+			}
+			// sql문을 돌려 나온 비밀번호가 입력받은 비밀번호와 일치하는지 확인
+			// 일치하지 않으면 2를 반환
+			else if(!(rs.getString("phoneNum").equals(phoneNum))) {
+				flag = 2;
+				return flag;
+			} else {
+				flag = 3;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return flag;
+	}
+	
+	// 유저정보 출력
+	
 	// 관심기업 리스트 출력
 	public List<OpeningListVO> getPickedList(int userNum, int startRow, int pageSize) {
 		List<OpeningListVO> list = new ArrayList<OpeningListVO>();
@@ -144,5 +186,7 @@ public class DisabilityDAO {
 		}
 		return cnt;
 	}
+	
+	
 	
 }

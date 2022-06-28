@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
+<jsp:useBean id="vo" class="jobFairMgr.DisabilityVO" />
+<%
+	String name = (String)session.getAttribute("lgnName");
+	
+%>
 <html>
 <head>
 	<meta charset="UTF-8">

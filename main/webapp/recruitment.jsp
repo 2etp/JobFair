@@ -40,60 +40,49 @@
 <main>
 	<div>
 		<section>
-			<form name="searchFrm" method="post" action="recruitmentProc.jsp">
+			<form name="searchFrm" method="post" action="search.jsp">
 				<div>
 					<input type="text" name="companyName" placeholder="기업명을 입력하세요">
-					<a id="submit-button" href="javascript:" role="button">검색</a>
+					<a id="submit-button" href="javascript:" role="button" onclick="document.searchFrm.submit()">검색</a>
 				</div>
 				<div>
-					<select name="secondSection">
-						<option value="categoryOfOccupation" selected>직종</option>
-						<option value="manufacturing">제조업</option>
-						<option value="service">서비스</option>
-						<option value="science">전문, 과학서비스업</option>
-						<option value="wholesaleRetail">도소매업</option>
-						<option value="health">보건업</option>
-						<option value="lodging">숙박업</option>
-						<option value="socialWelfare">사회복지, 노인의료복지</option>
-						<option value="education">교욱 서비스업</option>
-						<option value="catering">외식업</option>
+					<select name="sectors">
+						<option value="sectors" selected>직종</option>
+						<option value="제조업">제조업</option>
+						<option value="서비스">서비스</option>
+						<option value="도소매업">도소매업</option>
+						<option value="보건업">보건업</option>
+						<option value="숙박업">숙박업</option>
+						<option value="사회복지">사회복지</option>
+						<option value="교욱서비스업">교욱 서비스업</option>
+						<option value="외식업">외식업</option>
 					</select>
-					<select name="thirdSection">
+					<select name="workArea">
 						<option value="workArea" selected>근무지역</option>
-						<option value="gangseogu">강서구</option>
-						<option value="geumjeonggu">금정구</option>
-						<option value="gijanggun">기장군</option>
-						<option value="namgu">남구</option>
-						<option value="donggu">동구</option>
-						<option value="dongnaegu">동래구</option>
-						<option value="busanjingu">부산진구</option>
-						<option value="bukgu">북구</option>
-						<option value="sasanggu">사상구</option>
-						<option value="sahagu">사하구</option>
-						<option value="seogu">서구</option>
-						<option value="suyeonggu">수영구</option>
-						<option value="yeonjegu">연제구</option>
-						<option value="yeongdogu">영도구</option>
-						<option value="haeundae">해운대구</option>
-						<option value="gimhaesi">김해시</option>
+						<option value="강서구">강서구</option>
+						<option value="금정구">금정구</option>
+						<option value="기장군">기장군</option>
+						<option value="남구">남구</option>
+						<option value="동구">동구</option>
+						<option value="동래구">동래구</option>
+						<option value="부산진구">부산진구</option>
+						<option value="북구">북구</option>
+						<option value="사상구">사상구</option>
+						<option value="사하구">사하구</option>
+						<option value="서구">서구</option>
+						<option value="수영구">수영구</option>
+						<option value="연제구">연제구</option>
+						<option value="영도구">영도구</option>
+						<option value="해운대구">해운대구</option>
+						<option value="김해시">김해시</option>
 					</select>
-					<select name="fourthSection">
+					<select name="workType">
 						<option value="workType" selected>근무형태</option>
-						<option value="fiveDays">주5일</option>
-						<option value="fourDays">주3~4일</option>
-						<option value="discussion">협의</option>	
+						<option value="주5일">주5일</option>
+						<option value="주3~4일">주3~4일</option>
+						<option value="협의">협의</option>	
 					</select>
-					<select name="fifthSection">
-						<option value="preferred" selected>우대사항</option>
-						<option value="young">청년층</option>
-						<option value="female">여성층</option>
-						<option value="senior">장년층</option>	
-						<option value="old">장년(고령자)</option>	
-						<option value="nearby">인근거주자</option>	
-						<option value="driving">운전가능자</option>	
-						<option value="vehicle">차량소지자</option>	
-					</select>
-					<a id="submit-button" href="javascript:" role="button">검색</a>
+					<a id="submit-button" href="javascript:" role="button" onclick="document.searchFrm.submit()">검색</a>
 				</div>
 			</form>		
 		</section>

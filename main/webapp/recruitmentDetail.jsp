@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/recruitmentDetail.css">
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+<jsp:include page="commonJSP/header.jsp"/>
 <main>
 <div>
 	<section id="comInfo">
@@ -136,6 +136,6 @@
 	</section>
 </div>
 </main>
-<jsp:include page="footer.jsp"/>
+<jsp:include page="commonJSP/footer.jsp"/>
 </body>
 </html>

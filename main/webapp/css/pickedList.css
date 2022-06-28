@@ -1,22 +1,44 @@
 @charset "UTF-8";
-/* 
+
 main section{
 	flex-basis: 40%;
 }
-*/
+
 .title {
 	left: 30%;	
 }
 
-.jobOpening {
-	/* display: flex; */
-	top: 25%;
-	left: 30%;
+.jobOpening-item {
+	display:flex;
+	justify-content: space-between;
+	
 }
 
+.jobOpening-item-content{
+	display: flex;
+	flex-basis: 50%;
+	justify-content: space-between;
+}
+
+.jobOpening-item-img img{
+	width : 100%;
+	height : 100%;
+}
+.jobOpening-paging {
+	text-align: center;
+	height : 30px;
+
+}
+.jobOpening-paging a{
+	padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: skyblue;
+}
+    
+
 .content {
-	position: relative;
-	left: 10%;
+	margin-top: 15px;
 }
 
 .content a {
@@ -32,7 +54,6 @@ main section{
 }
 
 .content p:nth-of-type(1) {
-	float: left;
 	margin-right: 10px;
 	margin-top: 35px;
 	border: 1px solid navy;
@@ -40,42 +61,45 @@ main section{
 	padding: 5px 8px 5px 8px;
 	font-weight: bold;
 	color: navy;
+	width: 35%;
+	text-align : center;
 }
 
 .content p:nth-of-type(2n) {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 .content p:nth-of-type(3) {
-	clear: left;
-	float: left;
 	margin-right: 10px;
 	border: 1px solid navy;
 	border-radius: 3px;
 	padding: 5px 8px 5px 8px;
 	font-weight: bold;
 	color: navy;
+	width: 35%;
+	text-align : center;
 }
 
 .content p:nth-of-type(4) {
-	float: left;
 	margin-top: 20px;
 }
 
 .deadline {
-	position: relative;
-	left: 30%;
-	margin-top: -10px;
+	flex-basis: 40%;
 }
 
 .deadline p:nth-of-type(1) {
 	border: 1px solid #dfdfdf;
-	padding: 10px;
+	margin : 0;
+	font-size : 15px;
+	width : 70%;
+	text-align : center;
+	padding : 10px;
+	
 }
 
 .deadline p:nth-of-type(2) {
-	position: relative;
-	left: 15px;
+	margin-top : 35px;
 }
 
 .sideBar {

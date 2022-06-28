@@ -11,6 +11,10 @@
 	src:url("../fonts/BinggraeⅡ.ttf");
 	font-family:Binggrae;
 }
+*{
+	letter-spacing:0.1em;
+	font-family:KoddiRegular;
+}
 td a{
 	position:relative;
 }
@@ -24,47 +28,60 @@ td a{
 	position:absolute;
 	left:0;
 }
+h1,h2,h3{
+	font-family:Binggrae;
+}
+h1{
+	font-family:Binggrae;
+	text-align:center;
+	margin-top:50px;
+	background-color:#004C6A;
+	color:white;
+	line-height:100px;
+}
 section{
 	margin-top:50px;
 }
 .icons{
-	height:30px;
+	height:38px;
 }
 h2{
-	font-family:Binggrae;
 	font-size:26px;
 }
 table, tr, th, td{
 	border-collapse:collapse;
 	border:1px solid #000;
 }
+th, td{
+	padding:15px;
+	font-size:18px;
+}
 th{
-	width:100px;
+	width:130px;
 	background-color:#54BDB6;
 	color:white;
 	text-shadow:0 0 10px #000;
+	letter-spacing:5px;
+	padding:15px 5px 15px 5px;
 }
 td{
 	font-family:KoddiRegular;
-	width:350px;
+	width:380px;
 }
 tr td:not(tr td:last-child){
 	border-right:5px double #000;
 }
-th, td{
-	padding:20px 10px;
-	font-size:18px;
-}
+
 #comInfo th{
-	width:85px;
+	width:130px;
 }
 #comInfo td{
-	width:195px;
+	width:210px;
 }
 .logo-wrap{
 	float:left;
 	margin-right:13px;
-	height:326px;
+	height:276px;
 	width:326px;
 	background-color:#888;
 	position:relative;
@@ -72,5 +89,75 @@ th, td{
 }
 .logo{
 	position:absolute;
-	top:15%;
+	top:9%
+}
+
+
+#container{
+	position:relative;
+}
+#sideNav{	
+	float:left;
+	border:1px solid #000;
+	border-radius:5px;
+	width:250px;
+	height:450px;
+	position:sticky;
+	top:40%;
+	margin-left:20px;
+}
+#sideNav-container{
+	position:relative;	
+}
+#bookmark{
+	position:absolute;
+	top:-20px;
+	right:5px;
+	display:block;
+	width:80px;
+	text-decoration:none;
+	text-align:center;
+	color:#004C6A;
+}
+#bookmark img{
+	display:inline-block;
+	width:50px;
+}
+#bookmark span{
+	display:block;
+}
+#sideNav h3{
+	margin:20px;
+	font-family:Binggrae;
+}
+#sideNav h4{
+	margin-top:0;
+}
+#sideNav section{
+	margin:20px;
+}
+.selectResume{
+	width:200px;
+	height:30px;
+	font-size:18px;
+}
+#sideNav .btn{
+	display:inline-block;
+	text-align:center;
+	color:white;
+	text-decoration:none;
+}
+#resPreview{
+	margin-top:10px;
+	width:200px;
+	height:30px;
+	background-color:#FF958C;
+	line-height:30px;
+}
+#apply{
+	margin-top:15px;
+	width:200px;
+	height:60px;
+	background-color:#F7545F;
+	line-height:60px;
 }

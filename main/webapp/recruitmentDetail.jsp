@@ -7,15 +7,18 @@
 <title>2022 부산 장애인 온라인 채용 박람회 | 채용공고</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/recruitmentDetail.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
-<jsp:include page="commonJSP/header.jsp"/>
+<jsp:include page="header.jsp"/>
 <main>
-<div>
+<div id="container">
+	<h1>에스지씨앤씨</h1>
 	<section id="comInfo">
 		<h2>
 			<img class="icons" src="./image/building.svg" aria-hidden="true">
-			기업정보
+			<span class="secTitle">기업정보</span>
 		</h2>
 		<div class="logo-wrap">
 			<img class="logo" src="image/에스지씨앤씨 주식회사.png" alt="에스지씨앤씨 주식회사 로고">
@@ -46,7 +49,7 @@
 			<tr>
 				<th>홈페이지</th>
 				<td colspan="3">
-					<a href="http://sgcnc.kr">
+					<a href="http://sgcnc.kr" tabindex="-1">
 						<span aria-hidden="true">http://sgcnc.kr</span>
 						<span class="offscreen">에스지씨앤씨 주식회사 홈페이지</span>
 					</a>
@@ -135,7 +138,40 @@
 		</table>
 	</section>
 </div>
+
+<aside id="sideNav">
+	<div id="sideNav-container">
+		<h3>사이드 메뉴바</h3>
+		<a href="" id="bookmark">
+			<img src="image/bookmark_off.svg" aria-hidden="true">
+			<span>관심기업 등록</span>
+		</a>
+		<section>
+			<h4>빠른 이동</h4>
+			<ul>
+				<li><a href="javascript:scrollUnderHeader('#comInfo')">기업정보</a></li>
+				<li><a href="javascript:scrollUnderHeader('#recruitInfo')">채용정보</a></li>
+				<li><a href="javascript:scrollUnderHeader('#welfare')">우대사항 및 복리후생</a></li>
+			</ul>
+		</section>
+		<hr style="margin:10px;">
+		<section>
+			<h4>바로 지원하기</h4>
+			<form>
+				<p>이력서를 선택해 주세요.</p>
+				<select class="selectResume">
+					<option value="">기본이력서</option>
+				</select>
+				<br>
+				<a href="" class="btn" id="resPreview">미리보기</a>
+				<br>
+				<a href="" class="btn" id="apply">지원하기</a>
+			</form>
+		</section>
+	</div>
+</aside>
 </main>
-<jsp:include page="commonJSP/footer.jsp"/>
+<jsp:include page="footer.jsp"/>
 </body>
+<script src="js/common.js"></script>
 </html>

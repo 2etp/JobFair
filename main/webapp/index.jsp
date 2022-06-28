@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String name = (String)session.getAttribute("lgnName");
+//	String name = "관리자";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +16,7 @@
 <body>
 <header>
 	<div class="logo">
-		<img src="images/head_00.png" alt="2021 부산 장애인 온라인 채용 박람회">
+		<img src="image/head_00.png" alt="2021 부산 장애인 온라인 채용 박람회">
 	</div>
 </header>
 <main>
@@ -20,8 +25,13 @@
 	</div>
 	<nav>
 		<section class="sign">
-			<a href="signUp.jsp" id="signUp">회원가입</a>
-			<a href="login.jsp" id="signIn">로그인</a>
+			<% if(name == null) {%>
+				<a href="signUp.jsp" id="signUp">회원가입</a>
+				<a href="login.jsp" id="signIn">로그인</a>
+			<%} else { %>
+				<a href="myPage.jsp" id="signUp">마이페이지</a>
+				<a href="logout.jsp" id="signIn">로그아웃</a>
+			<%}%>
 		</section>
 		<section class="how-to">
 			<a href="" id="howTo">사이트 이용방법</a>

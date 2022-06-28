@@ -112,7 +112,7 @@ public class DisabilityDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select g.logoName from generals As g  join jobopening as j on g.comNum = j.comNum join intercom as i on i.employNum = j.employNum where i.userNum = ? order by employNum desc";
+			sql = "select g.logoName from generals As g  join jobopening as j on g.comNum = j.comNum join intercom as i on i.employNum = j.employNum where i.userNum = ? order by j.employNum desc";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, userNum);
 			rs = pstmt.executeQuery();

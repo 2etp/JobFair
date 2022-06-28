@@ -1,0 +1,76 @@
+@charset "utf-8";
+@font-face{
+	src:url("../fonts/KoddiUDOnGothic-Regular.ttf");
+	font-family:KoddiRegular;
+}
+@font-face{
+	src:url("../fonts/KoddiUDOnGothic-Bold.ttf");
+	font-family:KoddiBold;
+}
+@font-face{
+	src:url("../fonts/BinggraeⅡ.ttf");
+	font-family:Binggrae;
+}
+td a{
+	position:relative;
+}
+.offscreen{
+	display:inline-block;
+	color:rgba(0,0,0,0);
+	width:150px;
+	height:1px;
+	font-size:0.01px;
+	overflow:hidden;
+	position:absolute;
+	left:0;
+}
+section{
+	margin-top:50px;
+}
+.icons{
+	height:30px;
+}
+h2{
+	font-family:Binggrae;
+	font-size:26px;
+}
+table, tr, th, td{
+	border-collapse:collapse;
+	border:1px solid #000;
+}
+th{
+	width:100px;
+	background-color:#54BDB6;
+	color:white;
+	text-shadow:0 0 10px #000;
+}
+td{
+	font-family:KoddiRegular;
+	width:350px;
+}
+tr td:not(tr td:last-child){
+	border-right:5px double #000;
+}
+th, td{
+	padding:20px 10px;
+	font-size:18px;
+}
+#comInfo th{
+	width:85px;
+}
+#comInfo td{
+	width:195px;
+}
+.logo-wrap{
+	float:left;
+	margin-right:13px;
+	height:326px;
+	width:326px;
+	background-color:#888;
+	position:relative;
+	z-index:-10;
+}
+.logo{
+	position:absolute;
+	top:15%;
+}

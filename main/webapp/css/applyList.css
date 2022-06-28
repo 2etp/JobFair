@@ -6,7 +6,7 @@
 }
 
 .applyList {
-	display: flex;
+
 	position: absolute;
 	top: 25%;
 	left: 30%;
@@ -16,13 +16,14 @@
 .content {
 	display: block;
 	position: relative;
-	left: 10%;
+	float: left;
+	margin-right: 30px;
 }
 
 .content a {
 	text-decoration: none;
 	color: black;
-	display: flex;
+
 	margin: 15px 0 0 0;
 	font-size: 25px;
 }
@@ -32,17 +33,15 @@
 }
 
 .progress {
-	position: relative;
-	left: 20%;
+	float: left;
+	margin-right: 30px;
 }
 
 .buttons {
-	position: relative;
-	left: 30%;
+	float: left;
 }
 
 .buttons a {
-	display: flex;
 	text-decoration: none;
 	color: black;
 	margin: 20px 0 0 0;

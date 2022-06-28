@@ -72,6 +72,43 @@
 		</div>
 		
 		
+		<!-- 게시글 페이징 -->
+		<div>
+		 	<%
+	    		if(cnt != 0) {
+	    			// 전체 페이지 수 계산
+	    			int pageCnt = cnt / pageSize + (cnt%pageSize == 0 ? 0 : 1);
+	    			// 한 페이지에 보여줄 페이지 번호 개수
+	    			int pageBlock = 10;
+	    			// 시작하는 페이지 번호  ex) 1, 11, 21...
+	    			int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
+	    			// 끝나는 페이지 번호
+	    			int endPage = startPage + pageBlock-1;
+	    			
+	    			if(endPage > pageCnt) {
+	    				endPage = pageCnt;
+	    			}
+	    			
+	    			// 10페이지 이전으로 가는 버튼
+	    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
+		    		if(startPage > pageBlock) { %>
+		    			<a href="pickedList.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
+		    		<%}
+	    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
+	    			for(int i = startPage; i <= endPage; i++) { %>
+	    				<a href="pickedList.jsp?pageNum=<%=i%>"><%=i %></a>
+	    			<%}
+	    			
+	    			// 10페이지 건너뛰는 버튼
+	    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
+	    			if(endPage < pageCnt) { %>
+	    				<a href="pickedList.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
+	    			<%}
+	    		}
+			%>
+		 </div>
+		
+		
 		<aside class="sideBar">
 			<fieldset>
 				<legend>사이드 메뉴</legend>

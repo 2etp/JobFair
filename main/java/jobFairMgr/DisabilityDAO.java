@@ -66,6 +66,36 @@ public class DisabilityDAO {
 	}
 	
 	// 유저정보 출력
+	// 매개변수로 받은 name의 모든 정보를 반환(VO)
+	public DisabilityVO getUser(String name) {
+		DisabilityVO vo = new DisabilityVO();
+		Connection con = null;
+		PreparedStatement pstmt = null;	
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			con = pool.getConnection();
+			sql = "select * from users where name = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setUserNum(rs.getInt("userNum"));
+				vo.setName(rs.getString("name"));
+				vo.setPrefixNum(rs.getString("prefixNum"));
+				vo.setSuffixNum(rs.getString("suffixNum"));
+				vo.setLivingArea(rs.getString("livingArea"));
+				vo.setPhoneNum(rs.getString("phoneNum"));
+				vo.setDisType(rs.getString("disType"));
+				vo.setDisLevel(rs.getString("disLevel"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vo;
+	}
 	
 	// 관심기업 리스트 출력
 	public List<OpeningListVO> getPickedList(int userNum, int startRow, int pageSize) {
@@ -112,7 +142,7 @@ public class DisabilityDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select g.logoName from generals As g  join jobopening as j on g.comNum = j.comNum join intercom as i on i.employNum = j.employNum where i.userNum = ? order by employNum desc";
+			sql = "select g.logoName from generals As g  join jobopening as j on g.comNum = j.comNum join intercom as i on i.employNum = j.employNum where i.userNum = ? order by j.employNum desc";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, userNum);
 			rs = pstmt.executeQuery();

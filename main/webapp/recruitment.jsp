@@ -6,6 +6,11 @@
 
 
 <%
+	request.setCharacterEncoding("UTF-8");
+	// 전체 채용공고를 보는 것인지, 검색해서 나온 채용공고를 보는것인지
+	String pageType = request.getParameter("pageType");
+	List<OpeningListVO> list = new ArrayList<OpeningListVO>();
+	int cnt = 0;
 	//페이징 넘버 작업
 
 	// 한 페이지에 보여줄 게시글 개수
@@ -21,8 +26,38 @@
 	int currentPage = Integer.parseInt(pageNum);
 	int startRow = (currentPage - 1) * pageSize + 1;
 	
-	List<OpeningListVO> list = dao.getOpeningList(startRow, pageSize);
-	int cnt = dao.getOpeningCount();
+	// 검색해서 나온 채용공고를 볼 경우
+	if(pageType.equals("search")) {
+		// 기업명으로 검색했는지, 다른 조건으로 검색했는지
+		String item = request.getParameter("item");
+		if(item.equals("name")) {
+			// 기업명으로 검색했을 경우
+			String companyName = request.getParameter("companyName");
+			// 기업명이 공백인채 검색헀다면 평소와 같게 모든 채용공고 출력
+			if(companyName.equals("")) {
+				list = dao.getOpeningList(startRow, pageSize);
+				cnt = dao.getOpeningCount();
+			}
+			list = dao.getSearchName(companyName, startRow, pageSize);
+			
+		} else if(item.equals("other")) {
+			// 다른조건으로 검색했을 경우
+			String sectors = request.getParameter("sectors");
+			String workArea = request.getParameter("workArea");
+			String workType = request.getParameter("workType");
+			
+			if(sectors.equals("sectors")) sectors = "";
+			if(workArea.equals("workArea")) workArea = "";
+			if(workType.equals("workType")) workType = "";
+			
+			
+		}
+		
+	} else {
+		list = dao.getOpeningList(startRow, pageSize);
+		cnt = dao.getOpeningCount();
+	}
+
 %>
     
 <!DOCTYPE html>
@@ -42,11 +77,12 @@
 		<section>
 			<form name="searchFrm" method="post" action="search.jsp">
 				<div>
-					<input type="text" name="companyName" placeholder="기업명을 입력하세요">
-					<a id="submit-button" href="javascript:" role="button" onclick="document.searchFrm.submit()">검색</a>
+					<input id="companyName" type="text" name="companyName" placeholder="기업명을 입력하세요">
+					<a id="submit-button" href="javascript:" role="button"
+					 onclick="searchName()">검색</a>
 				</div>
 				<div>
-					<select name="sectors">
+					<select id="sectors" name="sectors">
 						<option value="sectors" selected>직종</option>
 						<option value="제조업">제조업</option>
 						<option value="서비스">서비스</option>
@@ -57,7 +93,7 @@
 						<option value="교욱서비스업">교욱 서비스업</option>
 						<option value="외식업">외식업</option>
 					</select>
-					<select name="workArea">
+					<select id="workArea" name="workArea">
 						<option value="workArea" selected>근무지역</option>
 						<option value="강서구">강서구</option>
 						<option value="금정구">금정구</option>
@@ -76,13 +112,14 @@
 						<option value="해운대구">해운대구</option>
 						<option value="김해시">김해시</option>
 					</select>
-					<select name="workType">
+					<select id="workType" name="workType">
 						<option value="workType" selected>근무형태</option>
 						<option value="주5일">주5일</option>
 						<option value="주3~4일">주3~4일</option>
 						<option value="협의">협의</option>	
 					</select>
-					<a id="submit-button" href="javascript:" role="button" onclick="document.searchFrm.submit()">검색</a>
+					<a id="submit-button" href="javascript:" role="button" 
+					onclick="searchOther()">검색</a>
 				</div>
 			</form>		
 		</section>
@@ -146,6 +183,18 @@
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>
-
+<script>
+	function searchName() {
+		let companyName = document.getElementById("companyName").value;
+		location.href="search.jsp?companyName=" + companyName + "\&item=name";
+	}
+	
+	function searchOther() {
+		let sectors = document.getElementById("sectors").value;
+		let workArea = document.getElementById("workArea").value;
+		let workType = document.getElementById("workType").value;
+		location.href="search.jsp?sectors=" + sectors + "\&workArea=" + workArea + "\&workType=" + workType + "\&item=other";
+	}
+</script>
 </body>
 </html>

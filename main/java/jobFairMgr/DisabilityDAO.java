@@ -94,7 +94,7 @@ public class DisabilityDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.task, j.openingDate, a.progress, r.resumeNum from generals As g join jobopening As j on g.comNum = j.comNum join applycom As a on a.employNum = j.employNum join resume As r on r.resumeSeq = a.resumeNum where a.userNum = ? order by employNum desc limit ?, ?";
+			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.task, j.openingDate, a.progress, r.resumeNum from generals As g join jobopening As j on g.comNum = j.comNum join applycom As a on a.employNum = j.employNum join resume As r on r.resumeNum = a.resumeNum where a.userNum = ? order by employNum desc limit ?, ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, userNum);
 			pstmt.setInt(2, startRow - 1);
@@ -130,7 +130,7 @@ public class DisabilityDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select g.logoName from generals As g join jobopening As j on g.comNum = j.comNum join applycom As a on a.employNum = j.employNum join resume As r on r.resumeSeq = a.resumeNum where a.userNum = ? order by employNum desc";
+			sql = "select g.logoName from generals As g join jobopening As j on g.comNum = j.comNum join applycom As a on a.employNum = j.employNum join resume As r on r.resumeNum = a.resumeNum where a.userNum = ? order by j.employNum desc";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, userNum);
 			rs = pstmt.executeQuery();

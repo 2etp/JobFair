@@ -160,6 +160,52 @@ public class generalDAO {
 		return vo;
 	}
 	
+	// 기업명으로 채용공고 검색
+	public List<OpeningListVO> getSearchName(String comName, int startRow, int pageSize) {
+		List<OpeningListVO> list = new ArrayList<OpeningListVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.openingDate, j.workArea, j.task from generals As g join jobopening as j on g.comNum = j.comNum and comName like ? order by employNum desc limit ?, ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "%" + comName + "%");
+			pstmt.setInt(2, startRow - 1);
+			pstmt.setInt(3, pageSize);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return list;
+	}
 	
-	
+	// 다중조건으로 채용공고 검색(근무지역, 근무형태, 우대사항)
+	public List<OpeningListVO> getSearchOther(String sectors, String workArea, String workType, int startRow, int pageSize) {
+		List<OpeningListVO> list = new ArrayList<OpeningListVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		try {
+			con = pool.getConnection();
+			sql = "select g.logoName, g.logoSize, g.comNum, g.comName, j.employNum, j.openingDate, j.workArea, j.task from generals As g join jobopening as j on g.comNum = j.comNum and ";
+			
+			sql += "comName like ? order by employNum desc limit ?, ?";
+			
+					
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(2, startRow - 1);
+			pstmt.setInt(3, pageSize);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return list;
+	}
 }

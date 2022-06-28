@@ -7,6 +7,7 @@
 <title>2022 부산 장애인 온라인 채용 박람회 | 로그인</title>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/login.css">
+<script defer src="js/login.js"></script>
 </head>
 <body>
 	
@@ -17,27 +18,27 @@
 		<form name="logFrm" method="post" action="loginProc.jsp">
 			<div class="div-form">
 				<ul>
-					<li>
+					<li class="li-private enable">
 						<a href="javascript:void(0)" >개인 회원</a>
 					</li>
-					<li>
+					<li class="li-enterprise">
 						<a href="javascript:void(0)" >기업 회원</a>
 					</li>
 				</ul>
 				<div class=div-input>
 					<div class=div-name>
-						<label>이름을 입력해주세요</label>
-						<input type="text" name="name">	
+						<label for="name">이름을 입력해주세요</label>
+						<input id="name" type="text" name="name">	
 					</div>
 					<div class=div-phone>
-						<label>휴대폰번호를 -를 제외하고 입력해주세요.</label>
-						<input type="tel" name="mobile">
+						<label for="phone">휴대폰번호를 -를 제외하고 입력해주세요.</label>
+						<input id="phone" type="tel" name="mobile">
 					</div>
 					<div class=div-submit>
 						<a id="loginButton" href="javascript:loginCheck();" role="button">로그인</a>
 					</div>
 				</div>
-				<div class="div-signup">
+				<div class="div-register">
 					<a href="javascript:void(0)">지금 바로 개인 회원 가입하기</a>
 				</div>
 			</div>

@@ -16,7 +16,7 @@ form[name='logFrm']{
     
     border: 1px solid black;
     border-radius: 50px;
- 
+ 	
 }
 
 
@@ -27,16 +27,17 @@ form[name='logFrm'] label{
     font-weight : bold;
     position : absolute;
     font-size : 14px;
+    padding : 10px;
+    color : #666666;
     
 }
 
-
 form[name='logFrm'] input{
+
 	width : 100%;
-	height: 34.1px;
     display: inline-block;
     border : none;
-    padding : 0;
+    padding : 10px;
 }
     
 .div-form{
@@ -61,17 +62,35 @@ form[name='logFrm'] input{
 	width : 100%;
 	height : 100%;
 	border : 1px solid black;
+	background-color : #F2F2F2;
+	
 }
 
 .div-form ul li a{
-	text-decoration: none;
-	color : black;
+	color : #666666;
+	text-decoration: none;;
 	width : 100%;
 	height : 69%;
 	padding-top : 8%;
 	display : inline-block;
+	font-weight : bold;
 	
 }
+
+.div-form ul li:nth-child(1){
+	border-right : 0px;
+
+}
+.div-form ul li[class~="enable"]{
+	border-bottom : 0px;
+	background-color : white;
+}
+
+.div-form ul li[class~="enable"] a{
+	color : black;
+}
+
+
 
 .div-name{
 	position: relative;
@@ -97,13 +116,13 @@ form[name='logFrm'] input{
 	position : relative;
 }
 
-.div-signup{
+.div-register{
 	height : 50%;
 	text-align : center;
 	background-color : skyblue;
 }
 
-.div-signup a{
+.div-register a{
 	height: 64%;
     padding-top: 11.5%;
 	text-align : center;
@@ -119,7 +138,9 @@ form[name='logFrm'] input{
 	text-decoration: none;
     color: white;
     background: blue;
-    padding: 25px;
+    padding: 25px 25px 27px 25px;
     
 }
+
+
 

@@ -25,18 +25,6 @@
 						<a href="javascript:void(0)" >기업 회원</a>
 					</li>
 				</ul>
-<<<<<<< HEAD
-				<div class=div-name>
-					<label for="name">이름</label>
-					<input type="text" name="name" id="name" placeholder="이름을 입력해주세요" title="이름"> 	
-				</div>
-				<div class=div-phone>
-					<label for="mobile">휴대폰번호</label>
-					<input type="tel" name="mobile" id="mobile" placeholder="전화번호를 -제외하고 입력해주세요." title="휴대폰번호">
-				</div>
-				<div class=div-submit>
-					<a id="loginButton" href="javascript:loginCheck();" role="button">로그인</a>
-=======
 				<div class=div-input>
 					<div class=div-name>
 						<label for="name">이름을 입력해주세요</label>
@@ -52,7 +40,6 @@
 				</div>
 				<div class="div-register">
 					<a href="javascript:void(0)">지금 바로 개인 회원 가입하기</a>
->>>>>>> 8e3069f697ab79ef4c049471a093429a6b28b561
 				</div>
 			</div>
 		</form>

@@ -9,6 +9,7 @@
 	int userNum = 1;
 	
 	
+	
 	//페이징 넘버 작업
 	
 	// 한 페이지에 보여줄 게시글 개수
@@ -35,88 +36,86 @@
 <meta charset="UTF-8">
 <title>2022 부산 장애인 온라인 채용 박람회 | 기업지원 현황</title>
 <link rel="stylesheet" href="./css/common.css">
-<link rel="stylesheet" href="./css/applyList.css?after">
+<link rel="stylesheet" href="./css/applyList.css">
 </head>
 <body>
 
 <jsp:include page="commonJSP/header.jsp"/>
 
 <main>
-
-	<h2 class="title">기업지원 현황</h2>
 	<section>
-
-			<div class="applyList">
-				<%for(int i = 0; i < list.size(); i++) { 
-					ApplyListVO vo = list.get(i);%>
-					<div style="clear:left; padding-bottom: 15px; margin-top:15px; height:230px; border-bottom: 1px solid gray;">
-						<div style="float: left; margin-right: 30px;">
-							<img src="./image/<%=vo.getLogoName()%>">
+		<h2 class="title">기업지원 현황</h2>
+		<div class="applyList">
+			<%for(int i = 0; i < list.size(); i++) { 
+				ApplyListVO vo = list.get(i);%>
+				<div class="applyList-item">
+					<div class="applyList-item-img">
+						<img src="./image/<%=vo.getLogoName()%>">
+					</div>
+					<div class="applyList-item-text">
+						<div class="content" >
+							<a href="#" role="button"><b><%=vo.getComName()%></b></a>
+							<p><%=vo.getTask() %></p>
 						</div>
-						<div style="float: left; padding-top: 15px;">
-							<div class="content" >
-								<a href="#" role="button"><b><%=vo.getComName()%></b></a>
-								<p><%=vo.getTask() %></p>
+						<div class="progress">
+							<h3>진행현황</h3>
+							<p>서류합격</p>
+						</div>
+						<div class="buttons">
+							<div>
+								<img src="./image/resume.png" alt="이력서 이미지" width="30px" height="30px">
+								<a href="javascript:" role="button">지원한 이력서</a>
 							</div>
-							<div class="progress">
-								<h3 style="margin-top: 0;">진행현황</h3>
-								<p>서류합격</p>
-							</div>
-							<div style="float: left;">
-								<div style="float: left;">
-									<img src="./image/resume.png" alt="이력서 이미지" width="30px" height="30px">
-								</div>
-								<div class="buttons">
-									<a href="javascript:" role="button">지원한 이력서</a><br><br>
-									<a href="javascript:" role="button">지원취소</a>
-									<div style="clear:left; padding-top:15px;">
-										<p>마감</p>
-										<p><%=vo.getOpeningDate().substring(10) %></p>
-									</div>
+							<div>
+								
+								<a href="javascript:" role="button">지원취소</a>
+								<div>
+									<p>마감</p>
+									<p><%=vo.getOpeningDate().substring(10) %></p>
 								</div>
 							</div>
-						</div><!-- 로고 이미지 이외의 간단내용 div -->
-					</div><!-- 지원공고 1줄 끝 -->
-				<% }%>
-			</div>
-			
-			<!-- 게시글 페이징 -->
-			<div>
-			 	<%
-		    		if(cnt != 0) {
-		    			// 전체 페이지 수 계산
-		    			int pageCnt = cnt / pageSize + (cnt%pageSize == 0 ? 0 : 1);
-		    			// 한 페이지에 보여줄 페이지 번호 개수
-		    			int pageBlock = 10;
-		    			// 시작하는 페이지 번호  ex) 1, 11, 21...
-		    			int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
-		    			// 끝나는 페이지 번호
-		    			int endPage = startPage + pageBlock-1;
-		    			
-		    			if(endPage > pageCnt) {
-		    				endPage = pageCnt;
-		    			}
-		    			
-		    			// 10페이지 이전으로 가는 버튼
-		    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
-			    		if(startPage > pageBlock) { %>
-			    			<a href="applyList.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
-			    		<%}
-		    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
-		    			for(int i = startPage; i <= endPage; i++) { %>
-		    				<a href="applyList.jsp?pageNum=<%=i%>"><%=i %></a>
-		    			<%}
-		    			
-		    			// 10페이지 건너뛰는 버튼
-		    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
-		    			if(endPage < pageCnt) { %>
-		    				<a href="applyList.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
-		    			<%}
-		    		}
-				%>
-			 </div>		
-			
-			
+						</div>
+					</div><!-- 로고 이미지 이외의 간단내용 div -->
+				</div><!-- 지원공고 1줄 끝 -->
+				<hr>
+			<% }%>
+		</div>
+		
+		<!-- 게시글 페이징 -->
+		<div class="applyList-paging">
+		 	<%
+	    		if(cnt != 0) {
+	    			// 전체 페이지 수 계산
+	    			int pageCnt = cnt / pageSize + (cnt%pageSize == 0 ? 0 : 1);
+	    			// 한 페이지에 보여줄 페이지 번호 개수
+	    			int pageBlock = 10;
+	    			// 시작하는 페이지 번호  ex) 1, 11, 21...
+	    			int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
+	    			// 끝나는 페이지 번호
+	    			int endPage = startPage + pageBlock-1;
+	    			
+	    			if(endPage > pageCnt) {
+	    				endPage = pageCnt;
+	    			}
+	    			
+	    			// 10페이지 이전으로 가는 버튼
+	    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
+		    		if(startPage > pageBlock) { %>
+		    			<a href="applyList.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
+		    		<%}
+	    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
+	    			for(int i = startPage; i <= endPage; i++) { %>
+	    				<a href="applyList.jsp?pageNum=<%=i%>"><%=i %></a>
+	    			<%}
+	    			
+	    			// 10페이지 건너뛰는 버튼
+	    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
+	    			if(endPage < pageCnt) { %>
+	    				<a href="applyList.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
+	    			<%}
+	    		}
+			%>
+		</div>		
 		<aside class="sideBar">
 			<fieldset>
 				<legend>사이드 메뉴</legend>

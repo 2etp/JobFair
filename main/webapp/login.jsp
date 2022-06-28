@@ -25,12 +25,12 @@
 					</li>
 				</ul>
 				<div class=div-name>
-					<label>이름</label>
-					<input type="text" name="name" placeholder="이름을 입력해주세요">	
+					<label for="name">이름</label>
+					<input type="text" name="name" id="name" placeholder="이름을 입력해주세요" title="이름"> 	
 				</div>
 				<div class=div-phone>
-					<label>휴대폰번호</label>
-					<input type="tel" name="mobile" placeholder="전화번호를 -제외하고 입력해주세요.">
+					<label for="mobile">휴대폰번호</label>
+					<input type="tel" name="mobile" id="mobile" placeholder="전화번호를 -제외하고 입력해주세요." title="휴대폰번호">
 				</div>
 				<div class=div-submit>
 					<a id="loginButton" href="javascript:loginCheck();" role="button">로그인</a>

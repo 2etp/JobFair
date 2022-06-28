@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+form[name='signupFrm'] input:not(input:nth-child(3)) {
+	display: flex;
+}
+
+form[name='signupFrm'] {
+	width: 500px;
+}
+
+form[name='signupFrm'] label:not(.signupFrm7 label) {
+	font-weight : bold;
+	font-size: 20px;
+}
+
+form[name='signupFrm'] div {
+	margin-top: 20px;
+}
+
+.signupFrm2 label {
+	display: block;
+}
+
+.signupFrm2 input:nth-of-type(1) {
+	float:left;
+}
+
+form[name='signupFrm'] input:not(.signupFrm1 input, .signupFrm3 input, .signupFrm7 input:last-of-type) {
+	width: 233.2px;
+	height: 40px;
+}
+
+
+.signupFrm1 input, .signupFrm3 input {
+	width: 492px;
+	height: 40px;
+}
+
+.signupFrm1 input, .signupFrm2 input, .signupFrm3 input {
+	margin-top: 10px;
+}
+
+#signupBtn {
+	text-decoration: none;
+	border: 1px solid #F14936;
+	background-color: #F14936;
+	color: white;
+	padding: 30px 50px 30px 50px;
+	display: block;
+	text-align: center;
+	font-size: 20px;
+}
+
+.signupFrm2 input:first-of-type {
+	margin-right: 5px;
+}
+
+.signupFrm7 input {
+	float: left;
+}
+
+.signupFrm7 label {
+	margin-left: 20px;
+}
+
+section .title {
+	position: relative;
+	display: flex;
+	left: 25%;
+	
+}
+
+section .title img {
+	width: 70px;
+	height: 70px;
+		
+}
+
+

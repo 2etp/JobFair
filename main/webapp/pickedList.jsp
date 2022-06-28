@@ -41,39 +41,47 @@
 
 <jsp:include page="commonJSP/header.jsp"/>
 
-<main style="display: block; margin: auto;">
+<main>
 
+	<section>
+		<h2 class="title">관심기업</h2>
 	
-	
-	<section style="width: 800px;">
-	<h2 class="title">관심기업</h2>
-	<hr>
 		<div class="jobOpening">
 			<%for(int i = 0; i < list.size(); i++) { 
 				OpeningListVO vo = list.get(i);%>
-			<div style="clear:left;">
-				<div style="float: left;">
-					<img src="./image/<%=vo.getLogoName()%>" width=225px; height=165px;>
+			<div class="jobOpening-item">
+				<div class="jobOpening-item-img">
+					<img src="./image/<%=vo.getLogoName()%>">
 				</div>
-				<div class="content" style="float: left;">
-					<a href="#" role="button"><b><%=vo.getComName()%></b></a>
-					<p>근무지역</p>
-					<p><%=vo.getWorkArea() %></p>
-					<p>직무</p>
-					<p><%=vo.getTask() %></p>
-				</div>
-				
-				<div class="deadline">
-					<p>접수마감</p>
-					<p><%=vo.getOpeningDate().substring(10) %></p>
+				<div class="jobOpening-item-content">
+					<div class="content">
+						<a href="#" role="button"><b><%=vo.getComName()%></b></a>
+						<p>근무지역</p>
+						<p><%=vo.getWorkArea() %></p>
+						<p>직무</p>
+						<p><%=vo.getTask() %></p>
+					</div>
+					<div class="deadline">
+						<p>접수마감</p>
+						<p><%=vo.getOpeningDate().substring(10) %></p>
+					</div>	
 				</div>
 			</div>
+			<hr>
 			<%}%>
 		</div>
 		
-		
+		<aside class="sideBar">
+			<fieldset>
+				<legend>사이드 메뉴</legend>
+					<a href="javascript:" role="button">내 정보 관리</a>
+					<a href="javascript:" role="button">이력서 관리</a>
+					<a href="javascript:" role="button">관심기업 관리</a>
+					<a href="javascript:" role="button">기업지원 현황</a>
+			</fieldset>
+		</aside>
 		<!-- 게시글 페이징 -->
-		<div>
+		<div class="jobOpening-paging">
 		 	<%
 	    		if(cnt != 0) {
 	    			// 전체 페이지 수 계산
@@ -109,15 +117,7 @@
 		 </div>
 		
 		
-		<aside class="sideBar">
-			<fieldset>
-				<legend>사이드 메뉴</legend>
-					<a href="javascript:" role="button">내 정보 관리</a>
-					<a href="javascript:" role="button">이력서 관리</a>
-					<a href="javascript:" role="button">관심기업 관리</a>
-					<a href="javascript:" role="button">기업지원 현황</a>
-			</fieldset>
-		</aside>
+		
 	</section>
 </main>
 

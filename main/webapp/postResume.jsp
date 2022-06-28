@@ -207,7 +207,7 @@
 			var data_type = 'data:application/vnd.ms-excel';
 			var ua = window.navigator.userAgent;
 			var msie = ua.indexOf("MSIE "); 
-			var fileName = title + '.xlsx';
+			var fileName = title + '.xls';
 			//Explorer 환경에서 다운로드    
 			if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
 				if (window.navigator.msSaveBlob) {

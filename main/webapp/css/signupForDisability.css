@@ -42,8 +42,8 @@ form[name='signupFrm'] input:not(.signupFrm1 input, .signupFrm3 input, .signupFr
 
 #signupBtn {
 	text-decoration: none;
-	border: 1px solid #F14936;
-	background-color: #F14936;
+	border: 1px solid #D13B3B;
+	background-color: #D13B3B;
 	color: white;
 	padding: 25px 50px 25px 50px;
 	display: block;
@@ -58,10 +58,6 @@ form[name='signupFrm'] input:not(.signupFrm1 input, .signupFrm3 input, .signupFr
 
 .signupFrm7 input {
 	float: left;
-}
-
-.signupFrm7 label {
-	margin-left: 20px;
 }
 
 section .title {

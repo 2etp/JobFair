@@ -92,7 +92,7 @@
 			</div>
 			
 			<div class="signupFrm7">
-				<label for="privacyInfo">개인정보 수집 및 활용에 동의</label><input type="checkbox" name="collectInfo" id="privacyInfo" value="" title="개인정보 수집 및 활용 동의 여부">
+				<label><input type="checkbox" name="collectInfo"value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
 			</div>
 			
 			<div>

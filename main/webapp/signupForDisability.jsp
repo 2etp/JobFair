@@ -15,7 +15,7 @@
 <main>
 	<section>
 		<div class="title">
-			<img src="./image/personal.svg">
+			<img src="./image/personal.svg" alt="회원가입 이미지">
 			<h2>회원가입</h2>
 		</div>
 		
@@ -35,33 +35,10 @@
 				<label for="mobile">휴대폰번호</label>
 				<input type="tel" name="mobile" id="mobile" placeholder="'-' 를 빼고 입력해 주세요" title="휴대폰번호">
 			</div>
-				
-			<div class="signupFrm4">
-				<label for="livingArea">거주지역</label>
-				<select name="livingArea" id="livingArea" title="거주지역">
-					<option value="gangseogu" selected>강서구</option>
-					<option value="geumjeonggu">금정구</option>
-					<option value="gijanggun">기장군</option>
-					<option value="namgu">남구</option>
-					<option value="donggu">동구</option>
-					<option value="dongnaegu">동래구</option>
-					<option value="busanjingu">부산진구</option>
-					<option value="bukgu">북구</option>
-					<option value="sasanggu">사상구</option>
-					<option value="sahagu">사하구</option>
-					<option value="seogu">서구</option>
-					<option value="suyeonggu">수영구</option>
-					<option value="yeonjegu">연제구</option>
-					<option value="yeongdogu">영도구</option>
-					<option value="haeundae">해운대구</option>
-					<option value="gimhaesi">김해시</option>
-				</select>
-			</div>
 		
-			
-			<div class="signupFrm5">	
+			<div class="signupFrm4">	
 				<label for="type">장애유형</label>
-				<select name="type" id="type" title="장애유형">
+				<select name="type" id="type" title="장애유형" style="width:100px;height:30px;">
 					<option value="physical" selected>지체장애</option>
 					<option value="brain">뇌병변장애</option>
 					<option value="eyes">시각장애</option>
@@ -80,15 +57,37 @@
 				</select>
 			</div>
 			
-			<div class="signupFrm6">
+			<div class="signupFrm5">
 				<label for="grade">장애등급</label>
-				<select name="grade" id="grade" title="장애등급">
+				<select name="grade" id="grade" title="장애등급" style="width:100px;height:30px;">
 					<option value="grade1" selected>1등급</option>
 					<option value="grade2">2등급</option>
 					<option value="grade3">3등급</option>
 					<option value="grade4">4등급</option>
 					<option value="grade5">5등급</option>
 					<option value="grade6">6등급</option>
+				</select>
+			</div>
+			
+			<div class="signupFrm6">
+				<label for="livingArea">거주지역</label>
+				<select name="livingArea" id="livingArea" title="거주지역" style="width:100px;height:30px;">
+					<option value="gangseogu" selected>강서구</option>
+					<option value="geumjeonggu">금정구</option>
+					<option value="gijanggun">기장군</option>
+					<option value="namgu">남구</option>
+					<option value="donggu">동구</option>
+					<option value="dongnaegu">동래구</option>
+					<option value="busanjingu">부산진구</option>
+					<option value="bukgu">북구</option>
+					<option value="sasanggu">사상구</option>
+					<option value="sahagu">사하구</option>
+					<option value="seogu">서구</option>
+					<option value="suyeonggu">수영구</option>
+					<option value="yeonjegu">연제구</option>
+					<option value="yeongdogu">영도구</option>
+					<option value="haeundae">해운대구</option>
+					<option value="gimhaesi">김해시</option>
 				</select>
 			</div>
 			

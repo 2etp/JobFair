@@ -17,12 +17,12 @@ liEls.forEach(function (Eliment, ElimentIndex, obj) {
 		if(Eliment.classList.contains("li-private"))
 		{
 			registerEl.innerHTML = `
-				<a href="javascript:void(0)">지금 바로 개인 회원 가입하기</a>
+				<a href="javascript:void(0)">개인 회원 가입하기</a>
 			`
 		}
 		else{
 			registerEl.innerHTML = `
-				<a href="javascript:void(0)">지금 바로 기업 회원 가입하기</a>
+				<a href="javascript:void(0)">기업 회원 가입하기</a>
 			`
 		}
 		Eliment.classList.add("enable");

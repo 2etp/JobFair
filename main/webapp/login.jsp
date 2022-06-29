@@ -17,7 +17,6 @@
 	<section>
 		<div class="title">
 			<img src="./image/login.png" alt="로그인 이미지">
-			<p>로그인</p>
 		</div>
 		<form name="logFrm" method="post" action="loginProc.jsp">
 			<div class="div-form">
@@ -42,7 +41,7 @@
 						<a id="loginButton" href="javascript:loginCheck();" role="button">로그인</a>
 					</div>
 					<div class="div-register">
-						<a href="javascript:void(0)" role="button">지금 바로 개인 회원 가입하기</a>
+						<a href="javascript:void(0)" role="button">개인 회원 가입하기</a>
 					</div>
 				</div>
 			</div>

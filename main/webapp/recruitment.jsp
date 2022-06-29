@@ -9,6 +9,10 @@
 	request.setCharacterEncoding("UTF-8");
 	// 전체 채용공고를 보는 것인지, 검색해서 나온 채용공고를 보는것인지
 	String pageType = request.getParameter("pageType");
+	if(pageType == null) {
+	      pageType = "default";
+	}
+	
 	List<OpeningListVO> list = new ArrayList<OpeningListVO>();
 	int cnt = 0;
 	//페이징 넘버 작업
@@ -76,13 +80,14 @@
 	<div>
 		<section>
 			<form name="searchFrm" method="post" action="search.jsp">
-				<div>
-					<input id="companyName" type="text" name="companyName" placeholder="기업명을 입력하세요">
+				<div class="div-search">
+					<img src="./image/search.svg" alt="검색 이미지">
+					<input id="companyName" type="text" name="companyName" placeholder="기업명을 입력하세요" title="기업명">
 					<a id="submit-button" href="javascript:" role="button"
 					 onclick="searchName()">검색</a>
 				</div>
 				<div>
-					<select id="sectors" name="sectors">
+					<select id="sectors" name="sectors" title="직종">
 						<option value="sectors" selected>직종</option>
 						<option value="제조업">제조업</option>
 						<option value="서비스">서비스</option>
@@ -93,7 +98,7 @@
 						<option value="교욱서비스업">교욱 서비스업</option>
 						<option value="외식업">외식업</option>
 					</select>
-					<select id="workArea" name="workArea">
+					<select id="workArea" name="workArea" title="근무지역">
 						<option value="workArea" selected>근무지역</option>
 						<option value="강서구">강서구</option>
 						<option value="금정구">금정구</option>
@@ -112,7 +117,7 @@
 						<option value="해운대구">해운대구</option>
 						<option value="김해시">김해시</option>
 					</select>
-					<select id="workType" name="workType">
+					<select id="workType" name="workType" title="근무형태">
 						<option value="workType" selected>근무형태</option>
 						<option value="주5일">주5일</option>
 						<option value="주3~4일">주3~4일</option>
@@ -123,20 +128,25 @@
 				</div>
 			</form>		
 		</section>
+		
 		<section>
+			<div class="div-list">
+				<img src="./image/building.png" alt="건물이미지">
+				<p>참여기업 리스트</p>
+			</div>
 			<!-- 채용공고 리스트 -->
 			<div>
 				<%for(int i = 0; i < list.size(); i++) { 
 					OpeningListVO vo = list.get(i);%>
-					<div style="height:150px; margin-top: 20px; padding-bottom:20px; border-bottom: 1px solid gray;"><!-- 로고 이미지 -->
-						<div style="float: left; margin-right: 40px;">
+					<div class="div-frame"><!-- 로고 이미지 -->
+						<div class="company-image">
 							<img alt="로고 이미지" src="./image/<%=vo.getLogoName()%>" width="200px" height="150px"><br>
 						</div>
-						<div style="float: left; height:150px;"> <!-- 채용글 -->
-							<p><%=vo.getComName() %></p>
-							<p>근무지역 : <%=vo.getWorkArea() %></p>
-							<p>직무 : <%=vo.getTask() %></p>
-							<p>지원기간 : <%=vo.getOpeningDate() %></p>
+						<div class="company-contents"> <!-- 채용글 -->
+							<a href="#" role="button"><p><%=vo.getComName() %></p></a>
+							<p><span>근무지역</span> <%=vo.getWorkArea() %></p>
+							<p><span>직무</span> <%=vo.getTask() %></p>
+							<p>지원기간 | <%=vo.getOpeningDate() %></p>
 						</div>
 					</div>
 				<% }%>

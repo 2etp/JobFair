@@ -68,7 +68,14 @@ section .title {
 
 section .title img {
 	width: 70px;
-	height: 70px;	
+	height: 70px;
+	margin-top: 10px;
+	
+}
+
+section .title p {
+	font-size: 30px;	
+	font-weight: bold;
 }
 
 .signupFrm4 {
@@ -76,6 +83,11 @@ section .title img {
 }
 
 .signupFrm5 {
-	position: relative;
-	left: 20%;
+	float: left;
+	margin-left: 100px;
+}
+
+.signupFrm6 {
+	clear: left;
+	padding-top: 25px;
 }

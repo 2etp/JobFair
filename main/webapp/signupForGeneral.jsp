@@ -19,7 +19,7 @@
 			<p>회원가입</p>
 			<div class="profile">
 				<img src="./image/company.svg" alt="기업로고 이미지">
-				<p>가로 300픽셀, 세로 200픽셀 크기의 사진을 올려주세요.</p> 
+				<p>[가로 300픽셀, 세로 200픽셀 크기의 사진을 올려주세요.]</p> 
 				<label for="fileUpload"><img src="./image/camera.svg"><span>파일선택</span></label>
 				<input type="file" id="fileUpload" name="filename" style="display: none;"/>
 
@@ -55,7 +55,7 @@
 			</div>
 			
 			<div>
-				<a href="javascript:signupCheck();" role="button" id="signupBtn">회원가입</a>
+				<a href="javascript:signupCheck();" role="button" id="signupBtn">가입하기</a>
 			</div>
 		</form>
 	</section>

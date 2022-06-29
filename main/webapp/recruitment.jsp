@@ -9,6 +9,10 @@
 	request.setCharacterEncoding("UTF-8");
 	// 전체 채용공고를 보는 것인지, 검색해서 나온 채용공고를 보는것인지
 	String pageType = request.getParameter("pageType");
+	if(pageType == null) {
+		pageType = "default";
+	}
+	
 	List<OpeningListVO> list = new ArrayList<OpeningListVO>();
 	int cnt = 0;
 	//페이징 넘버 작업

@@ -30,7 +30,7 @@ liEls.forEach(function (Eliment, ElimentIndex, obj) {
 })
 
 
-inputEls.forEach(function (Eliment, ElimentIndex, obj) {
+/*inputEls.forEach(function (Eliment, ElimentIndex, obj) {
 	
 	Eliment.addEventListener("focus", function() {
 		
@@ -42,4 +42,4 @@ inputEls.forEach(function (Eliment, ElimentIndex, obj) {
 			labelEls[ElimentIndex].style.display = "block";
 		}
 	})
-})
+})*/

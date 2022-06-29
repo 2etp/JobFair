@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<jsp:include page="header.jsp"/> 
+<jsp:include page="commonJSP/header.jsp"/> 
 <main>
 <div id="container">
 	<h1>에스지씨앤씨</h1>
@@ -171,7 +171,7 @@
 	</div>
 </aside>
 </main>
-<jsp:include page="footer.jsp"/>
+<jsp:include page="commonJSP/footer.jsp"/>
 </body>
 <script src="js/common.js"></script>
 </html>

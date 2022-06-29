@@ -20,6 +20,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script lang="javascript" src="./js/xlsx.full.min.js"></script>
+<script defer src="js/postResume.js"></script>
 </head>
 <body>
 
@@ -35,24 +36,24 @@
 					<th>성명</th>
 					<td><%=name%></td>
 					<th>성별</th>
-					<td><%=sex%></td>
+					<td colspan="3"><%=sex%></td>
 				</tr>
 				
 				<tr class="tr2">
 					<th>연락처</th>
 					<td><%=mobile%></td>
 					<th>생년월일</th>
-					<td><%=birthDay%></td>
+					<td colspan="3"><%=birthDay%></td>
 				</tr>
 				
 				<tr class="tr3">
 					<th>주소</th>
-					<td colspan="3"><%=address%></td>
+					<td colspan="5"><%=address%></td>
 				</tr>
 				
 				<tr class="tr4">
 					<th>병역</th>
-					<td colspan="3">
+					<td colspan="5">
 						<label><input type="radio" name="militaryService" value="finished">필</label>
 						<label><input type="radio" name="militaryService" value="yet">미필</label>
 						<label><input type="radio" name="militaryService" value="exemption">면제</label>
@@ -64,7 +65,7 @@
 					<th>장애유형</th>
 					<td><%=typeOfDisability%></td>
 					<th>보장구 유/무</th>
-					<td>
+					<td colspan="3">
 						<label><input type="radio" name="assistive" value="existence">유</label>
 						<label><input type="radio" name="assistive" value="nonexistence">무</label>
 					</td>
@@ -74,7 +75,7 @@
 					<th>장애등급</th>
 					<td><%=gradeOfDisability%></td>
 					<th>보장구 종류</th>
-					<td>
+					<td colspan="3">
 						<input type="text" name="assistiveDevice">
 					</td>
 				</tr>
@@ -82,7 +83,7 @@
 				<tr class="tr7">
 					<th rowspan="2">최종학력</th>
 					<td><input type="text" name="schoolName">학교</td>
-					<td rowspan="2" colspan="2">
+					<td rowspan="2" colspan="4">
 						<label><input type="radio" name="education" value="attending">재학</label>
 						<label><input type="radio" name="education" value="takingOff">휴학</label>
 						<label><input type="radio" name="education" value="graduate">졸업</label>
@@ -97,13 +98,10 @@
 			</table>
 				
 			<table class="table2" id="mytable2">
-				<tr class="tr9">
-					<th rowspan="5">경력 및 교육사항</th>
-				</tr>
-				
 				<tr class="tr10">
+					<th rowspan="4">경력 및 교육사항</th>
 					<th>사업체명 및 교육기관</th>
-					<th>기간</td>
+					<th>기간</th>
 					<th>담당업무 및 교육내용</th>
 					<th colspan="2">비고</th>
 				</tr>
@@ -131,11 +129,8 @@
 			</table>
 				
 			<table class="table3" id="mytable3">
-				<tr class="tr14">
-					<th rowspan="5">자격면허</th>
-				</tr>
-				
 				<tr class="tr15">
+					<th rowspan="4">자격면허</th>
 					<th>자격종목</th>
 					<th>급수</th>
 					<th>등록번호</th>
@@ -183,53 +178,6 @@
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>
-
-	
-	<script>
-		function fnExcelReport(id1,id2,id3, title) {
-			var tab_text = '<html xmlns:x="urn:schemas-microsoft-com:office:excel">';
-			tab_text = tab_text + '<head><meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';
-			tab_text = tab_text + '<xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>';
-			tab_text = tab_text + '<x:Name>Test Sheet</x:Name>';
-			tab_text = tab_text + '<x:WorksheetOptions><x:Panes></x:Panes></x:WorksheetOptions></x:ExcelWorksheet>';
-			tab_text = tab_text + '</x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body>';
-			tab_text = tab_text + "<table border='1px'>";
-			var exportTable1 = $('#' + id1).clone();
-			var exportTable2 = $('#' + id2).clone();
-			var exportTable3 = $('#' + id3).clone();
-			exportTable1.find('input').each(function (index, elem) { $(elem).remove(); });
-			tab_text = tab_text + exportTable1.html();
-			exportTable2.find('input').each(function (index, elem) { $(elem).remove(); });
-			tab_text = tab_text + exportTable2.html();
-			exportTable3.find('input').each(function (index, elem) { $(elem).remove(); });
-			tab_text = tab_text + exportTable3.html();
-			tab_text = tab_text + '</table></body></html>';
-			var data_type = 'data:application/vnd.ms-excel';
-			var ua = window.navigator.userAgent;
-			var msie = ua.indexOf("MSIE "); 
-			var fileName = title + '.xls';
-			//Explorer 환경에서 다운로드    
-			if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-				if (window.navigator.msSaveBlob) {
-					var blob = new Blob([tab_text], {
-						type: "application/csv;charset=utf-8;"
-					});
-						navigator.msSaveBlob(blob, fileName);
-					}    
-			} else {
-				var blob2 = new Blob([tab_text], {
-					type: "application/csv;charset=utf-8;"
-					});
-				var filename = fileName;
-				var elem = window.document.createElement('a');
-				elem.href = window.URL.createObjectURL(blob2);
-				elem.download = filename;
-				document.body.appendChild(elem);
-				elem.click();
-				document.body.removeChild(elem);
-			}
-		}
-	</script>
 
 </body>
 </html>

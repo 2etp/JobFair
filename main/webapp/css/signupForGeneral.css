@@ -80,6 +80,7 @@ form[name='signupFrm'] p:not(.profile p) {
 	font-weight: bold;
 	font-size: 30px;
 	text-align: center;
+	margin-bottom: 0px;
 	
 }
 

@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+<jsp:include page="header.jsp"/> 
 <main>
 <div id="container">
 	<h1>에스지씨앤씨</h1>

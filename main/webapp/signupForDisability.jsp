@@ -19,7 +19,7 @@
 			<p>회원가입</p>
 		</div>
 		
-		<form name="signupFrm" method="post" action="signupProc.jsp?type=Disability">
+		<form name="signupFrm" method="post" action="signup">
 			<div class="signupFrm1">
 				<label for="name">성명</label>
 				<input type="text" name="name" id="name" placeholder="ex) 홍길동" title="성명">
@@ -94,6 +94,7 @@
 			<div class="signupFrm7">
 				<label><input type="checkbox" name="collectInfo"value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
 			</div>
+			<input type="hidden" name="type" value="Disability">
 			
 			<div>
 				<a href="javascript:signupCheck();" role="button" id="signupBtn">가입하기</a>

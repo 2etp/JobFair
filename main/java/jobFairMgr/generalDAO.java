@@ -9,7 +9,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -17,8 +16,8 @@ public class generalDAO {
 	private DBConnectionMgr pool;
 	
 	// 사용자마다 현재 프로젝트의 경로가 다르기 때문에 그걸 미리 구해놓고 파일 업로드 경로를 상대적으로 바꿔준다
-//	private static String path = (System.getProperty("user.dir")).replace("\\", "/");
-//	private static final String SAVEFOLDER = path + "/Project1/FirstProject/src/main/webapp/uploadFiles/";
+	private static String path = (System.getProperty("user.dir")).replace("\\", "/");
+	private static final String SAVEFOLDER = path + "/JobFair/JobFair/src/main/webapp/image/";
 	private static final String ENCTYPE = "UTF-8";
 	private static int MAXSIZE = 10*1024*1024;
 	
@@ -32,16 +31,25 @@ public class generalDAO {
 	 
 
 	// 기업측 회원가입
-	public boolean insertGeneral(generalVO vo) {
+	public boolean insertGeneral(HttpServletRequest request, HttpServletResponse response) {
 		boolean flag = false;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
+		MultipartRequest multi = null;
+		int fileSize = 0;
+		String fileName = null;
+		
 		try {
 			con = pool.getConnection();
-			sql = "insert into ";
-			
-			
+			File file = new File(SAVEFOLDER);
+			if(!file.exists()) file.mkdirs();
+			multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+			if(multi.getFilesystemName("filename") != null) {
+				fileName = multi.getFilesystemName("filename");
+				fileSize = (int)multi.getFile("filename").length();
+			}
+			sql = "insert into generals(comName)";
 			
 			
 		} catch (Exception e) {

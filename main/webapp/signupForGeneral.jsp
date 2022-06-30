@@ -15,7 +15,7 @@
 
 <main>
 	<section>
-		<form name="signupFrm" method="post" action="signupProc.jsp?type=General" enctype="multipart/form-data">
+		<form name="signupFrm" method="post" action="signup" enctype="multipart/form-data">
 			<p>회원가입</p>
 			<div class="profile">
 				<img src="./image/company.svg" alt="기업로고 이미지">
@@ -37,7 +37,7 @@
 				
 			<div class="signupFrm3">
 				<label for="name">대표자 이름</label>
-				<input type="text" name="name" id="name" placeholder="ex) 홍길동" title="대표자 이름">
+				<input type="text" name="ceoName" id="name" placeholder="ex) 홍길동" title="대표자 이름">
 			</div>
 			
 			<div class="signupFrm4">	

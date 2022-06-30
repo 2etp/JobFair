@@ -13,8 +13,15 @@ public class generalVO {
 	private String comSize;			// 기업 규모
 	private String logoName;		// 기업로고 이미지 이름
 	private int logoSize;			// 이미지 크기
+	private String userType;		// 개인인지 기업인지
 	
 	
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	public int getComNum() {
 		return comNum;
 	}

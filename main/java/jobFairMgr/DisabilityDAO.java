@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
-
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 
 public class DisabilityDAO {
@@ -24,6 +26,40 @@ public class DisabilityDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	// 회원가입
+	public boolean insertUser(HttpServletRequest request) {
+		boolean flag = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "insert into users(name, prefixNum, suffixNum, livingArea, phoneNum, disType, disLevel)values(?, ?, ?, ?, ?, ?, ?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, request.getParameter("name"));
+			pstmt.setString(2, request.getParameter("prefixNum"));
+			pstmt.setString(3, request.getParameter("suffixNum"));
+			pstmt.setString(4, request.getParameter("mobile"));
+			pstmt.setString(5, request.getParameter("type"));
+			pstmt.setString(6, request.getParameter("grade"));
+			pstmt.setString(7, request.getParameter("livingArea"));
+	
+			// executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
+			// create, drop, alter인 경우에는 0을 반환
+			// 회원가입에는 1명의 정보를 저장하기 때문에 성공적으로 가입이 되었다면 1을 반환할 것이다.
+			if (pstmt.executeUpdate() == 1) {
+				flag = true;				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+		return flag;
+	}
+	
+	
 	
 	// 로그인
 	// 이름과 휴대폰번호를 입력받음

@@ -1,15 +1,23 @@
 package jobFairMgr;
 
 public class DisabilityVO {
-	private int userNum;
-	private String name;
-	private String prefixNum;
-	private String suffixNum;
-	private String livingArea;
-	private String phoneNum;
-	private String disType;
-	private String disLevel;
+	private int userNum;			// 유저 고유번호
+	private String name;			// 이름
+	private String prefixNum;		// 주민 앞자리
+	private String suffixNum;		// 주민 뒷자리
+	private String livingArea;		// 거주지역
+	private String phoneNum;		// 휴대폰 번호
+	private String disType;			// 장애타입
+	private String disLevel;		// 장애등급
+	private String userType;		// 개인인지 기업인지
 	
+	
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	public int getUserNum() {
 		return userNum;
 	}

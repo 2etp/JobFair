@@ -44,7 +44,10 @@
 
 <main>
 	<section>
-		<h2 class="title">기업지원 현황</h2>
+		<div class="div-list">
+			<img src="./image/building.png" alt="건물이미지">
+			<p>기업지원 현황</p>
+		</div>
 		<div class="applyList">
 			<%for(int i = 0; i < list.size(); i++) { 
 				ApplyListVO vo = list.get(i);%>
@@ -52,32 +55,22 @@
 					<div class="applyList-item-img">
 						<img src="./image/<%=vo.getLogoName()%>">
 					</div>
-					<div class="applyList-item-text">
-						<div class="content" >
-							<a href="#" role="button"><b><%=vo.getComName()%></b></a>
-							<p><%=vo.getTask() %></p>
-						</div>
-						<div class="progress">
-							<h3>진행현황</h3>
-							<p>서류합격</p>
-						</div>
-						<div class="buttons">
-							<div>
-								<img src="./image/resume.png" alt="이력서 이미지" width="30px" height="30px">
-								<a href="javascript:" role="button">지원한 이력서</a>
-							</div>
-							<div>
-								
-								<a href="javascript:" role="button">지원취소</a>
-								<div>
-									<p>마감</p>
-									<p><%=vo.getOpeningDate().substring(10) %></p>
-								</div>
-							</div>
-						</div>
-					</div><!-- 로고 이미지 이외의 간단내용 div -->
+					<div class="content" >
+						<a href="#" role="button"><%=vo.getComName()%></a>
+						<p><%=vo.getTask() %></p>
+						<img src="./image/resume.png" alt="이력서 이미지">
+						<a href="javascript:" role="button">지원한 이력서</a>
+					</div>
+					<div class="progress">
+						<p>진행현황</p>
+						<p>서류합격</p>
+						<a href="javascript:" role="button">지원취소</a>
+					</div>
+					<div class="dueDate">
+						<p>마감</p>
+						<p><%=vo.getOpeningDate().substring(10) %></p>
+					</div>
 				</div><!-- 지원공고 1줄 끝 -->
-				<hr>
 			<% }%>
 		</div>
 		

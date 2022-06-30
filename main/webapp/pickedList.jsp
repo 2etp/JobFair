@@ -44,30 +44,28 @@
 <main>
 
 	<section>
-		<h2 class="title">관심기업</h2>
-	
+		<div class="div-list">
+			<img src="./image/building.png" alt="건물이미지">
+			<p>관심기업 리스트</p>
+		</div>
+
 		<div class="jobOpening">
 			<%for(int i = 0; i < list.size(); i++) { 
 				OpeningListVO vo = list.get(i);%>
-			<div class="jobOpening-item">
-				<div class="jobOpening-item-img">
-					<img src="./image/<%=vo.getLogoName()%>">
-				</div>
-				<div class="jobOpening-item-content">
+				<div class="jobOpening-item">
+					<div class="jobOpening-item-img">
+						<img src="./image/<%=vo.getLogoName()%>">
+					</div>
 					<div class="content">
-						<a href="#" role="button"><b><%=vo.getComName()%></b></a>
-						<p>근무지역</p>
-						<p><%=vo.getWorkArea() %></p>
-						<p>직무</p>
-						<p><%=vo.getTask() %></p>
+						<a href="#" role="button"><%=vo.getComName()%></a>
+						<p><span>근무지역</span> <%=vo.getWorkArea() %></p>
+						<p><span>직무</span> <%=vo.getTask() %></p>
 					</div>
 					<div class="deadline">
 						<p>접수마감</p>
 						<p><%=vo.getOpeningDate().substring(10) %></p>
-					</div>	
+					</div>		
 				</div>
-			</div>
-			<hr>
 			<%}%>
 		</div>
 		

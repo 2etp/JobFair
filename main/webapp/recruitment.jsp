@@ -10,11 +10,16 @@
 	// 전체 채용공고를 보는 것인지, 검색해서 나온 채용공고를 보는것인지
 	String pageType = request.getParameter("pageType");
 	if(pageType == null) {
+<<<<<<< HEAD
 	    pageType = "default";
+=======
+	      pageType = "default";
+>>>>>>> a92d204ce271faa8085dac1c54412a2b2d180d8c
 	}
 	
 	List<OpeningListVO> list = new ArrayList<OpeningListVO>();
 	int cnt = 0;
+	
 	//페이징 넘버 작업
 
 	// 한 페이지에 보여줄 게시글 개수
@@ -41,8 +46,11 @@
 			if(companyName.equals("")) {
 				list = dao.getOpeningList(startRow, pageSize);
 				cnt = dao.getOpeningCount();
+				
+			} else{
+				list = dao.getSearchName(companyName, startRow, pageSize);
+				cnt = dao.getSearchNameCount(companyName);
 			}
-			list = dao.getSearchName(companyName, startRow, pageSize);
 			
 		} else if(item.equals("other")) {
 			// 다른조건으로 검색했을 경우
@@ -54,10 +62,13 @@
 			if(workArea.equals("workArea")) workArea = "";
 			if(workType.equals("workType")) workType = "";
 			
-			
+			list = dao.getSearchOther(sectors, workArea, workType, startRow, pageSize);
+			cnt = dao.getSearchOtherCount(sectors, workArea, workType);
 		}
 		
-	} else {
+	} 
+	// 검색으로 보는 경우가 아닐 때
+	else {
 		list = dao.getOpeningList(startRow, pageSize);
 		cnt = dao.getOpeningCount();
 	}
@@ -157,6 +168,7 @@
 			<div class="div-boardpaging">
 			 	<%
 		    		if(cnt != 0) {
+		    			
 		    			// 전체 페이지 수 계산
 		    			int pageCnt = cnt / pageSize + (cnt%pageSize == 0 ? 0 : 1);
 		    			// 한 페이지에 보여줄 페이지 번호 개수
@@ -171,20 +183,53 @@
 		    			}
 		    			
 		    			// 10페이지 이전으로 가는 버튼
-		    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
-			    		if(startPage > pageBlock) { %>
-			    			<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
-			    		<%}
-		    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
-		    			for(int i = startPage; i <= endPage; i++) { %>
-		    				<a href="recruitment.jsp?pageNum=<%=i%>"><%=i %></a>
-		    			<%}
-		    			
-		    			// 10페이지 건너뛰는 버튼
-		    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
-		    			if(endPage < pageCnt) { %>
-		    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
-		    			<%}
+		    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다.
+		    			if(pageType.equals("default")) {
+				    		if(startPage > pageBlock) { %>
+				    			<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
+				    		<%}
+			    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
+			    			for(int i = startPage; i <= endPage; i++) { %>
+			    				<a href="recruitment.jsp?pageNum=<%=i%>"><%=i %></a>
+			    			<%}
+			    			
+			    			// 10페이지 건너뛰는 버튼
+			    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
+			    			if(endPage < pageCnt) { %>
+			    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
+			    			<%}
+		    			} else {
+		    				// 검색했을 경우 페이징 번호에 다른 url을 붙여줘야한다.
+		    				String item = request.getParameter("item");
+		    				String companyName = request.getParameter("companyName");
+		    				if(item.equals("name")) {
+		    					// 기업명으로 검색했을 경우
+		    					if(startPage > pageBlock) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>&companyName=<%=companyName%>&pageType=search&item=name">이전</a>
+					    		<%}
+				    			for(int i = startPage; i <= endPage; i++) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=i%>&companyName=<%=companyName%>&pageType=search&item=name"><%=i %></a>
+				    			<%}
+				    			if(endPage < pageCnt) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>&companyName=<%=companyName%>&pageType=search&item=name">다음</a>
+				    			<%}
+			    			} else if(item.equals("other")) {
+			    				String sectors = request.getParameter("sectors");
+			    				String workArea = request.getParameter("workArea");
+			    				String workType = request.getParameter("workType");
+			    				
+			    				if(startPage > pageBlock) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>&sectors=<%=sectors%>&workArea=<%=workArea%>&workType=<%=workType%>&pageType=search&item=other">이전</a>
+					    		<%}
+				    			for(int i = startPage; i <= endPage; i++) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=i%>&sectors=<%=sectors%>&workArea=<%=workArea%>&workType=<%=workType%>&pageType=search&item=other"><%=i %></a>
+				    			<%}
+				    			if(endPage < pageCnt) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>&sectors=<%=sectors%>&workArea=<%=workArea%>&workType=<%=workType%>&pageType=search&item=other">다음</a>
+				    			<%}
+			    				
+			    			}
+		    			}
 		    		}
 				%>
 			 </div>				
@@ -196,14 +241,14 @@
 <script>
 	function searchName() {
 		let companyName = document.getElementById("companyName").value;
-		location.href="search.jsp?companyName=" + companyName + "\&item=name";
+		location.href="recruitment.jsp?companyName=" + companyName + "\&item=name\&pageType=search";
 	}
 	
 	function searchOther() {
 		let sectors = document.getElementById("sectors").value;
 		let workArea = document.getElementById("workArea").value;
 		let workType = document.getElementById("workType").value;
-		location.href="search.jsp?sectors=" + sectors + "\&workArea=" + workArea + "\&workType=" + workType + "\&item=other";
+		location.href="recruitment.jsp?sectors=" + sectors + "\&workArea=" + workArea + "\&workType=" + workType + "\&item=other\&pageType=search";
 	}
 </script>
 </body>

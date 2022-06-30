@@ -103,11 +103,26 @@
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>
-<script>
-	function signupCheck() {
-		const frm = document.signupFrm;
-		frm.submit();
-	}
-</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

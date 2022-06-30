@@ -1,21 +1,22 @@
 package jobFairMgr;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
 
 
-@WebServlet("/disSignup")
-public class DisSignupServlet extends HttpServlet {
+@WebServlet("/GenSignup")
+public class GenSignupServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		DisabilityDAO dao = new DisabilityDAO();
-		boolean flag = dao.insertUser(request);
+		generalDAO dao = new generalDAO();
+//		boolean flag = dao.insertUser(request);
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter writer = response.getWriter();
@@ -26,7 +27,5 @@ public class DisSignupServlet extends HttpServlet {
 			writer.println("<script>alert('회원가입에 실패했습니다'); </script>");
 			writer.close();
 		}
-
 	}
 }
-

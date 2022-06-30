@@ -14,8 +14,16 @@ public class generalVO {
 	private String logoName;		// 기업로고 이미지 이름
 	private int logoSize;			// 이미지 크기
 	private String userType;		// 개인인지 기업인지
+	private String foundedDate;		// 설립날짜
 	
 	
+	
+	public String getFoundedDate() {
+		return foundedDate;
+	}
+	public void setFoundedDate(String foundedDate) {
+		this.foundedDate = foundedDate;
+	}
 	public String getUserType() {
 		return userType;
 	}

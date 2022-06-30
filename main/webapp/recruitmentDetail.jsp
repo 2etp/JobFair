@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<jsp:useBean id="dao" class="jobFairMgr.generalDAO" />
+<%@ page import = "java.util.*" %>
+<%@ page import = "jobFairMgr.jobOpeningVO" %>
+
+<%
+	request.setCharacterEncoding("UTF-8");
+
+	int employNum = Integer.parseInt(request.getParameter("employNum"));
+	
+	/* jobOpeningVO vo = dao. */
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -138,41 +149,75 @@
 			</table>
 		</section>
 		<div class="div-sideNav">
-			<aside id="sideNav">
+			<aside id="sideNav" role="navigation">
 				<div id="sideNav-container">
-					<h3>사이드 메뉴바</h3>
+					<h3>채용공고 메뉴</h3>
 					<a href="" id="bookmark">
 						<img src="image/bookmark_off.svg" aria-hidden="true">
 						<span>관심기업 등록</span>
 					</a>
-					<section>
-						<h4>빠른 이동</h4>
+					<!-- 관심기업 등록 폼 -->
+					<form aria-hidden="true">
+						<input type="hidden" name="user" value="">
+						<input type="hidden" name="employNum" value="">
+					</form>
+					<!-- 관심기업 등록 폼 끝 -->
+					<section id="quickLink">
+						<h4>
+							<img class="small-icons" src="image/thunder.svg" aria-hidden="true">
+							<span>빠른 이동</span>
+						</h4>
 						<ul>
-							<li><a href="javascript:scrollUnderHeader('#comInfo')">기업정보</a></li>
-							<li><a href="javascript:scrollUnderHeader('#recruitInfo')">채용정보</a></li>
-							<li><a href="javascript:scrollUnderHeader('#welfare')">우대사항 및 복리후생</a></li>
+							<li><a href="javascript:scrollUnderHeader('#comInfo')">
+								<img class="small-icons" src="./image/building.svg" aria-hidden="true">
+								기업정보
+							</a></li>
+							<li><a href="javascript:scrollUnderHeader('#recruitInfo')">
+								<img class="small-icons" src="./image/recruit.svg" aria-hidden="true">
+								채용정보
+							</a></li>
+							<li><a href="javascript:scrollUnderHeader('#welfare')">
+								<img class="small-icons" src="./image/wing.svg" aria-hidden="true">
+								우대사항 및 복리후생
+							</a></li>
 						</ul>
 					</section>
+					
 					<hr style="margin:10px;">
-					<section>
-						<h4>바로 지원하기</h4>
-						<form>
-							<p>이력서를 선택해 주세요.</p>
-							<select class="selectResume">
+					
+					<section id="applyment">
+						<h4>
+							<img class="small-icons" src="image/apply.svg" aria-hidden="true">
+							<span>바로 지원하기</span>
+						</h4>
+						<!-- 이력서 제출 폼 -->
+						<form name="applyFrm">
+							<input type="hidden" name="user" value="" aria-hidden="true">
+							<input type="hidden" name="employNum" value="" aria-hidden="true">
+							<select class="selectResume" name="resume">
 								<option value="">기본이력서</option>
 							</select>
 							<br>
 							<a href="" class="btn" id="resPreview">미리보기</a>
 							<br>
-							<a href="" class="btn" id="apply">지원하기</a>
+							<input id="agreementChk" type="checkbox" required>
+							<label for="agreementChk">
+								<span>채용공고 및 이력서를</span>
+								<br>
+								<span>모두 확인하였습니다.</span>
+							</label>
+							<br>
+							<input type="button" class="btn" id="apply" value="지원하기" role="button">
 						</form>
+						<!-- 이력서 제출 폼 끝 -->
 					</section>
-				</div>
+				</div> <!-- sideNav-container -->
 			</aside>		
-		</div>
-	</div>
+		</div> <!-- div-sideNav -->
+	</div> <!-- container -->
 </main>
 <jsp:include page="commonJSP/footer.jsp"/>
 </body>
 <script src="js/common.js"></script>
+<script src="js/recruitmentDetail.js"></script>
 </html>

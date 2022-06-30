@@ -49,6 +49,7 @@ public class generalDAO {
 				fileName = multi.getFilesystemName("filename");
 				fileSize = (int)multi.getFile("filename").length();
 			}
+			
 			sql = "insert into generals(comName)";
 			
 			
@@ -126,7 +127,7 @@ public class generalDAO {
 	
 	
 	// 등록된 채용공고의 상세정보가 담긴 VO반환
-	public jobOpeningVO getOpening() {
+	public jobOpeningVO getOpening(int employNum) {
 		jobOpeningVO vo = new jobOpeningVO();
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -134,8 +135,9 @@ public class generalDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select * from jobopening";
+			sql = "select * from jobopening where emplyNum = ?";
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, employNum);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				vo.setEmployNum(rs.getInt("employNum"));

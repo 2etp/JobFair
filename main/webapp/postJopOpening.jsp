@@ -45,6 +45,7 @@
 					<td><input type="text" name="size"></td>
 				</tr>
 			</table>
+			
 			<p>채용정보</p>
 			<table>
 				<tr class="tr5">
@@ -83,10 +84,22 @@
 				</tr>
 				
 				<tr class="tr10">
+					<th>퇴직금</th>
+					<td><input type="text" name="severancePay"></td>
+					<th>상여금</th>
+					<td><input type="text" name="bonus"></td>
+				</tr>
+				
+				<tr class="tr11">
 					<th>근무시간</th>
 					<td><input type="text" name="officeHours"></td>
-					<th>기타</th>
-					<td><input type="text" name="etc"></td>
+					<th>잔업</th>
+					<td><input type="text" name="overtime"></td>
+				</tr>
+				
+				<tr class="tr12">
+					<th>기타조건</th>
+					<td colspan="3"><input type="text" name="etc"></td>
 				</tr>
 			</table>
 			
@@ -115,8 +128,11 @@
 			</table>
 			
 		<aside class="sideBar">
-			<a href="javascript:" role="button">미리보기</a>
-			<a href="javascript:" role="button">채용공고 저장</a>
+			<fieldset>
+				<legend>사이드 메뉴</legend>
+				<a href="javascript:" role="button">미리보기</a>
+				<a href="javascript:" role="button">채용공고 저장</a>
+			</fieldset>
 		</aside>
 		
 		</form>

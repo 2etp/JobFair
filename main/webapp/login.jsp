@@ -40,9 +40,6 @@
 					<div class=div-submit>
 						<a id="loginButton" href="javascript:loginCheck(this);" role="button">로그인</a>
 					</div>
-					<div class="div-register">
-						<a href="signupForDisability.jsp" role="button">개인 회원 가입하기</a>
-					</div>
 				</div>
 			</div>
 		</form>

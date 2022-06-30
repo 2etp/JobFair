@@ -54,3 +54,50 @@ section p {
 	font-size: 20px;
 	font-weight: bold;
 }
+
+.sideBar {
+	position:fixed;
+	right: 10%;
+	top: 40%;
+}
+
+.sideBar a {
+	display: flex;
+	text-decoration: none;
+	color: black;
+	padding: 15px 35px 15px 35px;
+	font-size: 20px;
+	border: 3px solid #dfdfdf;
+	margin: 5% 0 5% 0;
+	background-color: white;
+	color: #666;
+}
+
+.sideBar a:nth-of-type(1) {
+	padding-left: 45px;
+}
+
+.sideBar a:nth-of-type(2) {
+	padding-left: 48px;
+}
+
+.sideBar a:nth-of-type(3) {
+	background-color: #686868;
+	color: white;
+}
+
+.sideBar a:hover {
+	text-decoration: underline;
+}
+
+.sideBar fieldset {
+	border: 3px solid #686868;
+	padding: 10px 20px 10px 20px;
+	
+}
+
+.sideBar legend {
+	margin-left: 20px;
+	font-size: 30px;
+	color: #666;
+}

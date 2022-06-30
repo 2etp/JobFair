@@ -44,15 +44,28 @@ public class generalDAO {
 			con = pool.getConnection();
 			File file = new File(SAVEFOLDER);
 			if(!file.exists()) file.mkdirs();
+			
 			multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
 			if(multi.getFilesystemName("filename") != null) {
 				fileName = multi.getFilesystemName("filename");
 				fileSize = (int)multi.getFile("filename").length();
 			}
 			
-			sql = "insert into generals(comName)";
-			
-			
+			sql = "insert into generals(comName, comAddress, ceoName, comUrl, comTel, sectors, businessInfo, comSize, logoName, logoSize, userType) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, biz)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, multi.getParameter("companyName"));
+			pstmt.setString(2, multi.getParameter("address"));
+			pstmt.setString(3, multi.getParameter("ceoName"));
+			pstmt.setString(4, multi.getParameter("homepage"));
+			pstmt.setString(5, multi.getParameter("mobile"));
+			pstmt.setString(6, multi.getParameter("sectors"));
+			pstmt.setString(7, multi.getParameter("businessInfo"));
+			pstmt.setString(8, multi.getParameter("comSize"));
+			pstmt.setString(9, fileName);
+			pstmt.setInt(10, fileSize);
+			if (pstmt.executeUpdate() == 1) {
+				flag = true;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -62,6 +75,9 @@ public class generalDAO {
 		
 		return flag;
 	}
+	
+	// 기업측 로그인
+	
 	
 	// 채용공고 리스트(로고, 기업명, 근무지역, 직무, 지원기간)
 	public List<OpeningListVO> getOpeningList(int startRow, int pageSize) {
@@ -125,6 +141,42 @@ public class generalDAO {
 	// 채용공고 등록
 	
 	
+	// 기업정보 반환
+	public generalVO getGeneral(int comNum) {
+		generalVO vo = new generalVO();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select * from general where comNum = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, comNum);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setComNum(rs.getInt("comNum"));
+				vo.setComName(rs.getString("comName"));
+				vo.setCeoName(rs.getString("ceoName"));
+				vo.setFoundedDate(rs.getString("foundedDate"));
+				vo.setComAddress(rs.getString("comAddress"));
+				vo.setComUrl(rs.getString("comUrl"));
+				vo.setComTel(rs.getString("comTel"));
+				vo.setSectors(rs.getString("sectors"));
+				vo.setBusinessInfo(rs.getString("businessInfo"));
+				vo.setComSize(rs.getString("comSize"));
+				vo.setLogoName(rs.getString("logoName"));
+				vo.setLogoSize(rs.getInt("logoSize"));
+				vo.setUserType(rs.getString("userType"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vo;
+	}
+	
 	
 	// 등록된 채용공고의 상세정보가 담긴 VO반환
 	public jobOpeningVO getOpening(int employNum) {
@@ -135,7 +187,7 @@ public class generalDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select * from jobopening where emplyNum = ?";
+			sql = "select * from jobopening where employNum = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, employNum);
 			rs = pstmt.executeQuery();

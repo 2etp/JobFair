@@ -26,7 +26,6 @@ public class jobOpeningVO {
 	private String openingDate;		// 채용공고 기간
 	
 	
-
 	public int getEmployNum() {
 		return employNum;
 	}

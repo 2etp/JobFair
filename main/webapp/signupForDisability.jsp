@@ -7,6 +7,7 @@
 <title>2022 부산 장애인 온라인 채용 박람회 | 회원가입</title>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/signupForDisability.css">
+<script defer src="js/signupForDisability.js"></script>
 </head>
 <body>
 
@@ -27,8 +28,8 @@
 			
 			<div class="signupFrm2">
 				<label for="residentNum">주민등록번호</label>
-				<input type="tel" name="prefixNum" id="residentNum" placeholder="ex) 19990628" title="주민번호 앞자리">-
-				<input type="tel" name="suffixNum" placeholder="주민등록번호 뒤 7자리" title="주민번호 뒷자리">
+				<input maxlength=8 type="tel" name="prefixNum" id="residentNum" placeholder="ex) 19990628" title="주민번호 앞자리">-
+				<input id="residentNum2" type="tel" name="suffixNum" placeholder="주민등록번호 뒤 7자리" title="주민번호 뒷자리">
 			</div>
 			
 			<div class="signupFrm3">
@@ -92,7 +93,7 @@
 			</div>
 			
 			<div class="signupFrm7">
-				<label><input type="checkbox" name="collectInfo"value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
+				<label><input id="checkbox" type="checkbox" name="collectInfo"value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
 			</div>
 			<input type="hidden" name="type" value="Disability">
 			

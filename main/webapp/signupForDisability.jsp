@@ -19,9 +19,7 @@
 			<img src="./image/personal.svg" alt="회원가입 이미지">
 			<p>개인 회원가입</p>
 		</div>
-		
-		
-		<form name="signupFrm" method="post" action="signup">
+		<form name="signupFrm" method="post" action="disSignup" enctype="multipart/form-data">
 			<div class="signupFrm1">
 				<label for="name">성명</label>
 				<input type="text" name="name" id="name" placeholder="예시) 홍길동" title="성명">
@@ -96,7 +94,6 @@
 			<div class="signupFrm7">
 				<label><input id="checkbox" type="checkbox" name="collectInfo"value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
 			</div>
-			<input type="hidden" name="type" value="Disability">
 			
 			<div>
 				<a href="javascript:signupCheck();" role="button" id="signupBtn">가입하기</a>
@@ -106,6 +103,11 @@
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>
-
+<script>
+	function signupCheck() {
+		const frm = document.signupFrm;
+		frm.submit();
+	}
+</script>
 </body>
 </html>

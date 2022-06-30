@@ -15,6 +15,7 @@
 	
 	List<OpeningListVO> list = new ArrayList<OpeningListVO>();
 	int cnt = 0;
+	
 	//페이징 넘버 작업
 
 	// 한 페이지에 보여줄 게시글 개수
@@ -41,8 +42,11 @@
 			if(companyName.equals("")) {
 				list = dao.getOpeningList(startRow, pageSize);
 				cnt = dao.getOpeningCount();
+				
+			} else{
+				list = dao.getSearchName(companyName, startRow, pageSize);
+				cnt = dao.getSearchNameCount(companyName);
 			}
-			list = dao.getSearchName(companyName, startRow, pageSize);
 			
 		} else if(item.equals("other")) {
 			// 다른조건으로 검색했을 경우
@@ -54,10 +58,13 @@
 			if(workArea.equals("workArea")) workArea = "";
 			if(workType.equals("workType")) workType = "";
 			
-			
+			list = dao.getSearchOther(sectors, workArea, workType, startRow, pageSize);
+			cnt = dao.getSearchOtherCount(sectors, workArea, workType);
 		}
 		
-	} else {
+	} 
+	// 검색으로 보는 경우가 아닐 때
+	else {
 		list = dao.getOpeningList(startRow, pageSize);
 		cnt = dao.getOpeningCount();
 	}
@@ -196,14 +203,14 @@
 <script>
 	function searchName() {
 		let companyName = document.getElementById("companyName").value;
-		location.href="search.jsp?companyName=" + companyName + "\&item=name";
+		location.href="recruitment.jsp?companyName=" + companyName + "\&item=name\&pageType=search";
 	}
 	
 	function searchOther() {
 		let sectors = document.getElementById("sectors").value;
 		let workArea = document.getElementById("workArea").value;
 		let workType = document.getElementById("workType").value;
-		location.href="search.jsp?sectors=" + sectors + "\&workArea=" + workArea + "\&workType=" + workType + "\&item=other";
+		location.href="recruitment.jsp?sectors=" + sectors + "\&workArea=" + workArea + "\&workType=" + workType + "\&item=other\&pageType=search";
 	}
 </script>
 </body>

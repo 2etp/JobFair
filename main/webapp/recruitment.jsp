@@ -10,11 +10,7 @@
 	// 전체 채용공고를 보는 것인지, 검색해서 나온 채용공고를 보는것인지
 	String pageType = request.getParameter("pageType");
 	if(pageType == null) {
-<<<<<<< HEAD
-	    pageType = "default";
-=======
 	      pageType = "default";
->>>>>>> a92d204ce271faa8085dac1c54412a2b2d180d8c
 	}
 	
 	List<OpeningListVO> list = new ArrayList<OpeningListVO>();

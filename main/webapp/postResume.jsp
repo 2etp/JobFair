@@ -30,16 +30,18 @@
 	<section style="margin-top: 10px;">
 		
 		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
+		
+			<caption>입사지원서</caption>
+			<div class="div-table">
 			<table class="table1" id="table">
-				<caption>입사지원서</caption>
 				<tr class="tr1">
 					<td rowspan="4">
-						<div class="div-profileImage"></div>				
-						<label>
-							이력서에 사용할 사진을 등록해주세요
-							<input id="profileImage" type="file" accept="image/*">
-						</label>
+						<div class="div-profileImage">				
+							<label for="profileUpload">이력서에 사용할 사진을 등록해주세요</label>
+							<input type="file" id="profileUpload" accept="image/*" style="display: none;">
+						</div>
 						<a href="javascript:void();" role="button" onclick="imageRegister();">등록하기</a>
+					
 					</td>
 					<th>성명</th>
 					<td><%=name%></td>
@@ -109,7 +111,7 @@
 				
 			<table class="table2" id="mytable2">
 				<tr class="tr10">
-					<th rowspan="4">경력 및 교육사항</th>
+					<th rowspan="4">경력<br> 및<br> 교육사항</th>
 					<th>사업체명 및 교육기관</th>
 					<th>기간</th>
 					<th>담당업무 및 교육내용</th>
@@ -140,7 +142,7 @@
 				
 			<table class="table3" id="mytable3">
 				<tr class="tr15">
-					<th rowspan="4">자격면허</th>
+					<th rowspan="4" style="border-bottom-left-radius: 5px;">자격면허</th>
 					<th>자격종목</th>
 					<th>급수</th>
 					<th>등록번호</th>
@@ -172,6 +174,7 @@
 					<td><input type="text" name="issueDate3"></td>
 				</tr>
 			</table>
+			</div>
 			
 		<aside class="sideBar">
 			<fieldset>

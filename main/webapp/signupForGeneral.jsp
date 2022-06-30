@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>2022 부산 장애인 온라인 채용 박람회 | 이력서 등록(장애인용)</title>
+<title>2022 부산 장애인 온라인 채용 박람회 | 이력서 등록(기업용)</title>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/signupForGeneral.css">
 <script defer src="js/signupForGeneral.js"></script>

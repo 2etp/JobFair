@@ -10,7 +10,11 @@
 	// 전체 채용공고를 보는 것인지, 검색해서 나온 채용공고를 보는것인지
 	String pageType = request.getParameter("pageType");
 	if(pageType == null) {
-	    pageType = "default";
+<<<<<<< HEAD
+	      pageType = "default";
+=======
+		pageType = "default";
+>>>>>>> ffb9a2ce95198e5a1a0833619fd96399b4439afc
 	}
 	
 	List<OpeningListVO> list = new ArrayList<OpeningListVO>();
@@ -143,9 +147,7 @@
 							<img alt="로고 이미지" src="./image/<%=vo.getLogoName()%>" width="200px" height="150px"><br>
 						</div>
 						<div class="company-contents"> <!-- 채용글 -->
-							<a href="#" role="button">
-								<p><%=vo.getComName() %></p>
-							</a>
+							<a href="#" role="button"><p><%=vo.getComName() %></p></a>
 							<p><span>근무지역</span> <%=vo.getWorkArea() %></p>
 							<p><span>직무</span> <%=vo.getTask() %></p>
 							<p>지원기간 | <%=vo.getOpeningDate() %></p>

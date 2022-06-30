@@ -6,13 +6,13 @@
 		</div>
 		<nav class="header-navigation">
 			<div>|</div>
-			<a href="javascript:void(0)">소개</a>
+			<a href="introduce.jsp">소개</a>
 			<div>|</div>
-			<a href="javascript:void(0)">채용관</a>
+			<a href="recruitment.jsp">채용관</a>
 			<div>|</div>
-			<a href="javascript:void(0)">회원가입</a>
+			<a href="signup.jsp">회원가입</a>
 			<div>|</div>
-			<a href="javascript:void(0)">로그인</a>
+			<a href="login.jsp">로그인</a>
 			<div>|</div>
 		</nav>
 	</section>

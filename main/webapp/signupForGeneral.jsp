@@ -26,6 +26,21 @@
 			</div>
 			
 			<div class="signupFrm1">
+				<label for="id">아이디</label>
+				<input type="text" name="companyName" id="id" placeholder="예시) apple" title="기업명">
+			</div>
+			<div>
+				<a href="javascript:signupCheck();" role="button" id="duplicateCheck">중복체크</a>
+			</div>
+			<div class="signupFrm1">
+				<label for="password">패스워드</label>
+				<input type="password" name="companyName" id="password" placeholder="예시) qwer1234" title="기업명">
+			</div>
+			<div class="signupFrm1">
+				<label for="passwordCheck">패스워드 확인</label>
+				<input type="password" name="companyName" id="passwordCheck" placeholder="예시) qwer1234" title="기업명">
+			</div>
+			<div class="signupFrm1">
 				<label for="companyName">기업명</label>
 				<input type="text" name="companyName" id="companyName" placeholder="예시) 삼성" title="기업명">
 			</div>

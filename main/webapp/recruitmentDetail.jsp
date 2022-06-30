@@ -6,10 +6,60 @@
 
 <%
 	request.setCharacterEncoding("UTF-8");
-
-	int employNum = Integer.parseInt(request.getParameter("employNum"));
+	String name = (String)session.getAttribute("lgnName");
 	
-	/* jobOpeningVO vo = dao. */
+	String employNum_str = request.getParameter("employNum");
+	employNum_str="3";//test
+	int employNum = 0;
+	
+	jobOpeningVO vo = new jobOpeningVO();
+	int comNum = 0;			// 기업 고유번호 -> 나중에 외래키로 쓰여질 예정
+	String title = null;			// 채용공고 이름
+	String position = null;		// 모집 직종
+	int people = 0;				// 모집 인원
+	String task = null;			// 직무 내용
+	String workArea = null;		// 근무 지역
+	String education = null;		// 학력
+	String career = null;			// 경력
+	String employType = null;		// 고용형태
+	String workType = null;		// 근무형태
+	String pay = null;				// 급여조건
+	String insurance = null;		// 사회보험
+	String officeHours = null;		// 근무시간
+	String etc = null;				// 기타
+	String major = null;			// 전공
+	String certificate = null;		// 자격증
+	String computerLevel = null;	// 컴퓨터활용
+	String facilities = null;		// 편의시설
+	String welfare = null;			// 복리후생
+	String preferred = null;		// 우대사항
+	String openingDate = null;
+	
+	if(employNum_str != null){
+		employNum = Integer.parseInt(employNum_str);
+		vo = dao.getOpening(employNum);
+		comNum = vo.getComNum();			// 기업 고유번호 -> 나중에 외래키로 쓰여질 예정
+		title = vo.getTitle();			// 채용공고 이름
+		position = vo.getPosition();		// 모집 직종
+		people = vo.getPeople();				// 모집 인원
+		task = vo.getTask();			// 직무 내용
+		workArea = vo.getWorkArea();		// 근무 지역
+		education = vo.getEducation();		// 학력
+		career = vo.getCareer();			// 경력
+		employType = vo.getEmployType();		// 고용형태
+		workType = vo.getWorkType();		// 근무형태
+		pay = vo.getPay();				// 급여조건
+		insurance = vo.getInsurance();		// 사회보험
+		officeHours = vo.getOfficeHours();		// 근무시간
+		etc = vo.getEtc();				// 기타
+		major = vo.getMajor();			// 전공
+		certificate = vo.getCertificate();		// 자격증
+		computerLevel = vo.getComputerLevel();	// 컴퓨터활용
+		facilities = vo.getFacilities();		// 편의시설
+		welfare = vo.getWelfare();			// 복리후생
+		preferred = vo.getPreferred();		// 우대사항
+		openingDate = vo.getOpeningDate();
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -25,7 +75,7 @@
 <jsp:include page="commonJSP/header.jsp"/> 
 <main>
 	<div id="container">
-		<h1>에스지씨앤씨</h1>
+		<h1><%=title %></h1>
 		<section id="comInfo">
 			<h2>
 				<img class="icons" src="./image/building.svg" aria-hidden="true">
@@ -76,49 +126,49 @@
 			<table>
 				<tr>
 					<th>모집직종</th>
-					<td>소프트웨어 개발자 및 웹디자이너</td>
+					<td><%=position %></td>
 					<th>모집인원</th>
-					<td>5인</td>
+					<td><%=people %>인</td>
 				</tr>
 				<tr>
 					<th>직무내용</th>
-					<td>웹 프로그램 개발 및 웹 디자인 업무</td>
+					<td><%=task %></td>
 					<th>근무지역</th>
-					<td>수영구, 재택근무</td>
+					<td><%=workArea %></td>
 				</tr>
 				<tr>
 					<th>학력</th>
-					<td>무관</td>
+					<td><%=education %></td>
 					<th>경력</th>
-					<td>무관</td>
+					<td><%=career %></td>
 				</tr>
 				<tr>
 					<th>고용형태</th>
-					<td>기간의 정함이 없는 근로계약</td>
+					<td><%=employType %></td>
 					<th>근무형태</th>
-					<td>주5일</td>
+					<td><%=workType %></td>
 				</tr>
 				<tr>
 					<th>급여조건</th>
-					<td>월급(사규에 따름)</td>
+					<td><%=pay %></td>
 					<th>사회보험</th>
-					<td>국민연금, 건강보험, 고용보험, 산재보험</td>
+					<td><%=insurance %></td>
 				</tr>
 				<tr>
 					<th>퇴직금</th>
-					<td>퇴직금</td>
+					<td><% %></td>
 					<th>상여금</th>
 					<td>기본급 50%</td>
 				</tr>
 				<tr>
 					<th>근무시간</th>
-					<td>09:00~18:00</td>
+					<td><%=officeHours %></td>
 					<th>잔업</th>
 					<td>무</td>
 				</tr>
 				<tr>
 					<th>기타조건</th>
-					<td colspan="3">면접 후 본사/재택근무 결정, 재택근무 시 업무에 필요한 기자재(컴퓨터 및 전화기) 제공</td>
+					<td colspan="3"><%=etc %></td>
 				</tr>
 			</table>
 		</section>
@@ -130,21 +180,21 @@
 			<table>
 				<tr>
 					<th>전공</th>
-					<td>컴퓨터공학, 웹디자인</td>
+					<td><%=major %></td>
 					<th>자격면허</th>
-					<td>정보처리산업기사</td>
+					<td><%=certificate %></td>
 				</tr>
 				<tr>
 					<th>컴퓨터활용</th>
-					<td>문서작성, 표계산, 프리젠테이션</td>
+					<td><%=computerLevel %></td>
 					<th>편의시설</th>
-					<td>-</td>
+					<td><%=facilities %></td>
 				</tr>
 				<tr>
 					<th>복리후생</th>
-					<td>-</td>
+					<td><%=welfare %></td>
 					<th>우대사항</th>
-					<td>-</td>
+					<td><%=preferred %></td>
 				</tr>
 			</table>
 		</section>
@@ -159,7 +209,7 @@
 					<!-- 관심기업 등록 폼 -->
 					<form aria-hidden="true">
 						<input type="hidden" name="user" value="">
-						<input type="hidden" name="employNum" value="">
+						<input type="hidden" name="employNum" value="<%=employNum%>">
 					</form>
 					<!-- 관심기업 등록 폼 끝 -->
 					<section id="quickLink">
@@ -185,6 +235,15 @@
 					
 					<hr style="margin:10px;">
 					
+					<%if(name == null){ %>
+					<section id="loginPlz">
+						<div>
+							로그인 후 채용공고에 지원 가능합니다.
+							<br>
+							<a href="login.jsp" id="loginBtn">로그인</a>
+						</div>
+					</section>
+					<%}else{ %>
 					<section id="applyment">
 						<h4>
 							<img class="small-icons" src="image/apply.svg" aria-hidden="true">
@@ -193,7 +252,7 @@
 						<!-- 이력서 제출 폼 -->
 						<form name="applyFrm">
 							<input type="hidden" name="user" value="" aria-hidden="true">
-							<input type="hidden" name="employNum" value="" aria-hidden="true">
+							<input type="hidden" name="employNum" value="<%=employNum%>" aria-hidden="true">
 							<select class="selectResume" name="resume">
 								<option value="">기본이력서</option>
 							</select>
@@ -211,6 +270,7 @@
 						</form>
 						<!-- 이력서 제출 폼 끝 -->
 					</section>
+					<%} //if %>
 				</div> <!-- sideNav-container -->
 			</aside>		
 		</div> <!-- div-sideNav -->

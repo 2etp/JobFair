@@ -23,7 +23,6 @@
 				<p>[가로 300픽셀, 세로 200픽셀 크기의 사진을 올려주세요.]</p> 
 				<label for="fileUpload"><img src="./image/camera.svg"><span>파일선택</span></label>
 				<input type="file" id="fileUpload" name="filename" style="display: none;"/>
-
 			</div>
 			
 			<div class="signupFrm1">
@@ -103,6 +102,11 @@
 			</div>
 			
 			<div class="signupFrm9">
+				<label for="foundedDate">설립시기</label>
+				<input type="date" name="foundedDate" id="foundedDate" title="설립시기">
+			</div>
+			
+			<div class="signupFrm10">
 				<label><input id="checkbox" type="checkbox" name="collectInfo" value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
 			</div>
 			

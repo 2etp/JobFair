@@ -14,15 +14,13 @@
 		<section>
 			<article>
 				<img src="image/Introduce1.png">
-				<div>샬라샬라샬라샬샬샬랏샬ㄹ랏샬랏샬랏샷ㄹ라</div>
 			</article>
 			<article>
 				<img src="image/Introduce1.png">
-				<div>샬라샬라샬라샬샬샬랏샬ㄹ랏샬랏샬랏샷ㄹ라</div>
 			</article>
 			<article class="article-leftarrow">
 				<div>처음으로</div>
-				<a href="javascript:void();">
+				<a href="index.jsp" role="button">
 					<img src="image/arrow.png">
 				</a>
 			</article>

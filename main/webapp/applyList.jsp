@@ -112,10 +112,10 @@
 		<aside class="sideBar">
 			<fieldset>
 				<legend>사이드 메뉴</legend>
-					<a href="javascript:" role="button">내 정보 관리</a>
+					<a href="myPage.jsp" role="button">내 정보 관리</a>
 					<a href="javascript:" role="button">이력서 관리</a>
-					<a href="javascript:" role="button">관심기업 관리</a>
-					<a href="javascript:" role="button">기업지원 현황</a>
+					<a href="pickedList.jsp" role="button">관심기업 관리</a>
+					<a href="applyList.jsp" role="button">기업지원 현황</a>
 			</fieldset>
 		</aside>
 	</section>

@@ -5,7 +5,7 @@
 	height: 100px;
 }
 
-form[name='signupFrm'] input:not(.signupFrm9 input) {
+form[name='signupFrm'] input:not(.signupFrm9 input, .signupFrm10 input) {
 	display: flex;
 	margin-top: 10px;
 	width: 482px;
@@ -17,7 +17,7 @@ form[name='signupFrm'] {
 	width: 500px;
 }
 
-form[name='signupFrm'] label:not(.signupFrm9 label) {
+form[name='signupFrm'] label:not(.signupFrm9 input, .signupFrm10 label) {
 	font-weight : bold;
 	font-size: 20px;
 }
@@ -30,17 +30,25 @@ form[name='signupFrm'] div {
 	height: 30px;
 }
 
+.signupFrm9 input {
+	height: 25px;
+} 
+
 .signupFrm7 select {
 	width: 200px;
 	height: 30px;
 }
 
-.signupFrm6, signupFrm7 {
+.signupFrm6, signupFrm7, .signupFrm8 {
 	float: left;
 }
 
 .signupFrm7 label {
 	margin-left: 60px;
+}
+
+.signupFrm9 label {
+	margin-left: 70px;
 }
 
 #signupBtn {

@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+main section {
+	flex-basis: 40%;
+}
+
+table {
+	width: 800px;
+	height: 200px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-collapse: collapse;
+	
+}
+
+table:nth-of-type(2) {
+	width: 800px;
+	height: 350px;
+}
+
+tr, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th {
+	color: #FFFFFF;	
+	background-color: #32834A;
+}
+
+td {
+	width: 200px;
+}
+
+form[name='jobFrm'] input {
+	border: none;
+	padding: 0px;
+	height: 40px;
+	padding-left: 10px; 
+	width: 200px;
+	margin: 0px;
+}
+
+form[name='jobFrm'] {
+	width: 800px;
+}
+
+table th {
+	font-size: 20px;
+}
+
+section p {
+	margin-top: 30px;
+	font-size: 20px;
+	font-weight: bold;
+}

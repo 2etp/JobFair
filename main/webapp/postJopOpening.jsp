@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>2022 부산 장애인 온라인 채용 박람회 | 채용공고 등록</title>
 <link rel="stylesheet" href="./css/common.css"> 
+<link rel="stylesheet" href="./css/postJobOpening.css"> 
 </head>
 <body>
 
@@ -16,102 +17,101 @@
 		<p>기업정보</p>
 		<form name="jobFrm" method="post" action="postJobOpeningProc.jsp">
 			<table>
-				<tr>
-					<td>기업명</td>
+				<tr class="tr1">
+					<th>기업명</th>
 					<td></td>
-					<td>홈페이지</td>
+					<th>홈페이지</th>
 					<td></td>
 				</tr>
 				
-				<tr>
-					<td>대표자</td>
+				<tr class="tr2">
+					<th>대표자</th>
 					<td></td>
-					<td>업종</td>
+					<th>업종</th>
 					<td><input type="text" name="sectors"></td>
 				</tr>
 				
-				<tr>
-					<td>설립시기</td>
+				<tr class="tr3">
+					<th>설립시기</th>
 					<td><input type="text" name="founded"></td>
-					<td>사업내용</td>
+					<th>사업내용</th>
 					<td><input type="text" name="businessInfo"></td>
 				</tr>
 				
-				<tr>
-					<td>주소</td>
+				<tr class="tr4">
+					<th>주소</th>
 					<td></td>
-					<td>규모</td>
+					<th>규모</th>
 					<td><input type="text" name="size"></td>
 				</tr>
 			</table>
 			<p>채용정보</p>
 			<table>
-				<tr>
-					<td>모집직종</td>
+				<tr class="tr5">
+					<th>모집직종</th>
 					<td><input type="text" name="position"></td>
-					<td>모집인원</td>
+					<th>모집인원</th>
 					<td><input type="number" name="people"></td>
 				</tr>
 				
-				<tr>
-					<td>직무내용</td>
+				<tr class="tr6">
+					<th>직무내용</th>
 					<td><input type="text" name="task"></td>
-					<td>근무지역</td>
+					<th>근무지역</th>
 					<td><input type="text" name="workArea"></td>
 				</tr>
 				
-				<tr>
-					<td>학력</td>
+				<tr class="tr7">
+					<th>학력</th>
 					<td><input type="text" name="education"></td>
-					<td>경력</td>
+					<th>경력</th>
 					<td><input type="text" name="career"></td>
 				</tr>
 				
-				<tr>
-					<td>고용형태</td>
+				<tr class="tr8">
+					<th>고용형태</th>
 					<td><input type="text" name="employType"></td>
-					<td>근무형태</td>
+					<th>근무형태</th>
 					<td><input type="text" name="workType"></td>
 				</tr>
 				
-				<tr>
-					<td>급여조건</td>
+				<tr class="tr9">
+					<th>급여조건</th>
 					<td><input type="text" name="pay"></td>
-					<td>사회보험</td>
+					<th>사회보험</th>
 					<td><input type="text" name="insurance"></td>
 				</tr>
 				
-				<tr>
-					<td>근무시간</td>
+				<tr class="tr10">
+					<th>근무시간</th>
 					<td><input type="text" name="officeHours"></td>
-					<td>기타</td>
+					<th>기타</th>
 					<td><input type="text" name="etc"></td>
 				</tr>
 			</table>
 			
 			<p>우대사항 및 복리후생</p>
 			<table>
-				<tr>
-					<td>전공</td>
+				<tr class="tr11">
+					<th>전공</th>
 					<td><input type="text" name="major"></td>
-					<td>자격증</td>
+					<th>자격증</th>
 					<td><input type="text" name="certificate"></td>
 				</tr>
 				
-				<tr>
-					<td>컴퓨터활용</td>
+				<tr class="tr12">
+					<th>컴퓨터활용</th>
 					<td><input type="text" name="computerLevel"></td>
-					<td>편의시설</td>
+					<th>편의시설</th>
 					<td><input type="text" name="facilities"></td>
 				</tr>
 				
-				<tr>
-					<td>복리후생</td>
+				<tr class="tr13">
+					<th>복리후생</th>
 					<td><input type="text" name="welfare"></td>
-					<td>우대사항</td>
+					<th>우대사항</th>
 					<td><input type="text" name="preferred"></td>
-				</tr>
-				
+				</tr>	
 			</table>
 			
 		<aside class="sideBar">

@@ -43,7 +43,22 @@ function fnExcelReport(id1,id2,id3, title) {
 		document.body.removeChild(elem);
 	}
 }
-
+function imageRegister(){
+	let profileImageEl = document.querySelector(".div-profileImage");
+	let fileEl = document.getElementById("profileImage");
+	
+	let selectFile = fileEl.files[0];
+	
+	if(selectFile == null){
+		alert("이미지 파일을 선택해주세요");
+		return 0;
+	}
+	let file = URL.createObjectURL(selectFile);
+	
+	profileImageEl.innerHTML = `
+		<img src=${file}>
+	`
+}
 /*
 function fnExcelReport(id1,id2,id3, title) {
 	let workbook = XLSX.utils.book_new();

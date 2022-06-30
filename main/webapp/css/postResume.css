@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+main section {
+	flex-basis: 40%;
+}
+
 table, tr, td {
 	border: 1px solid black;
 	text-align: center;
@@ -7,7 +11,6 @@ table, tr, td {
 }
 
 table {
-	width: 900px;
 	margin-top: -1px;
 	height: 350px;
 }
@@ -63,6 +66,15 @@ table th {
 	background-color: #2A2E70;
 }
 
+table .tr1 a{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px;
+    text-decoration-line: none;
+    color: black;
+    background-color: gray;
+}
+
 table .tr1 th:nth-of-type(1) {
 	width: 200px;
 }
@@ -80,7 +92,7 @@ table .tr2 th:nth-of-type(2) {
 }
 
 table .tr1 td:nth-of-type(1) {
-	width: 250px;
+	width: 10px;
 }
 
 table .tr1 td:nth-of-type(2) {
@@ -101,10 +113,6 @@ table .tr6 input {
 	height: 30px;
 	border: none;
 }
-
-/* table .tr7 label {
-	margin-left: 10px;
-} */
 
 table .tr7 input:nth-of-type(1), .tr8 input {
 	margin-right: 10px;
@@ -163,4 +171,18 @@ table caption {
 	font-size: 30px;
 	margin-bottom: 10px;
 	margin-top: 50px;
+}
+.div-profileImage{
+	margin : 0 auto;
+	border : 1px solid black;
+	width : 148px;
+	height : 202px;
+}
+.div-profileImage img{
+	width : 100%;
+	height : 100%;
+}
+
+#profileImage{
+	background-color : gray;
 }

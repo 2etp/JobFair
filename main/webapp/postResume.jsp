@@ -33,27 +33,36 @@
 			<table class="table1" id="table">
 				<caption>입사지원서</caption>
 				<tr class="tr1">
+					<td rowspan="4">
+						<div class="div-profileImage"></div>				
+						<label>
+							이력서에 사용할 사진을 등록해주세요
+							<input id="profileImage" type="file" accept="image/*">
+						</label>
+						<a href=javascript:void() role="button" onclick="imageRegister()">등록하기</a>
+					</td>
 					<th>성명</th>
 					<td><%=name%></td>
 					<th>성별</th>
-					<td colspan="3"><%=sex%></td>
+					<td><%=sex%></td>
 				</tr>
 				
 				<tr class="tr2">
 					<th>연락처</th>
 					<td><%=mobile%></td>
 					<th>생년월일</th>
-					<td colspan="3"><%=birthDay%></td>
+					<td><%=birthDay%></td>
 				</tr>
 				
 				<tr class="tr3">
 					<th>주소</th>
-					<td colspan="5"><%=address%></td>
+					<td colspan="3"><%=address%></td>
+					
 				</tr>
 				
 				<tr class="tr4">
 					<th>병역</th>
-					<td colspan="5">
+					<td colspan="3">
 						<label><input type="radio" name="militaryService" value="finished">필</label>
 						<label><input type="radio" name="militaryService" value="yet">미필</label>
 						<label><input type="radio" name="militaryService" value="exemption">면제</label>
@@ -65,7 +74,7 @@
 					<th>장애유형</th>
 					<td><%=typeOfDisability%></td>
 					<th>보장구 유/무</th>
-					<td colspan="3">
+					<td colspan="2">
 						<label><input type="radio" name="assistive" value="existence">유</label>
 						<label><input type="radio" name="assistive" value="nonexistence">무</label>
 					</td>
@@ -75,15 +84,16 @@
 					<th>장애등급</th>
 					<td><%=gradeOfDisability%></td>
 					<th>보장구 종류</th>
-					<td colspan="3">
+					<td colspan="2">
 						<input type="text" name="assistiveDevice">
 					</td>
+					
 				</tr>
 				
 				<tr class="tr7">
 					<th rowspan="2">최종학력</th>
 					<td><input type="text" name="schoolName">학교</td>
-					<td rowspan="2" colspan="4">
+					<td rowspan="2" colspan="3">
 						<label><input type="radio" name="education" value="attending">재학</label>
 						<label><input type="radio" name="education" value="takingOff">휴학</label>
 						<label><input type="radio" name="education" value="graduate">졸업</label>

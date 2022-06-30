@@ -8,6 +8,7 @@
 <title>2022 부산 장애인 온라인 채용 박람회 | 이력서 등록(장애인용)</title>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/signupForGeneral.css">
+<script defer src="js/signupForGeneral.js"></script>
 </head>
 <body>
 
@@ -47,7 +48,7 @@
 			
 			<div class="signupFrm5">
 				<label for="mobile">연락처</label>
-				<input type="tel" name="mobile" id="mobile" placeholder="숫자만 입력해 주세요." title="연락처">
+				<input maxlength="11" type="tel" name="mobile" id="mobile" placeholder="숫자만 입력해 주세요." title="연락처">
 			</div>
 			
 			<div class="signupFrm6">	
@@ -102,7 +103,7 @@
 			</div>
 			
 			<div class="signupFrm9">
-				<label><input type="checkbox" name="collectInfo" value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
+				<label><input id="checkbox" type="checkbox" name="collectInfo" value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
 			</div>
 			
 			<div>

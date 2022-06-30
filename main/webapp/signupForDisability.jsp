@@ -19,7 +19,6 @@
 			<img src="./image/personal.svg" alt="회원가입 이미지">
 			<p>개인 회원가입</p>
 		</div>
-		
 		<form name="signupFrm" method="post" action="disSignup" enctype="multipart/form-data">
 			<div class="signupFrm1">
 				<label for="name">성명</label>
@@ -28,13 +27,13 @@
 			
 			<div class="signupFrm2">
 				<label for="residentNum">주민등록번호</label>
-				<input type="tel" name="prefixNum" id="residentNum" placeholder="주민등록번호 앞 6자리" title="주민번호 앞자리">-
-				<input type="tel" name="suffixNum" placeholder="주민등록번호 뒤 7자리" title="주민번호 뒷자리">
+				<input maxlength="6" type="tel" name="prefixNum" id="residentNum" placeholder="주민등록번호 앞 6자리" title="주민번호 앞자리">-
+				<input maxlength="7" id="residentNum2" type="tel" name="suffixNum" placeholder="주민등록번호 뒤 7자리" title="주민번호 뒷자리">
 			</div>
 			
 			<div class="signupFrm3">
 				<label for="mobile">휴대폰번호</label>
-				<input type="tel" name="mobile" id="mobile" placeholder="숫자만 입력해 주세요." title="휴대폰번호">
+				<input maxlength="11" type="tel" name="mobile" id="mobile" placeholder="숫자만 입력해 주세요." title="휴대폰번호">
 			</div>
 		
 			<div class="signupFrm4">	

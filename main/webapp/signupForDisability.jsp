@@ -7,6 +7,7 @@
 <title>2022 부산 장애인 온라인 채용 박람회 | 회원가입</title>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/signupForDisability.css">
+<script defer src="js/signupForDisability.js"></script>
 </head>
 <body>
 
@@ -16,24 +17,24 @@
 	<section>
 		<div class="title">
 			<img src="./image/personal.svg" alt="회원가입 이미지">
-			<p>회원가입</p>
+			<p>개인 회원가입</p>
 		</div>
 		
 		<form name="signupFrm" method="post" action="disSignup" enctype="multipart/form-data">
 			<div class="signupFrm1">
 				<label for="name">성명</label>
-				<input type="text" name="name" id="name" placeholder="ex) 홍길동" title="성명">
+				<input type="text" name="name" id="name" placeholder="예시) 홍길동" title="성명">
 			</div>
 			
 			<div class="signupFrm2">
 				<label for="residentNum">주민등록번호</label>
-				<input type="tel" name="prefixNum" id="residentNum" placeholder="ex) 19990628" title="주민번호 앞자리">-
+				<input type="tel" name="prefixNum" id="residentNum" placeholder="주민등록번호 앞 6자리" title="주민번호 앞자리">-
 				<input type="tel" name="suffixNum" placeholder="주민등록번호 뒤 7자리" title="주민번호 뒷자리">
 			</div>
 			
 			<div class="signupFrm3">
 				<label for="mobile">휴대폰번호</label>
-				<input type="tel" name="mobile" id="mobile" placeholder="'-' 를 빼고 입력해 주세요" title="휴대폰번호">
+				<input type="tel" name="mobile" id="mobile" placeholder="숫자만 입력해 주세요." title="휴대폰번호">
 			</div>
 		
 			<div class="signupFrm4">	
@@ -92,7 +93,7 @@
 			</div>
 			
 			<div class="signupFrm7">
-				<label><input type="checkbox" name="collectInfo"value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
+				<label><input id="checkbox" type="checkbox" name="collectInfo"value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
 			</div>
 			
 			<div>

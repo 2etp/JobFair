@@ -39,7 +39,7 @@
 							이력서에 사용할 사진을 등록해주세요
 							<input id="profileImage" type="file" accept="image/*">
 						</label>
-						<a href=javascript:void() role="button" onclick="imageRegister()">등록하기</a>
+						<a href="javascript:void();" role="button" onclick="imageRegister();">등록하기</a>
 					</td>
 					<th>성명</th>
 					<td><%=name%></td>

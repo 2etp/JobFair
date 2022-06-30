@@ -2,6 +2,7 @@
 
 form[name='signupFrm'] input:not(input:nth-child(3)) {
 	display: flex;
+	padding-left: 10px;
 }
 
 form[name='signupFrm'] {
@@ -26,13 +27,13 @@ form[name='signupFrm'] div {
 }
 
 form[name='signupFrm'] input:not(.signupFrm1 input, .signupFrm3 input, .signupFrm7 input:last-of-type) {
-	width: 233.2px;
+	width: 225.4px;
 	height: 40px;
+	padding-left: 10px;
 }
 
-
 .signupFrm1 input, .signupFrm3 input {
-	width: 492px;
+	width: 485px;
 	height: 40px;
 }
 

@@ -17,18 +17,41 @@ liEls.forEach(function (Eliment, ElimentIndex, obj) {
 		if(Eliment.classList.contains("li-private"))
 		{
 			registerEl.innerHTML = `
-				<a href="javascript:void(0)">개인 회원 가입하기</a>
+				<a href="signupForDisability.jsp">개인 회원 가입하기</a>
 			`
 		}
 		else{
 			registerEl.innerHTML = `
-				<a href="javascript:void(0)">기업 회원 가입하기</a>
+				<a href="signupForGeneral.jsp">기업 회원 가입하기</a>
 			`
 		}
 		Eliment.classList.add("enable");
 	})
 })
 
+
+function loginCheck(Element){
+	let formEl = document.querySelector("form[name='logFrm']");
+	let nameEl = document.getElementById("name");
+	let phoneEl = document.getElementById("phone");
+	
+	let phoneReg = new RegExp("010[0-9]{8}");
+	
+	if(nameEl.value == ""){
+		alert("이름을 입력해주세요.");
+		return 0;
+	}
+	
+	if(phoneEl.value == ""){
+		alert("전화번호를 입력해주세요.");
+		return 0;
+	}else if(!(phoneReg.test(phoneEl.value))){
+		alert("올바른 전화번호를 입력해주세요");
+		return 0;
+	}
+	
+	formEl.submit();
+}
 
 /*inputEls.forEach(function (Eliment, ElimentIndex, obj) {
 	

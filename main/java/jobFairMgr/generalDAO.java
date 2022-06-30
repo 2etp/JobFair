@@ -199,7 +199,8 @@ public class generalDAO {
 				vo.setPeople(rs.getInt("people"));
 				vo.setTask(rs.getString("task"));
 				vo.setWorkArea(rs.getString("workArea"));
-				vo.setEducation(rs.getString("career"));
+				vo.setEducation(rs.getString("education"));
+				vo.setCareer(rs.getString("career"));
 				vo.setEmployType(rs.getString("employType"));
 				vo.setWorkType(rs.getString("workType"));
 				vo.setPay(rs.getString("pay"));

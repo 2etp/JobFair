@@ -8,8 +8,9 @@
 form[name='signupFrm'] input:not(.signupFrm9 input) {
 	display: flex;
 	margin-top: 10px;
-	width: 492px;
+	width: 482px;
 	height: 40px;
+	padding-left: 10px;
 }
 
 form[name='signupFrm'] {

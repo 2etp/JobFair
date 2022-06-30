@@ -42,7 +42,7 @@
 			
 			<div class="signupFrm4">	
 				<label for="homepage">홈페이지</label>
-				<input type="text" name="homepage" id="homepage" placeholder="예시) abc@.com" title="홈페이지">
+				<input type="text" name="homepage" id="homepage" placeholder="예시) abc.co.kr" title="홈페이지">
 			</div>	
 			
 			<div class="signupFrm5">
@@ -93,19 +93,11 @@
 			<div class="signupFrm8">
 				<label for="comSize">규모</label>
 				<select id="comSize" name="comSize" title="규모">
-					<option value="max10" selected>1~10인</option>
-					<option value="max20">11~20인</option>
-					<option value="max30">21~30인</option>
-					<option value="max40">31~40인</option>
-					<option value="max50">41~50인</option>
-					<option value="max60">51~60인</option>
-					<option value="max70">61~70인</option>
-					<option value="max80">71~80인</option>
-					<option value="max90">81~90인</option>
-					<option value="max100">91~100인</option>
-					<option value="max200">101~200인</option>
-					<option value="max300">201~300인</option>
-					<option value="more300">300인 이상</option>
+					<option value="max50" selected>50명 이하</option>
+					<option value="max100">100명 이하</option>
+					<option value="max100">101~300</option>
+					<option value="max100">301~600</option>
+					<option value="more300">1000명 이상</option>
 				</select>
 			</div>
 			

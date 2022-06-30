@@ -43,17 +43,7 @@ form[name='signupFrm'] div {
 	margin-left: 60px;
 }
 
-#signupBtn {
-	text-decoration: none;
-	border: 1px solid #D13B3B;
-	background-color: #D13B3B;
-	color: white;
-	padding: 25px 50px 25px 50px;
-	display: block;
-	text-align: center;
-	font-size: 25px;
-	font-weight: bold;
-}
+
 
 section .title {
 	position: relative;
@@ -102,3 +92,22 @@ form[name='signupFrm'] p:not(.profile p) {
 	
 }
 
+#duplicateCheck{
+	background-color : #1A8F64;
+	color : white;
+	text-decoration-line: none;
+	padding : 10px;
+}
+
+
+#signupBtn {
+	text-decoration: none;
+	border: 1px solid #D13B3B;
+	background-color: #D13B3B;
+	color: white;
+	padding: 25px 50px 25px 50px;
+	display: block;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+}

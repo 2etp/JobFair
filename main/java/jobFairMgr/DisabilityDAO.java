@@ -14,10 +14,10 @@ public class DisabilityDAO {
 	private DBConnectionMgr pool;
 	
 	// 사용자마다 현재 프로젝트의 경로가 다르기 때문에 그걸 미리 구해놓고 파일 업로드 경로를 상대적으로 바꿔준다
-//	private static String path = (System.getProperty("user.dir")).replace("\\", "/");
-//	private static final String SAVEFOLDER = path + "/Project1/FirstProject/src/main/webapp/uploadFiles/";
-//	private static final String ENCTYPE = "UTF-8";
-//	private static int MAXSIZE = 10*1024*1024;
+	private static String path = (System.getProperty("user.dir")).replace("\\", "/");
+	private static final String SAVEFOLDER = path + "/Project1/FirstProject/src/main/webapp/uploadFiles/";
+	private static final String ENCTYPE = "UTF-8";
+	private static int MAXSIZE = 10*1024*1024;
 	
 	public DisabilityDAO() {
 		try {
@@ -32,18 +32,21 @@ public class DisabilityDAO {
 		boolean flag = false;
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		MultipartRequest multi = null;
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "insert into users(name, prefixNum, suffixNum, livingArea, phoneNum, disType, disLevel)values(?, ?, ?, ?, ?, ?, ?)";
+			multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+			
+			sql = "insert into users(name, prefixNum, suffixNum, livingArea, phoneNum, disType, disLevel, userType)values(?, ?, ?, ?, ?, ?, ?, 'dis')";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("name"));
-			pstmt.setString(2, request.getParameter("prefixNum"));
-			pstmt.setString(3, request.getParameter("suffixNum"));
-			pstmt.setString(4, request.getParameter("mobile"));
-			pstmt.setString(5, request.getParameter("type"));
-			pstmt.setString(6, request.getParameter("grade"));
-			pstmt.setString(7, request.getParameter("livingArea"));
+			pstmt.setString(1, multi.getParameter("name"));
+			pstmt.setString(2, multi.getParameter("prefixNum"));
+			pstmt.setString(3, multi.getParameter("suffixNum"));
+			pstmt.setString(4, multi.getParameter("livingArea"));
+			pstmt.setString(5, multi.getParameter("mobile"));
+			pstmt.setString(6, multi.getParameter("type"));
+			pstmt.setString(7, multi.getParameter("grade"));
 	
 			// executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
 			// create, drop, alter인 경우에는 0을 반환

@@ -10,3 +10,24 @@ main section {
     justify-content: center;
     align-items: center;
 }
+
+.div-signuplink{
+	width : 50%;
+	height : 30%;
+	background-color : #1A8F64;
+	border : 1px solid black;
+}
+
+.div-signuplink:first-child{
+	border-right : none;
+}
+
+
+.div-signuplink a{
+	display: inline-block;
+	padding-top : 20%;
+    font-size: 36px;
+    color: white;
+    text-decoration: none;
+    height : 63%;
+}

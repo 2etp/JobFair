@@ -12,10 +12,10 @@
 <jsp:include page="commonJSP/header.jsp"/>
 <main>
 	<section>
-		<div>
+		<div class="div-signuplink">
 			<a href="signupForDisability.jsp" id="introFair">개인회원가입 바로가기</a>
 		</div>
-		<div>
+		<div class="div-signuplink">
 			<a href="signupForGeneral.jsp" id="introFair">기업회원가입 바로가기</a>
 		</div>
 	</section>

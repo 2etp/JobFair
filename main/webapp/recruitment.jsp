@@ -164,6 +164,7 @@
 			<div class="div-boardpaging">
 			 	<%
 		    		if(cnt != 0) {
+		    			
 		    			// 전체 페이지 수 계산
 		    			int pageCnt = cnt / pageSize + (cnt%pageSize == 0 ? 0 : 1);
 		    			// 한 페이지에 보여줄 페이지 번호 개수
@@ -178,20 +179,53 @@
 		    			}
 		    			
 		    			// 10페이지 이전으로 가는 버튼
-		    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
-			    		if(startPage > pageBlock) { %>
-			    			<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
-			    		<%}
-		    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
-		    			for(int i = startPage; i <= endPage; i++) { %>
-		    				<a href="recruitment.jsp?pageNum=<%=i%>"><%=i %></a>
-		    			<%}
-		    			
-		    			// 10페이지 건너뛰는 버튼
-		    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
-		    			if(endPage < pageCnt) { %>
-		    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
-		    			<%}
+		    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다.
+		    			if(pageType.equals("default")) {
+				    		if(startPage > pageBlock) { %>
+				    			<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
+				    		<%}
+			    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
+			    			for(int i = startPage; i <= endPage; i++) { %>
+			    				<a href="recruitment.jsp?pageNum=<%=i%>"><%=i %></a>
+			    			<%}
+			    			
+			    			// 10페이지 건너뛰는 버튼
+			    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
+			    			if(endPage < pageCnt) { %>
+			    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
+			    			<%}
+		    			} else {
+		    				// 검색했을 경우 페이징 번호에 다른 url을 붙여줘야한다.
+		    				String item = request.getParameter("item");
+		    				String companyName = request.getParameter("companyName");
+		    				if(item.equals("name")) {
+		    					// 기업명으로 검색했을 경우
+		    					if(startPage > pageBlock) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>&companyName=<%=companyName%>&pageType=search&item=name">이전</a>
+					    		<%}
+				    			for(int i = startPage; i <= endPage; i++) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=i%>&companyName=<%=companyName%>&pageType=search&item=name"><%=i %></a>
+				    			<%}
+				    			if(endPage < pageCnt) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>&companyName=<%=companyName%>&pageType=search&item=name">다음</a>
+				    			<%}
+			    			} else if(item.equals("other")) {
+			    				String sectors = request.getParameter("sectors");
+			    				String workArea = request.getParameter("workArea");
+			    				String workType = request.getParameter("workType");
+			    				
+			    				if(startPage > pageBlock) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>&sectors=<%=sectors%>&workArea=<%=workArea%>&workType=<%=workType%>&pageType=search&item=other">이전</a>
+					    		<%}
+				    			for(int i = startPage; i <= endPage; i++) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=i%>&sectors=<%=sectors%>&workArea=<%=workArea%>&workType=<%=workType%>&pageType=search&item=other"><%=i %></a>
+				    			<%}
+				    			if(endPage < pageCnt) { %>
+				    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>&sectors=<%=sectors%>&workArea=<%=workArea%>&workType=<%=workType%>&pageType=search&item=other">다음</a>
+				    			<%}
+			    				
+			    			}
+		    			}
 		    		}
 				%>
 			 </div>				

@@ -15,6 +15,9 @@ body{
 	letter-spacing:0.1em;
 	font-family:KoddiRegular;
 }
+input:hover, select:hover{
+	cursor:pointer;
+}
 td a{
 	position:relative;
 }

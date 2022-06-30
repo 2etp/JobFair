@@ -11,7 +11,6 @@
 	String pageType = request.getParameter("pageType");
 	if(pageType == null) {
 	    pageType = "default";
-
 	}
 	
 	List<OpeningListVO> list = new ArrayList<OpeningListVO>();

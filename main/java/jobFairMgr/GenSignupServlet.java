@@ -16,7 +16,7 @@ public class GenSignupServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		generalDAO dao = new generalDAO();
-//		boolean flag = dao.insertUser(request);
+		boolean flag = dao.insertGeneral(request);
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter writer = response.getWriter();
@@ -24,7 +24,7 @@ public class GenSignupServlet extends HttpServlet {
 			writer.println("<script>alert('회원가입에 성공했습니다'); location.href='login.jsp'</script>");
 			writer.close();
 		} else {
-			writer.println("<script>alert('회원가입에 실패했습니다'); </script>");
+			writer.println("<script>alert('회원가입에 실패했습니다'); location.href='login.jsp'</script>");
 			writer.close();
 		}
 	}

@@ -10,8 +10,15 @@ public class DisabilityVO {
 	private String disType;			// 장애타입
 	private String disLevel;		// 장애등급
 	private String userType;		// 개인인지 기업인지
+	private String sex;				// 성별
 	
 	
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 	public String getUserType() {
 		return userType;
 	}

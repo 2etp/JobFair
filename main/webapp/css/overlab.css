@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+body{
+	margin : 0;
+	height : 100vh;
+}
+
+form {
+	height : 100%;
+	text-align : center;
+}
+
+form div:nth-child(1){
+	height : 90%;
+
+}
+form div:nth-child(2){
+	height : 10%;
+}
+
+form h1{
+	background : green;
+	color : white;
+	margin-top : 0;
+}
+
+.div-input{
+	background-color : gray
+}
+
+.div-input label{
+	font-weight : bold;
+}
+
+.div-footer {
+	background : green;
+}

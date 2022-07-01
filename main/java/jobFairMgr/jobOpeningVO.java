@@ -24,8 +24,29 @@ public class jobOpeningVO {
 	private String welfare;			// 복리후생
 	private String preferred;		// 우대사항
 	private String openingDate;		// 채용공고 기간
+	private String overtime;		// 잔업
+	private String bonus;			// 상여금
+	private String severancePay;	// 퇴직금
 	
 	
+	public String getOvertime() {
+		return overtime;
+	}
+	public void setOvertime(String overtime) {
+		this.overtime = overtime;
+	}
+	public String getBonus() {
+		return bonus;
+	}
+	public void setBonus(String bonus) {
+		this.bonus = bonus;
+	}
+	public String getSeverancePay() {
+		return severancePay;
+	}
+	public void setSeverancePay(String severancePay) {
+		this.severancePay = severancePay;
+	}
 	public int getEmployNum() {
 		return employNum;
 	}

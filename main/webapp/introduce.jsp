@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>2022 부산 장애인 온라인 채용 박람회 | 소개</title>
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/introduce.css">
-	
 </head>
+
 <body>
 	<jsp:include page="commonJSP/header.jsp"></jsp:include>
 	<main>
@@ -15,14 +15,11 @@
 			<article>
 				<img src="image/Introduce1.png">
 			</article>
-			<article>
-				<img src="image/Introduce1.png">
-			</article>
 			<article class="article-leftarrow">
-				<div>처음으로</div>
 				<a href="index.jsp" role="button">
-					<img src="image/arrow.png">
+					<img src="image/arrow.png" alt="화살표 이미지">
 				</a>
+				<p>처음으로</p>
 			</article>
 		</section>
 	</main>

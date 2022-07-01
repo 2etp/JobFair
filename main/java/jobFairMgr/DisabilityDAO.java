@@ -34,11 +34,19 @@ public class DisabilityDAO {
 		PreparedStatement pstmt = null;
 		MultipartRequest multi = null;
 		String sql = null;
+		String sex = null;
 		try {
 			con = pool.getConnection();
 			multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+			if(multi.getParameter("suffixNum").charAt(0) == '1' ||
+					multi.getParameter("suffixNum").charAt(0) == '3') {
+				sex = "남";
+			} else {
+				sex = "여";
+			}
 			
-			sql = "insert into users(name, prefixNum, suffixNum, livingArea, phoneNum, disType, disLevel, userType)values(?, ?, ?, ?, ?, ?, ?, 'dis')";
+			
+			sql = "insert into users(name, prefixNum, suffixNum, livingArea, phoneNum, disType, disLevel, userType, sex)values(?, ?, ?, ?, ?, ?, ?, 'dis', ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, multi.getParameter("name"));
 			pstmt.setString(2, multi.getParameter("prefixNum"));
@@ -47,7 +55,8 @@ public class DisabilityDAO {
 			pstmt.setString(5, multi.getParameter("mobile"));
 			pstmt.setString(6, multi.getParameter("type"));
 			pstmt.setString(7, multi.getParameter("grade"));
-	
+			pstmt.setString(8, sex);
+			
 			// executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
 			// create, drop, alter인 경우에는 0을 반환
 			// 회원가입에는 1명의 정보를 저장하기 때문에 성공적으로 가입이 되었다면 1을 반환할 것이다.

@@ -33,7 +33,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>2022 부산 장애인 온라인 채용 박람회 | 관심기업 관리</title>
+<title>2022 부산 장애인 온라인 채용 박람회 | 관심 채용공고 관리</title>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/pickedList.css">
 </head>

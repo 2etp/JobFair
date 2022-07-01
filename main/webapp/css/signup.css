@@ -1,33 +1,63 @@
 @charset "UTF-8";
 
+
+h1{
+	text-align : center;
+}
 body {
 	height : 100vh;
 }
 
 main section {
 	flex-basis: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }
+
 
 .div-signuplink{
-	width : 50%;
 	height : 30%;
-	background-color : #1A8F64;
-	border : 1px solid black;
+	text-align : center;
+	border-radius : 10px;
 }
 
-.div-signuplink:first-child{
+.div-signuplink-left{
+	text-align : center;
+	width : 40%;
+}
+
+.div-signuplink-right{
+	text-align : center;
+	width : 40%;
+}
+
+.disability{
 	border-right : none;
+	background-color : #1A8F64;
 }
-
+.general{
+	background-color : rgb(0, 128, 255);
+}
 
 .div-signuplink a{
 	display: inline-block;
 	padding-top : 20%;
+	padding-bottom: 20%;
     font-size: 36px;
-    color: white;
+   color: white;
     text-decoration: none;
+    width: 100%;
     height : 63%;
+}
+
+.div-signuplink-form{
+	
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height : 80%;
+}
+
+.div-signuplink-form img{
+	width : 100px;
+	height : 100px;
 }

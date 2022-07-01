@@ -89,7 +89,7 @@
 					<th>모집직종</th>
 					<td><%=jvo.getPosition()%></td>
 					<th>모집인원</th>
-					<td>jvo.getPeople()%>인</td>
+					<td><%=jvo.getPeople()%>인</td>
 				</tr>
 				<tr>
 					<th>직무내용</th>

@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -208,8 +207,10 @@ public class DisabilityDAO {
         	pstmt.setInt(1, userNum);
         	rs = pstmt.executeQuery();
         	while(rs.next()) {
-        		if(rs.getInt("employNum") == employNum)
+        		if(rs.getInt("employNum") == employNum) {
         			flag = true;
+        			break;
+        		}
         	}
         } catch (Exception e) {
 			e.printStackTrace();

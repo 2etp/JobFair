@@ -26,7 +26,7 @@
 
 <main>
 	<section class="section-table">
-		<p>개인정보</p>
+		<p>기업정보</p>
 		<table>
 			<thead>
 				<tr class="tr1">
@@ -62,15 +62,15 @@
 				</tr>
 				<tr>
 					<th>사업내용</th>
-					<td><%=vo.getDisLevel() %></td>
+					<td><%=vo.getBusinessInfo() %></td>
 				</tr>
 				<tr>
 					<th>규모</th>
-					<td><%=vo.getDisLevel() %></td>
+					<td><%=vo.getComSize()%></td>
 				</tr>
 				<tr>
 					<th>설립시기</th>
-					<td><%=vo.getDisLevel() %></td>
+					<td><%=vo.getFoundedDate()%></td>
 				</tr>
 				
 			</tbody>

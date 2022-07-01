@@ -29,7 +29,7 @@
 				<a href="signup.jsp" id="signUp">회원가입</a>
 				<a href="login.jsp" id="signIn">로그인</a>
 			<%} else { %>
-				<a href="myPage.jsp" id="signUp">마이페이지</a>
+				<a href="myPageForDisability.jsp" id="signUp">마이페이지</a>
 				<a href="logout.jsp" id="signIn">로그아웃</a>
 			<%}%>
 		</section>

@@ -21,7 +21,7 @@
 			<a href="login.jsp">로그인</a>
 			<div>|</div>
 		<% } else { %> 
-			<a href="myPage.jsp">마이페이지</a>
+			<a href="myPageForDisability.jsp">마이페이지</a>
 			<div>|</div>
 			<a href="logout.jsp">로그아웃</a>
 			<div>|</div>

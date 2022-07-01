@@ -38,7 +38,7 @@
 		break;
 	case 3: {
 		if(item.equals("dis")) {
-			url = "myPage.jsp";			
+			url = "myPageForDisability.jsp";			
 		} else if(item.equals("com")) {
 			url = "index.jsp";
 			name = gdao.getComName(name);

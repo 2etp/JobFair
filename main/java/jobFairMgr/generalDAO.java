@@ -258,7 +258,7 @@ public class generalDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select * from general where comName = ?";
+			sql = "select * from generals where comName = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, comName);
 			rs = pstmt.executeQuery();

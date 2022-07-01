@@ -15,7 +15,11 @@ public class DisabilityDAO {
 	
 	// �궗�슜�옄留덈떎 �쁽�옱 �봽濡쒖젥�듃�쓽 寃쎈줈媛� �떎瑜닿린 �븣臾몄뿉 洹멸구 誘몃━ 援ы빐�넃怨� �뙆�씪 �뾽濡쒕뱶 寃쎈줈瑜� �긽���쟻�쑝濡� 諛붽퓭以��떎
 	private static String path = (System.getProperty("user.dir")).replace("\\", "/");
+<<<<<<< HEAD
 	private static final String SAVEFOLDER = path + "/Jobfair/Jobfair/src/main/webapp/image/";
+=======
+	private static final String SAVEFOLDER = path + "/JobFair/JobFair/src/main/webapp/image/";
+>>>>>>> b3d055529b6fb3ba6647788e249c336e16b70c28
 	private static final String ENCTYPE = "UTF-8";
 	private static int MAXSIZE = 10*1024*1024;
 	

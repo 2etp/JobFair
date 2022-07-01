@@ -183,7 +183,7 @@
 							<img alt="로고 이미지" src="./image/<%=vo.getLogoName()%>" width="200px" height="150px"><br>
 						</div>
 						<div class="company-contents"> <!-- 채용글 -->
-							<a href="#" role="button"><%=vo.getComName() %></a>
+							<a href="recruitmentDetail.jsp?employNum=<%=vo.getEmployNum()%>" role="button"><%=vo.getComName() %></a>
 							<p><span>근무지역</span> <%=vo.getWorkArea() %></p>
 							<p><span>직무</span> <%=vo.getTask() %></p>
 							<p>지원기간 | <%=vo.getOpeningDate() %></p>

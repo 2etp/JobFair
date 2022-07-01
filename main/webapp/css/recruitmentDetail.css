@@ -228,6 +228,20 @@ h4 .small-icons{
 	font-size:25px;
 }
 
+#loginPlz div{
+	margin-top:60px;
+	text-align:center;
+	font-weight:bold;
+}
+#loginBtn{
+	margin-top:10px;
+	width:200px;
+	height:60px;
+	background-color:#F7545F;
+	line-height:60px;
+	font-size:25px;
+}
+
 .div-sideNav {
 	position : absolute;
 	right : 0px;

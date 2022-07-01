@@ -7,6 +7,7 @@
 <title>2022 부산 장애인 온라인 채용 박람회 | 이력서 관리</title>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/myResume.css">
+<script defer src="js/myResume.js"></script>
 </head>
 <body>
 
@@ -14,9 +15,17 @@
 
 <main>
 	<section>
-		<div class="div-resume-list">
-			
-		</div>
+		<details class="details-resume-list">
+			<summary>
+				<div>이력서 목록</div>
+				<img src="image/downArrow.png">
+			</summary>
+			<div class="details-resume-list-item">이력서 1</div>
+			<div class="details-resume-list-item">이력서 2</div>
+			<div class="details-resume-list-item">이력서 3</div>
+			<div class="details-resume-list-item">이력서 4</div>
+			<div class="details-resume-list-item">이력서 5</div>
+		</details>
 		<div class="div-caption">
 			<img src="./image/resume.png" alt="이력서 이미지">
 			<p>이력서</p>

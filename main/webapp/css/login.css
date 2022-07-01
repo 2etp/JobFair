@@ -55,7 +55,7 @@ form[name='logFrm'] input {
 	height : 100%;
 	border : 1px solid #1A8F64;
 	background-color : white;
-	
+	cursor: pointer;
 }
 
 .div-form ul li a{

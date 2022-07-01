@@ -35,7 +35,7 @@
 					</div>
 					<div class=div-phone>
 						<label for="phone">휴대폰번호</label>
-						<input id="phone" maxlength="11" type="tel" name="mobile" title="휴대폰번호" placeholder="'-' 를 빼고 입력해 주세요.">
+						<input id="phone" maxlength="11" type="tel" name="mobile" title="휴대폰번호" placeholder="숫자만 입력해 주세요.">
 					</div>
 					<div class=div-submit>
 						<a id="loginButton" href="javascript:loginCheck(this);" role="button">로그인</a>

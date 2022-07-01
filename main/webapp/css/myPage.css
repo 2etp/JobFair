@@ -4,11 +4,17 @@ main {
 	align-items : center;
 }
 
+table, tr, th, td {
+	border-top: 1px solid black;
+	border-collapse: collapse;
+}
+
+table tr:last-of-type {
+	border-bottom: 1px solid black;
+}
+
 .section-table {
-	flex-basis : 40%;
-	border : 1px solid black;
-	border-radius : 10%;
-	
+	flex-basis : 40%;	
 }
 
 .section-table table{

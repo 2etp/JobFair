@@ -32,7 +32,7 @@
 		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
 		<div class="div-caption">
 			<img src="./image/resume.png" alt="이력서 이미지">
-			<p>입사지원서</p>
+			<p>이력서 작성</p>
 		</div>
 			<div class="div-table">
 			<table class="table1" id="table">

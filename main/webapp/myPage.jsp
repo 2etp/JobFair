@@ -14,19 +14,21 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>2022 부산 장애인 온라인 채용 박람회 | 내 정보 관리</title>
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/myPage.css">
 	<link rel="stylesheet" href="css/aside.css">
-	
 </head>
+
 <body>
 	<jsp:include page="commonJSP/header.jsp"></jsp:include>
 	<main>
 		<section>
 			<jsp:include page="aside.jsp"></jsp:include>
 		</section>
+		
 		<section class="section-table">
+			<p>개인정보</p>
 			<table>
 				<tr>
 					<th>성명</th>

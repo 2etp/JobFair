@@ -137,18 +137,6 @@ table .tr7 td, .tr8 td {
 	height: 40px;
 }
 
-table .tr7 input:nth-of-type(1), .tr8 input {
-	margin-right: 10px;
-	height: 30px;
-	border: 1px solid gray;
-	width: 100px;
-}
-
-table .tr7 input[type=radio], .tr7 label {
-	height: 10px;
-	width: 10px;
-}
-
 table .tr10 th, .tr15 th {
 	border-left: 1px solid #28587D;	
 }
@@ -185,27 +173,6 @@ table .tr11 td, .tr12 td, .tr13 td {
 
 table .tr16 td, .tr17 td, .tr18 td {
 	height: 40px;
-}
-
-table .tr11 input, .tr12 input, .tr13 input {
-	margin: 0px;
-	height: 30px;
-	border: 1px solid gray;
-	width: 135px;
-}
-
-table .tr16 input, .tr17 input, .tr18 input {
-	margin: 0px;
-	height: 30px;
-	width: 120px;
-	border: 1px solid gray;
-}
-
-table caption {
-	font-size: 30px;
-	margin-bottom: 10px;
-	margin-top: 50px;
-	font-weight: bold;
 }
 
 .div-caption {

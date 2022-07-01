@@ -1,5 +1,4 @@
 let liEls = document.querySelectorAll(".div-form ul li");
-let registerEl = document.querySelector(".div-register");
 
 
 let inputEls = document.querySelectorAll("form[name='logFrm'] input");
@@ -14,17 +13,6 @@ liEls.forEach(function (Eliment, ElimentIndex, obj) {
 			obj[i].classList.remove("enable");
 		}
 		
-		if(Eliment.classList.contains("li-private"))
-		{
-			registerEl.innerHTML = `
-				<a href="signupForDisability.jsp">개인 회원 가입하기</a>
-			`
-		}
-		else{
-			registerEl.innerHTML = `
-				<a href="signupForGeneral.jsp">기업 회원 가입하기</a>
-			`
-		}
 		Eliment.classList.add("enable");
 	})
 })

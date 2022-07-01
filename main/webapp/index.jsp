@@ -26,7 +26,7 @@
 	<nav>
 		<section class="sign">
 			<% if(name == null) {%>
-				<a href="signUp.jsp" id="signUp">회원가입</a>
+				<a href="signup.jsp" id="signUp">회원가입</a>
 				<a href="login.jsp" id="signIn">로그인</a>
 			<%} else { %>
 				<a href="myPage.jsp" id="signUp">마이페이지</a>

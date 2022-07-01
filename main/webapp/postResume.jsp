@@ -16,7 +16,7 @@
 <meta charset="UTF-8">
 <title>2022 부산 장애인 온라인 채용 박람회 | 이력서 등록</title>
 <link rel="stylesheet" href="./css/common.css">
-<link rel="stylesheet" href="./css/postResume.css?after">
+<link rel="stylesheet" href="./css/postResume.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script lang="javascript" src="./js/xlsx.full.min.js"></script>
@@ -30,8 +30,10 @@
 	<section style="margin-top: 10px;">
 		
 		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
-		
-			<caption>입사지원서</caption>
+		<div class="div-caption">
+			<img src="./image/resume.png" alt="이력서 이미지">
+			<p>입사지원서</p>
+		</div>
 			<div class="div-table">
 			<table class="table1" id="table">
 				<tr class="tr1">
@@ -41,7 +43,6 @@
 							<input type="file" id="profileUpload" accept="image/*" style="display: none;">
 						</div>
 						<a href="javascript:void();" role="button" onclick="imageRegister();">등록하기</a>
-					
 					</td>
 					<th>성명</th>
 					<td><%=name%></td>
@@ -58,8 +59,7 @@
 				
 				<tr class="tr3">
 					<th>주소</th>
-					<td colspan="3"><%=address%></td>
-					
+					<td colspan="3"><%=address%></td>		
 				</tr>
 				
 				<tr class="tr4">
@@ -89,7 +89,6 @@
 					<td colspan="2">
 						<input type="text" name="assistiveDevice">
 					</td>
-					
 				</tr>
 				
 				<tr class="tr7">
@@ -142,7 +141,7 @@
 				
 			<table class="table3" id="mytable3">
 				<tr class="tr15">
-					<th rowspan="4" style="border-bottom-left-radius: 5px;">자격면허</th>
+					<th rowspan="4" style="border-bottom-left-radius: 19px;">자격면허</th>
 					<th>자격종목</th>
 					<th>급수</th>
 					<th>등록번호</th>

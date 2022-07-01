@@ -31,7 +31,7 @@ public class generalDAO {
 	 
 
 	// 기업측 회원가입
-	public boolean insertGeneral(HttpServletRequest request, HttpServletResponse response) {
+	public boolean insertGeneral(HttpServletRequest request) {
 		boolean flag = false;
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -51,7 +51,13 @@ public class generalDAO {
 				fileSize = (int)multi.getFile("filename").length();
 			}
 			
-			sql = "insert into generals(comName, comAddress, ceoName, comUrl, comTel, sectors, businessInfo, comSize, logoName, logoSize, userType) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, biz)";
+			// 설립날짜 가공
+			String date = multi.getParameter("foundedDate");
+			String[] arr = date.split("-");
+			String foundedDate = arr[0] + "년 " + arr[1] + "월 " + arr[2] + "일";
+			
+			
+			sql = "insert into generals(comName, comAddress, ceoName, comUrl, comTel, sectors, businessInfo, comSize, logoName, logoSize, userType, foundedDate, id, pw) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'biz', ?, ?, ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, multi.getParameter("companyName"));
 			pstmt.setString(2, multi.getParameter("address"));
@@ -63,6 +69,9 @@ public class generalDAO {
 			pstmt.setString(8, multi.getParameter("comSize"));
 			pstmt.setString(9, fileName);
 			pstmt.setInt(10, fileSize);
+			pstmt.setString(11, foundedDate);
+			pstmt.setString(12, multi.getParameter("id"));
+			pstmt.setString(13, multi.getParameter("pw"));
 			if (pstmt.executeUpdate() == 1) {
 				flag = true;
 			}
@@ -73,6 +82,31 @@ public class generalDAO {
 		}
 		
 		
+		return flag;
+	}
+	
+	// 회원가입시 ID 중복체크
+	public boolean isIdExist(String id) {
+		boolean flag = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			con = pool.getConnection();
+			sql = "select comNum from generals where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			// 결과물이 있다는 것은 입력받은 아이디가 이미 존재한다는 뜻
+			if(rs.next()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
 		return flag;
 	}
 	

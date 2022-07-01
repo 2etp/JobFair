@@ -16,7 +16,7 @@
 
 <main>
 	<section>
-		<form name="signupFrm" method="post" action="signup" enctype="multipart/form-data">
+		<form name="signupFrm" method="post" action="GenSignup" enctype="multipart/form-data">
 			<p>기업 회원가입</p>
 			<div class="profile">
 				<img src="./image/company.svg" alt="기업로고 이미지">
@@ -27,14 +27,14 @@
 			
 			<div class="signupFrm1">
 				<label for="id">아이디</label>
-				<input type="text" name="companyName" id="id" placeholder="예시) apple" title="기업명">
+				<input type="text" name="id" id="id" placeholder="중복체크 버튼을 눌러주세요" title="기업명" readonly>
 			</div>
 			<div>
-				<a href="javascript:signupCheck();" role="button" id="duplicateCheck">중복체크</a>
+				<a href="javascript:overlap();" role="button" id="duplicateCheck">중복체크</a>
 			</div>
 			<div class="signupFrm1">
 				<label for="password">패스워드</label>
-				<input type="password" name="companyName" id="password" placeholder="예시) qwer1234" title="기업명">
+				<input type="password" name="pw" id="password" placeholder="예시) qwer1234" title="기업명">
 			</div>
 			<div class="signupFrm1">
 				<label for="passwordCheck">패스워드 확인</label>
@@ -108,11 +108,11 @@
 			<div class="signupFrm8">
 				<label for="comSize">규모</label>
 				<select id="comSize" name="comSize" title="규모">
-					<option value="max50" selected>50명 이하</option>
-					<option value="max100">100명 이하</option>
-					<option value="max100">101~300</option>
-					<option value="max100">301~600</option>
-					<option value="more300">1000명 이상</option>
+					<option value="50인 이하" selected>50명 이하</option>
+					<option value="51 ~ 100인">100명 이하</option>
+					<option value="101 ~ 300인">101~300</option>
+					<option value="301 ~ 600인">301~600</option>
+					<option value="601인 이상">601명 이상</option>
 				</select>
 			</div>
 			
@@ -133,6 +133,14 @@
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>
-
+<script type="text/javascript">
+	function overlap() {
+	    window.open(
+	      "overlap.jsp",
+	      "중복 확인",
+	      "width=400, height=300, top=50, left=50"
+	    );
+	}
+</script>
 </body>
 </html>

@@ -308,6 +308,9 @@ public class generalDAO {
 				vo.setWelfare(rs.getString("welfare"));
 				vo.setPreferred(rs.getString("preferred"));
 				vo.setOpeningDate(rs.getString("openingDate"));
+				vo.setOvertime(rs.getString("overtime"));
+				vo.setBonus(rs.getString("bonus"));
+				vo.setSeverancePay(rs.getString("severancePay"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

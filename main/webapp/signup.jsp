@@ -12,11 +12,22 @@
 <jsp:include page="commonJSP/header.jsp"/>
 <main>
 	<section>
-		<div class="div-signuplink">
-			<a href="signupForDisability.jsp" id="introFair">개인회원가입 바로가기</a>
-		</div>
-		<div class="div-signuplink">
-			<a href="signupForGeneral.jsp" id="introFair">기업회원가입 바로가기</a>
+		<h1>회원가입을 환영합니다.</h1>
+		<div class="div-signuplink-form">
+			<div class="div-signuplink-left">
+				<img src="image/signupDisability.png">
+				
+				<div class="div-signuplink disability">
+					<a href="signupForDisability.jsp" id="introFair">개인회원가입</a>
+				</div>
+			</div>
+			<div class="div-signuplink-right">
+				<img src="image/signupGeneral.png">
+				<div class="div-signuplink general">
+					<a href="signupForGeneral.jsp" id="introFair">기업회원가입</a>
+				</div>
+			</div>
+			
 		</div>
 	</section>
 </main>

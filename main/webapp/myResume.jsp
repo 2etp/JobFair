@@ -20,11 +20,13 @@
 				<div>이력서 목록</div>
 				<img src="image/downArrow.png">
 			</summary>
-			<div class="details-resume-list-item">이력서 1</div>
-			<div class="details-resume-list-item">이력서 2</div>
-			<div class="details-resume-list-item">이력서 3</div>
-			<div class="details-resume-list-item">이력서 4</div>
-			<div class="details-resume-list-item">이력서 5</div>
+			<ul class="ul-resume-list">
+				<li class="details-resume-list-item" id="item1">이력서 1</li>
+				<li class="details-resume-list-item" id="item2">이력서 2</li>
+				<li class="details-resume-list-item" id="item3">이력서 3</li>
+				<li class="details-resume-list-item" id="item4">이력서 4</li>
+				<li class="details-resume-list-item" id="item5">이력서 5</li>
+			</ul>
 		</details>
 		<div class="div-caption">
 			<img src="./image/resume.png" alt="이력서 이미지">

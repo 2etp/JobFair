@@ -4,6 +4,10 @@ main section {
 	flex-basis: 40%;
 }
 
+main {
+	margin-top: 100px;
+}
+
 .div-caption p:first-of-type {
 	text-align: center;
 	font-weight: bold;
@@ -187,39 +191,55 @@ table .tr16 td, .tr17 td, .tr18 td {
 }
 
 .div-caption p {
-	width: 175px;
+	width: 130px;
 }
 
 .details-resume-list{
 	text-align : center;
 	background-color : white;
 	cursor : pointer;
-	border: 1px solid gray;
+	border: 2px solid #4B788F;
+	border-radius: 5px;
 }
 
 .details-resume-list summary{
 	height : 50px;
-	font-size : 30px;
-	color : black;
+	font-size : 20px;
+	color : #4B788F;
 	list-style : none;
-	font-weight: bold;
-	
 	display: flex;
-	justify-content : space-between;
+	padding-left: 50px;
 	align-items : center;
+	
 }
 
-.details-resume-list summary div{
+.ul-resume-list {
+	list-style: none;
+	padding: 0px;
+}
+
+.details-resume-list summary div {
 	width : 100%;
 }
 
 .details-resume-list summary img{
-	height : 100%;
+	width: 30px;
+	height: 30px;
+	margin-right: 25px;
+}
+
+.details-resume-list summary:hover{
+	background-color : #E1F3FF;
+	border-radius: 5px;
+}
+
+.details-resume-list li:hover {
+	background-color : #E1F3FF;
 }
 
 
-.details-resume-list > *:hover{
-	background-color : orange;
+.details-resume-list:hover {
+	border: 1px solid #4B788F;
 }
 
 .details-resume-list-item {
@@ -228,3 +248,4 @@ table .tr16 td, .tr17 td, .tr18 td {
 	font-size: 20px;
 	border-top : 1px solid gray;
 }
+

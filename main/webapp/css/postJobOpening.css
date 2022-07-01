@@ -86,7 +86,7 @@ th{
 }
 td{
 	font-family:KoddiRegular;
-	width:380px;
+	width:410px;
 	padding:0;
 }
 tr td:not(tr td:last-child){
@@ -99,7 +99,7 @@ td textarea, td input[type=number]{
 	background-repeat:no-repeat;
 	background-position:98%;
 	background-size:28px;
-	width:88%;
+	width:90%;
 	min-height:45px;
 	margin:0;
 	border:none;
@@ -108,12 +108,12 @@ td textarea, td input[type=number]{
 	font-size:18px;
 }
 td input[type=number]{
-	width:82%;
+	width:84%;
 	padding-right:50px;
 	background-position:99%;
 }
 td textarea[name="etc"]{
-	width:95%;
+	width:95.8%;
 	background-position:99.5%;
 }
 td select{
@@ -129,15 +129,15 @@ td select .select-holder{
 	display:none;
 }
 td a, td span{
-	padding-left:10px;
-	padding-right:10px;
+	margin-left:10px;
+	margin-right:10px;
 }
 
 #comInfo th{
 	width:130px;
 }
 #comInfo td{
-	width:210px;
+	width:240px;
 }
 .logo-wrap{
 	float:left;

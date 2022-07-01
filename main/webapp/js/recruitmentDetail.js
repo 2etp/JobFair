@@ -1,5 +1,5 @@
 'use strict';
 
-function companyBookmark(comNum){
-    
+function companyBookmark(){
+    document.bookmarkFrm.submit();
 }

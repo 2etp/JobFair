@@ -3,12 +3,14 @@
 <jsp:useBean id="dao" class="jobFairMgr.generalDAO" />
 <jsp:useBean id="vo" class="jobFairMgr.generalVO" />
 <jsp:useBean id="jvo" class="jobFairMgr.jobOpeningVO" />
+<jsp:useBean id="disvo" class="jobFairMgr.DisabilityVO" />
+<jsp:useBean id="disdao" class="jobFairMgr.DisabilityDAO" />
 <%@ page import = "java.util.*" %>
 
 <%
 	request.setCharacterEncoding("UTF-8");
 	String name = (String)session.getAttribute("lgnName");
-	
+	disvo = disdao.getUser(name);
 	int employNum = Integer.parseInt(request.getParameter("employNum"));
 	
 	jvo = dao.getOpening(employNum);
@@ -161,15 +163,25 @@
 			<aside id="sideNav" role="navigation">
 				<div id="sideNav-container">
 					<h3>채용공고 메뉴</h3>
-					<a href="" id="bookmark">
-						<img src="image/bookmark_off.svg" aria-hidden="true">
-						<span>관심기업 등록</span>
-					</a>
-					<!-- 관심기업 등록 폼 -->
-					<form aria-hidden="true">
-						<input type="hidden" name="user" value="">
-						<input type="hidden" name="employNum" value="<%=employNum%>">
-					</form>
+					<%
+					boolean flag = disdao.isExistInter(employNum, disvo.getUserNum());
+					if(flag) { %>
+						<a href="javascript:companyBookmark()" id="bookmark">
+							<img src="image/bookmark_on.svg" aria-hidden="true">
+							<span>관심공고 해제</span>
+						</a>
+					<%} else {%>
+						<a href="javascript:companyBookmark()" id="bookmark">
+							<img src="image/bookmark_off.svg" aria-hidden="true">
+							<span>관심공고 등록</span>
+						</a>
+					<%} %>
+						<!-- 관심공고 등록 폼 -->
+						<form aria-hidden="true" name="bookmarkFrm" method="get" action="addInterCom.jsp">
+							<input type="hidden" name="user" value="<%=disvo.getUserNum()%>">
+							<input type="hidden" name="employNum" value="<%=employNum%>">
+							<input type="hidden" name="flag" value="<%=flag%>">
+						</form>
 					<!-- 관심기업 등록 폼 끝 -->
 					<section id="quickLink">
 						<h4>

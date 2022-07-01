@@ -168,6 +168,56 @@ public class DisabilityDAO {
         }
         return flag;
     }
+    
+    // 관심공고 삭제
+    public boolean deleteInterCom(int employNum, int userNum) {
+        boolean flag = false;
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        try {
+            con = pool.getConnection();
+            sql ="delete from intercom where employNum = ? and userNum = ?";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, employNum);
+            pstmt.setInt(2, userNum);
+            if (pstmt.executeUpdate() == 1) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            pool.freeConnection(con, pstmt);
+        }
+        return flag;
+    }
+    
+    // 관심공고 여부 확인
+    // 로그인된 user의 고유번호와 보고있는 채용공고의 번호를 넣어서 관심공고에 등록됐는지 여부 확인
+    // 존재하면 true, 없으면 false
+    public boolean isExistInter(int employNum, int userNum) {
+    	boolean flag = false;
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        ResultSet rs = null;
+        try {
+        	con = pool.getConnection();
+        	sql = "select employNum from intercom where userNum = ?";
+        	pstmt = con.prepareStatement(sql);
+        	pstmt.setInt(1, userNum);
+        	rs = pstmt.executeQuery();
+        	while(rs.next()) {
+        		if(rs.getInt("employNum") == employNum)
+        			flag = true;
+        	}
+        } catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+        return flag;
+    }
 	
     // 관심기업 리스트 출력
 	public List<OpeningListVO> getPickedList(int userNum, int startRow, int pageSize) {

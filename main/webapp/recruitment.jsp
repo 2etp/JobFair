@@ -190,7 +190,7 @@
 						</div>
 					</div>
 				<% }%>
-			</div>		
+			</div>
 		</section>
 		<section>
 			<!-- 게시글 페이징 -->

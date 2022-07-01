@@ -31,13 +31,19 @@
 	int currentPage = Integer.parseInt(pageNum);
 	int startRow = (currentPage - 1) * pageSize + 1;
 	
+	
+	String item = null;
+	String companyName = null;
+	String sectors = null;
+	String workArea = null;
+	String workType = null;
 	// 검색해서 나온 채용공고를 볼 경우
 	if(pageType.equals("search")) {
 		// 기업명으로 검색했는지, 다른 조건으로 검색했는지
-		String item = request.getParameter("item");
+		item = request.getParameter("item");
 		if(item.equals("name")) {
 			// 기업명으로 검색했을 경우
-			String companyName = request.getParameter("companyName");
+			companyName = request.getParameter("companyName");
 			// 기업명이 공백인채 검색헀다면 평소와 같게 모든 채용공고 출력
 			if(companyName.equals("")) {
 				list = dao.getOpeningList(startRow, pageSize);
@@ -50,9 +56,9 @@
 			
 		} else if(item.equals("other")) {
 			// 다른조건으로 검색했을 경우
-			String sectors = request.getParameter("sectors");
-			String workArea = request.getParameter("workArea");
-			String workType = request.getParameter("workType");
+			sectors = request.getParameter("sectors");
+			workArea = request.getParameter("workArea");
+			workType = request.getParameter("workType");
 			
 			if(sectors.equals("sectors")) sectors = "";
 			if(workArea.equals("workArea")) workArea = "";
@@ -78,6 +84,7 @@
 <title>2022 부산 장애인 온라인 채용 박람회 | 채용관</title>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/recruitment.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -89,7 +96,7 @@
 			<form name="searchFrm" method="post" action="search.jsp">
 				<div class="div-search">
 					<img src="./image/search.svg" alt="검색 이미지">
-					<input id="companyName" type="text" name="companyName" placeholder="기업명을 입력하세요" title="기업명">
+					<input id="companyName" type="text" name="companyName" placeholder="기업명을 입력하세요" title="기업명" value="">
 					<a id="submit-button" href="javascript:" role="button"
 					 onclick="searchName()">검색</a>
 				</div>
@@ -135,6 +142,32 @@
 				</div>
 			</form>		
 		</section>
+		
+		<script>
+		<%if(pageType.equals("search")) { 
+			if(item.equals("name")){%>
+				const comNameField = $("#companyName");
+				comNameField.prop("value",'<%=companyName%>');
+			<%}else if(item.equals("other")){%>
+				const sectorsField = $("#sectors");
+				const workAreaField = $("#workArea");
+				const workTypeField = $("#workType");
+				let sectors = 'sectors';
+				let workArea = 'workArea';
+				let workType = 'workType';
+				<%if(!sectors.equals("")){%>
+					sectors = '<%=sectors%>';
+				<%}if(!workArea.equals("")){%>
+					workArea = '<%=workArea%>';
+				<%}if(!workType.equals("")){%>
+					workType = '<%=workType%>';
+				<%}%>
+				sectorsField.val(sectors).prop("selected",true);
+				workAreaField.val(workArea).prop("selected",true);
+				workTypeField.val(workType).prop("selected",true);
+			<%}%>
+		<%} %>
+		</script>
 		
 		<section>
 			<div class="div-list">
@@ -196,8 +229,8 @@
 			    			<%}
 		    			} else {
 		    				// 검색했을 경우 페이징 번호에 다른 url을 붙여줘야한다.
-		    				String item = request.getParameter("item");
-		    				String companyName = request.getParameter("companyName");
+		    				item = request.getParameter("item");
+		    				companyName = request.getParameter("companyName");
 		    				if(item.equals("name")) {
 		    					// 기업명으로 검색했을 경우
 		    					if(startPage > pageBlock) { %>
@@ -210,9 +243,9 @@
 				    				<a href="recruitment.jsp?pageNum=<%=startPage + pageBlock%>&companyName=<%=companyName%>&pageType=search&item=name">다음</a>
 				    			<%}
 			    			} else if(item.equals("other")) {
-			    				String sectors = request.getParameter("sectors");
-			    				String workArea = request.getParameter("workArea");
-			    				String workType = request.getParameter("workType");
+			    				sectors = request.getParameter("sectors");
+			    				workArea = request.getParameter("workArea");
+			    				workType = request.getParameter("workType");
 			    				
 			    				if(startPage > pageBlock) { %>
 				    				<a href="recruitment.jsp?pageNum=<%=startPage - pageBlock%>&sectors=<%=sectors%>&workArea=<%=workArea%>&workType=<%=workType%>&pageType=search&item=other">이전</a>

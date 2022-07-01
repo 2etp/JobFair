@@ -249,6 +249,42 @@ public class generalDAO {
 		return vo;
 	}
 	
+	// 기업정보 반환
+	public generalVO getGeneral(String comName) {
+		generalVO vo = new generalVO();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select * from general where comName = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, comName);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setComNum(rs.getInt("comNum"));
+				vo.setComName(rs.getString("comName"));
+				vo.setCeoName(rs.getString("ceoName"));
+				vo.setFoundedDate(rs.getString("foundedDate"));
+				vo.setComAddress(rs.getString("comAddress"));
+				vo.setComUrl(rs.getString("comUrl"));
+				vo.setComTel(rs.getString("comTel"));
+				vo.setSectors(rs.getString("sectors"));
+				vo.setBusinessInfo(rs.getString("businessInfo"));
+				vo.setComSize(rs.getString("comSize"));
+				vo.setLogoName(rs.getString("logoName"));
+				vo.setLogoSize(rs.getInt("logoSize"));
+				vo.setUserType(rs.getString("userType"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vo;
+	}
+	
 	// 아이디을 넣어서 해당되는 기업명 반환
 	public String getComName(String id) {
 		Connection con = null;

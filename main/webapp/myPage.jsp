@@ -30,30 +30,39 @@
 		<section class="section-table">
 			<p>개인정보</p>
 			<table>
-				<tr>
-					<th>성명</th>
-					<td><%=vo.getName() %></td>
-				</tr>
-				<tr>
-					<th>주민등록번호</th>
-					<td><%=vo.getPrefixNum()%> - <%=vo.getSuffixNum()%></td>
-				</tr>
-				<tr>
-					<th>거주지역</th>
-					<td>부산광역시 <%=vo.getLivingArea()%></td>
-				</tr>
-				<tr>
-					<th>연락처</th>
-					<td><%=pNum1 %> - <%=pNum2%> - <%=pNum3%></td>
-				</tr>
-				<tr>
-					<th>장애유형</th>
-					<td><%=vo.getDisType() %></td>
-				</tr>
-				<tr>
-					<th>장애등급</th>
-					<td><%=vo.getDisLevel() %></td>
-				</tr>
+				<thead>
+					<tr class="tr1">
+						<th>제목</th>
+						<th>내용</th>
+					</tr>
+				</thead>
+			
+				<tbody>
+					<tr>
+						<th>성명</th>
+						<td><%=vo.getName() %></td>
+					</tr>
+					<tr>
+						<th>주민등록번호</th>
+						<td><%=vo.getPrefixNum()%> - <%=vo.getSuffixNum()%></td>
+					</tr>
+					<tr>
+						<th>거주지역</th>
+						<td>부산광역시 <%=vo.getLivingArea()%></td>
+					</tr>
+					<tr>
+						<th>연락처</th>
+						<td><%=pNum1 %> - <%=pNum2%> - <%=pNum3%></td>
+					</tr>
+					<tr>
+						<th>장애유형</th>
+						<td><%=vo.getDisType() %></td>
+					</tr>
+					<tr>
+						<th>장애등급</th>
+						<td><%=vo.getDisLevel() %></td>
+					</tr>
+				</tbody>
 			</table>
 		</section>
 	</main>

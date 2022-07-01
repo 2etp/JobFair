@@ -110,7 +110,45 @@ public class generalDAO {
 		return flag;
 	}
 	
-	// 기업측 로그인
+	// 로그인
+	public int login(String id, String pw) {
+		Connection con = null;				
+		PreparedStatement pstmt = null;		
+		String sql = null;
+		ResultSet rs = null;
+		
+		// 1 : 아이디가 존재하지 않음
+		// 2 : 비밀번호가 일치하지 않음
+		// 3 : 로그인 성공
+		int flag = 0;
+		
+		try {
+			con = pool.getConnection();
+			// 입력받은 id가 데이터베이스에 존재하는지 확인
+			sql = "select id, pw from generals where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			// id가 없으니 1을 반환
+			if(!rs.next()) {
+				flag = 1;
+				return flag;
+			}
+			// sql문을 돌려 나온 비밀번호가 입력받은 비밀번호와 일치하는지 확인
+			// 일치하지 않으면 2를 반환
+			else if(!(rs.getString("pw").equals(pw))) {
+				flag = 2;
+				return flag;
+			}  else {
+				flag = 3;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return flag;
+	}
 	
 	
 	// 채용공고 리스트(로고, 기업명, 근무지역, 직무, 지원기간)
@@ -209,6 +247,28 @@ public class generalDAO {
 			pool.freeConnection(con, pstmt, rs);
 		}
 		return vo;
+	}
+	
+	// 아이디을 넣어서 해당되는 기업명 반환
+	public String getComName(String id) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		String comName = null;
+		try {
+			con = pool.getConnection();
+			sql = "select comName from generals where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) comName = rs.getString("comName");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return comName;
 	}
 	
 	

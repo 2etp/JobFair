@@ -1,6 +1,8 @@
 document.getElementById("profileUpload").addEventListener("change", function(){
+	console.log("A");
 	let labelEl = document.querySelector("label[for='profileUpload']");
-	labelEl.innerHTML = this.files[0].name;
+	labelEl.innerHTML = this.files[0].name
+	
 })
 
 
@@ -51,7 +53,7 @@ function fnExcelReport(id1,id2,id3, title) {
 function imageRegister(){
 	let profileImageEl = document.querySelector(".div-profileImage");
 	let fileEl = document.getElementById("profileUpload");
-	
+	let labelEl = document.querySelector("label[for='profileUpload']");
 	let selectFile = fileEl.files[0];
 	
 	if(selectFile == null){
@@ -60,9 +62,9 @@ function imageRegister(){
 	}
 	let file = URL.createObjectURL(selectFile);
 	
-	profileImageEl.innerHTML = `
-		<img src=${file}>
-	`
+	labelEl.innerHTML = `
+			<img src=${file}>
+	`;
 }
 /*
 function fnExcelReport(id1,id2,id3, title) {

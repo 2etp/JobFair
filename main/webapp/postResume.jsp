@@ -42,7 +42,7 @@
 							<label for="profileUpload">이력서에 사용할 사진을 등록해주세요</label>
 							<input type="file" id="profileUpload" accept="image/*" style="display: none;">
 						</div>
-						<a href="javascript:void();" role="button" onclick="imageRegister();">등록하기</a>
+						<a role="button" onclick="imageRegister();">등록하기</a>
 					</td>
 					<th>성명</th>
 					<td><%=name%></td>

@@ -94,6 +94,7 @@ table .tr1 a{
     text-decoration-line: none;
     color: black;
     background-color: gray;
+    cursor : pointer;
 }
 
 
@@ -214,8 +215,13 @@ table caption {
 	height : 202px;
 }
 .div-profileImage label{
-    padding: 53% 0;
     display: inline-block;
+    height : 100%;
+    
+}
+
+.div-profileImage label div{
+    padding-top : 50%;
 }
 
 .div-profileImage img{

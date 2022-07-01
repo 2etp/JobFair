@@ -7,8 +7,8 @@ function signupCheck(){
 	let phoneEl = document.getElementById("mobile");
 	let checkboxEl = document.getElementById("checkbox");
 	
-	let residentFirstRegExp = new RegExp("[0-9]{2}[0-1]{1}[0-2]{1}[1-3]{1}[0-9]{1}");
-	let residentSecondRegExp = new RegExp("[1-4]{1}[0-9]{6}");
+	let residentFirstRegExp = new RegExp("[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])");
+	let residentSecondRegExp = new RegExp("[1-4]([0-9]{6})");
 	let phoneRegExp = new RegExp("010[0-9]{8}");
 	
 	if(nameEl.value == ""){

@@ -8,9 +8,33 @@ liEls.forEach(function (Eliment, ElimentIndex, obj) {
 	
 	Eliment.addEventListener("click", function() {
 		
+		let divNameEl = document.querySelector(".div-name");
+		let divPhoneEl = document.querySelector(".div-phone");
+
 		for(let i=0; i<obj.length; i++)
 		{
 			obj[i].classList.remove("enable");
+		}
+		
+		if(Eliment.classList.contains("li-private")){
+			divNameEl.innerHTML = `
+				<label for="name">이름</label>
+				<input id="name" type="text" name="name" title="이름" placeholder="ex) 홍길동">
+			`;
+			
+			divPhoneEl.innerHTML = `
+				<label for="phone">휴대폰번호</label>
+				<input id="phone" maxlength="11" type="text" name="mobile" title="휴대폰번호" placeholder="'-' 를 빼고 입력해 주세요.">
+			`;
+		}else{
+			divNameEl.innerHTML = `
+				<label for="id">아이디</label>
+				<input id="id" type="text" name="name" title="이름" placeholder="아이디">
+			`;
+			divPhoneEl.innerHTML = `
+				<label for="password">패스워드</label>
+				<input id="password" type="password" name="mobile" title="휴대폰번호" placeholder="패스워드">
+			`;
 		}
 		
 		Eliment.classList.add("enable");

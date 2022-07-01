@@ -190,3 +190,41 @@ table .tr16 td, .tr17 td, .tr18 td {
 	width: 175px;
 }
 
+.details-resume-list{
+	text-align : center;
+	background-color : white;
+	cursor : pointer;
+	border: 1px solid gray;
+}
+
+.details-resume-list summary{
+	height : 50px;
+	font-size : 30px;
+	color : black;
+	list-style : none;
+	font-weight: bold;
+	
+	display: flex;
+	justify-content : space-between;
+	align-items : center;
+}
+
+.details-resume-list summary div{
+	width : 100%;
+}
+
+.details-resume-list summary img{
+	height : 100%;
+}
+
+
+.details-resume-list > *:hover{
+	background-color : orange;
+}
+
+.details-resume-list-item {
+	height : 30px;
+	color : black;
+	font-size: 20px;
+	border-top : 1px solid gray;
+}

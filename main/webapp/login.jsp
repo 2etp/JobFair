@@ -18,7 +18,7 @@
 		<div class="title">
 			<img src="./image/login.png" alt="로그인 이미지">
 		</div>
-		<form name="logFrm" method="post" action="loginProc.jsp">
+		<form name="logFrm" method="post" action="loginProc.jsp?item=dis">
 			<div class="div-form">
 				<ul>
 					<li class="li-private enable">
@@ -38,7 +38,7 @@
 						<input id="phone" maxlength="11" type="tel" name="mobile" title="휴대폰번호" placeholder="'-' 를 빼고 입력해 주세요.">
 					</div>
 					<div class=div-submit>
-						<a id="loginButton" href="javascript:loginCheck(this);" role="button">로그인</a>
+						<a id="loginButton" href="javascript:loginCheckDis(this);" role="button">로그인</a>
 					</div>
 				</div>
 			</div>

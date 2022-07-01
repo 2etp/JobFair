@@ -4,8 +4,8 @@
 <jsp:useBean id="vo" class="jobFairMgr.DisabilityVO" />
 <%
 
-//	String name = (String)session.getAttribute("lgnName");
-	String name = "관리자";
+	String name = (String)session.getAttribute("lgnName");
+	//String name = "관리자";
 	vo = dao.getUser(name);
 	String pNum1 = vo.getPhoneNum().substring(0, 3);
 	String pNum2 = vo.getPhoneNum().substring(3, 7);

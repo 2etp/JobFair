@@ -13,9 +13,9 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 public class DisabilityDAO {
 	private DBConnectionMgr pool;
 	
-	// 사용자마다 현재 프로젝트의 경로가 다르기 때문에 그걸 미리 구해놓고 파일 업로드 경로를 상대적으로 바꿔준다
+	// �궗�슜�옄留덈떎 �쁽�옱 �봽濡쒖젥�듃�쓽 寃쎈줈媛� �떎瑜닿린 �븣臾몄뿉 洹멸구 誘몃━ 援ы빐�넃怨� �뙆�씪 �뾽濡쒕뱶 寃쎈줈瑜� �긽���쟻�쑝濡� 諛붽퓭以��떎
 	private static String path = (System.getProperty("user.dir")).replace("\\", "/");
-	private static final String SAVEFOLDER = path + "/Project1/FirstProject/src/main/webapp/uploadFiles/";
+	private static final String SAVEFOLDER = path + "/Jobfair/Jobfair/src/main/webapp/image/";
 	private static final String ENCTYPE = "UTF-8";
 	private static int MAXSIZE = 10*1024*1024;
 	
@@ -27,7 +27,7 @@ public class DisabilityDAO {
 		}
 	}
 	
-	// 회원가입
+	// �쉶�썝媛��엯
 	public boolean insertUser(HttpServletRequest request) {
 		boolean flag = false;
 		Connection con = null;
@@ -57,9 +57,9 @@ public class DisabilityDAO {
 			pstmt.setString(7, multi.getParameter("grade"));
 			pstmt.setString(8, sex);
 			
-			// executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
-			// create, drop, alter인 경우에는 0을 반환
-			// 회원가입에는 1명의 정보를 저장하기 때문에 성공적으로 가입이 되었다면 1을 반환할 것이다.
+			// executeUpdate �쓽 諛섑솚媛믪� insert,update,delete�씤 寃쎌슦, 愿��젴�맂 �젅肄붾뱶�쓽 �닔瑜� 諛섑솚
+			// create, drop, alter�씤 寃쎌슦�뿉�뒗 0�쓣 諛섑솚
+			// �쉶�썝媛��엯�뿉�뒗 1紐낆쓽 �젙蹂대�� ���옣�븯湲� �븣臾몄뿉 �꽦怨듭쟻�쑝濡� 媛��엯�씠 �릺�뿀�떎硫� 1�쓣 諛섑솚�븷 寃껋씠�떎.
 			if (pstmt.executeUpdate() == 1) {
 				flag = true;				
 			}
@@ -73,32 +73,32 @@ public class DisabilityDAO {
 	
 	
 	
-	// 로그인
-	// 이름과 휴대폰번호를 입력받음
+	// 濡쒓렇�씤
+	// �씠由꾧낵 �쑕���룿踰덊샇瑜� �엯�젰諛쏆쓬
 	public int login(String name, String phoneNum) {
 		Connection con = null;				
 		PreparedStatement pstmt = null;		
 		String sql = null;
 		ResultSet rs = null;
 		
-		// 1 : 아이디가 존재하지 않음
-		// 2 : 비밀번호가 일치하지 않음
-		// 3 : 로그인 성공
+		// 1 : �븘�씠�뵒媛� 議댁옱�븯吏� �븡�쓬
+		// 2 : 鍮꾨�踰덊샇媛� �씪移섑븯吏� �븡�쓬
+		// 3 : 濡쒓렇�씤 �꽦怨�
 		int flag = 0;
 		try {
 			con = pool.getConnection();
-			// 입력받은 이름이 데이터베이스에 존재하는지 확인
+			// �엯�젰諛쏆� �씠由꾩씠 �뜲�씠�꽣踰좎씠�뒪�뿉 議댁옱�븯�뒗吏� �솗�씤
 			sql = "select name, phoneNum from users where name = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, name);
 			rs = pstmt.executeQuery();
-			// id가 없으니 1을 반환
+			// id媛� �뾾�쑝�땲 1�쓣 諛섑솚
 			if(!rs.next()) {
 				flag = 1;
 				return flag;
 			}
-			// sql문을 돌려 나온 비밀번호가 입력받은 비밀번호와 일치하는지 확인
-			// 일치하지 않으면 2를 반환
+			// sql臾몄쓣 �룎�젮 �굹�삩 鍮꾨�踰덊샇媛� �엯�젰諛쏆� 鍮꾨�踰덊샇�� �씪移섑븯�뒗吏� �솗�씤
+			// �씪移섑븯吏� �븡�쑝硫� 2瑜� 諛섑솚
 			else if(!(rs.getString("phoneNum").equals(phoneNum))) {
 				flag = 2;
 				return flag;
@@ -113,8 +113,8 @@ public class DisabilityDAO {
 		return flag;
 	}
 	
-	// 유저정보 출력
-	// 매개변수로 받은 name의 모든 정보를 반환(VO)
+	// �쑀���젙蹂� 異쒕젰
+	// 留ㅺ컻蹂��닔濡� 諛쏆� name�쓽 紐⑤뱺 �젙蹂대�� 諛섑솚(VO)
 	public DisabilityVO getUser(String name) {
 		DisabilityVO vo = new DisabilityVO();
 		Connection con = null;
@@ -145,7 +145,7 @@ public class DisabilityDAO {
 		return vo;
 	}
 	
-	// 관심기업 리스트 출력
+	// 愿��떖湲곗뾽 由ъ뒪�듃 異쒕젰
 	public List<OpeningListVO> getPickedList(int userNum, int startRow, int pageSize) {
 		List<OpeningListVO> list = new ArrayList<OpeningListVO>();
 		Connection con = null;
@@ -181,7 +181,7 @@ public class DisabilityDAO {
 	}
 	
 	
-	// 관심공고에 등록된 글이 총 몇개인지 반환
+	// 愿��떖怨듦퀬�뿉 �벑濡앸맂 湲��씠 珥� 紐뉕컻�씤吏� 諛섑솚
 	public int getPickedCount(int userNum) {
 		int cnt = 0;
 		Connection con = null;
@@ -205,7 +205,7 @@ public class DisabilityDAO {
 		return cnt;
 	}
 	
-	// 지원한 기업 리스트 출력
+	// 吏��썝�븳 湲곗뾽 由ъ뒪�듃 異쒕젰
 	public List<ApplyListVO> getApplyList(int userNum, int startRow, int pageSize) {
 		List<ApplyListVO> list = new ArrayList<ApplyListVO>();
 		Connection con = null;
@@ -241,7 +241,7 @@ public class DisabilityDAO {
 		return list;
 	}
 	
-	// 지원한 채용공고가 총 몇개인지
+	// 吏��썝�븳 梨꾩슜怨듦퀬媛� 珥� 紐뉕컻�씤吏�
 	public int getApplyCount(int userNum) {
 		int cnt = 0;
 		Connection con = null;

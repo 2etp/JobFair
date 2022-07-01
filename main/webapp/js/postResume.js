@@ -1,3 +1,8 @@
+document.getElementById("profileUpload").addEventListener("change", function(){
+	let labelEl = document.querySelector("label[for='profileUpload']");
+	labelEl.innerHTML = this.files[0].name;
+})
+
 
 function fnExcelReport(id1,id2,id3, title) {
 	
@@ -45,7 +50,7 @@ function fnExcelReport(id1,id2,id3, title) {
 }
 function imageRegister(){
 	let profileImageEl = document.querySelector(".div-profileImage");
-	let fileEl = document.getElementById("profileImage");
+	let fileEl = document.getElementById("profileUpload");
 	
 	let selectFile = fileEl.files[0];
 	

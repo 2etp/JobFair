@@ -213,6 +213,11 @@ table caption {
 	width : 150px;
 	height : 202px;
 }
+.div-profileImage label{
+    padding: 53% 0;
+    display: inline-block;
+}
+
 .div-profileImage img{
 	width : 100%;
 	height : 100%;

@@ -238,9 +238,9 @@
 					<%if(name == null){ %>
 					<section id="loginPlz">
 						<div>
-							로그인 후 채용공고에 지원 가능합니다.
+							로그인 후 채용공고에<br>지원 가능합니다.
 							<br>
-							<a href="login.jsp" id="loginBtn">로그인</a>
+							<a href="login.jsp" class="btn" id="loginBtn">로그인</a>
 						</div>
 					</section>
 					<%}else{ %>

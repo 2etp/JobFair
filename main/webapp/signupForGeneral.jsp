@@ -133,14 +133,5 @@
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>
-<script type="text/javascript">
-	function overlap() {
-	    window.open(
-	      "overlap.jsp",
-	      "중복 확인",
-	      "width=400, height=300, top=50, left=50"
-	    );
-	}
-</script>
 </body>
 </html>

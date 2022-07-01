@@ -67,3 +67,11 @@ function signupCheck(){
 	
 	FormEl.submit();
 }
+
+function overlap() {
+    window.open(
+      "overlap.jsp",
+      "중복 확인",
+      "width=400, height=300, top=50, left=50"
+    );
+}

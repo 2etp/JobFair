@@ -1,103 +1,293 @@
-@charset "UTF-8";
-
-main section {
-	flex-basis: 40%;
+@charset "utf-8";
+@font-face{
+	src:url("../fonts/KoddiUDOnGothic-Regular.ttf");
+	font-family:KoddiRegular;
+}
+@font-face{
+	src:url("../fonts/KoddiUDOnGothic-Bold.ttf");
+	font-family:KoddiBold;
+}
+@font-face{
+	src:url("../fonts/BinggraeⅡ.ttf");
+	font-family:Binggrae;
+}
+body{
+	letter-spacing:0.1em;
+	font-family:KoddiRegular;
+}
+input:hover, select:hover{
+	cursor:pointer;
+}
+td a{
+	position:relative;
+}
+.offscreen{
+	display:inline-block;
+	color:rgba(0,0,0,0);
+	width:150px;
+	height:1px;
+	font-size:0.01px;
+	overflow:hidden;
+	position:absolute;
+	left:0;
+}
+h1,h2,h3{
+	font-family:Binggrae;
+}
+h1{
+	font-family:Binggrae;
+	text-align:center;
+	margin-top:50px;
+	background-color:#004C6A;
+	color:white;
+	line-height:100px;
+}
+h1 textarea{
+	width:88%;
+	resize:none;
+	font-family:Binggrae;
+	font-weight:bold;
+	font-size:1.2em;
+	background-color:rgba(255,255,255,0);
+	border:none;
+	margin:10px 0;
+	text-align:center;
+	vertical-align:middle;
+	color:white;
+	background-image:url("../image/edit4.svg");
+	background-repeat:no-repeat;
+	background-position:98%;
+	background-size:28px;
+}
+section{
+	margin-top:50px;
+}
+.icons{
+	height:38px;
+}
+h2{
+	font-size:26px;
+}
+table, tr, th, td{
+	border-collapse:collapse;
+	border:1px solid #000;
+}
+th, td{
+	padding:15px;
+	font-size:18px;
+}
+th{
+	width:130px;
+	background-color:#54BDB6;
+	color:white;
+	text-shadow:0 0 10px #000;
+	letter-spacing:5px;
+	padding:15px 5px 15px 5px;
+}
+td{
+	font-family:KoddiRegular;
+	width:380px;
+	padding:0;
+}
+tr td:not(tr td:last-child){
+	border-right:5px double #000;
+}
+td textarea, td input[type=number]{
+	resize:vertical;
+	font-family:KoddiRegular;
+	background-image:url("../image/edit3.svg");
+	background-repeat:no-repeat;
+	background-position:98%;
+	background-size:28px;
+	width:88%;
+	min-height:45px;
+	margin:0;
+	border:none;
+	padding-left:10px;
+	padding-right:30px;
+	font-size:18px;
+}
+td input[type=number]{
+	width:82%;
+	padding-right:50px;
+	background-position:99%;
+}
+td textarea[name="etc"]{
+	width:95%;
+	background-position:99.5%;
+}
+td select{
+	margin:0;
+	font-family:KoddiRegular;
+	font-size:18px;
+	width:100%;
+	min-height:45px;
+	border:none;
+	padding-left:10px;
+}
+td select .select-holder{
+	display:none;
+}
+td a, td span{
+	padding-left:10px;
+	padding-right:10px;
 }
 
-table {
-	width: 800px;
-	height: 200px;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
-	border-collapse: collapse;
-	
+#comInfo th{
+	width:130px;
+}
+#comInfo td{
+	width:210px;
+}
+.logo-wrap{
+	float:left;
+	margin-right:13px;
+	height:276px;
+	width:326px;
+	background-color:#888;
+	position:relative;
+	z-index:-10;
+}
+.logo{
+	position:absolute;
+	top:9%
 }
 
-table:nth-of-type(2) {
-	width: 800px;
-	height: 350px;
-}
 
-tr, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
+#container{
+	flex-basis: 60%;
+	position:relative;
 }
-
-th {
-	color: #FFFFFF;	
-	background-color: #32834A;
-}
-
-td {
-	width: 200px;
-}
-
-form[name='jobFrm'] input {
-	border: none;
-	padding: 0px;
-	height: 40px;
-	padding-left: 10px; 
-	width: 200px;
-	margin: 0px;
-}
-
-form[name='jobFrm'] {
-	width: 800px;
-}
-
-table th {
-	font-size: 20px;
-}
-
-section p {
-	margin-top: 30px;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-.sideBar {
+#sideNav{	
+	float:left;
+	border:1px solid #000;
+	border-radius:5px;
+	width:250px;
+	height:390px;
 	position:fixed;
-	right: 10%;
-	top: 40%;
+	top:40%;
+	margin-left:20px;
+	box-shadow:2px 2px 5px #666;
+}
+#sideNav-container{
+	position:relative;	
+}
+#bookmark{
+	position:absolute;
+	top:-20px;
+	right:5px;
+	display:block;
+	width:80px;
+	text-decoration:none;
+	text-align:center;
+	color:#004C6A;
+}
+#bookmark img{
+	display:inline-block;
+	width:50px;
+}
+#bookmark span{
+	display:block;
+	width:80px;
+	height:40px;
+	font-weight:bold;
+	font-size:15px;
+}
+#sideNav h3{
+	margin:20px;
+	font-family:Binggrae;
+	font-size:15px;
+	color:#666;
+}
+#sideNav h4{
+	margin-top:0;
+	margin-bottom:0;
+	vertical-align:text-bottom;
+	height:22px;
+	padding-bottom:5px;
+	position:relative;
+}
+#sideNav h4 span{
+	height:18px;
+	line-height:18px;
+	font-size:18px;
+	margin-left:25px;
+}
+.small-icons{
+	height:22px;
+}
+h4 .small-icons{
+	position:absolute;
+}
+#quickLink .small-icons{
+	height:25px;
+}
+#quickLink h4 a span{
+	margin-top:5px;
+}
+#sideNav section{
+	margin:20px;
+}
+#quickLink ul{
+	list-style:none;
+	padding-inline-start:12px;
+}
+#quickLink ul li a{
+	color:#004C6A;
+}
+.selectResume{
+	width:200px;
+	height:30px;
+	font-size:18px;
+	margin-bottom:5px;
+}
+#postEmp form{
+	text-align:center;
+}
+#postEmp input[type=checkbox]{
+	transform:scale(1.8);
+	margin-top:10px;
+}
+#postEmp label span:last-child{
+	margin-left:26px;
+}
+#postEmp label{
+	font-size:15px;
+}
+#postEmp input[type=checkbox]:checked + label{
+	color:#004C6A;
+	font-weight:600;
+}
+#sideNav .btn{
+	display:inline-block;
+	text-align:center;
+	color:white;
+	text-decoration:none;
+	font-family:Binggrae;
+	text-shadow:0 0 10px #000;
+	font-weight:bold;
+	border-radius:5px;
+	border:1px solid #aaa;
+}
+#postPreview{
+	margin-top:5px;
+	width:200px;
+	height:30px;
+	background-color:#FF958C;
+	line-height:30px;
+	font-size:16px;
+}
+#postEmpSubmit{
+	margin-top:10px;
+	width:200px;
+	height:60px;
+	background-color:#F7545F;
+	line-height:60px;
+	font-size:25px;
 }
 
-.sideBar a {
-	display: flex;
-	text-decoration: none;
-	color: black;
-	padding: 15px 35px 15px 35px;
-	font-size: 20px;
-	border: 3px solid #dfdfdf;
-	margin: 5% 0 5% 0;
-	background-color: white;
-	color: #666;
-}
 
-.sideBar a:nth-of-type(1) {
-	padding-left: 45px;
-}
-
-.sideBar a:nth-of-type(2) {
-	padding-left: 48px;
-}
-
-.sideBar a:nth-of-type(3) {
-	background-color: #686868;
-	color: white;
-}
-
-.sideBar a:hover {
-	text-decoration: underline;
-}
-
-.sideBar fieldset {
-	border: 3px solid #686868;
-	padding: 10px 20px 10px 20px;
-	
-}
-
-.sideBar legend {
-	margin-left: 20px;
-	font-size: 30px;
-	color: #666;
+.div-sideNav {
+	position : absolute;
+	right : 0px;
 }

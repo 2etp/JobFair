@@ -222,7 +222,7 @@ public class generalDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select * from general where comNum = ?";
+			sql = "select * from generals where comNum = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, comNum);
 			rs = pstmt.executeQuery();

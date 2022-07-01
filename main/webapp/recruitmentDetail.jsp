@@ -1,65 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <jsp:useBean id="dao" class="jobFairMgr.generalDAO" />
+<jsp:useBean id="vo" class="jobFairMgr.generalVO" />
+<jsp:useBean id="jvo" class="jobFairMgr.jobOpeningVO" />
 <%@ page import = "java.util.*" %>
-<%@ page import = "jobFairMgr.jobOpeningVO" %>
 
 <%
 	request.setCharacterEncoding("UTF-8");
 	String name = (String)session.getAttribute("lgnName");
 	
-	String employNum_str = request.getParameter("employNum");
-	employNum_str="3";//test
-	int employNum = 0;
+	int employNum = Integer.parseInt(request.getParameter("employNum"));
 	
-	jobOpeningVO vo = new jobOpeningVO();
-	int comNum = 0;			// 기업 고유번호 -> 나중에 외래키로 쓰여질 예정
-	String title = null;			// 채용공고 이름
-	String position = null;		// 모집 직종
-	int people = 0;				// 모집 인원
-	String task = null;			// 직무 내용
-	String workArea = null;		// 근무 지역
-	String education = null;		// 학력
-	String career = null;			// 경력
-	String employType = null;		// 고용형태
-	String workType = null;		// 근무형태
-	String pay = null;				// 급여조건
-	String insurance = null;		// 사회보험
-	String officeHours = null;		// 근무시간
-	String etc = null;				// 기타
-	String major = null;			// 전공
-	String certificate = null;		// 자격증
-	String computerLevel = null;	// 컴퓨터활용
-	String facilities = null;		// 편의시설
-	String welfare = null;			// 복리후생
-	String preferred = null;		// 우대사항
-	String openingDate = null;
+	jvo = dao.getOpening(employNum);
+	vo = dao.getGeneral(jvo.getComNum());
 	
-	if(employNum_str != null){
-		employNum = Integer.parseInt(employNum_str);
-		vo = dao.getOpening(employNum);
-		comNum = vo.getComNum();			// 기업 고유번호 -> 나중에 외래키로 쓰여질 예정
-		title = vo.getTitle();			// 채용공고 이름
-		position = vo.getPosition();		// 모집 직종
-		people = vo.getPeople();				// 모집 인원
-		task = vo.getTask();			// 직무 내용
-		workArea = vo.getWorkArea();		// 근무 지역
-		education = vo.getEducation();		// 학력
-		career = vo.getCareer();			// 경력
-		employType = vo.getEmployType();		// 고용형태
-		workType = vo.getWorkType();		// 근무형태
-		pay = vo.getPay();				// 급여조건
-		insurance = vo.getInsurance();		// 사회보험
-		officeHours = vo.getOfficeHours();		// 근무시간
-		etc = vo.getEtc();				// 기타
-		major = vo.getMajor();			// 전공
-		certificate = vo.getCertificate();		// 자격증
-		computerLevel = vo.getComputerLevel();	// 컴퓨터활용
-		facilities = vo.getFacilities();		// 편의시설
-		welfare = vo.getWelfare();			// 복리후생
-		preferred = vo.getPreferred();		// 우대사항
-		openingDate = vo.getOpeningDate();
-	}
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -75,43 +30,47 @@
 <jsp:include page="commonJSP/header.jsp"/> 
 <main>
 	<div id="container">
-		<h1><%=title %></h1>
+		<h1><%=jvo.getTitle() %></h1>
 		<section id="comInfo">
 			<h2>
 				<img class="icons" src="./image/building.svg" aria-hidden="true">
 				<span class="secTitle">기업정보</span>
 			</h2>
 			<div class="logo-wrap">
-				<img class="logo" src="image/에스지씨앤씨 주식회사.png" alt="에스지씨앤씨 주식회사 로고">
+				<img class="logo" src="image/<%=vo.getLogoName()%>" alt="에스지씨앤씨 주식회사 로고">
 			</div>
 			<table>
 				<tr>
 					<th>기업명</th>
-					<td>에스지씨앤씨 주식회사</td>
+					<td><%=vo.getComName()%></td>
 					<th>대표자</th>
-					<td>최준완</td>
+					<td><%=vo.getCeoName()%></td>
 				</tr>
 				<tr>
 					<th>업종</th>
-					<td>정보통신업</td>
+					<td><%=vo.getSectors()%></td>
 					<th>사업내용</th>
-					<td>소프트웨어 개발</td>
+					<td><%=vo.getBusinessInfo()%></td>
 				</tr>
 				<tr>
 					<th>설립시기</th>
-					<td>2016년 8월 30일</td>
+					<td><%=vo.getFoundedDate()%></td>
 					<th>규모</th>
-					<td>5~49인</td>
+					<td><%=vo.getComSize()%></td>
 				</tr>
 				<tr>
 					<th>주소</th>
-					<td colspan="3">부산 수영구 민락로 19번길 21, 3층(민락동)</td>
+					<td colspan="3"><%=vo.getComAddress()%></td>
 				</tr>
 				<tr>
 					<th>홈페이지</th>
 					<td colspan="3">
-						<a href="http://sgcnc.kr" tabindex="-1">
-							<span aria-hidden="true">http://sgcnc.kr</span>
+					<%if(vo.getComUrl().equals("-")) { %>
+						<a href="#" tabindex="-1">
+					<%} else { %>
+						<a href="<%=vo.getComUrl()%>" tabindex="-1">
+					<%}%>
+							<span aria-hidden="true"><%=vo.getComUrl()%></span>
 							<span class="offscreen">에스지씨앤씨 주식회사 홈페이지</span>
 						</a>
 					</td>
@@ -126,49 +85,49 @@
 			<table>
 				<tr>
 					<th>모집직종</th>
-					<td><%=position %></td>
+					<td><%=jvo.getPosition()%></td>
 					<th>모집인원</th>
-					<td><%=people %>인</td>
+					<td>jvo.getPeople()%>인</td>
 				</tr>
 				<tr>
 					<th>직무내용</th>
-					<td><%=task %></td>
+					<td><%=jvo.getTask()%></td>
 					<th>근무지역</th>
-					<td><%=workArea %></td>
+					<td><%=jvo.getWorkArea()%></td>
 				</tr>
 				<tr>
 					<th>학력</th>
-					<td><%=education %></td>
+					<td><%=jvo.getEducation()%></td>
 					<th>경력</th>
-					<td><%=career %></td>
+					<td><%=jvo.getCareer()%></td>
 				</tr>
 				<tr>
 					<th>고용형태</th>
-					<td><%=employType %></td>
+					<td><%=jvo.getEmployType()%></td>
 					<th>근무형태</th>
-					<td><%=workType %></td>
+					<td><%=jvo.getWorkType()%></td>
 				</tr>
 				<tr>
 					<th>급여조건</th>
-					<td><%=pay %></td>
+					<td><%=jvo.getPay()%></td>
 					<th>사회보험</th>
-					<td><%=insurance %></td>
+					<td><%=jvo.getInsurance()%></td>
 				</tr>
 				<tr>
 					<th>퇴직금</th>
-					<td><% %></td>
+					<td><%=jvo.getSeverancePay()%></td>
 					<th>상여금</th>
-					<td>기본급 50%</td>
+					<td><%=jvo.getBonus() %></td>
 				</tr>
 				<tr>
 					<th>근무시간</th>
-					<td><%=officeHours %></td>
+					<td><%=jvo.getOfficeHours()%></td>
 					<th>잔업</th>
-					<td>무</td>
+					<td><%=jvo.getOvertime() %></td>
 				</tr>
 				<tr>
 					<th>기타조건</th>
-					<td colspan="3"><%=etc %></td>
+					<td colspan="3"><%=jvo.getEtc()%></td>
 				</tr>
 			</table>
 		</section>
@@ -180,21 +139,21 @@
 			<table>
 				<tr>
 					<th>전공</th>
-					<td><%=major %></td>
+					<td><%=jvo.getMajor()%></td>
 					<th>자격면허</th>
-					<td><%=certificate %></td>
+					<td><%=jvo.getCertificate()%></td>
 				</tr>
 				<tr>
 					<th>컴퓨터활용</th>
-					<td><%=computerLevel %></td>
+					<td><%=jvo.getComputerLevel()%></td>
 					<th>편의시설</th>
-					<td><%=facilities %></td>
+					<td><%=jvo.getFacilities()%></td>
 				</tr>
 				<tr>
 					<th>복리후생</th>
-					<td><%=welfare %></td>
+					<td><%=jvo.getWelfare()%></td>
 					<th>우대사항</th>
-					<td><%=preferred %></td>
+					<td><%=jvo.getPreferred()%></td>
 				</tr>
 			</table>
 		</section>

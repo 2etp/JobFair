@@ -149,6 +149,31 @@ public class GeneralDAO {
 		return flag;
 	}
 	
+	// 지금 로그인한 계정이 기업인지 유저인지 판단
+	// ture면 기업 false면 유저
+	public boolean isCompany(String name) {
+		boolean flag = false;
+		Connection con = null;				
+		PreparedStatement pstmt = null;		
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			con = pool.getConnection();
+			sql = "select comNum from generals where comName = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return flag;
+	}
+	
 	
 	// 채용공고 리스트(로고, 기업명, 근무지역, 직무, 지원기간)
 	public List<OpeningListVO> getOpeningList(int startRow, int pageSize) {

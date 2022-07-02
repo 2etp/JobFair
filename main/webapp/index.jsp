@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<jsp:useBean id="dao" class="jobFairMgr.GeneralDAO" />
+
 <%
 	request.setCharacterEncoding("UTF-8");
 	String name = (String)session.getAttribute("lgnName");
-//	String name = "관리자";
+	boolean flag = false;
+	if(name != null) {
+		flag = dao.isCompany(name);
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -28,8 +33,12 @@
 			<% if(name == null) {%>
 				<a href="signup.jsp" id="signUp">회원가입</a>
 				<a href="login.jsp" id="signIn">로그인</a>
-			<%} else { %>
-				<a href="myPageForDisability.jsp" id="signUp">마이페이지</a>
+			<%} else { 
+					if(flag) {%>
+						<a href="myPageForGeneral.jsp" id="signUp">마이페이지</a>						
+					<%} else {%>
+						<a href="myPageForDisability.jsp" id="signUp">마이페이지</a>
+					<%}%>
 				<a href="logout.jsp" id="signIn">로그아웃</a>
 			<%}%>
 		</section>

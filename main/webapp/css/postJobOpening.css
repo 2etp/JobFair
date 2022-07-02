@@ -164,7 +164,7 @@ td a, td span{
 	border:1px solid #000;
 	border-radius:5px;
 	width:250px;
-	height:390px;
+	height:340px;
 	position:fixed;
 	top:40%;
 	margin-left:20px;
@@ -236,28 +236,8 @@ h4 .small-icons{
 #quickLink ul li a{
 	color:#004C6A;
 }
-.selectResume{
-	width:200px;
-	height:30px;
-	font-size:18px;
-	margin-bottom:5px;
-}
 #postEmp form{
 	text-align:center;
-}
-#postEmp input[type=checkbox]{
-	transform:scale(1.8);
-	margin-top:10px;
-}
-#postEmp label span:last-child{
-	margin-left:26px;
-}
-#postEmp label{
-	font-size:15px;
-}
-#postEmp input[type=checkbox]:checked + label{
-	color:#004C6A;
-	font-weight:600;
 }
 #sideNav .btn{
 	display:inline-block;
@@ -269,14 +249,6 @@ h4 .small-icons{
 	font-weight:bold;
 	border-radius:5px;
 	border:1px solid #aaa;
-}
-#postPreview{
-	margin-top:5px;
-	width:200px;
-	height:30px;
-	background-color:#FF958C;
-	line-height:30px;
-	font-size:16px;
 }
 #postEmpSubmit{
 	margin-top:10px;

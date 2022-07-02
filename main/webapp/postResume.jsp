@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="vo" class="jobFairMgr.DisabilityVO" />
+<jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
 
 <%
-	String name = null;
-	String sex = null;
-	String mobile = null;
-	String birthDay = null;
-	String address = null;
-	String typeOfDisability = null;
-	String gradeOfDisability= null;
+	String name = (String)session.getAttribute("lgnName");
+	vo = dao.getUser(name);
+	String year;
+	String month;
+	String day;
+	year = vo.getPrefixNum().substring(0, 4);
+	month = vo.getPrefixNum().substring(4, 6);
+	day = vo.getPrefixNum().substring(6);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -45,21 +49,21 @@
 						<a role="button" onclick="imageRegister();">등록하기</a>
 					</td>
 					<th>성명</th>
-					<td><%=name%></td>
+					<td><%=vo.getName()%></td>
 					<th>성별</th>
-					<td><%=sex%></td>
+					<td><%=vo.getSex()%></td>
 				</tr>
 				
 				<tr class="tr2">
 					<th>연락처</th>
-					<td><%=mobile%></td>
+					<td><%=vo.getPhoneNum()%></td>
 					<th>생년월일</th>
-					<td><%=birthDay%></td>
+					<td><%=year%>.<%=month%>.<%=day%></td>
 				</tr>
 				
 				<tr class="tr3">
 					<th>주소</th>
-					<td colspan="3"><%=address%></td>		
+					<td colspan="3"><%=vo.getLivingArea()%></td>		
 				</tr>
 				
 				<tr class="tr4">
@@ -74,7 +78,7 @@
 				
 				<tr class="tr5">
 					<th>장애유형</th>
-					<td><%=typeOfDisability%></td>
+					<td><%=vo.getDisType()%></td>
 					<th>보장구 유/무</th>
 					<td colspan="2">
 						<label><input type="radio" name="assistive" value="existence">유</label>
@@ -84,7 +88,7 @@
 				
 				<tr class="tr6">
 					<th>장애등급</th>
-					<td><%=gradeOfDisability%></td>
+					<td><%=vo.getDisLevel()%></td>
 					<th>보장구 종류</th>
 					<td colspan="2">
 						<input type="text" name="assistiveDevice">

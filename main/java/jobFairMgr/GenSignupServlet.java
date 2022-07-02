@@ -15,7 +15,7 @@ public class GenSignupServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		generalDAO dao = new generalDAO();
+		GeneralDAO dao = new GeneralDAO();
 		boolean flag = dao.insertGeneral(request);
 		
 		response.setContentType("text/html; charset=UTF-8");

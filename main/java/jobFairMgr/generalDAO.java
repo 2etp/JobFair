@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class generalDAO {
+public class GeneralDAO {
 	private DBConnectionMgr pool;
 	
 	// 사용자마다 현재 프로젝트의 경로가 다르기 때문에 그걸 미리 구해놓고 파일 업로드 경로를 상대적으로 바꿔준다
@@ -20,7 +20,7 @@ public class generalDAO {
 	private static final String ENCTYPE = "UTF-8";
 	private static int MAXSIZE = 10*1024*1024;
 	
-	public generalDAO() {
+	public GeneralDAO() {
 		try {
 			pool = DBConnectionMgr.getInstance();
 		} catch (Exception e) {
@@ -213,8 +213,8 @@ public class generalDAO {
 	
 	
 	// 기업정보 반환
-	public generalVO getGeneral(int comNum) {
-		generalVO vo = new generalVO();
+	public GeneralVO getGeneral(int comNum) {
+		GeneralVO vo = new GeneralVO();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -249,8 +249,8 @@ public class generalDAO {
 	}
 	
 	// 기업정보 반환
-	public generalVO getGeneral(String comName) {
-		generalVO vo = new generalVO();
+	public GeneralVO getGeneral(String comName) {
+		GeneralVO vo = new GeneralVO();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -308,8 +308,8 @@ public class generalDAO {
 	
 	
 	// 등록된 채용공고의 상세정보가 담긴 VO반환
-	public jobOpeningVO getOpening(int employNum) {
-		jobOpeningVO vo = new jobOpeningVO();
+	public JobOpeningVO getOpening(int employNum) {
+		JobOpeningVO vo = new JobOpeningVO();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

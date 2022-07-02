@@ -1,7 +1,7 @@
 package jobFairMgr;
 
 // 채용공고 VO
-public class jobOpeningVO {
+public class JobOpeningVO {
 	private int employNum;			// 채용공고 고유번호
 	private int comNum;			// 기업 고유번호 -> 나중에 외래키로 쓰여질 예정
 	private String title;			// 채용공고 이름

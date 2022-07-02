@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO"/>
-<jsp:useBean id="gdao" class="jobFairMgr.generalDAO"/>
-<jsp:useBean id="vo" class="jobFairMgr.generalVO"/>
+<jsp:useBean id="gdao" class="jobFairMgr.GeneralDAO"/>
+<jsp:useBean id="vo" class="jobFairMgr.GeneralVO"/>
 
 <%
 	// 로그인 대상이 기업인지 개인인지 item으로 구분

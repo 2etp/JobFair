@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="gdao" class="jobFairMgr.generalDAO" />
-<jsp:useBean id="vo" class="jobFairMgr.generalVO" />
+<jsp:useBean id="gdao" class="jobFairMgr.GeneralDAO" />
+<jsp:useBean id="vo" class="jobFairMgr.GeneralVO" />
 
 <%
 

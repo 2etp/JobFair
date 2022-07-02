@@ -69,7 +69,7 @@
 						<li><img src="./image/resume.png" aria-hidden="true">
 							<a href="postResume.jsp" role="button">이력서 작성</a></li>
 						<li><img src="./image/myPage.svg"  aria-hidden="true">
-							<a href="myPageForDisability" role="button">내 정보 관리</a></li>
+							<a href="myPageForDisability.jsp" role="button">내 정보 관리</a></li>
 						<li><img src="./image/myResume.png" aria-hidden="true">
 							<a href="myResume.jsp" role="button">이력서 관리</a></li>
 						<li><img src="image/bookmark_on.svg" aria-hidden="true">

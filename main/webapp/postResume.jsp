@@ -178,16 +178,33 @@
 				</tr>
 			</table>
 			</div>
-			
-		<aside class="sideBar">
-			<fieldset>
-				<legend>사이드 메뉴</legend>
-					<a href="#" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">다운로드</a>
-					<a href="javascript:" role="button">미리보기</a>
-					<a href="javascript:" role="button">이력서 저장</a>
-			</fieldset>
-		</aside>
-			
+
+			<div class="div-sideNav">
+				<aside id="sideNav" role="navigation">
+					<h3>가이드 메뉴</h3>
+					<img src="image/guide.png" aria-hidden="true">
+					<ul>
+						<li><img src="./image/resume.png" aria-hidden="true">
+							<a href="postResume.jsp" role="button">이력서 작성</a></li>
+						<li><img src="./image/myPage.svg"  aria-hidden="true">
+							<a href="myPageForDisability.jsp" role="button">내 정보 관리</a></li>
+						<li><img src="./image/myResume.png" aria-hidden="true">
+							<a href="myResume.jsp" role="button">이력서 관리</a></li>
+						<li><img src="image/bookmark_on.svg" aria-hidden="true">
+							<a href="pickedList.jsp" role="button">관심 채용공고</a></li>
+						<li><img src="image/applyList.png" aria-hidden="true">
+							<a href="applyList.jsp" role="button">기업지원 현황</a></li>				
+					</ul>
+					<hr>
+					
+					<div class="side-button">
+						<a href="#" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">다운로드</a>
+						<a href="javascript:" role="button">이력서 저장</a>
+					</div>
+				</aside>
+			</div> 
+					
+			<input type="hidden" name="userNum" value=<%vo.getUserNum();%>>
 		</form>
 			
 	</section>

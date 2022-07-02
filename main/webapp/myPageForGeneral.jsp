@@ -26,7 +26,7 @@
 
 <main>
 	<section class="section-table">
-		<p>기업정보</p>
+		<p>기업정보 관리</p>
 		<table>
 			<thead>
 				<tr class="tr1">
@@ -75,16 +75,22 @@
 			</tbody>
 		</table>
 		
-		<aside class="sideBar">
-			<fieldset>
-				<legend>사이드 메뉴</legend>
-					<a href="myPageForGeneral.jsp" role="button">내 정보 관리</a>
-					<a href="postJobOpening.jsp" role="button">채용공고 등록</a>
-					<a href="myResume.jsp" role="button">이력서 관리</a>
-					<a href="pickedList.jsp" role="button">관심기업 관리</a>
-					<a href="applyList.jsp" role="button">기업지원 현황</a>
-			</fieldset>
-		</aside>
+			<div class="div-sideNav">
+				<aside id="sideNav" role="navigation">
+					<h3>가이드 메뉴</h3>
+					<img src="image/guide.png" aria-hidden="true">
+					<ul>
+						<li><img src="./image/resume.png" aria-hidden="true">
+							<a href="postResume.jsp" role="button">채용공고 등록</a></li>
+						<li><img src="./image/myPage.svg"  aria-hidden="true">
+							<a href="myPageForGeneral.jsp" role="button">기업정보 관리</a></li>
+						<li><img src="./image/myResume.png" aria-hidden="true">
+							<a href=".jsp" role="button">채용공고 관리</a></li>
+						<li><img src="image/applyList.png" aria-hidden="true">
+							<a href=".jsp" role="button">지원자 현황</a></li>
+					</ul>
+				</aside>
+			</div> 
 	</section>
 </main>
 

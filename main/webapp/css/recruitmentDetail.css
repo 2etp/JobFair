@@ -91,6 +91,7 @@ tr td:not(tr td:last-child){
 	z-index:-10;
 }
 .logo{
+	width:326px;
 	position:absolute;
 	top:9%
 }

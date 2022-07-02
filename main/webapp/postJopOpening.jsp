@@ -7,6 +7,8 @@
 <title>2022 부산 장애인 온라인 채용 박람회 | 채용공고 등록</title>
 <link rel="stylesheet" href="./css/common.css"> 
 <link rel="stylesheet" href="./css/postJobOpening.css"> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 </head>
 <body>
 
@@ -15,7 +17,7 @@
 <main>
 	<div id="container">
 		<h1>
-			<textarea name="title" placeholder="제목을 입력하세요" maxlength="40" cols="20" rows="2"></textarea>
+			<textarea name="title" placeholder="제목을 입력하세요" maxlength="40" cols="20" rows="2" onkeypress="javascript:noEnter()"></textarea>
 		</h1>
 		<section id="comInfo">
 			<h2>
@@ -266,4 +268,12 @@
 <jsp:include page="commonJSP/footer.jsp"/>
 
 </body>
+<script>
+	autosize($('td textarea'));
+	function noEnter()
+	{
+	   if(event.keyCode == 13)
+	      event.returnValue=false;
+	}
+</script>
 </html>

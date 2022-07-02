@@ -149,6 +149,7 @@ td a, td span{
 	z-index:-10;
 }
 .logo{
+	width:326px;
 	position:absolute;
 	top:9%
 }

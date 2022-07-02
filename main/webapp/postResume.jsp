@@ -33,7 +33,7 @@
 <main>
 	<section style="margin-top: 10px;">
 		
-		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
+		<form name="resumeFrm" method="post" action="SaveResumeServlet" enctype="multipart/form-data">
 		<div class="div-caption">
 			<img src="./image/resume.png" alt="이력서 이미지">
 			<p>이력서 작성</p>

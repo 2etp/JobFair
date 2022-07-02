@@ -1,5 +1,6 @@
 package jobFairMgr;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -279,6 +280,38 @@ public class DisabilityDAO {
 		}
 		return cnt;
 	}
+	
+	// 이력서 저장
+	public boolean insertResume(HttpServletRequest request) {
+		boolean flag = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		MultipartRequest multi = null;
+		int fileSize = 0;
+		String fileName = null;
+		
+		try {
+			con = pool.getConnection();
+			File file = new File(SAVEFOLDER);
+			if(!file.exists()) file.mkdirs();
+			
+			multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+			if(multi.getFilesystemName("filename") != null) {
+				fileName = multi.getFilesystemName("filename");
+				fileSize = (int)multi.getFile("filename").length();
+			}
+			
+			sql = "";
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+		
+		return flag;
+	}
+	
 	
     // 지원한 기업 리스트 출력
 	public List<ApplyListVO> getApplyList(int userNum, int startRow, int pageSize) {

@@ -17,16 +17,11 @@
 	<title>2022 부산 장애인 온라인 채용 박람회 | 내 정보 관리</title>
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/myPageForDisability.css">
-	<link rel="stylesheet" href="css/aside.css">
 </head>
 
 <body>
 	<jsp:include page="commonJSP/header.jsp"></jsp:include>
-	<main>
-		<section>
-			<jsp:include page="aside.jsp"></jsp:include>
-		</section>
-		
+	<main>		
 		<section class="section-table">
 			<p>개인정보</p>
 			<table>
@@ -64,6 +59,16 @@
 					</tr>
 				</tbody>
 			</table>
+			
+			<div class="div-sideNav">
+				<aside id="sideNav" role="navigation">
+					<a href="postResume.jsp" role="button">이력서 작성</a>
+					<a href="myPageForDisability" role="button">내 정보 관리</a>
+					<a href="myResume.jsp" role="button">이력서 관리</a>
+					<a href="pickedList.jsp" role="button">관심기업 관리</a>
+					<a href="applyList.jsp" role="button">기업지원 현황</a>
+				</aside>
+			</div> 
 		</section>
 	</main>
 	<jsp:include page="commonJSP/footer.jsp"></jsp:include>

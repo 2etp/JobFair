@@ -20,6 +20,7 @@ th:not(.tr1 th, .tr1 td) {
 
 table {
 	width: 700px;
+	clear: left;
 }
 
 .section-table {
@@ -41,8 +42,6 @@ table {
 .section-table p {
 	font-size: 20px;
 	font-weight: bold;
-	border-left: 4px solid #0083A3;
-	padding-left: 5px;
 	margin: 50px 0 30px 0;
 }
 
@@ -58,20 +57,43 @@ table {
 	box-shadow:2px 2px 5px #666;
 }
 
-#sideNav .btn{
-	display:inline-block;
-	text-align:center;
-	color:black;
-	text-decoration:none;
+#sideNav ul {
+	margin-top: 40px;
+}
+
+#sideNav ul li {
+	list-style: none;
+	margin-bottom: 20px;
+}
+#sideNav a {
+	color: #004C6A;
 	font-family:Binggrae;
-	text-shadow:0 0 10px black;
-	font-weight:bold;
-	border-radius:5px;
-	border:1px solid #aaa;
+	font-size: 20px;
+	clear: left;
+}
+
+#sideNav ul li img {
+	width: 30px;
+	height: 30px;
+	
+}
+
+#sideNav img {
+	width: 70px;
+	height: 70px;
+	position: relative;
 }
 
 .div-sideNav {
 	position : absolute;
 	right : 23%;
+}
+
+#sideNav h3 {
+	font-family:Binggrae;
+	margin-left: 20px;
+	color: #666;
+	float: left;
+	margin-right: 30px;
 }
 

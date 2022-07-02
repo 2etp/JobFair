@@ -102,7 +102,7 @@
 				</div>
 				<div>
 					<select id="sectors" name="sectors" title="직종">
-						<option value="sectors" selected>직종</option>
+						<option value="sectors" class="select-holder" aria-hidden="true" selected>직종</option>
 						<option value="제조업">제조업</option>
 						<option value="서비스">서비스</option>
 						<option value="도소매업">도소매업</option>
@@ -113,7 +113,7 @@
 						<option value="외식업">외식업</option>
 					</select>
 					<select id="workArea" name="workArea" title="근무지역">
-						<option value="workArea" selected>근무지역</option>
+						<option value="workArea" class="select-holder" aria-hidden="true" selected>근무지역</option>
 						<option value="강서구">강서구</option>
 						<option value="금정구">금정구</option>
 						<option value="기장군">기장군</option>
@@ -132,7 +132,7 @@
 						<option value="김해시">김해시</option>
 					</select>
 					<select id="workType" name="workType" title="근무형태">
-						<option value="workType" selected>근무형태</option>
+						<option value="workType" class="select-holder" aria-hidden="true" selected>근무형태</option>
 						<option value="주5일">주5일</option>
 						<option value="주3~4일">주3~4일</option>
 						<option value="협의">협의</option>	

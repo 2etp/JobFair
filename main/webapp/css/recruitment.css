@@ -33,6 +33,9 @@ form[name='searchFrm'] div{
 	margin-top : 30px;
 	text-align : right;
 }
+select .select-holder{
+	display:none;
+}
 
 #submit-button{
 	border : 1px solid #265FA6;

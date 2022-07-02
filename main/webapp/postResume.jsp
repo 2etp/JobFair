@@ -38,6 +38,12 @@
 			<img src="./image/resume.png" alt="이력서 이미지">
 			<p>이력서 작성</p>
 		</div>
+		
+			<div class="div-title">
+				<label for="title">이력서 제목</label>
+				<input type="text" id="title" name="title" placeholder="이력서 제목을 작성해 주세요.">
+			</div>
+			
 			<div class="div-table">
 			<table class="table1" id="table">
 				<tr class="tr1">

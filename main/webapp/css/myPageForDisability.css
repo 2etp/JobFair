@@ -1,12 +1,16 @@
 @charset "UTF-8";
 
+@font-face{
+	src:url("../fonts/BinggraeⅡ.ttf");
+	font-family:Binggrae;
+}
+
 table, tr, th, td {
 	border-bottom: 1px solid #A1A1A1;
 	border-collapse: collapse;
 	text-align: center;
 	
 }
-
 
 th:not(.tr1 th, .tr1 td) {
 	border-right: 1px solid #F7F7F7;
@@ -40,5 +44,34 @@ table {
 	border-left: 4px solid #0083A3;
 	padding-left: 5px;
 	margin: 50px 0 30px 0;
+}
+
+#sideNav{	
+	float:left;
+	border:1px solid #000;
+	border-radius:5px;
+	width:250px;
+	height:470px;
+	position:fixed;
+	top:40%;
+	margin-left:20px;
+	box-shadow:2px 2px 5px #666;
+}
+
+#sideNav .btn{
+	display:inline-block;
+	text-align:center;
+	color:black;
+	text-decoration:none;
+	font-family:Binggrae;
+	text-shadow:0 0 10px black;
+	font-weight:bold;
+	border-radius:5px;
+	border:1px solid #aaa;
+}
+
+.div-sideNav {
+	position : absolute;
+	right : 23%;
 }
 

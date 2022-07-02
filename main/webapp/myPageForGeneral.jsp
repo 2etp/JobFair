@@ -71,10 +71,20 @@
 				<tr>
 					<th>설립시기</th>
 					<td><%=vo.getFoundedDate()%></td>
-				</tr>
-				
+				</tr>			
 			</tbody>
 		</table>
+		
+		<aside class="sideBar">
+			<fieldset>
+				<legend>사이드 메뉴</legend>
+					<a href="myPageForGeneral.jsp" role="button">내 정보 관리</a>
+					<a href="postJobOpening.jsp" role="button">채용공고 등록</a>
+					<a href="myResume.jsp" role="button">이력서 관리</a>
+					<a href="pickedList.jsp" role="button">관심기업 관리</a>
+					<a href="applyList.jsp" role="button">기업지원 현황</a>
+			</fieldset>
+		</aside>
 	</section>
 </main>
 

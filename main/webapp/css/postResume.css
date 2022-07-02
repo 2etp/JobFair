@@ -36,47 +36,7 @@ table:not(table:last-of-type) {
 	height: 170px;
 }
 
-.sideBar {
-	position:fixed;
-	right: 10%;
-	top: 40%;
 
-}
-
-.sideBar a {
-	display: flex;
-	text-decoration: none;
-	color: black;
-	padding: 15px 35px 15px 35px;
-	font-size: 20px;
-	border: 3px solid #dfdfdf;
-	margin: 5% 0 5% 0;
-	background-color: white;
-	color: #666;
-}
-
-.sideBar a:nth-of-type(1) {
-	padding-left: 50px;
-}
-
-.sideBar a:nth-of-type(2) {
-	padding-left: 50px;
-}
-
-.sideBar a:hover {
-	text-decoration: underline;
-}
-
-.sideBar fieldset {
-	border: 3px solid #686868;
-	padding: 10px 20px 10px 20px;
-}
-
-.sideBar legend {
-	margin-left: 10px;
-	font-size: 30px;
-	color: #666;
-}
 
 table {
 	width: 815px;
@@ -96,7 +56,6 @@ table .tr1 a{
     background-color: gray;
     cursor : pointer;
 }
-
 
 table .tr1 th:nth-of-type(2) {
 	width: 115px;
@@ -268,7 +227,7 @@ table caption {
 	list-style: none;
 	margin-bottom: 20px;
 }
-#sideNav a {
+#sideNav ul li a {
 	color: #004C6A;
 	font-family:Binggrae;
 	font-size: 20px;
@@ -298,4 +257,20 @@ table caption {
 	color: #666;
 	float: left;
 	margin-right: 30px;
+}
+
+.side-button {
+	margin-left: 60px;
+}
+
+.side-button a {
+	border: 1px solid #aaa;
+	text-decoration: none;
+	color: white;
+	background-color: #F7545F;
+	padding: 7px 7px 7px 7px;
+	display: block;
+	width: 110px;
+	margin-bottom: 10px;
+	text-align: center;
 }

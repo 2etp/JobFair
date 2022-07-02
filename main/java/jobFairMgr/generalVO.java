@@ -1,7 +1,7 @@
 package jobFairMgr;
 
 // 기업 회원가입 VO
-public class generalVO {
+public class GeneralVO {
 	private int comNum;				// 기업 고유번호
 	private String comName;			// 기업명
 	private String ceoName;			// 대표자

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="dao" class="jobFairMgr.generalDAO" />
+<jsp:useBean id="dao" class="jobFairMgr.GeneralDAO" />
 <%@ page import = "java.util.*" %>
 <%@ page import = "jobFairMgr.OpeningListVO" %>
 

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<jsp:useBean id="dao" class="jobFairMgr.generalDAO" />
-<jsp:useBean id="vo" class="jobFairMgr.generalVO" />
-<jsp:useBean id="jvo" class="jobFairMgr.jobOpeningVO" />
+<jsp:useBean id="dao" class="jobFairMgr.GeneralDAO" />
+<jsp:useBean id="vo" class="jobFairMgr.GeneralVO" />
+<jsp:useBean id="jvo" class="jobFairMgr.JobOpeningVO" />
 <jsp:useBean id="disvo" class="jobFairMgr.DisabilityVO" />
 <jsp:useBean id="disdao" class="jobFairMgr.DisabilityDAO" />
 <%@ page import = "java.util.*" %>

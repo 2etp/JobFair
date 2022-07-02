@@ -1,5 +1,5 @@
 document.getElementById("fileUpload").addEventListener("change", function(){
-	let imgEl = document.querySelector(".profile img");
+	let imgEl = document.querySelector(".selected-img img");
 	
 	let fileURL = URL.createObjectURL(this.files[0]);
 	imgEl.src = fileURL;

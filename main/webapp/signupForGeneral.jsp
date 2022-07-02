@@ -19,10 +19,12 @@
 		<form name="signupFrm" method="post" action="GenSignup" enctype="multipart/form-data">
 			<p>기업 회원가입</p>
 			<div class="profile">
-				<img src="./image/company.svg" alt="기업로고 이미지">
-				<p>[가로 300픽셀, 세로 200픽셀 크기의 사진을 올려주세요.]</p> 
-				<label for="fileUpload"><img src="./image/camera.svg"><span>파일선택</span></label>
-				<input type="file" id="fileUpload" name="filename" style="display: none;"/>
+				<div class="img-upload">
+					<input type="file" id="fileUpload" name="filename"/>
+					<div class="selected-img"><img class="logo-img" aria-hidden="true"></div>
+					<div class="fileLabel"><img src="./image/camera.svg"><br><span>파일선택</span></div>
+				</div>
+				<p>[가로 300픽셀, 세로 200픽셀 크기의 사진을 올려주세요.]</p>
 			</div>
 			
 			<div class="signupFrm1">

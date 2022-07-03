@@ -1,18 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="vo" class="jobFairMgr.DisabilityVO" />
-<jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
 
 <%
-	String name = (String)session.getAttribute("lgnName");
-	vo = dao.getUser(name);
-	String year;
-	String month;
-	String day;
-	year = vo.getPrefixNum().substring(0, 4);
-	month = vo.getPrefixNum().substring(4, 6);
-	day = vo.getPrefixNum().substring(6);
-
+	String name = null;
+	String sex = null;
+	String mobile = null;
+	String birthDay = null;
+	String address = null;
+	String typeOfDisability = null;
+	String gradeOfDisability= null;
 %>
 <!DOCTYPE html>
 <html>
@@ -33,43 +29,38 @@
 <main>
 	<section style="margin-top: 10px;">
 		
-		<form name="resumeFrm" method="post" action="SaveResumeServlet" enctype="multipart/form-data">
+		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
 		<div class="div-caption">
 			<img src="./image/resume.png" alt="이력서 이미지">
 			<p>이력서 작성</p>
 		</div>
-		
-			<div class="div-title">
-				<label for="title">이력서 제목</label>
-				<input type="text" id="title" name="title" placeholder="이력서 제목을 작성해 주세요.">
-			</div>
-			
 			<div class="div-table">
 			<table class="table1" id="table">
 				<tr class="tr1">
 					<td rowspan="4">
 						<div class="div-profileImage">				
-							<label for="profileUpload">이력서에 사용할 사진을 등록해주세요</label>
-							<input type="file" id="profileUpload" accept="image/*" style="display: none;">
+							<input type="file" id="fileUpload" accept="image/*">
+							<div class="file-help"><span>파일을 끌어다 놓거나<br>이곳을 클릭하여<br>파일을 선택해 주세요.</span></div>
+							<div class="selected-img"><img class="resume-img" aria-hidden="true"></div>
+							<div class="fileLabel"><img src="./image/camera.svg"><br><span>파일선택</span></div>
 						</div>
-						<a role="button" onclick="imageRegister();">등록하기</a>
 					</td>
 					<th>성명</th>
-					<td><%=vo.getName()%></td>
+					<td><%=name%></td>
 					<th>성별</th>
-					<td><%=vo.getSex()%></td>
+					<td><%=sex%></td>
 				</tr>
 				
 				<tr class="tr2">
 					<th>연락처</th>
-					<td><%=vo.getPhoneNum()%></td>
+					<td><%=mobile%></td>
 					<th>생년월일</th>
-					<td><%=year%>.<%=month%>.<%=day%></td>
+					<td><%=birthDay%></td>
 				</tr>
 				
 				<tr class="tr3">
 					<th>주소</th>
-					<td colspan="3"><%=vo.getLivingArea()%></td>		
+					<td colspan="3"><%=address%></td>		
 				</tr>
 				
 				<tr class="tr4">
@@ -84,7 +75,7 @@
 				
 				<tr class="tr5">
 					<th>장애유형</th>
-					<td><%=vo.getDisType()%></td>
+					<td><%=typeOfDisability%></td>
 					<th>보장구 유/무</th>
 					<td colspan="2">
 						<label><input type="radio" name="assistive" value="existence">유</label>
@@ -94,7 +85,7 @@
 				
 				<tr class="tr6">
 					<th>장애등급</th>
-					<td><%=vo.getDisLevel()%></td>
+					<td><%=gradeOfDisability%></td>
 					<th>보장구 종류</th>
 					<td colspan="2">
 						<input type="text" name="assistiveDevice">
@@ -184,33 +175,16 @@
 				</tr>
 			</table>
 			</div>
-
-			<div class="div-sideNav">
-				<aside id="sideNav" role="navigation">
-					<h3>가이드 메뉴</h3>
-					<img src="image/guide.png" aria-hidden="true">
-					<ul>
-						<li><img src="./image/resume.png" aria-hidden="true">
-							<a href="postResume.jsp" role="button">이력서 작성</a></li>
-						<li><img src="./image/myPage.svg"  aria-hidden="true">
-							<a href="myPageForDisability.jsp" role="button">내 정보 관리</a></li>
-						<li><img src="./image/myResume.png" aria-hidden="true">
-							<a href="myResume.jsp" role="button">이력서 관리</a></li>
-						<li><img src="image/bookmark_on.svg" aria-hidden="true">
-							<a href="pickedList.jsp" role="button">관심 채용공고</a></li>
-						<li><img src="image/applyList.png" aria-hidden="true">
-							<a href="applyList.jsp" role="button">기업지원 현황</a></li>				
-					</ul>
-					<hr>
-					
-					<div class="side-button">
-						<a href="#" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">다운로드</a>
-						<a href="javascript:" role="button">이력서 저장</a>
-					</div>
-				</aside>
-			</div> 
-					
-			<input type="hidden" name="userNum" value=<%vo.getUserNum();%>>
+			
+		<aside class="sideBar">
+			<fieldset>
+				<legend>사이드 메뉴</legend>
+					<a href="#" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">다운로드</a>
+					<a href="javascript:" role="button">미리보기</a>
+					<a href="javascript:" role="button">이력서 저장</a>
+			</fieldset>
+		</aside>
+			
 		</form>
 			
 	</section>

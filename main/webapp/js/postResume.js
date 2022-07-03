@@ -1,9 +1,10 @@
-document.getElementById("profileUpload").addEventListener("change", function(){
-	console.log("A");
-	let labelEl = document.querySelector("label[for='profileUpload']");
-	labelEl.innerHTML = this.files[0].name
+document.getElementById("fileUpload").addEventListener("change", function(){
+	let imgEl = document.querySelector(".selected-img img");
 	
-})
+	let fileURL = URL.createObjectURL(this.files[0]);
+	imgEl.src = fileURL;
+	$(".file-help").css('z-index','-10');
+});
 
 
 function fnExcelReport(id1,id2,id3, title) {
@@ -50,22 +51,7 @@ function fnExcelReport(id1,id2,id3, title) {
 		document.body.removeChild(elem);
 	}
 }
-function imageRegister(){
-	let profileImageEl = document.querySelector(".div-profileImage");
-	let fileEl = document.getElementById("profileUpload");
-	let labelEl = document.querySelector("label[for='profileUpload']");
-	let selectFile = fileEl.files[0];
-	
-	if(selectFile == null){
-		alert("이미지 파일을 선택해주세요");
-		return 0;
-	}
-	let file = URL.createObjectURL(selectFile);
-	
-	labelEl.innerHTML = `
-			<img src=${file}>
-	`;
-}
+
 /*
 function fnExcelReport(id1,id2,id3, title) {
 	let workbook = XLSX.utils.book_new();

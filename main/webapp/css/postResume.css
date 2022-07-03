@@ -3,6 +3,71 @@
 main section {
 	flex-basis: 40%;
 }
+.div-profileImage{
+	margin : 0 auto;
+	border : 2px solid black;
+	width : 150px;
+	height : 200px;
+	position:relative;
+}
+
+#fileUpload{
+	position:absolute;
+    left: 0;
+    top:0;
+    width:150px;
+    height:200px;
+    background-color: transparent;
+    z-index: 20;
+    color: transparent;
+    box-sizing:border-box;
+}
+form[name="resumeFrm"] input::-webkit-file-upload-button{
+    display: none;
+}
+.resume-img {
+	width: 150px;
+	height: 200px;
+	background-color:#eee;
+}
+.file-help{
+	position:absolute;
+	width: 150px;
+	height: 200px;
+	top:0;
+	left:0;
+	vertical-align:middle;
+}
+
+.fileLabel{
+	position:absolute;
+	z-index:-10;
+	width: 150px;
+	height: 200px;
+	top:0;
+	left:0;
+	vertical-align:middle;
+	transition-duration:0.3s;
+}
+.fileLabel img{
+	display:inline-block;
+	width: 70px;
+	height: 70px;
+	margin-top:50px;
+}
+.fileLabel span, .file-help span{
+	font-weight:bold;
+}
+.file-help span{
+	display:inline-block;
+	margin-top:80px;
+	font-size:13px;
+}
+.div-profileImage:hover .fileLabel{
+	z-index:10;
+	background-color:rgba(220,220,220,0.8);
+	transition-duration:0.3s;
+}
 
 form[name='resumeFrm'] p:first-of-type {
 	text-align: center;
@@ -36,7 +101,47 @@ table:not(table:last-of-type) {
 	height: 170px;
 }
 
+.sideBar {
+	position:fixed;
+	right: 10%;
+	top: 40%;
 
+}
+
+.sideBar a {
+	display: flex;
+	text-decoration: none;
+	color: black;
+	padding: 15px 35px 15px 35px;
+	font-size: 20px;
+	border: 3px solid #dfdfdf;
+	margin: 5% 0 5% 0;
+	background-color: white;
+	color: #666;
+}
+
+.sideBar a:nth-of-type(1) {
+	padding-left: 50px;
+}
+
+.sideBar a:nth-of-type(2) {
+	padding-left: 50px;
+}
+
+.sideBar a:hover {
+	text-decoration: underline;
+}
+
+.sideBar fieldset {
+	border: 3px solid #686868;
+	padding: 10px 20px 10px 20px;
+}
+
+.sideBar legend {
+	margin-left: 10px;
+	font-size: 30px;
+	color: #666;
+}
 
 table {
 	width: 815px;
@@ -56,6 +161,7 @@ table .tr1 a{
     background-color: gray;
     cursor : pointer;
 }
+
 
 table .tr1 th:nth-of-type(2) {
 	width: 115px;
@@ -167,27 +273,6 @@ table caption {
 	font-weight: bold;
 }
 
-.div-profileImage{
-	margin : 0 auto;
-	border : 1px solid black;
-	width : 150px;
-	height : 202px;
-}
-.div-profileImage label{
-    display: inline-block;
-    height : 100%;
-    
-}
-
-.div-profileImage label div{
-    padding-top : 50%;
-}
-
-.div-profileImage img{
-	width : 100%;
-	height : 100%;
-}
-
 .div-caption {
 	position: relative;
 	left: 40%;
@@ -205,89 +290,4 @@ table caption {
 
 #profileImage{
 	background-color : gray;
-}
-
-#sideNav{	
-	float:left;
-	border:1px solid #000;
-	border-radius:5px;
-	width:250px;
-	height:470px;
-	position:fixed;
-	top:40%;
-	margin-left:20px;
-	box-shadow:2px 2px 5px #666;
-}
-
-#sideNav ul {
-	margin-top: 10px;
-}
-
-#sideNav ul li {
-	list-style: none;
-	margin-bottom: 20px;
-}
-#sideNav ul li a {
-	color: #004C6A;
-	font-family:Binggrae;
-	font-size: 20px;
-	clear: left;
-}
-
-#sideNav ul li img {
-	width: 30px;
-	height: 30px;
-	
-}
-
-#sideNav img {
-	width: 70px;
-	height: 70px;
-	position: relative;
-}
-
-.div-sideNav {
-	position : absolute;
-	right : 23%;
-}
-
-#sideNav h3 {
-	font-family:Binggrae;
-	margin-left: 20px;
-	color: #666;
-	float: left;
-	margin-right: 30px;
-}
-
-.side-button {
-	margin-left: 60px;
-}
-
-.side-button a {
-	border: 1px solid #aaa;
-	text-decoration: none;
-	color: white;
-	background-color: #F7545F;
-	padding: 7px 7px 7px 7px;
-	display: block;
-	width: 110px;
-	margin-bottom: 10px;
-	text-align: center;
-}
-
-.div-title label {
-	font-size: 20px;
-	font-weight: bold;
-	display: block;
-}
-
-.div-title input {
-	width: 810px;
-	height: 50px;
-	margin-top: 20px;
-	border-radius: 5px;
-}
-
-.div-title {
-	margin-bottom: 30px;
 }

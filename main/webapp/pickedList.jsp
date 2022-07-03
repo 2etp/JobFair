@@ -57,7 +57,7 @@
 						<img src="./image/<%=vo.getLogoName()%>">
 					</div>
 					<div class="content">
-						<a href="#" role="button"><%=vo.getComName()%></a>
+						<a href="recruitmentDetail.jsp?employNum=<%=vo.getEmployNum()%>" role="button"><%=vo.getComName()%></a>
 						<p><span>근무지역</span> <%=vo.getWorkArea() %></p>
 						<p><span>직무</span> <%=vo.getTask() %></p>
 					</div>

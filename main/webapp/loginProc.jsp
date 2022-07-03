@@ -40,7 +40,7 @@
 		if(item.equals("dis")) {
 			url = "myPageForDisability.jsp";			
 		} else if(item.equals("com")) {
-			url = "index.jsp";
+			url = "myPageForGeneral.jsp";
 			name = gdao.getComName(name);
 		}
 		

@@ -1,6 +1,7 @@
 package jobFairMgr;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -136,6 +137,7 @@ public class DisabilityDAO {
 				vo.setPhoneNum(rs.getString("phoneNum"));
 				vo.setDisType(rs.getString("disType"));
 				vo.setDisLevel(rs.getString("disLevel"));
+				vo.setSex(rs.getString("sex"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -281,6 +283,21 @@ public class DisabilityDAO {
 		return cnt;
 	}
 	
+	// request에 들어간 데이터를 배열로 반환
+	private List<String> dataIntoArr(HttpServletRequest request) throws IOException {
+		List<String> list = new ArrayList<String>();
+		MultipartRequest multi = null;
+		multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+		
+		Enumeration params = request.getParameterNames();
+		while(params.hasMoreElements()) {
+		  String name = (String) params.nextElement();
+		  list.add(request.getParameter(name)); 
+		}
+		
+		return list;
+	}
+	
 	// 이력서 저장
 	public boolean insertResume(HttpServletRequest request) {
 		boolean flag = false;
@@ -290,9 +307,14 @@ public class DisabilityDAO {
 		MultipartRequest multi = null;
 		int fileSize = 0;
 		String fileName = null;
+		// sql 문에 몇 개의 ?를 넣을 것인가 -> not null 컬럼이 5개 있기때문에 디폴트는 5
+		int questmark = 5;
 		
 		try {
 			con = pool.getConnection();
+			// request를 넘겨주어 dataIntoArr 메소드 안에서 멀티파트를 만들고 그 안에 들어있는 파라미터를 ArrayList로 묶어 반환 
+			List<String> dataList = dataIntoArr(request);
+			
 			File file = new File(SAVEFOLDER);
 			if(!file.exists()) file.mkdirs();
 			
@@ -302,7 +324,145 @@ public class DisabilityDAO {
 				fileSize = (int)multi.getFile("filename").length();
 			}
 			
-			sql = "";
+			Enumeration params = request.getParameterNames();
+			while(params.hasMoreElements()) {
+			  String name = (String) params.nextElement();
+			  System.out.println(name + " : " + request.getParameter(name)); 
+			}
+			
+			// multi에 들어있는 파라미터 요소들을 배열로 저장해서 index를 활용해 반복문을 돌린다?
+			// pstmt.setString에서 배열 넘버와 index + 1번 자리에 배열의 값
+			//if(arr[index] != null) {
+			//}
+			// pstmt.setString(index + 1, arr[index])
+			
+			
+			// sql 기본세팅
+//			sql = "insert into resume (userNum, militaryService, assistive, schoolName, education";
+//			// 이력서의 각 input필드의 값이 null인지 확인하고 null이 아닐시 sql문에 추가 후 ?개수를 1씩 증가
+//			if(multi.getParameter("assistiveDevice") != null) {
+//				sql += ", assistiveDevice";
+//				questmark++;
+//			}
+//			if(multi.getParameter("major") != null) {
+//				sql += ", major";
+//				questmark++;
+//			}
+//			if(multi.getParameter("institutionName1") != null) {
+//				sql += ", institutionName1";
+//				questmark++;
+//			}
+//			if(multi.getParameter("institutionName2") != null) {
+//				sql += ", institutionName2";
+//				questmark++;
+//			}
+//			if(multi.getParameter("institutionName3") != null) {
+//				sql += ", institutionName3";
+//				questmark++;
+//			}
+//			if(multi.getParameter("period1") != null) {
+//				sql += ", period1";
+//				questmark++;
+//			}
+//			if(multi.getParameter("period2") != null) {
+//				sql += ", period2";
+//				questmark++;
+//			}
+//			if(multi.getParameter("period3") != null) {
+//				sql += ", period3";
+//				questmark++;
+//			}
+//			if(multi.getParameter("content1") != null) {
+//				sql += ", content1";
+//				questmark++;
+//			}
+//			if(multi.getParameter("content2") != null) {
+//				sql += ", content2";
+//				questmark++;
+//			}
+//			if(multi.getParameter("content3") != null) {
+//				sql += ", content3";
+//				questmark++;
+//			}
+//			if(multi.getParameter("note1") != null) {
+//				sql += ", note1";
+//				questmark++;
+//			}
+//			if(multi.getParameter("note2") != null) {
+//				sql += ", note2";
+//				questmark++;
+//			}
+//			if(multi.getParameter("note3") != null) {
+//				sql += ", note3";
+//				questmark++;
+//			}
+//			if(multi.getParameter("certificate1") != null) {
+//				sql += ", certificate1";
+//				questmark++;
+//			}
+//			if(multi.getParameter("certificate2") != null) {
+//				sql += ", certificate2";
+//				questmark++;
+//			}
+//			if(multi.getParameter("certificate3") != null) {
+//				sql += ", certificate3";
+//				questmark++;
+//			}
+//			if(multi.getParameter("certificateNum1") != null) {
+//				sql += ", certificateNum1";
+//				questmark++;
+//			}
+//			if(multi.getParameter("certificateNum2") != null) {
+//				sql += ", certificateNum2";
+//				questmark++;
+//			}
+//			if(multi.getParameter("certificateNum3") != null) {
+//				sql += "certificateNum3";
+//				questmark++;
+//			}
+//			if(multi.getParameter("registration1") != null) {
+//				sql += ", registration1";
+//				questmark++;
+//			}
+//			if(multi.getParameter("registration2") != null) {
+//				sql += ", registration2";
+//				questmark++;
+//			}
+//			if(multi.getParameter("registration3") != null) {
+//				sql += ", registration3";
+//				questmark++;
+//			}
+//			if(multi.getParameter("issuer1") != null) {
+//				sql += ", issuer1";
+//				questmark++;
+//			}
+//			if(multi.getParameter("issuer2") != null) {
+//				sql += ", issuer2";
+//				questmark++;
+//			}
+//			if(multi.getParameter("issuer3") != null) {
+//				sql += ", issuer3";
+//				questmark++;
+//			}
+//			if(multi.getParameter("issueDate1") != null) {
+//				sql += ", issueDate1";
+//				questmark++;
+//			}
+//			if(multi.getParameter("issueDate2") != null) {
+//				sql += ", issueDate2";
+//				questmark++;
+//			}
+//			if(multi.getParameter("issueDate3") != null) {
+//				sql += ", issueDate3) values(?";
+//				questmark++;
+//			}
+//			for(int i = 1; i < questmark - 1; i++) {
+//				sql += ", ?";
+//			}
+//			sql += ")";
+//			
+//			pstmt = con.prepareStatement(sql);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

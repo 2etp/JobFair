@@ -47,7 +47,7 @@
 				<tr class="tr1">
 					<td rowspan="4">
 						<div class="div-profileImage">				
-							<input type="file" id="fileUpload" accept="image/*">
+							<input type="file" name="filename" id="fileUpload" accept="image/*">
 							<div class="file-help"><span>파일을 끌어다 놓거나<br>이곳을 클릭하여<br>파일을 선택해 주세요.</span></div>
 							<div class="selected-img"><img class="resume-img" aria-hidden="true"></div>
 							<div class="fileLabel"><img src="./image/camera.svg"><br><span>파일선택</span></div>
@@ -203,7 +203,7 @@
 						
 						<div class="side-button">
 							<a href="#" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">다운로드</a>
-							<a href="javascript:" role="button">이력서 저장</a>
+							<a href="javascript:saveResume()" role="button">이력서 저장</a>
 						</div>
 					</aside>
 				</div> 

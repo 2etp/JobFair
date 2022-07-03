@@ -66,3 +66,8 @@ function fnExcelReport(id1,id2,id3, title) {
 	XLSX.writeFileXLSX(workbook, "a.xlsx");
 }
 */
+
+// 이력서 저장
+function saveResume() {
+    document.resumeFrm.submit();
+}

@@ -308,3 +308,71 @@ table caption {
 .div-title {
 	margin-bottom: 30px;
 } 
+
+#sideNav{	
+	float:left;
+	border:1px solid #000;
+	border-radius:5px;
+	width:250px;
+	height:470px;
+	position:fixed;
+	top:40%;
+	margin-left:20px;
+	box-shadow:2px 2px 5px #666;
+}
+
+#sideNav ul {
+	margin-top: 10px;
+}
+
+#sideNav ul li {
+	list-style: none;
+	margin-bottom: 20px;
+}
+#sideNav ul li a {
+	color: #004C6A;
+	font-family:Binggrae;
+	font-size: 20px;
+	clear: left;
+}
+
+#sideNav ul li img {
+	width: 30px;
+	height: 30px;
+	
+}
+
+#sideNav img {
+	width: 70px;
+	height: 70px;
+	position: relative;
+}
+
+.div-sideNav {
+	position : absolute;
+	right : 23%;
+}
+
+#sideNav h3 {
+	font-family:Binggrae;
+	margin-left: 20px;
+	color: #666;
+	float: left;
+	margin-right: 30px;
+}
+
+.side-button {
+	margin-left: 60px;
+}
+
+.side-button a {
+	border: 1px solid #aaa;
+	text-decoration: none;
+	color: white;
+	background-color: #F7545F;
+	padding: 7px 7px 7px 7px;
+	display: block;
+	width: 110px;
+	margin-bottom: 10px;
+	text-align: center;
+}

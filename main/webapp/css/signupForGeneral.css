@@ -16,6 +16,7 @@
     z-index: 20;
     color: transparent;
     box-sizing:border-box;
+    margin-top:20px;
 }
 form[name="signupFrm"] input::-webkit-file-upload-button{
     display: none;
@@ -26,14 +27,24 @@ form[name="signupFrm"] input::-webkit-file-upload-button{
 	border: 2px solid black;
 	background-color:#eee;
 }
-.fileLabel{
+.file-help{
 	position:absolute;
-	z-index:-10;
 	width: 300px;
 	height: 200px;
 	top:0;
 	left:0;
 	vertical-align:middle;
+}
+
+.fileLabel{
+	position:absolute;
+	z-index:-10;
+	width: 304px;
+	height: 204px;
+	top:0;
+	left:0;
+	vertical-align:middle;
+	transition-duration:0.3s;
 }
 .fileLabel img{
 	display:inline-block;
@@ -41,12 +52,17 @@ form[name="signupFrm"] input::-webkit-file-upload-button{
 	height: 100px;
 	margin-top:40px;
 }
-.fileLabel span{
+.fileLabel span, .file-help span{
 	font-weight:bold;
+}
+.file-help span{
+	display:inline-block;
+	margin-top:70px;
 }
 .img-upload:hover .fileLabel{
 	z-index:10;
-	background-color:rgba(200,200,200,0.3);
+	background-color:rgba(220,220,220,0.8);
+	transition-duration:0.3s;
 }
 
 form[name='signupFrm'] input:not(input[type=file], .signupFrm9 input, .signupFrm10 input) {

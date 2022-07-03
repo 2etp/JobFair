@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/signupForGeneral.css">
 <script defer src="js/signupForGeneral.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -21,6 +22,7 @@
 			<div class="profile">
 				<div class="img-upload">
 					<input type="file" id="fileUpload" name="filename"/>
+					<div class="file-help"><span>파일을 끌어다 놓거나<br>이곳을 클릭하여<br>파일을 선택해 주세요.</span></div>
 					<div class="selected-img"><img class="logo-img" aria-hidden="true"></div>
 					<div class="fileLabel"><img src="./image/camera.svg"><br><span>파일선택</span></div>
 				</div>

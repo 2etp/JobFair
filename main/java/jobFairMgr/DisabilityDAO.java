@@ -283,20 +283,20 @@ public class DisabilityDAO {
 		return cnt;
 	}
 	
-	// request에 들어간 데이터를 배열로 반환
-	private List<String> dataIntoArr(HttpServletRequest request) throws IOException {
-		List<String> list = new ArrayList<String>();
-		MultipartRequest multi = null;
-		multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
-		
-		Enumeration params = request.getParameterNames();
-		while(params.hasMoreElements()) {
-		  String name = (String) params.nextElement();
-		  list.add(request.getParameter(name)); 
-		}
-		
-		return list;
-	}
+//	// request에 들어간 데이터를 배열로 반환
+//	private List<String> dataIntoArr(HttpServletRequest request) throws IOException {
+//		List<String> list = new ArrayList<String>();
+//		MultipartRequest multi = null;
+//		multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+//		
+//		Enumeration params = request.getParameterNames();
+//		while(params.hasMoreElements()) {
+//		  String name = (String) params.nextElement();
+//		  list.add(request.getParameter(name)); 
+//		}
+//		
+//		return list;
+//	}
 	
 	// 이력서 저장
 	public boolean insertResume(HttpServletRequest request) {
@@ -311,24 +311,24 @@ public class DisabilityDAO {
 		int questmark = 5;
 		
 		try {
-			con = pool.getConnection();
-			// request를 넘겨주어 dataIntoArr 메소드 안에서 멀티파트를 만들고 그 안에 들어있는 파라미터를 ArrayList로 묶어 반환 
-			List<String> dataList = dataIntoArr(request);
+//			con = pool.getConnection();
+//			// request를 넘겨주어 dataIntoArr 메소드 안에서 멀티파트를 만들고 그 안에 들어있는 파라미터를 ArrayList로 묶어 반환 
+//			List<String> dataList = dataIntoArr(request);
+//			
+//			File file = new File(SAVEFOLDER);
+//			if(!file.exists()) file.mkdirs();
+//			
+//			multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+//			if(multi.getFilesystemName("filename") != null) {
+//				fileName = multi.getFilesystemName("filename");
+//				fileSize = (int)multi.getFile("filename").length();
+//			}
 			
-			File file = new File(SAVEFOLDER);
-			if(!file.exists()) file.mkdirs();
-			
-			multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
-			if(multi.getFilesystemName("filename") != null) {
-				fileName = multi.getFilesystemName("filename");
-				fileSize = (int)multi.getFile("filename").length();
-			}
-			
-			Enumeration params = request.getParameterNames();
-			while(params.hasMoreElements()) {
-			  String name = (String) params.nextElement();
-			  System.out.println(name + " : " + request.getParameter(name)); 
-			}
+//			Enumeration params = request.getParameterNames();
+//			while(params.hasMoreElements()) {
+//			  String name = (String) params.nextElement();
+//			  System.out.println(name + " : " + request.getParameter(name)); 
+//			}
 			
 			// multi에 들어있는 파라미터 요소들을 배열로 저장해서 index를 활용해 반복문을 돌린다?
 			// pstmt.setString에서 배열 넘버와 index + 1번 자리에 배열의 값

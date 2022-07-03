@@ -95,7 +95,7 @@
 		<section>
 			<form name="searchFrm" method="post" action="search.jsp">
 				<div class="div-search">
-					<img src="./image/search.svg" alt="검색 이미지">
+					<img src="./image/search.svg" aria-hidden="true">
 					<input id="companyName" type="text" name="companyName" placeholder="기업명을 입력하세요" title="기업명" value="">
 					<a id="submit-button" href="javascript:" role="button"
 					 onclick="searchName()">검색</a>
@@ -171,7 +171,7 @@
 		
 		<section>
 			<div class="div-list">
-				<img src="./image/building.png" alt="건물이미지">
+				<img src="./image/building.png" aria-hidden="true">
 				<p>참여기업 리스트</p>
 			</div>
 			<!-- 채용공고 리스트 -->

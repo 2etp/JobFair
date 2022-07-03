@@ -16,10 +16,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>2022 부산 장애인 온라인 채용 박람회 | 내 정보 관리</title>
+<title>2022 부산 장애인 온라인 채용 박람회 | 기업정보 관리</title>
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/myPageForGeneral.css">
 </head>
+
 <body>
 
 <jsp:include page="commonJSP/header.jsp"></jsp:include>

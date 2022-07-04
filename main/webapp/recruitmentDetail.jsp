@@ -6,6 +6,7 @@
 <jsp:useBean id="disvo" class="jobFairMgr.DisabilityVO" />
 <jsp:useBean id="disdao" class="jobFairMgr.DisabilityDAO" />
 <%@ page import = "java.util.*" %>
+<%@ page import="jobFairMgr.ResumeVO"%>
 
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -15,7 +16,7 @@
 	
 	jvo = dao.getOpening(employNum);
 	vo = dao.getGeneral(jvo.getComNum());
-	
+	List<ResumeVO> rvoList = disdao.getResumeList(disvo.getUserNum());
 %>
 <!DOCTYPE html>
 <html>
@@ -220,14 +221,27 @@
 							<span>바로 지원하기</span>
 						</h4>
 						<!-- 이력서 제출 폼 -->
-						<form name="applyFrm">
-							<input type="hidden" name="user" value="" aria-hidden="true">
+						<form name="applyFrm" method="post" action="apply_proc.jsp">
+							<input type="hidden" name="user" value="<%=disvo.getUserNum()%>" aria-hidden="true">
 							<input type="hidden" name="employNum" value="<%=employNum%>" aria-hidden="true">
-							<select class="selectResume" name="resume">
-								<option value="">기본이력서</option>
+							<select class="selectResume" name="resume" id="resume">
+								<%for(int i = 0; i < rvoList.size(); i++)  { 
+									ResumeVO revo = rvoList.get(i);%>
+									<option value="<%=revo.getResumeNum()%>"><%=revo.getTitle()%></option>
+								<%}%>
 							</select>
 							<br>
-							<a href="" class="btn" id="resPreview">미리보기</a>
+							
+							<!-- 새 탭으로 현재 선택된 이력서를 자세히 보도록 a태그에 url을 달아줘야함 -->
+							<a href="" target="_blank" class="btn" id="resPreview">미리보기</a>
+							<!-- 
+							<script>
+								const a = document.getElementByID('resPreview');
+								const select = document.getElementByID('resume');
+								a.href="myResume.jsp?resumeNum="+select.value;
+							</script>
+							 -->
+							
 							<br>
 							<input id="agreementChk" type="checkbox" required>
 							<label for="agreementChk">
@@ -236,7 +250,8 @@
 								<span>모두 확인하였습니다.</span>
 							</label>
 							<br>
-							<input type="button" class="btn" id="apply" value="지원하기" role="button">
+							<input type="button" class="btn" id="apply" value="지원하기" role="button" 
+								onclick="applyRecru()">
 						</form>
 						<!-- 이력서 제출 폼 끝 -->
 					</section>
@@ -249,5 +264,5 @@
 <jsp:include page="commonJSP/footer.jsp"/>
 </body>
 <script src="js/common.js"></script>
-<script src="js/recruitmentDetail.js"></script>
+<script defer src="js/recruitmentDetail.js"></script>
 </html>

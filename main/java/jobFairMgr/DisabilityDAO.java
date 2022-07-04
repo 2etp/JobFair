@@ -307,10 +307,6 @@ public class DisabilityDAO {
 		MultipartRequest multi = null;
 		int fileSize = 0;
 		String fileName = null;
-		// sql 문에 몇 개의 ?를 넣을 것인가 -> not null 컬럼이 5개 + fileSize가 있기때문에 디폴트는 6
-		int questmark = 6;
-		// pstmt.setString에서 현재 물음표 위치
-		int questmarkPos = 7;
 		
 		try {
 			con = pool.getConnection();
@@ -467,6 +463,30 @@ public class DisabilityDAO {
 			pool.freeConnection(con, pstmt, rs);
 		}
 		return list;
+	}
+	
+	// 채용공고 지원
+	public boolean apply(ApplyVO vo) {
+		boolean flag = false;
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        try {
+        	con = pool.getConnection();
+        	sql = "insert into applycom (userNum, employNum, resumeNum, progress) values(?, ?, ?, '서류심사')";
+        	pstmt = con.prepareStatement(sql);
+        	pstmt.setInt(1, vo.getUserNum());
+        	pstmt.setInt(2, vo.getEmployNum());
+        	pstmt.setInt(3, vo.getResumeNum());
+        	if (pstmt.executeUpdate() == 1) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            pool.freeConnection(con, pstmt);
+        }
+        return flag;
 	}
 	
 	

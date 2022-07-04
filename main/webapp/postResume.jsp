@@ -73,10 +73,10 @@
 				<tr class="tr4">
 					<th>병역</th>
 					<td colspan="3">
-						<label><input type="radio" name="militaryService" value="finished">필</label>
-						<label><input type="radio" name="militaryService" value="yet">미필</label>
-						<label><input type="radio" name="militaryService" value="exemption">면제</label>
-						<label><input type="radio" name="militaryService" value="none">해당사항 없음</label>
+						<label><input type="radio" name="militaryService" value="필">필</label>
+						<label><input type="radio" name="militaryService" value="미필">미필</label>
+						<label><input type="radio" name="militaryService" value="면제">면제</label>
+						<label><input type="radio" name="militaryService" value="해당사항 없음">해당사항 없음</label>
 					</td>
 				</tr>
 				
@@ -85,8 +85,8 @@
 					<td><%=vo.getDisType()%></td>
 					<th>보장구 유/무</th>
 					<td colspan="2">
-						<label><input type="radio" name="assistive" value="existence">유</label>
-						<label><input type="radio" name="assistive" value="nonexistence">무</label>
+						<label><input type="radio" name="assistive" value="유">유</label>
+						<label><input type="radio" name="assistive" value="무">무</label>
 					</td>
 				</tr>
 				
@@ -103,10 +103,10 @@
 					<th rowspan="2">최종학력</th>
 					<td><input type="text" name="schoolName">학교</td>
 					<td rowspan="2" colspan="3">
-						<label><input type="radio" name="education" value="attending">재학</label>
-						<label><input type="radio" name="education" value="takingOff">휴학</label>
-						<label><input type="radio" name="education" value="graduate">졸업</label>
-						<label><input type="radio" name="education" value="dropOut">중퇴</label>
+						<label><input type="radio" name="education" value="재학">재학</label>
+						<label><input type="radio" name="education" value="휴학">휴학</label>
+						<label><input type="radio" name="education" value="졸업">졸업</label>
+						<label><input type="radio" name="education" value="중퇴">중퇴</label>
 					</td>
 				</tr>
 				

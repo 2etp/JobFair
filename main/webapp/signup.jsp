@@ -12,7 +12,7 @@
 <jsp:include page="commonJSP/header.jsp"/>
 <main>
 	<section>
-		<h1>회원가입을 환영합니다.</h1>
+		<h1>회원가입</h1>
 		<div class="div-signuplink-form">
 			<div class="div-signuplink-left">
 				<img src="image/signupDisability.png">

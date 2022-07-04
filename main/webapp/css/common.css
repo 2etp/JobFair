@@ -8,20 +8,21 @@ body {
 }
 
 header {
-	
+	display: flex;
 	flex-basis : 15%;
-	display : flex;
 	position : sticky;
 	top : 0;
 	justify-content : center;
 	width : 100%;
 	background-color : white;
 	z-index : 1;
+	white-space:nowrap;
 }
 
 header section{
 	margin-top : 30px;
-	flex-basis : 40%
+	flex-basis : 40%;
+	
 }
 
 main {
@@ -61,7 +62,12 @@ footer section article{
 	text-decoration : none;
 }
 
-.header-navigation div{
+.header-navigation div:not(.header-navigation div:first-of-type) {
 	font-size : 23px;
+	margin: 0 10px 0 10px;
+}
 
+.header-navigation div:first-of-type {
+	font-size : 23px;
+	margin-right: 10px;
 }

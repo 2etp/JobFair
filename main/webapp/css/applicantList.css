@@ -1,1 +1,110 @@
 @charset "UTF-8";
+
+
+@font-face{
+	src:url("../fonts/Jalnan.ttf");
+	font-family:Jalnan;
+}
+
+table, tr, th, td {
+	border-bottom: 1px solid #ccc;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+tr, td {
+	height: 40px;
+}
+
+td a {
+	text-decoration: none;
+	color: #757575;
+}
+
+table {
+	width: 800px;
+	margin-top: 30px;
+}
+
+section p {
+	font-size: 25px;
+	font-weight: bold;
+	width: 250px;
+	margin: 0 0 0 50px;
+	padding-top: 7px;
+	font-family:Jalnan;
+}
+
+.title-div {
+	margin-top: 50px;
+}
+
+.title-img {
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.tr1 {
+	border-top: 1px solid #ccc;
+	font-size: 17px;
+	height: 50px;
+	background-color: #F2F2F2;
+}
+
+.tr2 img {
+	width: 25px;
+	height: 25px;
+}
+
+#sideNav{	
+	float:left;
+	border:1px solid #000;
+	border-radius:5px;
+	width:250px;
+	height:470px;
+	position:fixed;
+	top:40%;
+	margin-left:20px;
+	box-shadow:2px 2px 5px #666;
+}
+
+#sideNav ul {
+	margin-top: 40px;
+}
+
+#sideNav ul li {
+	list-style: none;
+	margin-bottom: 20px;
+}
+#sideNav a {
+	color: #004C6A;
+	font-family:Binggrae;
+	font-size: 20px;
+	clear: left;
+}
+
+#sideNav ul li img {
+	width: 30px;
+	height: 30px;
+	
+}
+
+#sideNav img {
+	width: 70px;
+	height: 70px;
+	position: relative;
+}
+
+#sideNav h3 {
+	font-family:Binggrae;
+	margin-left: 20px;
+	color: #666;
+	float: left;
+	margin-right: 30px;
+}
+
+.div-sideNav {
+	position : absolute;
+	right : 23%;
+}

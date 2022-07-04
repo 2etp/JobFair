@@ -46,7 +46,7 @@
 	<section>
 		<div class="div-list">
 			<img src="./image/building.png" alt="건물이미지">
-			<p>관심기업 리스트</p>
+			<p>관심 채용공고</p>
 		</div>
 
 		<div class="jobOpening">

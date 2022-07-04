@@ -23,8 +23,10 @@
 	<jsp:include page="commonJSP/header.jsp"></jsp:include>
 	<main>		
 		<section class="section-table">
-			<!-- <img src="./image/myPage.svg" aria-hidden="true"> -->
-			<p>내 정보 관리</p>
+			<div class="title-div">
+				<img src="./image/myPage.svg" aria-hidden="true" class="title-img">
+				<p>내 정보 관리</p>
+			</div>
 			<table>
 				<thead>
 					<tr class="tr1">

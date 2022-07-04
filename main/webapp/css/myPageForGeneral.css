@@ -1,12 +1,16 @@
 @charset "UTF-8";
 
+@font-face{
+	src:url("../fonts/Jalnan.ttf");
+	font-family:Jalnan;
+}
+
 table, tr, th, td {
 	border-bottom: 1px solid #A1A1A1;
 	border-collapse: collapse;
 	text-align: center;
 	
 }
-
 
 th:not(.tr1 th, .tr1 td) {
 	border-right: 1px solid #F7F7F7;
@@ -16,6 +20,7 @@ th:not(.tr1 th, .tr1 td) {
 
 table {
 	width: 700px;
+	margin-top: 50px;
 }
 
 .section-table {
@@ -35,9 +40,22 @@ table {
 }
 
 .section-table p {
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: bold;
-	margin: 50px 0 30px 0;
+	width: 250px;
+	margin: 0 0 0 50px;
+	padding-top: 7px;
+	font-family:Jalnan;
+}
+
+.title-img {
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.title-div {
+	margin-top: 50px;
 }
 
 #sideNav{	

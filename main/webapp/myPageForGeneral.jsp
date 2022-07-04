@@ -27,7 +27,10 @@
 
 <main>
 	<section class="section-table">
-		<p>기업정보 관리</p>
+		<div class="title-div">
+			<img src="./image/myPage.svg" aria-hidden="true" class="title-img">
+			<p>내 정보 관리</p>
+		</div>
 		<table>
 			<thead>
 				<tr class="tr1">
@@ -82,13 +85,11 @@
 					<img src="image/guide.png" aria-hidden="true">
 					<ul>
 						<li><img src="./image/resume.png" aria-hidden="true">
-							<a href="postResume.jsp" role="button">채용공고 등록</a></li>
+							<a href="postJobOpening.jsp" role="button">채용공고 등록</a></li>
 						<li><img src="./image/myPage.svg"  aria-hidden="true">
 							<a href="myPageForGeneral.jsp" role="button">기업정보 관리</a></li>
-						<li><img src="./image/myResume.png" aria-hidden="true">
-							<a href=".jsp" role="button">채용공고 관리</a></li>
 						<li><img src="image/applyList.png" aria-hidden="true">
-							<a href=".jsp" role="button">지원자 현황</a></li>
+							<a href="applicantList.jsp" role="button">지원자 현황</a></li>
 					</ul>
 				</aside>
 			</div> 

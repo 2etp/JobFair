@@ -1,4 +1,16 @@
 @charset "UTF-8";
+@font-face{
+	src:url("../fonts/KoddiUDOnGothic-Regular.ttf");
+	font-family:KoddiRegular;
+}
+@font-face{
+	src:url("../fonts/KoddiUDOnGothic-Bold.ttf");
+	font-family:KoddiBold;
+}
+@font-face{
+	src:url("../fonts/BinggraeⅡ.ttf");
+	font-family:Binggrae;
+}
 
 main section {
 	flex-basis: 40%;
@@ -93,54 +105,14 @@ table:not(table:last-of-type) {
 
 .div-table {
 	border: 1px solid #3778AB;
-	border-radius: 20px;
-	box-shadow: 0 0 8px #3778AB ;
+	border-radius: 5px;
+	box-shadow: 0 0 8px #3778AB;
+	margin:auto;
+	width:fit-content;
 }
 
 .table2, .table3 {
 	height: 170px;
-}
-
-.sideBar {
-	position:fixed;
-	right: 10%;
-	top: 40%;
-
-}
-
-.sideBar a {
-	display: flex;
-	text-decoration: none;
-	color: black;
-	padding: 15px 35px 15px 35px;
-	font-size: 20px;
-	border: 3px solid #dfdfdf;
-	margin: 5% 0 5% 0;
-	background-color: white;
-	color: #666;
-}
-
-.sideBar a:nth-of-type(1) {
-	padding-left: 50px;
-}
-
-.sideBar a:nth-of-type(2) {
-	padding-left: 50px;
-}
-
-.sideBar a:hover {
-	text-decoration: underline;
-}
-
-.sideBar fieldset {
-	border: 3px solid #686868;
-	padding: 10px 20px 10px 20px;
-}
-
-.sideBar legend {
-	margin-left: 10px;
-	font-size: 30px;
-	color: #666;
 }
 
 table {
@@ -306,15 +278,20 @@ table caption {
 }
 
 .div-title {
+	text-align:center;
 	margin-bottom: 30px;
 } 
 
+#container{
+	flex-basis: 42%;
+	position:relative;
+}
 #sideNav{	
 	float:left;
 	border:1px solid #000;
 	border-radius:5px;
 	width:250px;
-	height:470px;
+	height:420px;
 	position:fixed;
 	top:40%;
 	margin-left:20px;
@@ -327,13 +304,12 @@ table caption {
 
 #sideNav ul li {
 	list-style: none;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 #sideNav ul li a {
 	color: #004C6A;
 	font-family:Binggrae;
 	font-size: 20px;
-	clear: left;
 }
 
 #sideNav ul li img {
@@ -343,36 +319,55 @@ table caption {
 }
 
 #sideNav img {
-	width: 70px;
-	height: 70px;
-	position: relative;
+	width: 30px;
+	height: 30px;
 }
 
 .div-sideNav {
 	position : absolute;
-	right : 23%;
+	right : 0px;
 }
 
 #sideNav h3 {
 	font-family:Binggrae;
 	margin-left: 20px;
 	color: #666;
-	float: left;
 	margin-right: 30px;
 }
 
 .side-button {
-	margin-left: 60px;
+	text-align:center;
 }
 
 .side-button a {
+	font-family:Binggrae;
 	border: 1px solid #aaa;
 	text-decoration: none;
 	color: white;
-	background-color: #F7545F;
 	padding: 7px 7px 7px 7px;
-	display: block;
-	width: 110px;
+	display: inline-block;
+	width: 150px;
 	margin-bottom: 10px;
 	text-align: center;
+	font-weight:bold;
+	font-size:18px;
+	text-shadow:0 0 10px #000;
+	border-radius:2px;
+}
+#xlsDL{
+	background-color: #2A8732;
+	overflow:hidden;
+	position:relative;
+}
+#xlsDL img{
+	position:absolute;
+	top:3px;
+	right:22px;
+	height:30px;
+}
+#xlsDL span{
+	margin-left:-15px;
+}
+#saveRes{
+	background-color: #2396B0;
 }

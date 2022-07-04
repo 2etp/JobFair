@@ -30,6 +30,7 @@
 <jsp:include page="commonJSP/header.jsp"/>
 
 <main>
+	<div id="container">
 	<section style="margin-top: 10px;">
 		
 		<form name="resumeFrm" method="post" action="postResumeProc.jsp">
@@ -38,8 +39,7 @@
 			<p>이력서 작성</p>
 		</div>
 		<div class="div-title">
-			<label for="title">이력서 제목</label>
-			<input type="text" id="title" name="title" placeholder="이력서 제목을 작성해 주세요.">
+			<input type="text" id="title" name="title" title="이력서 제목" placeholder="이력서 제목을 작성해 주세요.">
 		</div>
 		
 			<div class="div-table">
@@ -149,7 +149,7 @@
 				
 			<table class="table3" id="mytable3">
 				<tr class="tr15">
-					<th rowspan="4" style="border-bottom-left-radius: 19px;">자격면허</th>
+					<th rowspan="4">자격면허</th>
 					<th>자격종목</th>
 					<th>급수</th>
 					<th>등록번호</th>
@@ -184,33 +184,44 @@
 			</div>
 			
 			<div class="div-sideNav">
-					<aside id="sideNav" role="navigation">
-						<h3>가이드 메뉴</h3>
-						<img src="image/guide.png" aria-hidden="true">
-						<ul>
-							<li><img src="./image/resume.png" aria-hidden="true">
-								<a href="postResume.jsp" role="button">이력서 작성</a></li>
-							<li><img src="./image/myPage.svg"  aria-hidden="true">
-								<a href="myPageForDisability.jsp" role="button">내 정보 관리</a></li>
-							<li><img src="./image/myResume.png" aria-hidden="true">
-								<a href="myResume.jsp" role="button">이력서 관리</a></li>
-							<li><img src="image/bookmark_on.svg" aria-hidden="true">
-								<a href="pickedList.jsp" role="button">관심 채용공고</a></li>
-							<li><img src="image/applyList.png" aria-hidden="true">
-								<a href="applyList.jsp" role="button">기업지원 현황</a></li>				
-						</ul>
-						<hr>
+				<aside id="sideNav" role="navigation">
+					<div id="sideNav-container">
+						<h3>마이페이지 메뉴</h3>
+						<section>
+							<ul>
+								<li><a href="postResume.jsp" role="button">
+									<img src="./image/resume.png" aria-hidden="true">
+									이력서 작성</a></li>
+								<li><a href="myPageForDisability.jsp" role="button">
+									<img src="./image/myPage.svg"  aria-hidden="true">
+									내 정보 관리</a></li>
+								<li><a href="myResume.jsp" role="button">
+									<img src="./image/myResume.png" aria-hidden="true">
+									이력서 관리</a></li>
+								<li><a href="pickedList.jsp" role="button">
+									<img src="image/bookmark_on.svg" aria-hidden="true">
+									관심 채용공고</a></li>
+								<li><a href="applyList.jsp" role="button">
+									<img src="image/applyList.png" aria-hidden="true">
+									기업지원 현황</a></li>				
+							</ul>
+						</section>
 						
-						<div class="side-button">
-							<a href="#" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">다운로드</a>
-							<a href="javascript:saveResume()" role="button">이력서 저장</a>
-						</div>
-					</aside>
-				</div> 
+						<hr style="margin:10px;">
 						
-				<input type="hidden" name="userNum" value=<%vo.getUserNum();%>>
-			</form>
+						<section class="side-button">
+							<div><a href="#" id="xlsDL" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">
+								<span>다운로드</span><img src="image/excel_icon3.svg"></a></div>
+							<a href="javascript:saveResume()" id="saveRes" role="button">이력서 저장</a>
+						</section>
+					</div>
+				</aside>
+			</div> 
+						
+			<input type="hidden" name="userNum" value=<%vo.getUserNum();%>>
+		</form>
 	</section>
+	</div>
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>

@@ -20,6 +20,7 @@ table, tr, th, td {
 th:not(.tr1 th, .tr1 td) {
 	border-right: 1px solid #F7F7F7;
 	background-color: #E0FFD2;
+	color : black;
 	width: 160px;
 }
 

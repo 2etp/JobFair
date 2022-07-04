@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<jsp:useBean id="dao" class="jobFairMgr.GeneralDAO" />
+<jsp:useBean id="dao" class="jobFairMgr.GeneralDAO"/>
 
 <%
 	request.setCharacterEncoding("UTF-8");

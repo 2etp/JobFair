@@ -18,14 +18,14 @@
 		<details class="details-resume-list">
 			<summary>
 				<div>이력서 목록</div>
-				<img src="image/downArrow.png">
+				<img src="image/downArrow.png" alt="아래 방향 화살표 이미지">
 			</summary>
 			<ul class="ul-resume-list">
-				<li class="details-resume-list-item" id="item1">이력서 1</li>
-				<li class="details-resume-list-item" id="item2">이력서 2</li>
-				<li class="details-resume-list-item" id="item3">이력서 3</li>
-				<li class="details-resume-list-item" id="item4">이력서 4</li>
-				<li class="details-resume-list-item" id="item5">이력서 5</li>
+				<li class="details-resume-list-item">이력서 1</li>
+				<li class="details-resume-list-item">이력서 2</li>
+				<li class="details-resume-list-item">이력서 3</li>
+				<li class="details-resume-list-item">이력서 4</li>
+				<li class="details-resume-list-item">이력서 5</li>
 			</ul>
 		</details>
 		<div class="div-caption">

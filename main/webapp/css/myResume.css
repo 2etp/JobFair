@@ -300,3 +300,7 @@ table .tr16 td, .tr17 td, .tr18 td {
 	float: left;
 	margin-right: 30px;
 }
+
+.ul-resume-list {
+	margin: 0px;
+}

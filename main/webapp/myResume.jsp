@@ -1,5 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="vo" class="jobFairMgr.DisabilityVO" />
+<jsp:useBean id="rvo" class="jobFairMgr.ResumeVO" />
+<jsp:useBean id="rvoList" class="jobFairMgr.ResumeVO" />
+<jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
+
+<%
+	String name = (String)session.getAttribute("lgnName");
+	vo = dao.getUser(name);
+	String year = vo.getPrefixNum().substring(0, 4);
+	String month = vo.getPrefixNum().substring(4, 6);
+	String day = vo.getPrefixNum().substring(6);
+	
+	
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,27 +54,27 @@
 					<td rowspan="4">
 					</td>
 					<th>성명</th>
-					<td></td>
+					<td><%=vo.getName()%></td>
 					<th>성별</th>
-					<td></td>
+					<td><%=vo.getSex()%></td>
 				</tr>
 				
 				<tr class="tr2">
 					<th>연락처</th>
-					<td></td>
+					<td><%=vo.getPhoneNum()%></td>
 					<th>생년월일</th>
-					<td></td>
+					<td><%=year%>.<%=month%>.<%=day%></td>
 				</tr>
 				
 				<tr class="tr3">
 					<th>주소</th>
-					<td colspan="3"></td>		
+					<td colspan="3"><%=vo.getLivingArea()%></td>		
 				</tr>
 				
 				<tr class="tr4">
 					<th>병역</th>
 					<td colspan="3">
-
+						
 					</td>
 				</tr>
 				

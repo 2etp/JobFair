@@ -18,10 +18,10 @@ public class SaveResumeServlet extends HttpServlet {
 		
 		String str = request.getParameter("userNum");
 		boolean flag = dao.insertResume(request);
+		System.out.println(str);
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter writer = response.getWriter();
-		System.out.println(str);
 		if(flag) {
 			writer.println("<script>alert('이력서를 저장했습니다.'); location.href='myPageForDisability.jsp'</script>");
 			writer.close();

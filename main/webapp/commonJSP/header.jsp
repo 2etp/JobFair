@@ -7,7 +7,7 @@
 	if(name != null) {
 		flag = dao.isCompany(name);
 	}
-
+	
 	String godabi = (String)session.getAttribute("godabi");
 %>
 <script defer src="js/header.js?godabi=<%=godabi%>"></script>

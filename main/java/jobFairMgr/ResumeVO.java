@@ -3,6 +3,7 @@ package jobFairMgr;
 public class ResumeVO {
 	private int resumeNum;
 	private int userNum;
+	private String title;
 	private String militaryService;
 	private String assistive;
 	private String assistiveDevice;
@@ -21,8 +22,133 @@ public class ResumeVO {
 	private String period3;
 	private String content3;
 	private String note3;
+	private String certificate1;
+	private String certificate2;
+	private String certificate3;
+	private String certificateNum1;
+	private String certificateNum2;
+	private String certificateNum3;
+	private String registration1;
+	private String registration2;
+	private String registration3;
+	private String issuer1;
+	private String issuer2;
+	private String issuer3;
+	private String issueDate1;
+	private String issueDate2;
+	private String issueDate3;
+	private String fileName;
+	private int fileSize;
 	
 
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getCertificate1() {
+		return certificate1;
+	}
+	public void setCertificate1(String certificate1) {
+		this.certificate1 = certificate1;
+	}
+	public String getCertificate2() {
+		return certificate2;
+	}
+	public void setCertificate2(String certificate2) {
+		this.certificate2 = certificate2;
+	}
+	public String getCertificate3() {
+		return certificate3;
+	}
+	public void setCertificate3(String certificate3) {
+		this.certificate3 = certificate3;
+	}
+	public String getCertificateNum1() {
+		return certificateNum1;
+	}
+	public void setCertificateNum1(String certificateNum1) {
+		this.certificateNum1 = certificateNum1;
+	}
+	public String getCertificateNum2() {
+		return certificateNum2;
+	}
+	public void setCertificateNum2(String certificateNum2) {
+		this.certificateNum2 = certificateNum2;
+	}
+	public String getCertificateNum3() {
+		return certificateNum3;
+	}
+	public void setCertificateNum3(String certificateNum3) {
+		this.certificateNum3 = certificateNum3;
+	}
+	public String getRegistration1() {
+		return registration1;
+	}
+	public void setRegistration1(String registration1) {
+		this.registration1 = registration1;
+	}
+	public String getRegistration2() {
+		return registration2;
+	}
+	public void setRegistration2(String registration2) {
+		this.registration2 = registration2;
+	}
+	public String getRegistration3() {
+		return registration3;
+	}
+	public void setRegistration3(String registration3) {
+		this.registration3 = registration3;
+	}
+	public String getIssuer1() {
+		return issuer1;
+	}
+	public void setIssuer1(String issuer1) {
+		this.issuer1 = issuer1;
+	}
+	public String getIssuer2() {
+		return issuer2;
+	}
+	public void setIssuer2(String issuer2) {
+		this.issuer2 = issuer2;
+	}
+	public String getIssuer3() {
+		return issuer3;
+	}
+	public void setIssuer3(String issuer3) {
+		this.issuer3 = issuer3;
+	}
+	public String getIssueDate1() {
+		return issueDate1;
+	}
+	public void setIssueDate1(String issueDate1) {
+		this.issueDate1 = issueDate1;
+	}
+	public String getIssueDate2() {
+		return issueDate2;
+	}
+	public void setIssueDate2(String issueDate2) {
+		this.issueDate2 = issueDate2;
+	}
+	public String getIssueDate3() {
+		return issueDate3;
+	}
+	public void setIssueDate3(String issueDate3) {
+		this.issueDate3 = issueDate3;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public int getFileSize() {
+		return fileSize;
+	}
+	public void setFileSize(int fileSize) {
+		this.fileSize = fileSize;
+	}
 	public int getResumeNum() {
 		return resumeNum;
 	}

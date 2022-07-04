@@ -14,6 +14,8 @@
 
 main section {
 	flex-basis: 40%;
+	font-family:KoddiRegular;
+	letter-spacing:0.1em;
 }
 .div-profileImage{
 	margin : 0 auto;
@@ -166,6 +168,8 @@ table {
 table th {
 	color: white;
 	background-color: #3778AB;
+	letter-spacing:0.5em;
+	white-space:pre-line;
 }
 
 table .tr1 a{
@@ -223,6 +227,7 @@ table .tr7 input[type=radio], .tr7 label {
 
 table .tr10 th, .tr15 th {
 	border-left: 1px solid #28587D;	
+	white-space:pre-line;
 }
 
 table .tr10 td:last-of-type {
@@ -297,6 +302,7 @@ table caption {
 	height: 50px;
 	margin-top: 20px;
 	border-radius: 5px;
+	font-size:18px;
 }
 
 .div-title {

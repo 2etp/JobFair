@@ -39,7 +39,7 @@
 			<h1><img src="./image/resume.png" aria-hidden="true">이력서 작성</h1>
 		</div>
 		<div class="div-title">
-			<input type="text" id="title" name="title" title="이력서 제목" placeholder="이력서 제목을 작성해 주세요.">
+			<input type="text" id="title" name="title" title="이력서 제목" placeholder="이력서 제목을 작성해 주세요." maxlength="255">
 		</div>
 		
 			<div class="div-table">
@@ -49,8 +49,8 @@
 						<div class="div-profileImage">				
 							<div class="file-help">
 								<span>파일을 끌어다 놓거나 
-								이곳을 클릭하여 파일을 
-								선택해 주세요.</span>
+								이곳을 클릭하여 
+								파일을 선택해 주세요.</span>
 							</div>
 							<input type="file" name="filename" id="fileUpload" title="이력서 사진" accept="image/*">
 							<div class="selected-img"><img class="resume-img" aria-hidden="true"></div>
@@ -89,7 +89,7 @@
 				<tr class="tr5">
 					<th>장애유형</th>
 					<td><%=vo.getDisType()%></td>
-					<th>보장구 유/무</th>
+					<th>보장구 유무</th>
 					<td colspan="2">
 						<ul role="group" aria-labelledby="assistive">
 							<li><label><input type="radio" name="assistive" value="유">유</label></li>
@@ -110,28 +110,35 @@
 				<tr class="tr7">
 					<th rowspan="2">최종학력</th>
 					<td colspan="2"><span>학교:</span><textarea name="schoolName" title="학교명" maxlength="20" onkeypress="noEnter()"></textarea></td>
-					<td rowspan="2" colspan="2">
+					<td colspan="2"><span>학과:</span><textarea name="major" title="학과명" maxlength="30" onkeypress="noEnter()"></textarea></td>
+				</tr>
+				
+				<tr class="tr8">
+					<td rowspan="2" colspan="4">
 						<ul role="group" aria-labelledby="assistive">
 							<li><label><input type="radio" name="education" value="재학">재학</label></li>
 							<li><label><input type="radio" name="education" value="휴학">휴학</label></li>
+							<li><label><input type="radio" name="education" value="졸업예정">졸업예정</label></li>
 							<li><label><input type="radio" name="education" value="졸업">졸업</label></li>
 							<li><label><input type="radio" name="education" value="중퇴">중퇴</label></li>
 						</ul>
 					</td>
 				</tr>
 				
-				<tr class="tr8">
-					<td colspan="2"><span>학과:</span><textarea name="major" title="학과명" maxlength="30" onkeypress="noEnter()"></textarea></td>
-				</tr>
-				
 			</table>
 				
 			<table class="table2" id="mytable2">
 				<tr class="tr10">
-					<th rowspan="4">경력<br> 및<br> 교육사항</th>
-					<th>사업체명 및 교육기관</th>
+					<th rowspan="4">경력 
+					및 
+					교육사항</th>
+					<th>사업체명 
+					및 
+					교육기관</th>
 					<th>기간</th>
-					<th>담당업무 및 교육내용</th>
+					<th>담당업무 
+					및 
+					교육내용</th>
 					<th colspan="2">비고</th>
 				</tr>
 				

@@ -7,6 +7,7 @@
 	if(name != null) {
 		flag = dao.isCompany(name);
 	}
+
 %>
 <script defer src="js/header.js"></script>
 <header>

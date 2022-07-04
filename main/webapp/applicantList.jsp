@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
+<%@ page import = "java.util.*" %>
+<%@ page import = "jobFairMgr.ApplyListVO" %>
+    
+<%
+	
+%>
+
 <!DOCTYPE html>
 <html>
 <head>

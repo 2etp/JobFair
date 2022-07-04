@@ -314,11 +314,6 @@ public class DisabilityDAO {
 		
 		try {
 			con = pool.getConnection();
-//			// request를 넘겨주어 dataIntoArr 메소드 안에서 멀티파트를 만들고 그 안에 들어있는 파라미터를 ArrayList로 묶어 반환 
-//			Map<String, String> dataList = dataIntoArr(request);
-			String str = request.getParameter("militaryService");
-			// sql 기본세팅
-			sql = "insert into resume (fileSize, userNum, militaryService, assistive, schoolName, education";
 			
 			File file = new File(SAVEFOLDER);
 			if(!file.exists()) file.mkdirs();
@@ -329,172 +324,54 @@ public class DisabilityDAO {
 				fileSize = (int)multi.getFile("filename").length();
 			}
 			
-			// request에 들어있는 모든 파라미터를 가져옴
-			Enumeration<String> params = request.getParameterNames();
-			while(params.hasMoreElements()) {
-			  String name = (String) params.nextElement();
-			  sql += "," + name;
-			  questmark++;
-			}
-			
-			// sql문 중간 세팅 (......, name)
-			sql += ", fileSize)values(";
-			
-			// sql문에 ?붙여주기
-			while(params.hasMoreElements()) {
-				sql += "?,";
-			}
-			sql += "?)";
-			
-			//pstmt 세팅
+			sql = "insert into resume (userNum, title, militaryService, assistive,assistiveDevice, schoolName, education,"
+					+ "major, institutionName1, institutionName2, institutionName3,"
+					+ "period1, period2, period3, content1, content2, content3, note1, note2, note3,"
+					+ "certificate1, certificate2, certificate3, certificateNum1, certificateNum2, "
+					+ "certificateNum3, registration1, registration2, registration3, issuer1,"
+					+ "issuer2, issuer3, issueDate1, issueDate2, issueDate3, fileName, fileSize) values("
+					+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, fileSize);
-			pstmt.setInt(2, Integer.parseInt(multi.getParameter("userNum")));
+			pstmt.setInt(1, Integer.parseInt(multi.getParameter("userNum")));
+			pstmt.setString(2, multi.getParameter("title"));
 			pstmt.setString(3, multi.getParameter("militaryService"));
 			pstmt.setString(4, multi.getParameter("assistive"));
-			pstmt.setString(5, multi.getParameter("schoolName"));
-			pstmt.setString(6, multi.getParameter("education"));
-			while(params.hasMoreElements()) {
-				String name = (String) params.nextElement();
-				pstmt.setString(questmarkPos, multi.getParameter(name));
-			}
-			
+			pstmt.setString(5, multi.getParameter("assistiveDevice"));
+			pstmt.setString(6, multi.getParameter("schoolName"));
+			pstmt.setString(7, multi.getParameter("education"));
+			pstmt.setString(8, multi.getParameter("major"));
+			pstmt.setString(9, multi.getParameter("institutionName1"));
+			pstmt.setString(10, multi.getParameter("institutionName2"));
+			pstmt.setString(11, multi.getParameter("institutionName3"));
+			pstmt.setString(12, multi.getParameter("period1"));
+			pstmt.setString(13, multi.getParameter("period2"));
+			pstmt.setString(14, multi.getParameter("period3"));
+			pstmt.setString(15, multi.getParameter("content1"));
+			pstmt.setString(16, multi.getParameter("content2"));
+			pstmt.setString(17, multi.getParameter("content3"));
+			pstmt.setString(18, multi.getParameter("note1"));
+			pstmt.setString(19, multi.getParameter("note2"));
+			pstmt.setString(20, multi.getParameter("note3"));
+			pstmt.setString(21, multi.getParameter("certificate1"));
+			pstmt.setString(22, multi.getParameter("certificate2"));
+			pstmt.setString(23, multi.getParameter("certificate3"));
+			pstmt.setString(24, multi.getParameter("certificateNum1"));
+			pstmt.setString(25, multi.getParameter("certificateNum2"));
+			pstmt.setString(26, multi.getParameter("certificateNum3"));
+			pstmt.setString(27, multi.getParameter("registration1"));
+			pstmt.setString(28, multi.getParameter("registration2"));
+			pstmt.setString(29, multi.getParameter("registration2"));
+			pstmt.setString(30, multi.getParameter("issuer1"));
+			pstmt.setString(31, multi.getParameter("issuer2"));
+			pstmt.setString(32, multi.getParameter("issuer3"));
+			pstmt.setString(33, multi.getParameter("issueDate1"));
+			pstmt.setString(34, multi.getParameter("issueDate2"));
+			pstmt.setString(35, multi.getParameter("issueDate3"));
+			pstmt.setString(36, fileName);
+			pstmt.setInt(37, fileSize);
 			if(pstmt.executeUpdate() == 1) {
 				flag = true;
 			}
-			// multi에 들어있는 파라미터 요소들을 배열로 저장해서 index를 활용해 반복문을 돌린다?
-			// pstmt.setString에서 배열 넘버와 index + 1번 자리에 배열의 값
-			//if(arr[index] != null) {
-			//}
-			// pstmt.setString(index + 1, arr[index])
-			
-			
-			// sql 기본세팅
-//			sql = "insert into resume (userNum, militaryService, assistive, schoolName, education";
-//			// 이력서의 각 input필드의 값이 null인지 확인하고 null이 아닐시 sql문에 추가 후 ?개수를 1씩 증가
-//			if(multi.getParameter("assistiveDevice") != null) {
-//				sql += ", assistiveDevice";
-//				questmark++;
-//			}
-//			if(multi.getParameter("major") != null) {
-//				sql += ", major";
-//				questmark++;
-//			}
-//			if(multi.getParameter("institutionName1") != null) {
-//				sql += ", institutionName1";
-//				questmark++;
-//			}
-//			if(multi.getParameter("institutionName2") != null) {
-//				sql += ", institutionName2";
-//				questmark++;
-//			}
-//			if(multi.getParameter("institutionName3") != null) {
-//				sql += ", institutionName3";
-//				questmark++;
-//			}
-//			if(multi.getParameter("period1") != null) {
-//				sql += ", period1";
-//				questmark++;
-//			}
-//			if(multi.getParameter("period2") != null) {
-//				sql += ", period2";
-//				questmark++;
-//			}
-//			if(multi.getParameter("period3") != null) {
-//				sql += ", period3";
-//				questmark++;
-//			}
-//			if(multi.getParameter("content1") != null) {
-//				sql += ", content1";
-//				questmark++;
-//			}
-//			if(multi.getParameter("content2") != null) {
-//				sql += ", content2";
-//				questmark++;
-//			}
-//			if(multi.getParameter("content3") != null) {
-//				sql += ", content3";
-//				questmark++;
-//			}
-//			if(multi.getParameter("note1") != null) {
-//				sql += ", note1";
-//				questmark++;
-//			}
-//			if(multi.getParameter("note2") != null) {
-//				sql += ", note2";
-//				questmark++;
-//			}
-//			if(multi.getParameter("note3") != null) {
-//				sql += ", note3";
-//				questmark++;
-//			}
-//			if(multi.getParameter("certificate1") != null) {
-//				sql += ", certificate1";
-//				questmark++;
-//			}
-//			if(multi.getParameter("certificate2") != null) {
-//				sql += ", certificate2";
-//				questmark++;
-//			}
-//			if(multi.getParameter("certificate3") != null) {
-//				sql += ", certificate3";
-//				questmark++;
-//			}
-//			if(multi.getParameter("certificateNum1") != null) {
-//				sql += ", certificateNum1";
-//				questmark++;
-//			}
-//			if(multi.getParameter("certificateNum2") != null) {
-//				sql += ", certificateNum2";
-//				questmark++;
-//			}
-//			if(multi.getParameter("certificateNum3") != null) {
-//				sql += "certificateNum3";
-//				questmark++;
-//			}
-//			if(multi.getParameter("registration1") != null) {
-//				sql += ", registration1";
-//				questmark++;
-//			}
-//			if(multi.getParameter("registration2") != null) {
-//				sql += ", registration2";
-//				questmark++;
-//			}
-//			if(multi.getParameter("registration3") != null) {
-//				sql += ", registration3";
-//				questmark++;
-//			}
-//			if(multi.getParameter("issuer1") != null) {
-//				sql += ", issuer1";
-//				questmark++;
-//			}
-//			if(multi.getParameter("issuer2") != null) {
-//				sql += ", issuer2";
-//				questmark++;
-//			}
-//			if(multi.getParameter("issuer3") != null) {
-//				sql += ", issuer3";
-//				questmark++;
-//			}
-//			if(multi.getParameter("issueDate1") != null) {
-//				sql += ", issueDate1";
-//				questmark++;
-//			}
-//			if(multi.getParameter("issueDate2") != null) {
-//				sql += ", issueDate2";
-//				questmark++;
-//			}
-//			if(multi.getParameter("issueDate3") != null) {
-//				sql += ", issueDate3) values(?";
-//				questmark++;
-//			}
-//			for(int i = 1; i < questmark - 1; i++) {
-//				sql += ", ?";
-//			}
-//			sql += ")";
-//			
-//			pstmt = con.prepareStatement(sql);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -503,6 +380,95 @@ public class DisabilityDAO {
 		
 		return flag;
 	}
+	
+	// 이력서 불러오기
+	public ResumeVO getResume(int resumeNum) {
+		ResumeVO vo = new ResumeVO();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select * from resume where resumeNum = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, resumeNum);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setResumeNum(Integer.parseInt(rs.getString("resumeNum")));
+				vo.setUserNum(Integer.parseInt(rs.getString("userNum")));
+				vo.setMilitaryService(rs.getString("militaryService"));
+				vo.setAssistive(rs.getString("assistive"));
+				vo.setAssistiveDevice(rs.getString("assistiveDevice"));
+				vo.setSchoolName(rs.getString("schoolName"));
+				vo.setEducation(rs.getString("education"));
+				vo.setMajor(rs.getString("major"));
+				vo.setInstitutionName1(rs.getString("institutionName1"));
+				vo.setPeriod1(rs.getString("period1"));
+				vo.setContent1(rs.getString("content1"));
+				vo.setNote1(rs.getString("note1"));
+				vo.setInstitutionName2(rs.getString("institutionName2"));
+				vo.setPeriod2(rs.getString("period2"));
+				vo.setContent2(rs.getString("content2"));
+				vo.setNote2(rs.getString("note2"));
+				vo.setInstitutionName3(rs.getString("institutionName3"));
+				vo.setPeriod3(rs.getString("period3"));
+				vo.setContent3(rs.getString("content3"));
+				vo.setNote3(rs.getString("note3"));
+				vo.setCertificate1(rs.getString("certificate1"));
+				vo.setCertificateNum1(rs.getString("certificateNum1"));
+				vo.setRegistration1(rs.getString("registration1"));
+				vo.setIssuer1(rs.getString("issuer1"));
+				vo.setIssueDate1(rs.getString("issueDate1"));
+				vo.setCertificate2(rs.getString("certificate2"));
+				vo.setCertificateNum2(rs.getString("certificateNum2"));
+				vo.setRegistration2(rs.getString("registration2"));
+				vo.setIssuer2(rs.getString("issuer2"));
+				vo.setIssueDate2(rs.getString("issueDate2"));
+				vo.setCertificate3(rs.getString("certificate3"));
+				vo.setCertificateNum3(rs.getString("certificateNum3"));
+				vo.setRegistration3(rs.getString("registration3"));
+				vo.setIssuer3(rs.getString("issuer3"));
+				vo.setIssueDate3(rs.getString("issueDate3"));
+				vo.setTitle(rs.getString("title"));
+				vo.setFileName(rs.getString("fileName"));
+				vo.setFileSize(Integer.parseInt(rs.getString("fileSize")));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vo;
+	}
+	
+	// 자신이 작성한 이력서 목록 출력(제목, 이력서 고유번호) -> 이력서 관리에서 쓰일 예정
+	public List<ResumeVO> getResumeList(int userNum) {
+		List<ResumeVO> list = new ArrayList<ResumeVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select title, resumeNum from resume where userNum = ?"; 
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, userNum);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ResumeVO vo = new ResumeVO();
+				vo.setResumeNum(Integer.parseInt(rs.getString("resumeNum")));
+				vo.setTitle(rs.getString("title"));
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return list;
+	}
+	
 	
 	
     // 지원한 기업 리스트 출력

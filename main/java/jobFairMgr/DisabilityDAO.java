@@ -147,6 +147,38 @@ public class DisabilityDAO {
 		return vo;
 	}
 	
+	// 유저 번호로 정보 갖고오기
+	public DisabilityVO getUser(int userNum) {
+		DisabilityVO vo = new DisabilityVO();
+		Connection con = null;
+		PreparedStatement pstmt = null;	
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			con = pool.getConnection();
+			sql = "select * from users where userNum = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, userNum);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setUserNum(rs.getInt("userNum"));
+				vo.setName(rs.getString("name"));
+				vo.setPrefixNum(rs.getString("prefixNum"));
+				vo.setSuffixNum(rs.getString("suffixNum"));
+				vo.setLivingArea(rs.getString("livingArea"));
+				vo.setPhoneNum(rs.getString("phoneNum"));
+				vo.setDisType(rs.getString("disType"));
+				vo.setDisLevel(rs.getString("disLevel"));
+				vo.setSex(rs.getString("sex"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vo;
+	}
+	
     // 관심공고 등록
     // 보고있던 채용공고 번호와 로그인된 계정의 고유번호를 집어넣음
     public boolean addInterCom(int employNum, int userNum) {

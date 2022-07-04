@@ -283,20 +283,20 @@ public class DisabilityDAO {
 		return cnt;
 	}
 	
-//	// request에 들어간 데이터를 배열로 반환
-//	private List<String> dataIntoArr(HttpServletRequest request) throws IOException {
-//		List<String> list = new ArrayList<String>();
-//		MultipartRequest multi = null;
-//		multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
-//		
-//		Enumeration params = request.getParameterNames();
-//		while(params.hasMoreElements()) {
-//		  String name = (String) params.nextElement();
-//		  list.add(request.getParameter(name)); 
-//		}
-//		
-//		return list;
-//	}
+	// request에 들어간 데이터를 배열로 반환
+	private Map<String, String> dataIntoArr(HttpServletRequest request) throws IOException {
+		Map<String, String> dataMap = new HashMap<String, String>();
+		MultipartRequest multi = null;
+		multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+		
+		Enumeration params = request.getParameterNames();
+		while(params.hasMoreElements()) {
+		  String name = (String) params.nextElement();
+		  dataMap.put(name, request.getParameter(name));
+		}
+		
+		return dataMap;
+	}
 	
 	// 이력서 저장
 	public boolean insertResume(HttpServletRequest request) {
@@ -307,29 +307,61 @@ public class DisabilityDAO {
 		MultipartRequest multi = null;
 		int fileSize = 0;
 		String fileName = null;
-		// sql 문에 몇 개의 ?를 넣을 것인가 -> not null 컬럼이 5개 있기때문에 디폴트는 5
-		int questmark = 5;
+		// sql 문에 몇 개의 ?를 넣을 것인가 -> not null 컬럼이 5개 + fileSize가 있기때문에 디폴트는 6
+		int questmark = 6;
+		// pstmt.setString에서 현재 물음표 위치
+		int questmarkPos = 7;
 		
 		try {
-//			con = pool.getConnection();
+			con = pool.getConnection();
 //			// request를 넘겨주어 dataIntoArr 메소드 안에서 멀티파트를 만들고 그 안에 들어있는 파라미터를 ArrayList로 묶어 반환 
-//			List<String> dataList = dataIntoArr(request);
-//			
-//			File file = new File(SAVEFOLDER);
-//			if(!file.exists()) file.mkdirs();
-//			
-//			multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
-//			if(multi.getFilesystemName("filename") != null) {
-//				fileName = multi.getFilesystemName("filename");
-//				fileSize = (int)multi.getFile("filename").length();
-//			}
+//			Map<String, String> dataList = dataIntoArr(request);
+			String str = request.getParameter("militaryService");
+			// sql 기본세팅
+			sql = "insert into resume (fileSize, userNum, militaryService, assistive, schoolName, education";
 			
-//			Enumeration params = request.getParameterNames();
-//			while(params.hasMoreElements()) {
-//			  String name = (String) params.nextElement();
-//			  System.out.println(name + " : " + request.getParameter(name)); 
-//			}
+			File file = new File(SAVEFOLDER);
+			if(!file.exists()) file.mkdirs();
 			
+			multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+			if(multi.getFilesystemName("filename") != null) {
+				fileName = multi.getFilesystemName("filename");
+				fileSize = (int)multi.getFile("filename").length();
+			}
+			
+			// request에 들어있는 모든 파라미터를 가져옴
+			Enumeration<String> params = request.getParameterNames();
+			while(params.hasMoreElements()) {
+			  String name = (String) params.nextElement();
+			  sql += "," + name;
+			  questmark++;
+			}
+			
+			// sql문 중간 세팅 (......, name)
+			sql += ", fileSize)values(";
+			
+			// sql문에 ?붙여주기
+			while(params.hasMoreElements()) {
+				sql += "?,";
+			}
+			sql += "?)";
+			
+			//pstmt 세팅
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, fileSize);
+			pstmt.setInt(2, Integer.parseInt(multi.getParameter("userNum")));
+			pstmt.setString(3, multi.getParameter("militaryService"));
+			pstmt.setString(4, multi.getParameter("assistive"));
+			pstmt.setString(5, multi.getParameter("schoolName"));
+			pstmt.setString(6, multi.getParameter("education"));
+			while(params.hasMoreElements()) {
+				String name = (String) params.nextElement();
+				pstmt.setString(questmarkPos, multi.getParameter(name));
+			}
+			
+			if(pstmt.executeUpdate() == 1) {
+				flag = true;
+			}
 			// multi에 들어있는 파라미터 요소들을 배열로 저장해서 index를 활용해 반복문을 돌린다?
 			// pstmt.setString에서 배열 넘버와 index + 1번 자리에 배열의 값
 			//if(arr[index] != null) {

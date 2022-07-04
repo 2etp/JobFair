@@ -15,10 +15,13 @@ public class SaveResumeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		DisabilityDAO dao = new DisabilityDAO();
+		
+		String str = request.getParameter("userNum");
 		boolean flag = dao.insertResume(request);
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter writer = response.getWriter();
+		System.out.println(str);
 		if(flag) {
 			writer.println("<script>alert('이력서를 저장했습니다.'); location.href='myPageForDisability.jsp'</script>");
 			writer.close();

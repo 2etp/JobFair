@@ -2,15 +2,28 @@
     pageEncoding="UTF-8"%>
 <jsp:useBean id="vo" class="jobFairMgr.DisabilityVO" />
 <jsp:useBean id="rvo" class="jobFairMgr.ResumeVO" />
-<jsp:useBean id="rvoList" class="jobFairMgr.ResumeVO" />
 <jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
+<%@ page import="java.util.*" %>
+<%@ page import="jobFairMgr.ResumeVO"%>
 
 <%
+
 	String name = (String)session.getAttribute("lgnName");
 	vo = dao.getUser(name);
 	String year = vo.getPrefixNum().substring(0, 4);
 	String month = vo.getPrefixNum().substring(4, 6);
 	String day = vo.getPrefixNum().substring(6);
+	
+	List<ResumeVO> rvoList = dao.getResumeList(vo.getUserNum());
+	String resumeNum_str = request.getParameter("resumeNum");
+	int resumeNum;
+	
+	if(resumeNum_str == null) {
+		resumeNum = rvoList.get(0).getResumeNum();	// 최종적으로는 0을 디폴트로 resumeNum이 0이면 등록된 이력서가 없다고 띄움
+	} else {
+		resumeNum = Integer.parseInt(resumeNum_str);
+	}
+	rvo = dao.getResume(resumeNum);
 	
 	
 %>
@@ -33,15 +46,16 @@
 	<section>
 		<details class="details-resume-list">
 			<summary>
-				<div>이력서 목록</div>
+				<div><%=rvo.getTitle()%></div>
 				<img src="image/downArrow.png" alt="아래 방향 화살표 이미지">
 			</summary>
 			<ul class="ul-resume-list">
-				<li class="details-resume-list-item">이력서 1</li>
-				<li class="details-resume-list-item">이력서 2</li>
-				<li class="details-resume-list-item">이력서 3</li>
-				<li class="details-resume-list-item">이력서 4</li>
-				<li class="details-resume-list-item">이력서 5</li>
+				<%
+					for(int i = 0; i < rvoList.size(); i++) { 
+					ResumeVO eachVO = rvoList.get(i);%>
+						<li class="details-resume-list-item"><a href="myResume.jsp?resumeNum=<%=eachVO.getResumeNum()%>">
+						<%=eachVO.getTitle()%></a></li>
+					<%}%>
 			</ul>
 		</details>
 		<div class="div-caption">
@@ -51,7 +65,8 @@
 			<div class="div-table">
 			<table class="table1" id="table">
 				<tr class="tr1">
-					<td rowspan="4">
+					<td rowspan="4"><!-- 증명사진 -->
+					<img src="./image/<%=rvo.getFileName()%>" width=150px height=165px>
 					</td>
 					<th>성명</th>
 					<td><%=vo.getName()%></td>
@@ -74,38 +89,38 @@
 				<tr class="tr4">
 					<th>병역</th>
 					<td colspan="3">
-						
+						<%=rvo.getMilitaryService()%>
 					</td>
 				</tr>
 				
 				<tr class="tr5">
 					<th>장애유형</th>
-					<td></td>
+					<td><%=vo.getDisType()%></td>
 					<th>보장구 유/무</th>
 					<td colspan="2">
-
+						<%=rvo.getAssistive()%>
 					</td>
 				</tr>
 				
 				<tr class="tr6">
 					<th>장애등급</th>
-					<td></td>
+					<td><%=vo.getDisLevel()%></td>
 					<th>보장구 종류</th>
 					<td colspan="2">
-
+						<%=rvo.getAssistiveDevice() %>
 					</td>
 				</tr>
 				
 				<tr class="tr7">
 					<th rowspan="2">최종학력</th>
-					<td>학교</td>
+					<td><%=rvo.getSchoolName()%></td>
 					<td rowspan="2" colspan="3">
-
+						<%=rvo.getEducation() %>
 					</td>
 				</tr>
 				
 				<tr class="tr8">
-					<td>학과</td>
+					<td><%=rvo.getMajor()%></td>
 				</tr>
 				
 			</table>
@@ -120,24 +135,24 @@
 				</tr>
 				
 				<tr class="tr11">
-					<td></td>
-					<td></td>
-					<td></td>
-					<td colspan="2"></td>
+					<td><%=rvo.getInstitutionName1()%></td>
+					<td><%=rvo.getPeriod1()%></td>
+					<td><%=rvo.getContent1()%></td>
+					<td colspan="2"><%=rvo.getNote1()%></td>
 				</tr>
 							
 				<tr class="tr12">
-					<td></td>
-					<td></td>
-					<td></td>
-					<td colspan="2"></td>
+					<td><%=rvo.getInstitutionName2()%></td>
+					<td><%=rvo.getPeriod2()%></td>
+					<td><%=rvo.getContent2()%></td>
+					<td colspan="2"><%=rvo.getNote2()%></td>
 				</tr>
 				
 				<tr class="tr13">
-					<td></td>
-					<td></td>
-					<td></td>
-					<td colspan="2"></td>
+					<td><%=rvo.getInstitutionName3()%></td>
+					<td><%=rvo.getPeriod3()%></td>
+					<td><%=rvo.getContent3()%></td>
+					<td colspan="2"><%=rvo.getNote3()%></td>
 				</tr>
 			</table>
 				
@@ -152,27 +167,27 @@
 				</tr>
 				
 				<tr class="tr16">
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td><%=rvo.getCertificate1()%></td>
+					<td><%=rvo.getCertificateNum1()%></td>
+					<td><%=rvo.getRegistration1()%></td>
+					<td><%=rvo.getIssuer1()%></td>
+					<td><%=rvo.getIssueDate1()%></td>
 				</tr>
 				
 				<tr class="tr17">
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td><%=rvo.getCertificate2()%></td>
+					<td><%=rvo.getCertificateNum2()%></td>
+					<td><%=rvo.getRegistration2()%></td>
+					<td><%=rvo.getIssuer2()%></td>
+					<td><%=rvo.getIssueDate2()%></td>
 				</tr>
 				
 				<tr class="tr18">
-					<td></td>
-					<td></td>					
-					<td></td>
-					<td></td>
-					<td></td>
+					<td><%=rvo.getCertificate3()%></td>
+					<td><%=rvo.getCertificateNum3()%></td>
+					<td><%=rvo.getRegistration3()%></td>
+					<td><%=rvo.getIssuer3()%></td>
+					<td><%=rvo.getIssueDate3()%></td>
 				</tr>
 			</table>
 			</div>

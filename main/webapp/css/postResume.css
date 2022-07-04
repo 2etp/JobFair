@@ -72,25 +72,69 @@ form[name="resumeFrm"] input::-webkit-file-upload-button{
 }
 .file-help span{
 	display:inline-block;
-	margin-top:80px;
 	font-size:13px;
+	margin:0;
+	margin-top:80px;
+	white-space:pre-line;
 }
+
 .div-profileImage:hover .fileLabel{
 	z-index:10;
 	background-color:rgba(220,220,220,0.8);
 	transition-duration:0.3s;
 }
-
-form[name='resumeFrm'] p:first-of-type {
-	text-align: center;
-	font-weight: bold;
-	font-size: 25px;
+td{
+	position:relative;
 }
-
+td ul{
+	text-align:center;
+	padding-inline-start: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+td ul li{
+	display:inline-block;
+	text-align:center;
+	list-style:none;
+}
+td textarea{
+	resize:vertical;
+	font-family:KoddiRegular;
+	background-image:url("../image/edit3.svg");
+	background-repeat:no-repeat;
+	background-position:98%;
+	background-size:28px;
+	width:75%;
+	min-height:45px;
+	margin:0;
+	border:none;
+	padding-left:10px;
+	padding-right:30px;
+	font-size:18px;
+}
+#table td textarea{
+	width:85%;
+}
+#mytable3 td textarea{
+	width:70%;
+}
+#table .tr7 td textarea, #table .tr8 td textarea{
+	width:70%;
+	float:right;
+}
+#table .tr7 td span, #table .tr8 td span{
+	display:inline-block;
+	position:absolute;
+	left:5px;
+	top:15px;
+	font-weight:bold;
+}
 table, tr, td {
 	border: 1px solid #28587D;
-	text-align: center;
 	border-collapse: collapse;
+}
+#table td{
+	text-align:center;
 }
 
 table {
@@ -139,7 +183,9 @@ table .tr1 th:nth-of-type(2) {
 	width: 115px;
 
 }
-
+#table .tr4,#table .tr6{
+	border-bottom:3px double #28587D;
+}
 table .tr2 th{
 	width: 100px;
 }
@@ -164,23 +210,11 @@ table .tr6 td:last-of-type {
 	width: 230px;
 }
 
-table .tr6 input {
-	width: 230px;
-	margin: 0px;
-	height: 30px;
-	border: 1px solid gray;
-}
 
 table .tr7 td, .tr8 td {
 	height: 40px;
 }
 
-table .tr7 input:nth-of-type(1), .tr8 input {
-	margin-right: 10px;
-	height: 30px;
-	border: 1px solid gray;
-	width: 100px;
-}
 
 table .tr7 input[type=radio], .tr7 label {
 	height: 10px;
@@ -224,19 +258,7 @@ table .tr16 td, .tr17 td, .tr18 td {
 	height: 40px;
 }
 
-table .tr11 input, .tr12 input, .tr13 input {
-	margin: 0px;
-	height: 30px;
-	border: 1px solid gray;
-	width: 135px;
-}
 
-table .tr16 input, .tr17 input, .tr18 input {
-	margin: 0px;
-	height: 30px;
-	width: 120px;
-	border: 1px solid gray;
-}
 
 table caption {
 	font-size: 30px;

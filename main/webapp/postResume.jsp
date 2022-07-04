@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="./css/postResume.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 <script lang="javascript" src="./js/xlsx.full.min.js"></script>
 <script defer src="js/postResume.js"></script>
 </head>
@@ -33,10 +34,9 @@
 	<div id="container">
 	<section style="margin-top: 10px;">
 		
-		<form name="resumeFrm" method="post" action="SaveResumeServlet" enctype="multipart/form-data">
+		<form name="resumeFrm" method="post" enctype="multipart/form-data" action="SaveResumeServlet">
 		<div class="div-caption">
-			<img src="./image/resume.png" alt="이력서 이미지">
-			<p>이력서 작성</p>
+			<h1><img src="./image/resume.png" aria-hidden="true">이력서 작성</h1>
 		</div>
 		<div class="div-title">
 			<input type="text" id="title" name="title" title="이력서 제목" placeholder="이력서 제목을 작성해 주세요.">
@@ -47,10 +47,14 @@
 				<tr class="tr1">
 					<td rowspan="4">
 						<div class="div-profileImage">				
-							<input type="file" name="filename" id="fileUpload" accept="image/*">
-							<div class="file-help"><span>파일을 끌어다 놓거나<br>이곳을 클릭하여<br>파일을 선택해 주세요.</span></div>
+							<div class="file-help">
+								<span>파일을 끌어다 놓거나 
+								이곳을 클릭하여 파일을 
+								선택해 주세요.</span>
+							</div>
+							<input type="file" name="filename" id="fileUpload" title="이력서 사진" accept="image/*">
 							<div class="selected-img"><img class="resume-img" aria-hidden="true"></div>
-							<div class="fileLabel"><img src="./image/camera.svg"><br><span>파일선택</span></div>
+							<div class="fileLabel" aria-hidden="true"><img src="./image/camera.svg"><br><span>파일선택</span></div>
 						</div>
 					<th>성명</th>
 					<td><%=vo.getName()%></td>
@@ -73,10 +77,12 @@
 				<tr class="tr4">
 					<th>병역</th>
 					<td colspan="3">
-						<label><input type="radio" name="militaryService" value="필">필</label>
-						<label><input type="radio" name="militaryService" value="미필">미필</label>
-						<label><input type="radio" name="militaryService" value="면제">면제</label>
-						<label><input type="radio" name="militaryService" value="해당사항 없음">해당사항 없음</label>
+						<ul role="group" aria-labelledby="militaryService">
+							<li><label><input type="radio" name="militaryService" value="필">필</label></li>
+							<li><label><input type="radio" name="militaryService" value="미필">미필</label></li>
+							<li><label><input type="radio" name="militaryService" value="면제">면제</label></li>
+							<li><label><input type="radio" name="militaryService" value="해당사항 없음">해당사항 없음</label></li>
+						</ul>
 					</td>
 				</tr>
 				
@@ -85,8 +91,10 @@
 					<td><%=vo.getDisType()%></td>
 					<th>보장구 유/무</th>
 					<td colspan="2">
-						<label><input type="radio" name="assistive" value="유">유</label>
-						<label><input type="radio" name="assistive" value="무">무</label>
+						<ul role="group" aria-labelledby="assistive">
+							<li><label><input type="radio" name="assistive" value="유">유</label></li>
+							<li><label><input type="radio" name="assistive" value="무">무</label></li>
+						</ul>
 					</td>
 				</tr>
 				
@@ -95,23 +103,25 @@
 					<td><%=vo.getDisLevel()%></td>
 					<th>보장구 종류</th>
 					<td colspan="2">
-						<input type="text" name="assistiveDevice">
+						<textarea name="assistiveDevice" title="보장구 종류" maxlength="30"></textarea>
 					</td>
 				</tr>
 				
 				<tr class="tr7">
 					<th rowspan="2">최종학력</th>
-					<td><input type="text" name="schoolName">학교</td>
-					<td rowspan="2" colspan="3">
-						<label><input type="radio" name="education" value="재학">재학</label>
-						<label><input type="radio" name="education" value="휴학">휴학</label>
-						<label><input type="radio" name="education" value="졸업">졸업</label>
-						<label><input type="radio" name="education" value="중퇴">중퇴</label>
+					<td colspan="2"><span>학교:</span><textarea name="schoolName" title="학교명" maxlength="20" onkeypress="noEnter()"></textarea></td>
+					<td rowspan="2" colspan="2">
+						<ul role="group" aria-labelledby="assistive">
+							<li><label><input type="radio" name="education" value="재학">재학</label></li>
+							<li><label><input type="radio" name="education" value="휴학">휴학</label></li>
+							<li><label><input type="radio" name="education" value="졸업">졸업</label></li>
+							<li><label><input type="radio" name="education" value="중퇴">중퇴</label></li>
+						</ul>
 					</td>
 				</tr>
 				
 				<tr class="tr8">
-					<td><input type="text" name="major">학과</td>
+					<td colspan="2"><span>학과:</span><textarea name="major" title="학과명" maxlength="30" onkeypress="noEnter()"></textarea></td>
 				</tr>
 				
 			</table>
@@ -126,24 +136,24 @@
 				</tr>
 				
 				<tr class="tr11">
-					<td><input type="text" name="institutionName1"></td>
-					<td><input type="text" name="period1"></td>
-					<td><input type="text" name="content1"></td>
-					<td colspan="2"><input type="text" name="note1"></td>
+					<td><textarea name="institutionName1" title="사업체명 및 교육기관" maxlength="255"></textarea></td>
+					<td><textarea name="period1" title="기간" maxlength="255"></textarea></td>
+					<td><textarea name="content1" title="담당업무 및 교육내용" maxlength="255"></textarea></td>
+					<td colspan="2"><textarea name="note1" title="비고" maxlength="255"></textarea></td>
 				</tr>
 							
 				<tr class="tr12">
-					<td><input type="text" name="institutionName2"></td>
-					<td><input type="text" name="period2"></td>
-					<td><input type="text" name="content2"></td>
-					<td colspan="2"><input type="text" name="note2"></td>
+					<td><textarea name="institutionName2" title="사업체명 및 교육기관" maxlength="255"></textarea></td>
+					<td><textarea name="period2" title="기간" maxlength="255"></textarea></td>
+					<td><textarea name="content2" title="담당업무 및 교육내용" maxlength="255"></textarea></td>
+					<td colspan="2"><textarea name="note2" title="비고" maxlength="255"></textarea></td>
 				</tr>
 				
 				<tr class="tr13">
-					<td><input type="text" name="institutionName3"></td>
-					<td><input type="text" name="period3"></td>
-					<td><input type="text" name="content3"></td>
-					<td colspan="2"><input type="text" name="note3"></td>
+					<td><textarea name="institutionName3" title="사업체명 및 교육기관" maxlength="255"></textarea></td>
+					<td><textarea name="period3" title="기간" maxlength="255"></textarea></td>
+					<td><textarea name="content3" title="담당업무 및 교육내용" maxlength="255"></textarea></td>
+					<td colspan="2"><textarea name="note3" title="비고" maxlength="255"></textarea></td>
 				</tr>
 			</table>
 				
@@ -158,36 +168,38 @@
 				</tr>
 				
 				<tr class="tr16">
-					<td><input type="text" name="certificate1"></td>
-					<td><input type="text" name="certificateNum1"></td>
-					<td><input type="text" name="registration1"></td>
-					<td><input type="text" name="issuer1"></td>
-					<td><input type="text" name="issueDate1"></td>
+					<td><textarea name="certificate1" title="자격종목" maxlength="255"></textarea></td>
+					<td><textarea name="certificateNum1" title="급수" maxlength="255"></textarea></td>
+					<td><textarea name="registration1" title="등록번호" maxlength="255"></textarea></td>
+					<td><textarea name="issuer1" title="발행처" maxlength="255"></textarea></td>
+					<td><textarea name="issueDate1" title="발급일자" maxlength="255"></textarea></td>
 				</tr>
 				
 				<tr class="tr17">
-					<td><input type="text" name="certificate2"></td>
-					<td><input type="text" name="certificateNum2"></td>
-					<td><input type="text" name="registration2"></td>
-					<td><input type="text" name="issuer2"></td>
-					<td><input type="text" name="issueDate2"></td>
+					<td><textarea name="certificate2" title="자격종목" maxlength="255"></textarea></td>
+					<td><textarea name="certificateNum2" title="급수" maxlength="255"></textarea></td>
+					<td><textarea name="registration2" title="등록번호" maxlength="255"></textarea></td>
+					<td><textarea name="issuer2" title="발행처" maxlength="255"></textarea></td>
+					<td><textarea name="issueDate2" title="발급일자" maxlength="255"></textarea></td>
 				</tr>
 				
 				<tr class="tr18">
-					<td><input type="text" name="certificate3"></td>
-					<td><input type="text" name="certificateNum3"></td>					
-					<td><input type="text" name="registration3"></td>
-					<td><input type="text" name="issuer3"></td>
-					<td><input type="text" name="issueDate3"></td>
+					<td><textarea name="certificate3" title="자격종목" maxlength="255"></textarea></td>
+					<td><textarea name="certificateNum3" title="급수" maxlength="255"></textarea></td>					
+					<td><textarea name="registration3" title="등록번호" maxlength="255"></textarea></td>
+					<td><textarea name="issuer3" title="발행처" maxlength="255"></textarea></td>
+					<td><textarea name="issueDate3" title="발급일자" maxlength="255"></textarea></td>
 				</tr>
 			</table>
 			</div>
+			<input type="hidden" name="userNum" value="<%=vo.getUserNum()%>">
+			</form>
 			
 			<div class="div-sideNav">
 				<aside id="sideNav" role="navigation">
 					<div id="sideNav-container">
 						<h3>마이페이지 메뉴</h3>
-						<section>
+						<section id="">
 							<ul>
 								<li><a href="postResume.jsp" role="button">
 									<img src="./image/resume.png" aria-hidden="true">
@@ -210,16 +222,13 @@
 						<hr style="margin:10px;">
 						
 						<section class="side-button">
+							<a href="javascript:saveResume()" id="saveRes" role="button">이력서 저장</a>
 							<div><a href="#" id="xlsDL" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">
 								<span>다운로드</span><img src="image/excel_icon3.svg"></a></div>
-							<a href="javascript:saveResume()" id="saveRes" role="button">이력서 저장</a>
 						</section>
 					</div>
 				</aside>
 			</div> 
-						
-			<input type="hidden" name="userNum" value="<%=vo.getUserNum()%>">
-		</form>
 	</section>
 	</div>
 </main>
@@ -227,4 +236,15 @@
 <jsp:include page="commonJSP/footer.jsp"/>
 
 </body>
+<script>
+	autosize($('td textarea'));
+	function noEnter()
+	{
+	   if(event.keyCode == 13)
+	      event.returnValue=false;
+	}
+	function postEmp(){
+		document.empPostFrm.submit();
+	}
+</script>
 </html>

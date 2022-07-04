@@ -544,4 +544,63 @@ public class GeneralDAO {
 		}
 		return rsCnt;
 	}
+	
+	// 지원자 리스트 출력
+	public List<ApplicantListVO> getApplicantList(int comNum, int startRow, int pageSize) {
+		List<ApplicantListVO> list = new ArrayList<ApplicantListVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		try {
+			con = pool.getConnection();
+			sql = "select r.title, r.resumeNum, a.regiDate, u.name from `resume` as r join users as u on r.userNum = u.userNum join applycom as a on a.resumeNum = r.resumeNum where a.employNum = ? order by u.userNum desc limit ?, ?;";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, comNum);
+			pstmt.setInt(2, startRow - 1);
+			pstmt.setInt(3, pageSize);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ApplicantListVO vo = new ApplicantListVO();
+				vo.setResumeTitle(rs.getString("title"));
+				vo.setResumeNum(rs.getInt("resumeNum"));
+				vo.setRegiDate(rs.getString("regiDate"));
+				vo.setUserName(rs.getString("name"));
+				list.add(vo);
+			}
+		}  catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return list;
+	}
+	
+	// 지원자 수 카운트 반환
+	public int getApplicantCount(int comNum) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		int cnt = 0;
+		
+		try {
+			con = pool.getConnection();
+			sql = "select r.title from `resume` as r join users as u on r.userNum = u.userNum join applycom as a on a.resumeNum = r.resumeNum where a.employNum = ? order by u.userNum desc";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, comNum);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				cnt++;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return cnt;
+	}
 }

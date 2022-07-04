@@ -1,11 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
+<jsp:useBean id="dao" class="jobFairMgr.GeneralDAO" />
 <%@ page import = "java.util.*" %>
-<%@ page import = "jobFairMgr.ApplyListVO" %>
+<%@ page import = "jobFairMgr.ApplicantListVO" %>
     
 <%
+	request.setCharacterEncoding("UTF-8");
+//	int userNum = (int)session.getAttribute("lgnUserNum");
+	int userNum = 1;
+	//int comNum = (int) session.getAttribute("lgnComNum");
+	int comNum = 1;
 	
+	
+	//페이징 넘버 작업
+
+	// 한 페이지에 보여줄 게시글 개수
+	int pageSize = 10;
+	// 현재 페이지
+	String pageNum = request.getParameter("pageNum");
+	// pageNum이 null이라는 뜻은 처음 이 사이트에 들어왔다는 뜻이며, 그러한 경우 1번 페이지를 보여준다.
+	if(pageNum == null) {
+		pageNum = "1";
+	}
+	
+	// 첫번째 글이 전체 게시글중 몇번째인지 계산
+	int currentPage = Integer.parseInt(pageNum);
+	int startRow = (currentPage - 1) * pageSize + 1;
+	
+	List<ApplicantListVO> list = dao.getApplicantList(comNum, startRow, pageSize);
+	int cnt = dao.getApplicantCount(comNum);
 %>
 
 <!DOCTYPE html>
@@ -26,10 +49,11 @@
 			<img src="image/applyList.png" aria-hidden="true" class="title-img">
 			<p>지원자 리스트</p>
 		</div>
+		
+
 		<table>
 			<thead>
 			<tr class="tr1">
-				<th>번호</th>
 				<th>제목</th>
 				<th>지원자</th>
 				<th>지원 날짜</th>
@@ -37,15 +61,18 @@
 			</tr>
 			</thead>
 			
+		<%for(int i = 0; i < list.size(); i++) { 
+			ApplicantListVO vo = list.get(i);%>
 			<tbody>
 			<tr class="tr2">
-				<td>1</td>
-				<td>열정으로 보답하겠다.</td>
-				<td>닝겐</td>
-				<td>2022.07.04</td>
-				<td><a href="#"><img src="./image/resumeList.png" alt="이력서 보기 이미지">이력서 보기</a></td>
+				<td><%=vo.getResumeTitle() %></td>
+				<td><%=vo.getUserName() %></td>
+				<td><%=vo.getRegiDate() %></td>
+				<td><a href="myResume.jsp?resumeNum=<%=vo.getResumeNum()%>">
+				<img src="./image/resumeList.png" alt="이력서 보기 이미지">이력서 보기</a></td>
 			</tr>
 			</tbody>
+		<%}%>
 		</table>
 		
 		<div class="div-sideNav">

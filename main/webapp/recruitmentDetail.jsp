@@ -16,7 +16,6 @@
 	jvo = dao.getOpening(employNum);
 	vo = dao.getGeneral(jvo.getComNum());
 	
-	
 %>
 <!DOCTYPE html>
 <html>

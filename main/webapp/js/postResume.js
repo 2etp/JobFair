@@ -4,6 +4,7 @@ document.getElementById("fileUpload").addEventListener("change", function(){
 	let fileURL = URL.createObjectURL(this.files[0]);
 	imgEl.src = fileURL;
 	$(".file-help").css('z-index','-10');
+	$(".file-help").ariaHidden = "true";
 });
 
 

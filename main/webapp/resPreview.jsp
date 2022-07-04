@@ -10,7 +10,7 @@
 <%
 	String name = (String)session.getAttribute("lgnName");
 	//String name = "tom";
-	if(name==null || !gdao.isCompany(name)){ //미로그인 또는 기업이 아닌 경우(본인 이력서가 아닌 경우에도 막으려했으나 고민중)
+	if(name==null){ //미로그인(또는 기업이 아닌 경우와 본인 이력서가 아닌 경우에도 막으려했으나 고민중)
 %>
 <script>
 	alert("접근 권한이 없습니다.");

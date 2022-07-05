@@ -122,7 +122,7 @@
 					</tr>
 					<tr>
 						<th>모집인원</th>
-						<td><input type="number" name="people" min="0" required></td>
+						<td><input type="number" name="people" title="모집인원" min="0" required></td>
 						<th>근무형태</th>
 						<td>
 							<select id="workType" name="workType" title="근무형태" required>
@@ -235,10 +235,6 @@
 			<aside id="sideNav" role="navigation">
 				<div id="sideNav-container">
 					<h3>채용공고 편집 메뉴</h3>
-					<a href="" id="bookmark">
-						<img src="image/bookmark_off.svg" aria-hidden="true">
-						<span>관심기업 등록</span>
-					</a>
 					<section id="quickLink">
 						<h4>
 							<img class="small-icons" src="image/thunder.svg" aria-hidden="true">

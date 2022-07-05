@@ -23,6 +23,7 @@ main section{
 	border-bottom: 1px dotted gray;
 	margin-top: 20px;
 	clear: left;
+	width: 800px;
 }
 
 .jobOpening-item-img {
@@ -86,6 +87,7 @@ main section{
 	float: left;
 	flex-basis: 40%;
 	height: 100px;
+	margin-left: 50px;
 }
 
 .deadline p:nth-of-type(1) {

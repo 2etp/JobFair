@@ -30,3 +30,11 @@ main section article img{
 	font-size: 20px;
 	margin: 0px;
 }
+
+html.godabiON .article-leftarrow img {
+	content : url("../image/arrow_w.svg");
+}
+
+html.godabiON main section article:nth-child(1) img{
+	content : url("../image/Introduce1_w.png");	
+}

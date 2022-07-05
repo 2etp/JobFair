@@ -16,7 +16,7 @@
 <main>
 	<section>
 		<div class="title">
-			<img src="./image/login.png" alt="로그인 이미지">
+			<img src="./image/login.png">
 		</div>
 		<form name="logFrm" method="post" action="loginProc.jsp?item=dis">
 			<div class="div-form">

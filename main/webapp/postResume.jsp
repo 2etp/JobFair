@@ -208,19 +208,19 @@
 						<h3>마이페이지 메뉴</h3>
 						<section id="">
 							<ul>
-								<li><a href="postResume.jsp" role="button">
+								<li><a href="postResume.jsp">
 									<img src="./image/resume.png" aria-hidden="true">
 									이력서 작성</a></li>
-								<li><a href="myPageForDisability.jsp" role="button">
+								<li><a href="myPageForDisability.jsp" >
 									<img src="./image/myPage.svg"  aria-hidden="true">
 									내 정보 관리</a></li>
-								<li><a href="myResume.jsp" role="button">
+								<li><a href="myResume.jsp" >
 									<img src="./image/myResume.png" aria-hidden="true">
 									이력서 관리</a></li>
-								<li><a href="pickedList.jsp" role="button">
+								<li><a href="pickedList.jsp" >
 									<img src="image/bookmark_on.svg" aria-hidden="true">
 									관심 채용공고</a></li>
-								<li><a href="applyList.jsp" role="button">
+								<li><a href="applyList.jsp" >
 									<img src="image/applyList.png" aria-hidden="true">
 									기업지원 현황</a></li>				
 							</ul>

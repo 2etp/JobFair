@@ -16,7 +16,7 @@
 				<img src="image/Introduce1.png">
 			</article>
 			<article class="article-leftarrow">
-				<a href="index.jsp" role="button">
+				<a href="index.jsp">
 					<img src="image/arrow.png" alt="화살표 이미지">
 				</a>
 				<p>처음으로</p>

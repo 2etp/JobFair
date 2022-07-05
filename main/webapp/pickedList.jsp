@@ -57,7 +57,7 @@
 						<img src="./image/<%=vo.getLogoName()%>">
 					</div>
 					<div class="content">
-						<a href="recruitmentDetail.jsp?employNum=<%=vo.getEmployNum()%>" role="button"><%=vo.getComName()%></a>
+						<a href="recruitmentDetail.jsp?employNum=<%=vo.getEmployNum()%>"><%=vo.getComName()%></a>
 						<p><span>근무지역</span> <%=vo.getWorkArea() %></p>
 						<p><span>직무</span> <%=vo.getTask() %></p>
 					</div>
@@ -75,15 +75,15 @@
 					<img src="image/guide.png" aria-hidden="true">
 					<ul>
 						<li><img src="./image/resume.png" aria-hidden="true">
-							<a href="postResume.jsp" role="button">이력서 작성</a></li>
+							<a href="postResume.jsp" >이력서 작성</a></li>
 						<li><img src="./image/myPage.svg"  aria-hidden="true">
-							<a href="myPageForDisability.jsp" role="button">내 정보 관리</a></li>
+							<a href="myPageForDisability.jsp" >내 정보 관리</a></li>
 						<li><img src="./image/myResume.png" aria-hidden="true">
-							<a href="myResume.jsp" role="button">이력서 관리</a></li>
+							<a href="myResume.jsp" >이력서 관리</a></li>
 						<li><img src="image/bookmark_on.svg" aria-hidden="true">
-							<a href="pickedList.jsp" role="button">관심 채용공고</a></li>
+							<a href="pickedList.jsp" >관심 채용공고</a></li>
 						<li><img src="image/applyList.png" aria-hidden="true">
-							<a href="applyList.jsp" role="button">기업지원 현황</a></li>
+							<a href="applyList.jsp" >기업지원 현황</a></li>
 					</ul>
 				</aside>
 			</div> 

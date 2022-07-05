@@ -99,6 +99,10 @@ select .select-holder{
 	font-weight: bold;
 	border-radius: 5px;
 }
+html.godabiON .company-contents p span{
+	border: 1px solid #fff;
+	color: #fff;
+}
 
 .company-contents a {
 	text-decoration: none;
@@ -121,7 +125,7 @@ select .select-holder{
 	margin: 0px;
 	float: left;
 	margin-left: 10px;
-	color: #267FA6;
+	color: #004C6A;
 	
 }
 
@@ -146,4 +150,10 @@ html.godabiON form[name='searchFrm'] select{
 
 html.godabiON .div-search img{
 	content : url("../image/search_w.svg");
+}
+html.godabiON .div-list img{
+	content : url("../image/buildings_w.svg");
+}
+html.godabiON .div-list p{
+	color:white;
 }

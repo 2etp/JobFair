@@ -8,15 +8,14 @@ function applyRecru() {
 	document.applyFrm.submit();
 }
 
-let htmlEl = document.querySelector("html");
-
-
-let boormarkImgEl = document.querySelector("#bookmark img");
-
-if(window.sessionStorage.getItem("godabi") == null || window.sessionStorage.getItem("godabi") == "null"){
-	boormarkImgEl.src = "image/bookmark_off.svg";
-	
+function godabi_bookmark(){
+	let bookmarkImgEl = document.querySelector("#bookmark img");
+	let godabi = window.sessionStorage.getItem("godabi");
+	let window
+	if(bookmarkImgEl.src == "image/bookmark_on.svg" && (godabi==null || godabi=="null"))
+	{
+		
+	}
 }
-else{
-	boormarkImgEl.src = "image/bookmark_on.svg";
-}
+
+//godabi_bookmark();

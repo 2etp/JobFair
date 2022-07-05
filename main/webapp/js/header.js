@@ -17,12 +17,12 @@ if(scriptEl.src.split("?")[1].split("=")[1] == "null"){
 if(godabiValue == null || godabiValue == "null"){
 	inputEl.checked = false;
 	htmlEl.classList.remove("godabiON");
-	pEl.innerHTML = "고대비 OFF"
+	pEl.innerHTML = "꺼짐"
 	
 }
 else{
 	inputEl.checked = true;
-	pEl.innerHTML = "고대비 ON"
+	pEl.innerHTML = "켜짐"
 	htmlEl.classList.add("godabiON");
 }
 
@@ -34,7 +34,7 @@ inputEl.addEventListener("change", function(){
 	if(inputEl.checked == true)
 	{
 		window.sessionStorage.setItem("godabi","1");
-		pEl.innerHTML = "고대비 ON"
+		pEl.innerHTML = "켜짐"
 		htmlEl.classList.add("godabiON");
 
 	}
@@ -43,6 +43,6 @@ inputEl.addEventListener("change", function(){
 	{
 		window.sessionStorage.setItem("godabi","null");
 		htmlEl.classList.remove("godabiON");
-		pEl.innerHTML = "고대비 OFF"
+		pEl.innerHTML = "꺼짐"
 	}
 })

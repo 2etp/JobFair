@@ -18,7 +18,7 @@
 	boolean flag = dao.apply(vo);
 	if(flag) {
 		msg = "성공적으로 지원했습니다. \\n좋은 결과가 있기를 바랍니다.";
-		url = "myPageForDisability.jsp";
+		url = "recruitment.jsp";
 	}
 %>
 <script>

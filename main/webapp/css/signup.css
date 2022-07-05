@@ -15,7 +15,7 @@ main section {
 }
 
 
-.div-signuplink{
+/* .div-signuplink{
 	height : 30%;
 	text-align : center;
 	border-radius : 10px;
@@ -29,11 +29,6 @@ main section {
 .div-signuplink-right{
 	text-align : center;
 	width : 40%;
-}
-
-.disability{
-	border-right : none;
-	
 }
 
 .div-signuplink a{
@@ -51,7 +46,7 @@ main section {
 .div-signuplink.general a{
 	background-color : rgb(0, 128, 255);
 }
-
+ */
 
 .div-signuplink-form{
 	
@@ -64,4 +59,24 @@ main section {
 .div-signuplink-form img{
 	width : 100px;
 	height : 100px;
+}
+
+main a{
+	display:inline-block;
+	text-align:center;
+	white-space:pre-line;
+	min-width:300px;
+	background-color : #004C6A;
+	padding-top : 20%;
+	padding-bottom: 20%;
+    font-size: 36px;
+   	color: white;
+    text-decoration: none;
+    margin:20px;
+}
+.disability a{
+	background-color : #288233;
+}
+main a img{
+	display:inline-block;
 }

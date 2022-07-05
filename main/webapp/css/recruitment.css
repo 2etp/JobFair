@@ -135,4 +135,11 @@ select .select-holder{
 	float: left;
 }
 
+html.godabiON .company-contents a{
+	color: white;
+}
+
+html.godabiON form[name='searchFrm'] select{
+	color : black;
+}
 

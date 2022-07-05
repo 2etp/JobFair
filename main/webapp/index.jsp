@@ -15,13 +15,22 @@
 <head>
 <meta charset="utf-8">
 <title>2022 부산 장애인 온라인 채용 박람회 | 홈</title>
-<link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/common.css">
+	<script defer src="js/header.js"></script>
 </head>
 <body>
 <header>
 	<div class="logo">
 		<img src="image/head_00.png" alt="2021 부산 장애인 온라인 채용 박람회">
+	</div>
+	
+	<div class="header-godaebi">
+		<label class="switch">
+		  	<input type="checkbox">
+		  	<span class="slider round"></span>
+		</label>
+		<p class="p-godaebi">고대비 OFF</p>
 	</div>
 </header>
 <main>
@@ -43,7 +52,7 @@
 			<%}%>
 		</section>
 		<section class="how-to">
-			<a href="" id="howTo">사이트 이용방법</a>
+			<a href="howToUse.jsp" id="howTo">사이트 이용방법</a>
 		</section>
 		<section class="nav-main">
 			<a href="introduce.jsp" id="introFair">박람회 소개</a>

@@ -92,3 +92,76 @@ nav .nav-main a{
 	background-image:url("../image/sm_02.png");
 	background-position:300px;
 }
+
+/* 고대비 */
+.header-godaebi .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  vertical-align:middle;
+}
+
+.header-godaebi .switch input {display:none;}
+
+.header-godaebi .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.header-godaebi .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+.header-godaebi input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.header-godaebi input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.header-godaebi input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.header-godaebi .slider.round {
+  border-radius: 34px;
+}
+
+.header-godaebi .slider.round:before {
+  border-radius: 50%;
+}
+
+.header-godaebi p {
+	margin:0px;
+	display:inline-block;
+	font-size:15px;
+	font-weight:bold;
+}
+
+.header-godaebi {
+	position: relative;
+	left: 11%;
+	margin-top: 30px;
+	
+}
+
+/* 고대비 스타일 */
+html.godabiON *{
+	background-color: black;
+	color : white;
+}

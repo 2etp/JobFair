@@ -149,8 +149,10 @@ section .title {
 section .title img {
 	width: 150px;
 	height: 160px;
-	position: relative;
-	top: 30%;
+}
+
+html.godabiON section .title img{
+	content : url("../image/login_png_w.png");
 }
 
 

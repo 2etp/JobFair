@@ -23,7 +23,7 @@
 				  	<input type="checkbox">
 				  	<span class="slider round"></span>
 				</label>
-				<p class="p-godaebi">꺼짐</p>
+				<p class="p-godaebi">고대비 꺼짐</p>
 			</div>
 		</div>
 		<nav class="header-navigation">

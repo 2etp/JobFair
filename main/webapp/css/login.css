@@ -4,6 +4,7 @@ main section {
 	display : flex;
 	flex-direction : column;
 	justify-content : center;
+	height: 550px;
 }
 
 form[name='logFrm']{
@@ -141,11 +142,13 @@ form[name='logFrm'] input {
 
 section .title {
 	text-align: center;
+	height: 120px;
+	margin-bottom: 30px;
 }
 
 section .title img {
 	width: 150px;
-	height: 150px;
+	height: 160px;
 	position: relative;
 	top: 30%;
 }

@@ -59,7 +59,12 @@ main section{
 	text-decoration: none;
 }
 
-.content a:hover {
+.content a:first-of-type:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+.content a:hover:not(.content a:first-of-type) {
 	color: #666;
 }
 
@@ -80,7 +85,7 @@ main section{
 }
 
 .progress p:first-of-type{
-	margin: 0 0 20px 0;
+	margin: 0 0 10px 0;
 	font-size: 20px;
 	font-weight: bold;
 	position: relative;

@@ -56,10 +56,12 @@
 						<img src="./image/<%=vo.getLogoName()%>">
 					</div>
 					<div class="content" >
-						<a href="#" role="button"><%=vo.getComName()%></a>
+						<a href="recruitmentDetail.jsp?employNum=<%=vo.getEmployNum()%>" role="button"><%=vo.getComName() %></a>
 						<p><%=vo.getTask() %></p>
-						<img src="./image/resume.png" alt="이력서 이미지">
-						<a href="javascript:" role="button">지원한 이력서</a>
+						<a href="resPreview.jsp?resumeNum=<%=vo.getResumeNum()%>" 
+                			onClick="window.open(this.href, '', 'width=820, height=800'); return false;">
+  							<img src="./image/resume.png" alt="이력서 이미지">지원한 이력서
+                		</a>
 					</div>
 					<div class="progress">
 						<p>진행현황</p>

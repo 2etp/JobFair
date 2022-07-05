@@ -12,7 +12,7 @@
 <jsp:include page="commonJSP/header.jsp"/>
 <main>
 	<section>
-		<h1>회원가입</h1>
+		<h1><img src="image/sign.svg" aria-hidden="true"><span>회원가입</span></h1>
 		<div class="div-signuplink-form">
 			<div class="div-signuplink-left">
 				

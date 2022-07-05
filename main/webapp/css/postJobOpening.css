@@ -38,15 +38,59 @@ td a{
 h1,h2,h3{
 	font-family:Binggrae;
 }
-h1{
+#titleInfo{
+	max-width:1110px;
+	color:white;
+	background-color:#004C6A;
+}
+#titleInfo label{
+	display:block;
+	text-align:center;
+}
+#titleInfo h1{
 	font-family:Binggrae;
 	text-align:center;
 	margin-top:50px;
-	background-color:#004C6A;
-	color:white;
+	margin-bottom:0;
 	line-height:100px;
-	max-width:1110px;
 }
+#titleInfo input{
+	font-family:KoddiRegular;
+	color:white;
+	background-color:transparent;
+	border:none;
+	width:25%;
+	height:50px;
+	margin:5px;
+	margin-left:10px;
+	padding:3px;
+	position: relative;
+	font-size:18px;
+}
+input[type="date"]::before {
+  display:none;
+}
+#titleInfo input::-webkit-calendar-picker-indicator{
+	background:transparent;
+	transform:scale(2.0);
+	margin-left: 10px;
+	width: 50px;
+  	height:30px;
+  	z-index:5;
+}
+input[type="date"]:after{
+  position: absolute;
+  top:50%;
+  right:10px;
+  content: '';
+  width: 50px;
+  height:30px;
+
+  background: url('../image/calendar.svg') center center /contain no-repeat;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
 h1 textarea{
 	width:88%;
 	resize:none;

@@ -6,6 +6,7 @@
 <jsp:useBean id="disvo" class="jobFairMgr.DisabilityVO" />
 <jsp:useBean id="disdao" class="jobFairMgr.DisabilityDAO" />
 <%@ page import = "java.util.*" %>
+<%@ page import = "java.text.*" %>
 <%@ page import="jobFairMgr.ResumeVO"%>
 
 <%
@@ -17,6 +18,8 @@
 	jvo = dao.getOpening(employNum);
 	vo = dao.getGeneral(jvo.getComNum());
 	List<ResumeVO> rvoList = disdao.getResumeList(disvo.getUserNum());
+	
+
 %>
 <!DOCTYPE html>
 <html>
@@ -250,8 +253,21 @@
 								<span>모두 확인하였습니다.</span>
 							</label>
 							<br>
-							<input type="button" class="btn" id="apply" value="지원하기" role="button" 
-								onclick="applyRecru()">
+							<%
+								String Deadline = jvo.getOpeningDate().split(" ~ ")[1];
+								SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+								Date deadlineDate = format.parse(Deadline);
+								Date nowDate = new Date();
+								
+								boolean dead = deadlineDate.getTime() < nowDate.getTime();
+								
+								if(dead){
+							%>
+								<input type="button" class="btn" id="apply" value="지원신청이 마감되었습니다." role="button" 
+									onclick="applyRecru()" disabled>
+							<%} else { %>
+								<input type="button" class="btn" id="apply" value="지원하기" role="button" onclick="applyRecru()">
+							<% } %>
 						</form>
 						<!-- 이력서 제출 폼 끝 -->
 					</section>

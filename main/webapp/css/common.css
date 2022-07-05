@@ -1,12 +1,33 @@
 @charset "UTF-8";
-
+@font-face{
+	src:url("../fonts/KoddiUDOnGothic-Regular.ttf");
+	font-family:KoddiRegular;
+}
+@font-face{
+	src:url("../fonts/KoddiUDOnGothic-Bold.ttf");
+	font-family:KoddiBold;
+}
+@font-face{
+	src:url("../fonts/BinggraeⅡ.ttf");
+	font-family:Binggrae;
+}
 body {
+	letter-spacing:0.1em;
+	font-family:KoddiRegular;
 	display : flex;
 	flex-direction : column;
 	justify-content : space-between;
 	margin : 0;
 }
-
+input, select, option{
+	letter-spacing:0.1em;
+}
+input, select{
+	background-color:transparent;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family:Binggrae;
+}
 header {
 	display: flex;
 	flex-basis : 15%;
@@ -15,7 +36,7 @@ header {
 	justify-content : center;
 	width : 100%;
 	background-color : white;
-	z-index : 1;
+	z-index : 100;
 	white-space:nowrap;
 	margin-bottom: 40px;
 }
@@ -143,7 +164,12 @@ footer section article{
 
 /* 고대비 스타일 */
 
-html.godabiON *{
+html.godabiON header, html.godabiON body{
 	background-color: black;
+}
+html.godabiON *{
 	color : white;
+}
+.file-help span, .fileLabel span{
+	color:black;
 }

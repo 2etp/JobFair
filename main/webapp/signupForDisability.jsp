@@ -16,7 +16,7 @@
 <main>
 	<section>
 		<div class="title">
-			<img src="./image/personal.svg" alt="회원가입 이미지">
+			<img src="./image/signup.svg" aria-hidden="true">
 			<p>개인 회원가입</p>
 		</div>
 		<form name="signupFrm" method="post" action="disSignup" enctype="multipart/form-data">
@@ -39,7 +39,8 @@
 			<div class="signupFrm4">	
 				<label for="type">장애유형</label>
 				<select name="type" id="type" title="장애유형" style="width:100px;height:30px;">
-					<option value="지체장애" selected>지체장애</option>
+					<option value="" class="select-holder" aria-hidden="true" selected>선택</option>
+					<option value="지체장애">지체장애</option>
 					<option value="뇌병변장애">뇌병변장애</option>
 					<option value="시각장애">시각장애</option>
 					<option value="청각장애">청각장애</option>
@@ -60,7 +61,8 @@
 			<div class="signupFrm5">
 				<label for="grade">장애등급</label>
 				<select name="grade" id="grade" title="장애등급" style="width:100px;height:30px;">
-					<option value="1등급" selected>1등급</option>
+					<option value="" class="select-holder" aria-hidden="true" selected>선택</option>
+					<option value="1등급">1등급</option>
 					<option value="2등급">2등급</option>
 					<option value="3등급">3등급</option>
 					<option value="4등급">4등급</option>
@@ -72,7 +74,8 @@
 			<div class="signupFrm6">
 				<label for="livingArea">거주지역</label>
 				<select name="livingArea" id="livingArea" title="거주지역" style="width:100px;height:30px;">
-					<option value="강서구" selected>강서구</option>
+					<option value="" class="select-holder" aria-hidden="true" selected>선택</option>
+					<option value="강서구">강서구</option>
 					<option value="금정구">금정구</option>
 					<option value="기장군">기장군</option>
 					<option value="남구">남구</option>

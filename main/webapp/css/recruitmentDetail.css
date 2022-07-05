@@ -91,6 +91,7 @@ tr td:not(tr td:last-child){
 }
 .logo{
 	width:326px;
+	height: 225px;
 	position:absolute;
 	top:9%
 }
@@ -148,7 +149,7 @@ tr td:not(tr td:last-child){
 	height:22px;
 	padding-bottom:5px;
 	position:relative;
-	width : 60%;
+	
 }
 #sideNav h4 span{
 	height:18px;
@@ -164,6 +165,9 @@ h4 .small-icons{
 }
 #quickLink .small-icons{
 	height:25px;
+}
+#quickLink h4{
+	width : 60%;
 }
 #quickLink h4 a span{
 	margin-top:5px;
@@ -228,6 +232,11 @@ h4 .small-icons{
 	line-height:60px;
 	font-size:25px;
 }
+#apply[disabled] {
+	background-color: gray;
+	font-size:15px;
+	cursor : default;
+}
 
 #loginPlz div{
 	margin-top:60px;
@@ -284,6 +293,11 @@ html.godabiON #quickLink ul li:nth-child(2) img{
 html.godabiON #quickLink ul li:nth-child(3) img{
 	content: url("../image/wing_w.svg");
 }
+
+html.godabiON #applyment h4 img{
+	content: url("../image/write_res_w.svg");
+}
+
 
 html.godabiON #comInfo h2 img{
 	content: url("../image/building_w.svg");

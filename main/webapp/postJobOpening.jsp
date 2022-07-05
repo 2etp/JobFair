@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="dao" class="jobFairMgr.GeneralDAO" />
+<jsp:useBean id="vo" class="jobFairMgr.GeneralVO" />
+
+<%
+	String name = (String)session.getAttribute("lgnName");
+	// 기업으로 로그인했는지 판단 -> 여유가 있다면 예외처리할 예정
+	boolean flag = false;
+	if(name != null) {
+		flag = dao.isCompany(name);
+	}
+	vo = dao.getGeneral(name);
+%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,13 +45,13 @@
 				<table>
 					<tr>
 						<th>기업명</th>
-						<td><span>에스지씨앤씨 주식회사</span></td>
+						<td><span><%=vo.getComName()%></span></td>
 						<th>대표자</th>
-						<td><span>최준완</span></td>
+						<td><span><%=vo.getCeoName()%></span></td>
 					</tr>
 					<tr>
 						<th>업종</th>
-						<td><span>정보통신업</span></td>
+						<td><span><%=vo.getSectors()%></span></td>
 						<th>사업내용</th>
 						<td><span>소프트웨어 개발</span></td>
 					</tr>

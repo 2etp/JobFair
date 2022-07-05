@@ -34,7 +34,7 @@ td a{
 h1,h2,h3{
 	font-family:Binggrae;
 }
-h1{
+#container h1{
 	font-family:Binggrae;
 	text-align:center;
 	margin-top:50px;
@@ -59,7 +59,7 @@ th, td{
 	padding:15px;
 	font-size:18px;
 }
-th{
+#container th{
 	width:130px;
 	background-color:#54BDB6;
 	color:white;
@@ -81,14 +81,13 @@ tr td:not(tr td:last-child){
 #comInfo td{
 	width:210px;
 }
-.logo-wrap{
+#comInfo .logo-wrap{
 	float:left;
 	margin-right:13px;
 	height:276px;
 	width:326px;
 	background-color:#888;
 	position:relative;
-	z-index:-10;
 }
 .logo{
 	width:326px;
@@ -149,6 +148,7 @@ tr td:not(tr td:last-child){
 	height:22px;
 	padding-bottom:5px;
 	position:relative;
+	width : 60%;
 }
 #sideNav h4 span{
 	height:18px;
@@ -248,6 +248,56 @@ h4 .small-icons{
 	right : 0px;
 }
 
+<<<<<<< HEAD
 .tr-url a {
 	text-decoration: none;
 }
+=======
+html.godabiON table, html.godabiON tr, html.godabiON th, html.godabiON td{
+	border:1px solid white;
+}
+
+
+html.godabiON #sideNav{
+	border: 1px solid white;
+}
+html.godabiON #sideNav h3{
+	color : white;
+}
+
+html.godabiON #quickLink ul li a{
+	color : white;
+}
+
+html.godabiON #bookmark img{
+	content: url("../image/bookmark_on_w.svg");
+}
+
+html.godabiON #quickLink h4 img{
+	content: url("../image/thunder_w.svg");
+}
+
+html.godabiON #quickLink ul li:nth-child(1) img{
+	content: url("../image/building_w.svg");
+}
+
+html.godabiON #quickLink ul li:nth-child(2) img{
+	content: url("../image/recruit_w.svg");
+	
+}
+html.godabiON #quickLink ul li:nth-child(3) img{
+	content: url("../image/wing_w.svg");
+}
+
+html.godabiON #comInfo h2 img{
+	content: url("../image/building_w.svg");
+}
+
+html.godabiON #recruitInfo h2 img{
+	content: url("../image/recruit_w.svg");
+}
+
+html.godabiON #welfare h2 img{
+	content: url("../image/wing_w.svg");
+}
+>>>>>>> 478cbeb8703eb2e821a81684cee9608bddac033a

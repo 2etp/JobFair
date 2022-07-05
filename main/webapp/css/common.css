@@ -17,6 +17,7 @@ header {
 	background-color : white;
 	z-index : 1;
 	white-space:nowrap;
+	margin-bottom: 40px;
 }
 
 header section{
@@ -35,6 +36,7 @@ footer{
 	flex-basis : 15%;
 	display : flex;
 	justify-content : center;
+	margin-top: 50px;
 }
 
 footer section{
@@ -70,12 +72,13 @@ footer section article{
 
 .header-navigation div:not(.header-navigation div:first-of-type) {
 	font-size : 23px;
-	margin: 0 10px 0 10px;
+	margin: 0 10px 20px 10px;
 }
 
 .header-navigation div:first-of-type {
 	font-size : 23px;
 	margin-right: 10px;
+	margin-bottom: 20px;
 }
 
 /* 고대비 */

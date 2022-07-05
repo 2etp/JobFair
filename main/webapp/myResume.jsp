@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="vo" class="jobFairMgr.DisabilityVO" />
 <jsp:useBean id="rvo" class="jobFairMgr.ResumeVO" />
 <jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
@@ -46,7 +45,7 @@
 	<section>
 		<details class="details-resume-list">
 			<summary>
-				<div><%=rvo.getTitle()%></div>
+				<div>이력서 리스트</div>
 				<img src="image/downArrow.png" alt="아래 방향 화살표 이미지">
 			</summary>
 			<ul class="ul-resume-list">

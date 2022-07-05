@@ -78,7 +78,7 @@
 					<th>병역</th>
 					<td colspan="3">
 						<ul role="group" aria-labelledby="militaryService">
-							<li><label><input type="radio" name="militaryService" value="필">필</label></li>
+							<li><label><input type="radio" name="militaryService" value="필" required>필</label></li>
 							<li><label><input type="radio" name="militaryService" value="미필">미필</label></li>
 							<li><label><input type="radio" name="militaryService" value="면제">면제</label></li>
 							<li><label><input type="radio" name="militaryService" value="해당사항 없음">해당사항 없음</label></li>

@@ -19,7 +19,6 @@ form[name='logFrm'] label{
 	font-weight : bold;
 	font-size: 20px;
     padding : 10px;
-    color : black;
     margin-top: 10px;   
 }
 
@@ -154,7 +153,9 @@ section .title img {
 html.godabiON section .title img{
 	content : url("../image/login_png_w.png");
 }
-
+html.godabiON #loginButton{
+	border: 1px solid #1A8F64;
+}
 
 
 

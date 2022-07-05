@@ -29,7 +29,7 @@
 
 <main>
 	<div id="container">
-		<form name="empPostFrm" method="post" action="#">
+		<form name="empPostFrm" method="post" action="postJobProc.jsp">
 			<h1>
 				<textarea name="title" placeholder="제목을 입력하세요" maxlength="40" cols="20" rows="2" 
 					onkeypress="javascript:noEnter()" required></textarea>
@@ -53,24 +53,24 @@
 						<th>업종</th>
 						<td><span><%=vo.getSectors()%></span></td>
 						<th>사업내용</th>
-						<td><span>소프트웨어 개발</span></td>
+						<td><span><%=vo.getBusinessInfo()%></span></td>
 					</tr>
 					<tr>
 						<th>설립시기</th>
-						<td><span>2016년 8월 30일</span></td>
+						<td><span><%=vo.getFoundedDate()%></span></td>
 						<th>규모</th>
-						<td><span>5~49인</span></td>
+						<td><span><%=vo.getComSize()%></span></td>
 					</tr>
 					<tr>
 						<th>주소</th>
-						<td colspan="3"><span>부산 수영구 민락로 19번길 21, 3층(민락동)</span></td>
+						<td colspan="3"><span><%=vo.getComAddress()%></span></td>
 					</tr>
 					<tr>
 						<th>홈페이지</th>
 						<td colspan="3">
-							<a href="http://sgcnc.kr" tabindex="-1">
-								<span aria-hidden="true">http://sgcnc.kr</span>
-								<span class="offscreen">에스지씨앤씨 주식회사 홈페이지</span>
+							<a href="<%=vo.getComUrl()%>" tabindex="-1">
+								<span aria-hidden="true"><%=vo.getComUrl()%></span>
+								<span class="offscreen"><%=vo.getComName()%> 홈페이지</span>
 							</a>
 						</td>
 					</tr>
@@ -230,6 +230,7 @@
 					</tr>
 				</table>
 			</section>
+			<input type="hidden" name="comNum" value="<%=vo.getComNum()%>" aria-hidden="true">
 		</form>
 		<div class="div-sideNav">
 			<aside id="sideNav" role="navigation">

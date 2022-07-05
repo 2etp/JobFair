@@ -316,6 +316,9 @@ public class DisabilityDAO {
 	}
 	
 	// request에 들어간 데이터를 배열로 반환
+	// request로 받은 폼 데이터들을 한번에 처리할 수 있어 용이함
+	// 대신 멀티파트 인코딩으로 받은 request인 경우 multi로 넘겨준 다음 파라미터를 가져올 수 있기 때문에
+	// 당장은 상용화가 어려움. 방법을 조금 더 생각해보겠음
 	private Map<String, String> dataIntoArr(HttpServletRequest request) throws IOException {
 		Map<String, String> dataMap = new HashMap<String, String>();
 		MultipartRequest multi = null;
@@ -496,6 +499,7 @@ public class DisabilityDAO {
 		}
 		return list;
 	}
+	
 	
 	// 채용공고 지원
 	public boolean apply(ApplyVO vo) {

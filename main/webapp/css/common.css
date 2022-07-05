@@ -25,6 +25,9 @@ input, select, option{
 input, select{
 	background-color:transparent;
 }
+html.godabiON option{
+	background-color:black;
+}
 html.godabiON input, select{
 	border: 1px solid #aaa;
 }

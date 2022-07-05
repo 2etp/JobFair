@@ -5,13 +5,17 @@ main section {
 }
 
 main {
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 .div-caption p:first-of-type {
 	text-align: center;
 	font-weight: bold;
 	font-size: 25px;
+}
+
+.div-caption {
+	margin-top: 50px;
 }
 
 table, tr, td {

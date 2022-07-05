@@ -70,5 +70,50 @@ function fnExcelReport(id1,id2,id3, title) {
 
 // 이력서 저장
 function saveResume() {
-    document.resumeFrm.submit();
+	let militaryEl = document.querySelectorAll("input[name='militaryService']");
+	let educationEl = document.querySelectorAll("input[name='education']");
+	let schoolNameEl = document.querySelector("textarea[name='schoolName']");
+	let majorEl = document.querySelector("textarea[name='major']");
+	
+	let militaryCount = 0;
+	let educationCount = 0;
+	
+	for(i=0; i<militaryEl.length; i++){
+		if(militaryEl[i].checked == false)
+		{
+			militaryCount++;
+		}
+	}
+	
+	for(i=0; i<educationEl.length; i++){
+		if(educationEl[i].checked == false)
+		{
+			educationCount++;
+		}
+	}
+	
+	if(militaryEl.length == militaryCount){
+		alert("병역 여부를 체크해주세요");
+		return 0;
+	}
+	
+	if(schoolNameEl.value == ""){
+		alert("학교 이름을 입력해주세요");
+		return 0;
+	}
+	
+	if(majorEl.value == ""){
+		alert("학과명을 입력해주세요");
+		return 0;
+	}
+	
+	
+	if(educationEl.length == educationCount){
+		alert("최종학력의 학교 졸업 유무를 체크해주세요");
+		return 0;
+	}
+	
+	
+	document.resumeFrm.submit();
+    
 }

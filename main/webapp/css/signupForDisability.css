@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 form[name='signupFrm'] input:not(input:nth-child(3)) {
 	display: flex;
 	padding-left: 10px;
@@ -27,7 +26,7 @@ form[name='signupFrm'] div {
 }
 
 form[name='signupFrm'] input:not(.signupFrm1 input, .signupFrm3 input, .signupFrm7 input:last-of-type) {
-	width: 225.4px;
+	width: 223px;
 	height: 40px;
 	padding-left: 10px;
 }
@@ -43,14 +42,15 @@ form[name='signupFrm'] input:not(.signupFrm1 input, .signupFrm3 input, .signupFr
 
 #signupBtn {
 	text-decoration: none;
-	border: 1px solid #D13B3B;
-	background-color: #D13B3B;
+	border:2px solid #666;
+	background-color:#004C6A;
 	color: white;
 	padding: 25px 50px 25px 50px;
 	display: block;
 	text-align: center;
 	font-size: 25px;
 	font-weight: bold;
+	font-family:Binggrae;
 }
 
 .signupFrm2 input:first-of-type {
@@ -62,6 +62,7 @@ form[name='signupFrm'] input:not(.signupFrm1 input, .signupFrm3 input, .signupFr
 }
 
 section .title {
+	font-family:Binggrae;
 	position: relative;
 	display: flex;
 	left: 27%;
@@ -93,3 +94,6 @@ section .title p {
 	padding-top: 25px;
 }
 
+select .select-holder{
+	display:none;
+}

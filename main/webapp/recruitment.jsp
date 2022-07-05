@@ -96,7 +96,7 @@
 			<form name="searchFrm" method="post" action="search.jsp">
 				<div class="div-search">
 					<img src="./image/search.svg" aria-hidden="true">
-					<input id="companyName" type="text" name="companyName" placeholder="기업명을 입력하세요" title="기업명" value="">
+					<input id="companyName" type="text" name="companyName" placeholder="기업명을 입력하세요" title="기업명">
 					<a id="submit-button" href="javascript:" role="button"
 					 onclick="searchName()">검색</a>
 				</div>

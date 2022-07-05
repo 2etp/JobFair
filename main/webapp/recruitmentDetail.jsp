@@ -73,7 +73,7 @@
 					<%if(vo.getComUrl().equals("-")) { %>
 						<a href="#" tabindex="-1">
 					<%} else { %>
-						<a href="<%=vo.getComUrl()%>" tabindex="-1">
+						<a href="<%=vo.getComUrl()%>" tabindex="-1" target="_blank">
 					<%}%>
 							<span aria-hidden="true"><%=vo.getComUrl()%></span>
 							<span class="offscreen">에스지씨앤씨 주식회사 홈페이지</span>

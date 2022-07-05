@@ -165,3 +165,20 @@ html.godabiON *{
 	background-color: black;
 	color : white;
 }
+html.godabiON #signUp{
+	border:2px solid #C6F14A;
+}
+html.godabiON #signIn{
+	border:2px solid #FFBB00;
+}
+html.godabiON #howTo{
+	border:2px solid #FF958C;
+}
+html.godabiON #introFair{
+	border:2px solid #7700FF;
+	background-image:none;
+}
+html.godabiON #employee{
+	border:2px solid #71D0BD;
+	background-image:none;
+}

@@ -22,7 +22,7 @@
 <body>
 <header>
 	<div class="logo">
-		<img src="image/head_00.png" alt="2021 부산 장애인 온라인 채용 박람회">
+		<img src="image/head_00.png" alt="2021 부산 장애인 온라인 채용 박람회 로고">
 	</div>
 	
 	<div class="header-godaebi">
@@ -30,12 +30,12 @@
 		  	<input type="checkbox">
 		  	<span class="slider round"></span>
 		</label>
-		<p class="p-godaebi">고대비 OFF</p>
+		<p class="p-godaebi">고대비 꺼짐</p>
 	</div>
 </header>
 <main>
 	<div class="main-img">
-		<img src="image/main.png">
+		<img src="image/main.png" alt="2021 부산 장애인 온라인 채용 박람회 메인 이미지">
 	</div>
 	<nav>
 		<section class="sign">

@@ -48,7 +48,7 @@
 					<span class="secTitle">기업정보</span>
 				</h2>
 				<div class="logo-wrap">
-					<img class="logo" src="image/<%=vo.getLogoName()%>" alt="에스지씨앤씨 주식회사 로고">
+					<img class="logo" src="image/<%=vo.getLogoName()%>" alt="<%=vo.getComName() %> 로고">
 				</div>
 				<table>
 					<tr>

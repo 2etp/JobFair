@@ -77,11 +77,20 @@ main a{
     text-decoration: none;
     margin:20px;
     border-radius:5px;
-    border:2px solid #666;
+    border:2px solid #eee;
 }
 .disability a{
 	background-color : #288233;
 }
 main a img{
 	display:inline-block;
+}
+html.godabiON .disability a{
+	border:2px solid #FF958C;
+}
+html.godabiON .general a{
+	border:2px solid #71D0BD;
+}
+html.godabiON h1 img{
+	content: url("../image/sign_w.svg");
 }

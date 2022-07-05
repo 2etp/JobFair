@@ -52,6 +52,9 @@ form[name='signupFrm'] input:not(.signupFrm1 input, .signupFrm3 input, .signupFr
 	font-weight: bold;
 	font-family:Binggrae;
 }
+html.godabiON #signupBtn{
+	border:2px solid #71D0BD;
+}
 
 .signupFrm2 input:first-of-type {
 	margin-right: 5px;
@@ -73,6 +76,9 @@ section .title img {
 	height: 70px;
 	margin-top: 10px;
 	
+}
+html.godabiON section .title img{
+	content: url("../image/signup_w.svg");
 }
 
 section .title p {

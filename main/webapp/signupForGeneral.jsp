@@ -18,7 +18,10 @@
 <main>
 	<section>
 		<form name="signupFrm" method="post" action="GenSignup" enctype="multipart/form-data">
-			<p>기업 회원가입</p>
+			<div class="title">
+				<img src="./image/buildings.svg" aria-hidden="true">
+				<p>기업 회원가입</p>
+			</div>
 			<div class="profile">
 				<div class="img-upload">
 					<input type="file" id="fileUpload" name="filename"/>

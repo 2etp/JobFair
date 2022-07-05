@@ -25,6 +25,12 @@ input, select, option{
 input, select{
 	background-color:transparent;
 }
+html.godabiON input, select{
+	border: 1px solid #aaa;
+}
+html.godabiON input::placeholder, html.godabiON textarea::placeholder{
+	color:#aaa;
+}
 h1,h2,h3,h4,h5,h6{
 	font-family:Binggrae;
 }
@@ -169,6 +175,9 @@ html.godabiON header, html.godabiON body{
 }
 html.godabiON *{
 	color : white;
+}
+html.godabiON * a{
+	background-color:transparent !important;
 }
 .file-help span, .fileLabel span{
 	color:black;

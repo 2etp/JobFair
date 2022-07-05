@@ -19,7 +19,7 @@
 	vo = dao.getGeneral(jvo.getComNum());
 	List<ResumeVO> rvoList = disdao.getResumeList(disvo.getUserNum());
 	
-
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -167,18 +167,21 @@
 				<div id="sideNav-container">
 					<h3>채용공고 메뉴</h3>
 					<%
-					boolean flag = disdao.isExistInter(employNum, disvo.getUserNum());
-					if(flag) { %>
-						<a href="javascript:companyBookmark()" id="bookmark">
-							<img src="image/bookmark_on.svg" aria-hidden="true">
-							<span>관심공고 해제</span>
-						</a>
-					<%} else {%>
-						<a href="javascript:companyBookmark()" id="bookmark">
-							<img src="image/bookmark_off.svg" aria-hidden="true">
-							<span>관심공고 등록</span>
-						</a>
-					<%} %>
+						boolean flag = disdao.isExistInter(employNum, disvo.getUserNum());
+						if(dao.isCompany(name) == false){
+							if(flag) { %>
+								<a href="javascript:companyBookmark()" id="bookmark">
+									<img src="image/bookmark_on.svg" aria-hidden="true">
+									<span>관심공고 해제</span>
+								</a>
+							<%} else {%>
+								<a href="javascript:companyBookmark()" id="bookmark">
+									<img src="image/bookmark_off.svg" aria-hidden="true">
+									<span>관심공고 등록</span>
+								</a>
+							<%}
+						}
+					%>
 						<!-- 관심공고 등록 폼 -->
 						<form aria-hidden="true" name="bookmarkFrm" method="get" action="addInterCom.jsp">
 							<input type="hidden" name="user" value="<%=disvo.getUserNum()%>">
@@ -254,20 +257,19 @@
 							</label>
 							<br>
 							<%
-								String Deadline = jvo.getOpeningDate().split(" ~ ")[1];
-								SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
-								Date deadlineDate = format.parse(Deadline);
-								Date nowDate = new Date();
-								
-								boolean dead = deadlineDate.getTime() < nowDate.getTime();
-								
-								if(dead){
-							%>
-								<input type="button" class="btn" id="apply" value="지원신청이 마감되었습니다." role="button" 
-									onclick="applyRecru()" disabled>
-							<%} else { %>
-								<input type="button" class="btn" id="apply" value="지원하기" role="button" onclick="applyRecru()">
-							<% } %>
+								if(dao.isCompany(name) == false){
+									String Deadline = jvo.getOpeningDate().split(" ~ ")[1];
+									SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+									Date deadlineDate = format.parse(Deadline);
+									Date nowDate = new Date();
+									boolean dead = deadlineDate.getTime() < nowDate.getTime();
+									if(dead){ %>
+										<input type="button" class="btn" id="apply" value="지원신청이 마감되었습니다." role="button" 
+											onclick="applyRecru()" disabled>
+									<%} else { %>
+										<input type="button" class="btn" id="apply" value="지원하기" role="button" onclick="applyRecru()">
+									<% } %>
+							<%	} %>
 						</form>
 						<!-- 이력서 제출 폼 끝 -->
 					</section>

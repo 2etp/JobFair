@@ -15,16 +15,16 @@
 		<h1>회원가입</h1>
 		<div class="div-signuplink-form">
 			<div class="div-signuplink-left">
-				<img src="image/signupDisability.png">
 				
 				<div class="div-signuplink disability">
-					<a href="signupForDisability.jsp" id="introFair">개인회원가입</a>
+					<a href="signupForDisability.jsp"><img src="image/signup_w.svg" aria-hidden="true">
+					개인 회원가입</a>
 				</div>
 			</div>
 			<div class="div-signuplink-right">
-				<img src="image/signupGeneral.png">
 				<div class="div-signuplink general">
-					<a href="signupForGeneral.jsp" id="introFair">기업회원가입</a>
+					<a href="signupForGeneral.jsp"><img src="image/buildings_w.svg" aria-hidden="true">
+					기업 회원가입</a>
 				</div>
 			</div>
 			

@@ -174,6 +174,24 @@ public class GeneralDAO {
 		return flag;
 	}
 	
+	// 채용공고 등록
+	public boolean insertJobOpening() {
+		boolean flag = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return flag;
+	}
+	
+	
 	
 	// 채용공고 리스트(로고, 기업명, 근무지역, 직무, 지원기간)
 	public List<OpeningListVO> getOpeningList(int startRow, int pageSize) {

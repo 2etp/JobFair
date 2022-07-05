@@ -45,7 +45,7 @@
 <main>
 	<section>
 		<div class="div-list">
-			<img src="./image/building.png" alt="건물이미지">
+			<img src="./image/building.png" aria-hidden="true">
 			<p>기업지원 현황</p>
 		</div>
 		<div class="applyList">

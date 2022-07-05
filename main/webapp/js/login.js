@@ -23,7 +23,7 @@ liEls.forEach(function (Eliment, ElimentIndex, obj) {
 			formEl.action = "loginProc.jsp?item=dis";
 			divNameEl.innerHTML = `
 				<label for="name">이름</label>
-				<input id="name" type="text" name="name" placeholder="성과 이름을 띄어쓰기 없이 모두 입력해 주세요.">
+				<input id="name" type="text" name="name" placeholder="성과 이름을 띄어쓰기 없이 모두 입력해 주세요." >
 			`;
 			
 			divPhoneEl.innerHTML = `
@@ -37,7 +37,7 @@ liEls.forEach(function (Eliment, ElimentIndex, obj) {
 			formEl.action = "loginProc.jsp?item=com";
 			divNameEl.innerHTML = `
 				<label for="id">아이디</label>
-				<input id="id" type="text" name="name" placeholder="아이디를 입력해 주세요.">
+				<input id="id" type="text" name="name" placeholder="아이디를 입력해 주세요." >
 			`;
 			divPhoneEl.innerHTML = `
 				<label for="password">패스워드</label>

@@ -16,7 +16,7 @@
 <main>
 	<section>
 		<div class="title">
-			<img src="./image/login.png">
+			<img src="./image/login.png" aria-hidden="true">
 		</div>
 		<form name="logFrm" method="post" action="loginProc.jsp?item=dis">
 			<div class="div-form">

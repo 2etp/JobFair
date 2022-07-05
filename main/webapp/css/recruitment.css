@@ -144,3 +144,6 @@ html.godabiON form[name='searchFrm'] select{
 	color : black;
 }
 
+html.godabiON .div-search img{
+	content : url("../image/search_w.svg");
+}

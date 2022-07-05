@@ -31,11 +31,11 @@
 				<div class=div-input>
 					<div class=div-name>
 						<label for="name">이름</label>
-						<input id="name" type="text" name="name" title="이름" placeholder="ex) 홍길동">	
+						<input id="name" type="text" name="name" placeholder="성과 이름을 띄어쓰기 없이 모두 입력해 주세요.">	
 					</div>
 					<div class=div-phone>
 						<label for="phone">휴대폰번호</label>
-						<input id="phone" maxlength="11" type="tel" name="mobile" title="휴대폰번호" placeholder="숫자만 입력해 주세요.">
+						<input id="phone" maxlength="11" type="tel" name="mobile" placeholder="숫자만 입력해 주세요.">
 					</div>
 					<div class=div-submit>
 						<a id="loginButton" href="javascript:loginCheckDis(this);" role="button">로그인</a>

@@ -233,7 +233,7 @@
 							<br>
 							
 							<!-- 새 탭으로 현재 선택된 이력서를 자세히 보도록 a태그에 url을 달아줘야함 -->
-							<a href="" target="_blank" class="btn" id="resPreview">미리보기</a>
+							<a href="" target="_blank" class="btn" id="resPreview" >미리보기</a>
 							<!-- 
 							<script>
 								const a = document.getElementByID('resPreview');

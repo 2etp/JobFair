@@ -23,12 +23,12 @@ liEls.forEach(function (Eliment, ElimentIndex, obj) {
 			formEl.action = "loginProc.jsp?item=dis";
 			divNameEl.innerHTML = `
 				<label for="name">이름</label>
-				<input id="name" type="text" name="name" title="이름" placeholder="ex) 홍길동">
+				<input id="name" type="text" name="name" placeholder="성과 이름을 띄어쓰기 없이 모두 입력해 주세요.">
 			`;
 			
 			divPhoneEl.innerHTML = `
 				<label for="phone">휴대폰번호</label>
-				<input id="phone" maxlength="11" type="text" name="mobile" title="휴대폰번호" placeholder="'-' 를 빼고 입력해 주세요.">
+				<input id="phone" maxlength="11" type="text" name="mobile" placeholder="숫자만 입력해 주세요.">
 			`;
 			divSubmitEl.innerHTML = `
 				<a id="loginButton" href="javascript:loginCheckDis(this);" role="button">로그인</a>
@@ -37,11 +37,11 @@ liEls.forEach(function (Eliment, ElimentIndex, obj) {
 			formEl.action = "loginProc.jsp?item=com";
 			divNameEl.innerHTML = `
 				<label for="id">아이디</label>
-				<input id="id" type="text" name="name" title="이름" placeholder="아이디">
+				<input id="id" type="text" name="name" placeholder="아이디를 입력해 주세요.">
 			`;
 			divPhoneEl.innerHTML = `
 				<label for="password">패스워드</label>
-				<input id="password" type="password" name="mobile" title="휴대폰번호" placeholder="패스워드">
+				<input id="password" type="password" name="mobile" placeholder="패스워드를 입력해 주세요.">
 			`;
 			divSubmitEl.innerHTML = `
 				<a id="loginButton" href="javascript:loginCheckCom(this);" role="button">로그인</a>

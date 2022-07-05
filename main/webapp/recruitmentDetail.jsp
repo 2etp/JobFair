@@ -239,14 +239,7 @@
 							<br>
 							
 							<!-- 새 탭으로 현재 선택된 이력서를 자세히 보도록 a태그에 url을 달아줘야함 -->
-							<a href="" target="_blank" class="btn" id="resPreview" >미리보기</a>
-							<!-- 
-							<script>
-								const a = document.getElementByID('resPreview');
-								const select = document.getElementByID('resume');
-								a.href="myResume.jsp?resumeNum="+select.value;
-							</script>
-							 -->
+							<a onclick="javascript:resPreview()" class="btn" id="resPreview" >미리보기</a>
 							
 							<br>
 							<input id="agreementChk" type="checkbox" required>
@@ -283,4 +276,13 @@
 </body>
 <script src="js/common.js"></script>
 <script defer src="js/recruitmentDetail.js"></script>
+<script>
+	function resPreview(){
+		const select = document.getElementById('resume');
+		let go ="resPreview.jsp?resumeNum="+select.value;
+		console.log(go);
+		window.open(go, '', 'width=820, height=800');
+		return false;
+	}
+</script>
 </html>

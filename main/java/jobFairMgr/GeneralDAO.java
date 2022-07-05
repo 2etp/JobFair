@@ -175,14 +175,46 @@ public class GeneralDAO {
 	}
 	
 	// 채용공고 등록
-	public boolean insertJobOpening() {
+	public boolean insertJobOpening(JobOpeningVO vo) {
 		boolean flag = false;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
 		try {
-			
+			con = pool.getConnection();
+			sql = "insert into jobopening(comNum, title, position, people, task, workArea, education,"
+					+ "career, employType, workType, pay, insurance, officeHours, etc, major, "
+					+ "certificate, computerLevel, facilities, welfare, preferred, openingDate, overtime, bonus, severancePay) "
+					+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, vo.getComNum());
+			pstmt.setString(2, vo.getTitle());
+			pstmt.setString(3, vo.getPosition());
+			pstmt.setInt(4, vo.getPeople());
+			pstmt.setString(5, vo.getTask());
+			pstmt.setString(6, vo.getWorkArea());
+			pstmt.setString(7, vo.getEducation());
+			pstmt.setString(8, vo.getCareer());
+			pstmt.setString(9, vo.getEmployType());
+			pstmt.setString(10, vo.getWorkType());
+			pstmt.setString(11, vo.getPay());
+			pstmt.setString(12, vo.getInsurance());
+			pstmt.setString(13, vo.getOfficeHours());
+			pstmt.setString(14, vo.getEtc());
+			pstmt.setString(15, vo.getMajor());
+			pstmt.setString(16, vo.getCertificate());
+			pstmt.setString(17, vo.getComputerLevel());
+			pstmt.setString(18, vo.getFacilities());
+			pstmt.setString(19, vo.getWelfare());
+			pstmt.setString(20, vo.getPreferred());
+			pstmt.setString(21, vo.getOpeningDate());
+			pstmt.setString(22, vo.getOvertime());
+			pstmt.setString(23, vo.getBonus());
+			pstmt.setString(24, vo.getSeverancePay());
+			if(pstmt.executeUpdate() == 1) {
+				flag = true;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

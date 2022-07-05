@@ -39,8 +39,8 @@
 					<textarea name="title" placeholder="제목을 입력하세요" maxlength="40" cols="20" rows="2" 
 						onkeypress="javascript:noEnter()" required></textarea>
 				</h1>
-					<input type="hidden" name="jobOpeninsStart" value="<%=nowDate%>" aria-hidden="true">
-					<label>종료 날짜:<input type="date" name="jobOpeninsEnd" title="종료 날짜" min="<%=nowDate%>"></label>
+					<input type="hidden" name="jobOpeningStart" value="<%=nowDate%>" aria-hidden="true">
+					<label>종료 날짜:<input type="date" name="jobOpeningEnd" title="종료 날짜" min="<%=nowDate%>"></label>
 			</section>
 			<section id="comInfo">
 				<h2>
@@ -48,7 +48,7 @@
 					<span class="secTitle">기업정보</span>
 				</h2>
 				<div class="logo-wrap">
-					<img class="logo" src="image/에스지씨앤씨 주식회사.png" alt="에스지씨앤씨 주식회사 로고">
+					<img class="logo" src="image/<%=vo.getLogoName()%>" alt="에스지씨앤씨 주식회사 로고">
 				</div>
 				<table>
 					<tr>

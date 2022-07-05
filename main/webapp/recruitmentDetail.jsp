@@ -64,7 +64,7 @@
 					<th>주소</th>
 					<td colspan="3"><%=vo.getComAddress()%></td>
 				</tr>
-				<tr>
+				<tr class="tr-url">
 					<th>홈페이지</th>
 					<td colspan="3">
 					<%if(vo.getComUrl().equals("-")) { %>

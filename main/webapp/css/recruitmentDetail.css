@@ -247,3 +247,7 @@ h4 .small-icons{
 	position : absolute;
 	right : 0px;
 }
+
+.tr-url a {
+	text-decoration: none;
+}

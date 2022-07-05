@@ -42,7 +42,7 @@ function inputEventListener(){
 				bookmarkImgEl.src = "image/bookmark_on.svg";
 			}
 			else{
-				bookmarkImgEl.src = "image/bookmark_on_w.svg";
+				bookmarkImgEl.src = "image/bookmark1_on.svg";
 			}		
 		}else if(bookmarkImgEl.src.split("/").slice(-1)[0] == "bookmark_off.svg"){
 			if(godabi==null || godabi=="null")
@@ -50,25 +50,25 @@ function inputEventListener(){
 				bookmarkImgEl.src = "image/bookmark_off.svg";
 			}
 			else{
-				bookmarkImgEl.src = "image/bookmark_off_w.svg";
+				bookmarkImgEl.src = "image/bookmark1_off.svg";
 			}
 		}
-		else if(bookmarkImgEl.src.split("/").slice(-1)[0] == "bookmark_on_w.svg"){
+		else if(bookmarkImgEl.src.split("/").slice(-1)[0] == "bookmark1_on.svg"){
 			if(godabi==null || godabi=="null")
 			{
 				bookmarkImgEl.src = "image/bookmark_on.svg";
 			}
 			else{
-				bookmarkImgEl.src = "image/bookmark_on_w.svg";
+				bookmarkImgEl.src = "image/bookmark1_on_w.svg";
 			}
 		}
-		else if(bookmarkImgEl.src.split("/").slice(-1)[0] == "bookmark_off_w.svg"){
+		else if(bookmarkImgEl.src.split("/").slice(-1)[0] == "bookmark1_off.svg"){
 			if(godabi==null || godabi=="null")
 			{
 				bookmarkImgEl.src = "image/bookmark_off.svg";
 			}
 			else{
-				bookmarkImgEl.src = "image/bookmark_off_w.svg";
+				bookmarkImgEl.src = "image/bookmark1_off.svg";
 			}
 		}
 	})

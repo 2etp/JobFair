@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.time.LocalDate" %>
+<%@page import="java.time.ZoneId" %>
 <jsp:useBean id="dao" class="jobFairMgr.GeneralDAO" />
 <jsp:useBean id="vo" class="jobFairMgr.GeneralVO" />
 
 <%
+	LocalDate nowDate = LocalDate.now(ZoneId.of("Asia/Seoul"));
+
 	String name = (String)session.getAttribute("lgnName");
 	// 기업으로 로그인했는지 판단 -> 여유가 있다면 예외처리할 예정
 	boolean flag = false;
@@ -30,10 +34,14 @@
 <main>
 	<div id="container">
 		<form name="empPostFrm" method="post" action="postJobProc.jsp">
-			<h1>
-				<textarea name="title" placeholder="제목을 입력하세요" maxlength="40" cols="20" rows="2" 
-					onkeypress="javascript:noEnter()" required></textarea>
-			</h1>
+			<section id="titleInfo">
+				<h1>
+					<textarea name="title" placeholder="제목을 입력하세요" maxlength="40" cols="20" rows="2" 
+						onkeypress="javascript:noEnter()" required></textarea>
+				</h1>
+					<input type="hidden" name="jobOpeninsStart" value="<%=nowDate%>" aria-hidden="true">
+					<label>종료 날짜:<input type="date" name="jobOpeninsEnd" title="종료 날짜" min="<%=nowDate%>"></label>
+			</section>
 			<section id="comInfo">
 				<h2>
 					<img class="icons" src="./image/building.svg" aria-hidden="true">

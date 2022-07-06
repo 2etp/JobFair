@@ -43,6 +43,7 @@ table:not(table:last-of-type) {
 	border: 1px solid #3778AB;
 	border-radius: 20px;
 	box-shadow: 0 0 8px #3778AB ;
+	overflow:hidden;
 }
 
 .table2, .table3 {
@@ -205,7 +206,7 @@ table .tr16 td, .tr17 td, .tr18 td {
 
 .details-resume-list{
 	text-align : center;
-	background-color : white;
+	background-color : transparent;
 	cursor : pointer;
 	border: 2px solid #4B788F;
 	border-radius: 5px;
@@ -238,12 +239,18 @@ table .tr16 td, .tr17 td, .tr18 td {
 }
 
 .details-resume-list summary:hover{
-	background-color : #E1F3FF;
+	background-color : rgba(225, 243, 255,0.8);
 	border-radius: 5px;
+}
+.details-resume-list summary:hover div{
+	color:black;
 }
 
 .details-resume-list li:hover {
 	background-color : #E1F3FF;
+}
+.details-resume-list li:hover a{
+	color:black;
 }
 
 
@@ -288,6 +295,7 @@ table .tr16 td, .tr17 td, .tr18 td {
 	font-family:Binggrae;
 	font-size: 20px;
 	clear: left;
+	text-decoration:none;
 }
 
 #sideNav ul li img {
@@ -312,7 +320,6 @@ table .tr16 td, .tr17 td, .tr18 td {
 	font-family:Binggrae;
 	margin-left: 20px;
 	color: #666;
-	float: left;
 	margin-right: 30px;
 }
 
@@ -326,7 +333,6 @@ table .tr16 td, .tr17 td, .tr18 td {
 
 .side-button a {
 	font-family:Binggrae;
-	border: 1px solid #aaa;
 	text-decoration: none;
 	color: white;
 	padding: 5px 7px 5px 7px;
@@ -342,9 +348,11 @@ table .tr16 td, .tr17 td, .tr18 td {
 }
 
 #xlsDL{
+	border: 2px solid #2A8732;
 	background-color: #2A8732;
 	overflow:hidden;
 	position:relative;
+	margin-top:20px;
 }
 #xlsDL img{
 	top:8px;
@@ -356,8 +364,46 @@ table .tr16 td, .tr17 td, .tr18 td {
 #xlsDL span{
 	margin-left: 10px;
 	float: left;
-	margin-top: 10px;
+	margin-top: 12px;
 }
-#saveRes{
-	background-color: #2396B0;
+html.godabiON .div-caption img{
+	content: url("../image/resume_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(1) img {
+	content: url("../image/account_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(2) img {
+	content: url("../image/write_res_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(3) img {
+	content: url("../image/resume_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(4) img {
+	content: url("../image/bookmark_on_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(5) img {
+	content: url("../image/list_w.svg");
+}
+html.godabiON #sideNav{
+	border: 1px solid #eee;
+}
+html.godabiON #sideNav h3{
+	color: #aaa;
+}
+html.godabiON th{
+	background-color: transparent;
+	border:2px solid #fff;
+}
+html.godabiON table,html.godabiON tr,html.godabiON td{
+	border:1px solid #fff;
+}
+html.godabiON .div-table {
+	border: 1px solid #fff;
+	box-shadow: none;
+}
+html.godabiON .details-resume-list-item a {
+	color: white;
+}
+html.godabiON .details-resume-list-item li:hover a {
+	color: black;
 }

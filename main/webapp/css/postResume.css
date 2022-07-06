@@ -114,6 +114,9 @@ td textarea{
 	padding-right:30px;
 	font-size:18px;
 }
+html.godabiON td textarea{
+	background-image:url("../image/edit3_w.svg");
+}
 #table td textarea{
 	width:85%;
 }
@@ -189,6 +192,9 @@ table .tr1 th:nth-of-type(2) {
 }
 #table .tr4,#table .tr6{
 	border-bottom:3px double #28587D;
+}
+html.godabiON #table .tr4,#table .tr6{
+	border-bottom:3px double white;
 }
 table .tr2 th{
 	width: 100px;
@@ -338,6 +344,7 @@ table caption {
 	color: #004C6A;
 	font-family:Binggrae;
 	font-size: 20px;
+	text-decoration:none;
 }
 
 #sideNav ul li img {
@@ -382,20 +389,45 @@ table caption {
 	text-shadow:0 0 10px #000;
 	border-radius:2px;
 }
-#xlsDL{
-	background-color: #2A8732;
-	overflow:hidden;
-	position:relative;
-}
-#xlsDL img{
-	position:absolute;
-	top:3px;
-	right:22px;
-	height:30px;
-}
-#xlsDL span{
-	margin-left:-15px;
-}
 #saveRes{
 	background-color: #2396B0;
+	margin-top:20px;
+}
+html.godabiON .div-caption img{
+	content: url("../image/resume_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(1) img {
+	content: url("../image/account_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(2) img {
+	content: url("../image/write_res_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(3) img {
+	content: url("../image/resume_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(4) img {
+	content: url("../image/bookmark_on_w.svg");
+}
+html.godabiON #sideNav ul li:nth-child(5) img {
+	content: url("../image/list_w.svg");
+}
+html.godabiON #sideNav{
+	border: 1px solid #eee;
+}
+html.godabiON #sideNav h3{
+	color: #aaa;
+}
+html.godabiON th{
+	background-color: transparent;
+	border:2px solid #fff;
+}
+html.godabiON table,html.godabiON tr,html.godabiON td{
+	border:1px solid #fff;
+}
+html.godabiON .div-table {
+	border: 1px solid #fff;
+	box-shadow: none;
+}
+html.godabiON #saveRes {
+	border: 2px solid #71D0BD;
 }

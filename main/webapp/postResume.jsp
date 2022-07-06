@@ -35,7 +35,7 @@
 		
 		<form name="resumeFrm" method="post" enctype="multipart/form-data" action="SaveResumeServlet">
 		<div class="div-caption">
-			<h1><img src="./image/resume.png" aria-hidden="true">이력서 작성</h1>
+			<h1><img src="./image/resume.svg" aria-hidden="true">이력서 작성</h1>
 		</div>
 		<div class="div-title">
 			<input type="text" id="title" name="title" title="이력서 제목" placeholder="이력서 제목을 작성해 주세요." maxlength="255">
@@ -204,31 +204,29 @@
 			<div class="div-sideNav">
 				<aside id="sideNav" role="navigation">
 					<div id="sideNav-container">
-						<h3>마이페이지 메뉴</h3>
-						<section id="">
-							<ul>
-								<li><a href="postResume.jsp">
-									<img src="./image/resume.png" aria-hidden="true">
-									이력서 작성</a></li>
-								<li><a href="myPageForDisability.jsp" >
-									<img src="./image/myPage.svg"  aria-hidden="true">
-									내 정보 관리</a></li>
-								<li><a href="myResume.jsp" >
-									<img src="./image/myResume.png" aria-hidden="true">
-									이력서 관리</a></li>
-								<li><a href="pickedList.jsp" >
-									<img src="image/bookmark_on.svg" aria-hidden="true">
-									관심 채용공고</a></li>
-								<li><a href="applyList.jsp" >
-									<img src="image/applyList.png" aria-hidden="true">
-									기업지원 현황</a></li>				
-							</ul>
-						</section>
-						
-						<hr style="margin:10px;">
-						
 						<section class="side-button">
 							<a href="javascript:saveResume()" id="saveRes" role="button">이력서 저장</a>
+						</section>
+						<hr style="margin:10px;">
+						<section id="">
+							<h3>마이페이지 메뉴</h3>
+								<ul>
+									<li><a href="myPageForDisability.jsp" >
+										<img src="./image/account.svg"  aria-hidden="true">
+										내 정보 관리</a></li>
+									<li><a href="postResume.jsp" >
+										<img src="./image/write_res.svg" aria-hidden="true">
+										이력서 작성</a></li>
+									<li><a href="myResume.jsp" >
+										<img src="./image/resume.svg" aria-hidden="true">
+										이력서 관리</a></li>
+									<li><a href="pickedList.jsp" >
+										<img src="image/bookmark_on.svg" aria-hidden="true">
+										관심 채용공고</a></li>
+									<li><a href="applyList.jsp" >
+										<img src="image/list.svg" aria-hidden="true">
+										기업지원 현황</a></li>
+								</ul>
 						</section>
 					</div>
 				</aside>

@@ -22,21 +22,21 @@ body {
 input, select, option{
 	letter-spacing:0.1em;
 }
-input:not(input[id="apply"]), select{
+input:not(input[id="apply"]), select, textarea{
 	background-color:transparent !important;
 }
 html.godabiON option{
 	background-color:black;
 	color:white !important;
 }
-html.godabiON input, html.godabiON select{
+html.godabiON input:not(input[type=file]), html.godabiON select, html.godabiON textarea{
 	border: 1px solid #aaa;
 	color:white !important;
 }
 html.godabiON input::placeholder, html.godabiON textarea::placeholder{
 	color:#aaa;
 }
-html.godabiON #sideNav a:not(#sideNav a[id="resPreview"]) {
+html.godabiON #sideNav a:not(#sideNav a[id="resPreview"],#sideNav a[id="saveRes"]) {
 	color: #71D0BD !important;
 }
 h1,h2,h3,h4,h5,h6{

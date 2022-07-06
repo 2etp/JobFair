@@ -22,7 +22,7 @@ body {
 input, select, option{
 	letter-spacing:0.1em;
 }
-input, select{
+input:not(input[id="apply"]), select{
 	background-color:transparent !important;
 }
 html.godabiON option{

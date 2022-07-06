@@ -8,7 +8,7 @@ document.getElementById("fileUpload").addEventListener("change", function(){
 });
 
 
-function fnExcelReport(id1,id2,id3, title) {
+/*function fnExcelReport(id1,id2,id3, title) {
 	
 	var tab_text = '<html xmlns:x="urn:schemas-microsoft-com:office:excel">';
 	tab_text = tab_text + '<head><meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';
@@ -51,7 +51,7 @@ function fnExcelReport(id1,id2,id3, title) {
 		elem.click();
 		document.body.removeChild(elem);
 	}
-}
+}*/
 
 /*
 function fnExcelReport(id1,id2,id3, title) {

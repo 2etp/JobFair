@@ -23,7 +23,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
-<script lang="javascript" src="./js/xlsx.full.min.js"></script>
 <script defer src="js/postResume.js"></script>
 </head>
 <body>

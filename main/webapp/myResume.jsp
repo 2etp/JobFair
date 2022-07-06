@@ -36,6 +36,8 @@
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/myResume.css">
 <script defer src="js/myResume.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script lang="javascript" src="./js/xlsx.full.min.js"></script>
 </head>
 <body>
 
@@ -61,6 +63,7 @@
 			<img src="./image/resume.png" alt="이력서 이미지">
 			<p>이력서</p>
 		</div>
+		
 			<div class="div-table">
 			<table class="table1" id="table">
 				<tr class="tr1">

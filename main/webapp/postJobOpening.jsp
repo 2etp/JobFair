@@ -243,10 +243,6 @@
 		<div class="div-sideNav">
 			<aside id="sideNav" role="navigation">
 				<div id="sideNav-container">
-					<section id="postEmp">
-						<a href="javascript:postEmp()" class="btn" id="postEmpSubmit" role="button">등록</a>
-					</section>
-					<hr style="margin:10px;">
 					<h3>채용공고 편집 메뉴</h3>
 					<section id="quickLink">
 						<h4>
@@ -269,9 +265,11 @@
 						</ul>
 					</section>
 					
+					<hr style="margin:10px;">
 					
-					
-					
+					<section id="postEmp">
+						<a href="javascript:postEmp()" class="btn" id="postEmpSubmit" role="button">등록</a>
+					</section>
 				</div> <!-- sideNav-container -->
 			</aside>		
 		</div> <!-- div-sideNav -->

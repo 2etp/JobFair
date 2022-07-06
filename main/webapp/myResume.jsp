@@ -207,6 +207,13 @@
 						<li><img src="image/applyList.png" aria-hidden="true">
 							<a href="applyList.jsp" >기업지원 현황</a></li>
 					</ul>
+					
+					<hr style="margin:10px;">
+					
+					<section class="side-button">
+						<div><a href="#" id="xlsDL" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">
+							<img src="image/excel_icon3.svg"><span>다운로드</span></a></div>
+					</section>
 				</aside>
 			</div> 
 	</section>	

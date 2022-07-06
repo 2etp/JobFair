@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="dao" class="jobFairMgr.GeneralDAO" />
+<jsp:useBean id="gvo" class="jobFairMgr.GeneralVO" />
 <%@ page import = "java.util.*" %>
 <%@ page import = "jobFairMgr.ApplicantListVO" %>
     
 <%
 	request.setCharacterEncoding("UTF-8");
 	//int userNum = (int)session.getAttribute("lgnUserNum");
-	int userNum = 1;
-	//int comNum = (int) session.getAttribute("lgnComNum");
-	int comNum = 1;
+	//int userNum = 1;
+	String comName = (String)session.getAttribute("lgnName");
+	gvo = dao.getGeneral(comName);
+	//int comNum = 1;
 	
 	
 	//페이징 넘버 작업
@@ -27,8 +29,8 @@
 	int currentPage = Integer.parseInt(pageNum);
 	int startRow = (currentPage - 1) * pageSize + 1;
 	
-	List<ApplicantListVO> list = dao.getApplicantList(comNum, startRow, pageSize);
-	int cnt = dao.getApplicantCount(comNum);
+	List<ApplicantListVO> list = dao.getApplicantList(gvo.getComNum(), startRow, pageSize);
+	int cnt = dao.getApplicantCount(gvo.getComNum());
 %>
 
 <!DOCTYPE html>

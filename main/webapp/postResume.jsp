@@ -230,8 +230,6 @@
 						
 						<section class="side-button">
 							<a href="javascript:saveResume()" id="saveRes" role="button">이력서 저장</a>
-							<div><a href="#" id="xlsDL" role="button" onclick="fnExcelReport('table','mytable2','mytable3','title');">
-								<span>다운로드</span><img src="image/excel_icon3.svg"></a></div>
 						</section>
 					</div>
 				</aside>

@@ -22,23 +22,23 @@
 		<form name="signupFrm" method="post" action="disSignup" enctype="multipart/form-data">
 			<div class="signupFrm1">
 				<label for="name">성명</label>
-				<input type="text" name="name" id="name" placeholder="예시) 홍길동" title="성명">
+				<input type="text" name="name" id="name" placeholder="성과 이름을 띄어쓰기 없이 모두 입력해 주세요.">
 			</div>
 			
 			<div class="signupFrm2">
 				<label for="residentNum">주민등록번호</label>
-				<input maxlength="6" type="tel" name="prefixNum" id="residentNum" placeholder="주민등록번호 앞 6자리" title="주민번호 앞자리">-
-				<input maxlength="7" id="residentNum2" type="tel" name="suffixNum" placeholder="주민등록번호 뒤 7자리" title="주민번호 뒷자리">
+				<input maxlength="6" type="tel" name="prefixNum" id="residentNum" placeholder="주민등록번호 앞 6자리" >-
+				<input maxlength="7" id="residentNum2" type="password" name="suffixNum" placeholder="주민등록번호 뒤 7자리" >
 			</div>
 			
 			<div class="signupFrm3">
 				<label for="mobile">휴대폰번호</label>
-				<input maxlength="11" type="tel" name="mobile" id="mobile" placeholder="숫자만 입력해 주세요." title="휴대폰번호">
+				<input maxlength="11" type="tel" name="mobile" id="mobile" placeholder="숫자만 입력해 주세요.">
 			</div>
 		
 			<div class="signupFrm4">	
 				<label for="type">장애유형</label>
-				<select name="type" id="type" title="장애유형" style="width:100px;height:30px;">
+				<select name="type" id="type" style="width:100px;height:30px;">
 					<option value="" class="select-holder" aria-hidden="true" selected>선택</option>
 					<option value="지체장애">지체장애</option>
 					<option value="뇌병변장애">뇌병변장애</option>
@@ -60,7 +60,7 @@
 			
 			<div class="signupFrm5">
 				<label for="grade">장애등급</label>
-				<select name="grade" id="grade" title="장애등급" style="width:100px;height:30px;">
+				<select name="grade" id="grade" style="width:100px;height:30px;">
 					<option value="" class="select-holder" aria-hidden="true" selected>선택</option>
 					<option value="1등급">1등급</option>
 					<option value="2등급">2등급</option>
@@ -73,7 +73,7 @@
 			
 			<div class="signupFrm6">
 				<label for="livingArea">거주지역</label>
-				<select name="livingArea" id="livingArea" title="거주지역" style="width:100px;height:30px;">
+				<select name="livingArea" id="livingArea" style="width:100px;height:30px;">
 					<option value="" class="select-holder" aria-hidden="true" selected>선택</option>
 					<option value="강서구">강서구</option>
 					<option value="금정구">금정구</option>
@@ -95,7 +95,7 @@
 			</div>
 			
 			<div class="signupFrm7">
-				<label><input id="checkbox" type="checkbox" name="collectInfo"value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
+				<label><input id="checkbox" type="checkbox" name="collectInfo">개인정보 수집 및 활용에 동의</label>
 			</div>
 			
 			<div>

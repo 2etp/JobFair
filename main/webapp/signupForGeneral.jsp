@@ -34,47 +34,47 @@
 			
 			<div class="signupFrm1">
 				<label for="id">아이디</label>
-				<input type="text" name="id" id="id" placeholder="중복체크 버튼을 눌러주세요" title="기업명" readonly>
+				<input type="text" name="id" id="id" placeholder="중복체크 버튼을 눌러주세요" readonly>
 			</div>
 			<div>
 				<a href="javascript:overlap();" role="button" id="duplicateCheck">중복체크</a>
 			</div>
 			<div class="signupFrm1">
 				<label for="password">패스워드</label>
-				<input type="password" name="pw" id="password" placeholder="예시) qwer1234" title="기업명">
+				<input type="password" name="pw" id="password" placeholder="패스워드를 입력해 주세요." >
 			</div>
 			<div class="signupFrm1">
 				<label for="passwordCheck">패스워드 확인</label>
-				<input type="password" name="companyName" id="passwordCheck" placeholder="예시) qwer1234" title="기업명">
+				<input type="password" name="companyName" id="passwordCheck" placeholder="패스워드를 한 번 더 입력해 주세요." >
 			</div>
 			<div class="signupFrm1">
 				<label for="companyName">기업명</label>
-				<input type="text" name="companyName" id="companyName" placeholder="예시) 삼성" title="기업명">
+				<input type="text" name="companyName" id="companyName" placeholder="기업명을 입력해 주세요." >
 			</div>
 			
 			<div class="signupFrm2"	>
 				<label for="address">기업주소</label>
-				<input type="text" name="address" id="address" placeholder="예시) 부산광역시 부산진구 서면대로 110번길 20" title="기업주소">
+				<input type="text" name="address" id="address" placeholder="기업의 주소를 입력해 주세요." >
 			</div>
 				
 			<div class="signupFrm3">
 				<label for="name">대표자 이름</label>
-				<input type="text" name="ceoName" id="name" placeholder="예시) 홍길동" title="대표자 이름">
+				<input type="text" name="ceoName" id="name" placeholder="기업 대표자의 이름을 입력해 주세요." >
 			</div>
 			
 			<div class="signupFrm4">	
 				<label for="homepage">홈페이지</label>
-				<input type="text" name="homepage" id="homepage" placeholder="예시) abc.co.kr" title="홈페이지">
+				<input type="text" name="homepage" id="homepage" placeholder="예시) abc.co.kr" >
 			</div>	
 			
 			<div class="signupFrm5">
 				<label for="mobile">연락처</label>
-				<input maxlength="11" type="tel" name="mobile" id="mobile" placeholder="숫자만 입력해 주세요." title="연락처">
+				<input maxlength="11" type="tel" name="mobile" id="mobile" placeholder="숫자만 입력해 주세요." >
 			</div>
 			
 			<div class="signupFrm6">	
 				<label for="sectors">업종</label>
-				<select id="sectors" name="sectors" title="업종">
+				<select id="sectors" name="sectors" >
 					<option value="제조업" selected>제조업</option>
 					<option value="서비스">서비스</option>
 					<option value="도소매업">도소매업</option>
@@ -88,7 +88,7 @@
 			
 			<div class="signupFrm7">
 				<label for="businessInfo">사업내용</label>
-				<select id="businessInfo" name="businessInfo" title="사업내용">
+				<select id="businessInfo" name="businessInfo" >
 					<option value="기계부품" selected>기계부품</option>
 					<option value="청소">청소</option>
 					<option value="	소프트웨어개발">	소프트웨어 개발</option>
@@ -114,7 +114,7 @@
 			
 			<div class="signupFrm8">
 				<label for="comSize">규모</label>
-				<select id="comSize" name="comSize" title="규모">
+				<select id="comSize" name="comSize" >
 					<option value="50인 이하" selected>50명 이하</option>
 					<option value="51 ~ 100인">100명 이하</option>
 					<option value="101 ~ 300인">101~300</option>
@@ -125,11 +125,11 @@
 			
 			<div class="signupFrm9">
 				<label for="foundedDate">설립시기</label>
-				<input type="date" name="foundedDate" id="foundedDate" title="설립시기">
+				<input type="date" name="foundedDate" id="foundedDate" >
 			</div>
 			
 			<div class="signupFrm10">
-				<label><input id="checkbox" type="checkbox" name="collectInfo" value="" title="개인정보 수집 및 활용 동의 여부">개인정보 수집 및 활용에 동의</label>
+				<label><input id="checkbox" type="checkbox" name="collectInfo" >개인정보 수집 및 활용에 동의</label>
 			</div>
 			
 			<div>

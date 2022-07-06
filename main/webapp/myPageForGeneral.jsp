@@ -81,7 +81,7 @@
 		
 			<div class="div-sideNav">
 				<aside id="sideNav" role="navigation">
-					<h3>가이드 메뉴</h3>
+					<h3>마이페이지 메뉴</h3>
 					<ul>
 						<li><a href="myPageForGeneral.jsp" >
 							<img src="./image/account.svg"  aria-hidden="true">

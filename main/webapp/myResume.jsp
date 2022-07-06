@@ -60,7 +60,7 @@
 			</ul>
 		</details>
 		<div class="div-caption">
-			<img src="./image/resume.png" alt="이력서 이미지">
+			<img src="./image/resume.png" aria-hidden="true">
 			<p>이력서</p>
 		</div>
 		

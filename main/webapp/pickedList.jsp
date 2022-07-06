@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
+<jsp:useBean id="dvo" class="jobFairMgr.DisabilityVO" />
 <%@ page import = "java.util.*" %>
 <%@ page import = "jobFairMgr.OpeningListVO" %>
 
 <%
 	request.setCharacterEncoding("UTF-8");
-//	int userNum = (int)session.getAttribute("lgnUserNum");
-	int userNum = 1;
+	String name = (String)session.getAttribute("lgnName");
+	dvo = dao.getUser(name);
 	
 	
 	//페이징 넘버 작업
@@ -25,8 +26,8 @@
 	int currentPage = Integer.parseInt(pageNum);
 	int startRow = (currentPage - 1) * pageSize + 1;
 	
-	List<OpeningListVO> list = dao.getPickedList(userNum, startRow, pageSize);
-	int cnt = dao.getPickedCount(userNum);
+	List<OpeningListVO> list = dao.getPickedList(dvo.getUserNum(), startRow, pageSize);
+	int cnt = dao.getPickedCount(dvo.getUserNum());
 %>
 
 <!DOCTYPE html>

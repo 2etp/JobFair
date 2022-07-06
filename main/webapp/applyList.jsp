@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="dao" class="jobFairMgr.DisabilityDAO" />
+<jsp:useBean id="dvo" class="jobFairMgr.DisabilityVO" />
 <%@ page import = "java.util.*" %>
 <%@ page import = "jobFairMgr.ApplyListVO" %>
 <%
 	request.setCharacterEncoding("UTF-8");
-	//int userNum = (int)session.getAttribute("lgnUserNum");
-	int userNum = 1;
+	String name = (String)session.getAttribute("lgnName");
+	dvo = dao.getUser(name);
 	
 	
 	
@@ -25,8 +26,8 @@
 	int currentPage = Integer.parseInt(pageNum);
 	int startRow = (currentPage - 1) * pageSize + 1;
 	
-	List<ApplyListVO> list = dao.getApplyList(userNum, startRow, pageSize);
-	int cnt = dao.getApplyCount(userNum);
+	List<ApplyListVO> list = dao.getApplyList(dvo.getUserNum(), startRow, pageSize);
+	int cnt = dao.getApplyCount(dvo.getUserNum());
 
 %>
     

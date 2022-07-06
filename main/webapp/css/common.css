@@ -36,7 +36,7 @@ html.godabiON input:not(input[type=file]), html.godabiON select, html.godabiON t
 html.godabiON input::placeholder, html.godabiON textarea::placeholder{
 	color:#aaa;
 }
-html.godabiON #sideNav a:not(#sideNav a[id="resPreview"],#sideNav a[id="saveRes"]) {
+html.godabiON #sideNav a:not(#sideNav a[id="resPreview"],#sideNav a[id="saveRes"],#sideNav a[id="postEmpSubmit"]) {
 	color: #71D0BD !important;
 }
 h1,h2,h3,h4,h5,h6{

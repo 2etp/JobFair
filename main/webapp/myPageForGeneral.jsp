@@ -28,7 +28,7 @@
 <main>
 	<section class="section-table">
 		<div class="title-div">
-			<img src="./image/myPage.svg" aria-hidden="true" class="title-img">
+			<img src="./image/account.svg" aria-hidden="true" class="title-img">
 			<p>내 정보 관리</p>
 		</div>
 		<table>
@@ -82,14 +82,16 @@
 			<div class="div-sideNav">
 				<aside id="sideNav" role="navigation">
 					<h3>가이드 메뉴</h3>
-					<img src="image/guide.png" aria-hidden="true">
 					<ul>
-						<li><img src="./image/resume.png" aria-hidden="true">
-							<a href="postJobOpening.jsp" >채용공고 등록</a></li>
-						<li><img src="./image/myPage.svg"  aria-hidden="true">
-							<a href="myPageForGeneral.jsp" >기업정보 관리</a></li>
-						<li><img src="image/applyList.png" aria-hidden="true">
-							<a href="applicantList.jsp" >지원자 현황</a></li>
+						<li><a href="myPageForGeneral.jsp" >
+							<img src="./image/account.svg"  aria-hidden="true">
+							기업정보 관리</a></li>
+						<li><a href="postJobOpening.jsp" >
+							<img src="./image/write_res.svg" aria-hidden="true">
+							채용공고 등록</a></li>
+						<li><a href="applicantList.jsp" >
+							<img src="image/list.svg" aria-hidden="true">
+							지원자 현황</a></li>
 					</ul>
 				</aside>
 			</div> 

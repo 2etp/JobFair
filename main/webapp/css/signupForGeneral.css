@@ -208,3 +208,32 @@ section .title p {
 	font-size: 30px;	
 	font-weight: bold;
 }
+input[type="date"]{
+	position: relative;
+}
+input[type="date"]::before {
+  display:none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator{
+	background:transparent;
+	margin-left: 10px;
+	width: 25px;
+  	height:20px;
+  	z-index:5;
+}
+input[type="date"]:after{
+  position: absolute;
+  top:50%;
+  right:0;
+  content: '';
+  width: 25px;
+  height:20px;
+
+  background: url('../image/calendar_b.svg') center center /contain no-repeat;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+html.godabiON input[type="date"]:after{
+  background: url('../image/calendar.svg') center center /contain no-repeat;
+  transform: translateY(-50%);
+}

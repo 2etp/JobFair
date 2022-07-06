@@ -154,7 +154,7 @@ html.godabiON section .title img{
 	content : url("../image/login_png_w.png");
 }
 html.godabiON #loginButton{
-	border: 1px solid #1A8F64;
+	border: 2px solid #1A8F64;
 }
 
 

@@ -38,7 +38,7 @@ select .select-holder{
 }
 
 #submit-button{
-	border : 1px solid #265FA6;
+	border : 2px solid #265FA6;
 	color : white;
 	background-color : #265FA6;
 	text-decoration : none;
@@ -59,6 +59,9 @@ select .select-holder{
 	text-decoration : none;
 	color : white;
 	background-color: skyblue;
+}
+html.godabiON .div-boardpaging a{
+	border: 2px solid skyblue;
 }
 
 .div-frame {
@@ -84,7 +87,7 @@ select .select-holder{
 	font-size: 25px;
 	font-weight: bold;
 	color: black;
-	font-family: Jalnan;
+	font-family:Binggrae;
 
 }
 
@@ -126,7 +129,7 @@ html.godabiON .company-contents p span{
 	float: left;
 	margin-left: 10px;
 	color: #004C6A;
-	
+	font-family:Binggrae;
 }
 
 .div-list {

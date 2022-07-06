@@ -24,7 +24,7 @@
 	<main>		
 		<section class="section-table">
 			<div class="title-div">
-				<img src="./image/myPage.svg" aria-hidden="true" class="title-img">
+				<img src="./image/account.svg" aria-hidden="true" class="title-img">
 				<p>내 정보 관리</p>
 			</div>
 			<table>
@@ -65,19 +65,23 @@
 			
 			<div class="div-sideNav">
 				<aside id="sideNav" role="navigation">
-					<h3>가이드 메뉴</h3>
-					<img src="image/guide.png" aria-hidden="true">
+					<h3>마이페이지 메뉴</h3>
 					<ul>
-						<li><img src="./image/resume.png" aria-hidden="true">
-							<a href="postResume.jsp" >이력서 작성</a></li>
-						<li><img src="./image/myPage.svg"  aria-hidden="true">
-							<a href="myPageForDisability.jsp" >내 정보 관리</a></li>
-						<li><img src="./image/myResume.png" aria-hidden="true">
-							<a href="myResume.jsp" >이력서 관리</a></li>
-						<li><img src="image/bookmark_on.svg" aria-hidden="true">
-							<a href="pickedList.jsp" >관심 채용공고</a></li>
-						<li><img src="image/applyList.png" aria-hidden="true">
-							<a href="applyList.jsp" >기업지원 현황</a></li>
+						<li><a href="myPageForDisability.jsp" >
+							<img src="./image/account.svg"  aria-hidden="true">
+							내 정보 관리</a></li>
+						<li><a href="postResume.jsp" >
+							<img src="./image/write_res.svg" aria-hidden="true">
+							이력서 작성</a></li>
+						<li><a href="myResume.jsp" >
+							<img src="./image/resume.svg" aria-hidden="true">
+							이력서 관리</a></li>
+						<li><a href="pickedList.jsp" >
+							<img src="image/bookmark_on.svg" aria-hidden="true">
+							관심 채용공고</a></li>
+						<li><a href="applyList.jsp" >
+							<img src="image/list.svg" aria-hidden="true">
+							기업지원 현황</a></li>
 					</ul>
 				</aside>
 			</div> 

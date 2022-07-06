@@ -23,16 +23,21 @@ input, select, option{
 	letter-spacing:0.1em;
 }
 input, select{
-	background-color:transparent;
+	background-color:transparent !important;
 }
 html.godabiON option{
 	background-color:black;
+	color:white !important;
 }
-html.godabiON input, select{
+html.godabiON input, html.godabiON select{
 	border: 1px solid #aaa;
+	color:white !important;
 }
 html.godabiON input::placeholder, html.godabiON textarea::placeholder{
 	color:#aaa;
+}
+html.godabiON #sideNav a:not(#sideNav a[id="resPreview"]) {
+	color: #71D0BD !important;
 }
 h1,h2,h3,h4,h5,h6{
 	font-family:Binggrae;

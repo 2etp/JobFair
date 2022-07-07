@@ -98,6 +98,7 @@
 	</section>
 </main>
 
+
 <jsp:include page="commonJSP/footer.jsp"></jsp:include>
 </body>
 </html>

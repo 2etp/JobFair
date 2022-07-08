@@ -267,6 +267,7 @@
 </main>
 
 <jsp:include page="commonJSP/footer.jsp"/>
+
 <script>
 	function searchName() {
 		let companyName = document.getElementById("companyName").value;
